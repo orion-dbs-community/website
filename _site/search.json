@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "sos.html",
+    "href": "sos.html",
+    "title": "Sesam Open",
+    "section": "",
+    "text": "A great collection powered by Bianca Kramer\n…"
+  },
+  {
+    "objectID": "sos.html#butler_apcs",
+    "href": "sos.html#butler_apcs",
+    "title": "Sesam Open",
+    "section": "butler_apcs",
+    "text": "butler_apcs\n\n\nCreated: Aug 26, 2025 17:17 | Location: US"
+  },
+  {
+    "objectID": "sos.html#crossref",
+    "href": "sos.html#crossref",
+    "title": "Sesam Open",
+    "section": "crossref",
+    "text": "crossref\n\n\nCreated: Jul 08, 2025 09:53 | Location: US"
+  },
+  {
+    "objectID": "sos.html#doaj",
+    "href": "sos.html#doaj",
+    "title": "Sesam Open",
+    "section": "doaj",
+    "text": "doaj\n\n\nCreated: Aug 03, 2025 22:57 | Location: US"
+  },
+  {
+    "objectID": "sos.html#goa",
+    "href": "sos.html#goa",
+    "title": "Sesam Open",
+    "section": "goa",
+    "text": "goa\n\n\nCreated: Aug 03, 2025 23:22 | Location: US"
+  },
+  {
+    "objectID": "sos.html#issn",
+    "href": "sos.html#issn",
+    "title": "Sesam Open",
+    "section": "issn",
+    "text": "issn\n\n\nCreated: Aug 03, 2025 23:00 | Location: US"
+  },
+  {
+    "objectID": "sos.html#jct",
+    "href": "sos.html#jct",
+    "title": "Sesam Open",
+    "section": "jct",
+    "text": "jct\n\n\nCreated: Aug 03, 2025 23:14 | Location: US"
+  },
+  {
+    "objectID": "sos.html#openaire",
+    "href": "sos.html#openaire",
+    "title": "Sesam Open",
+    "section": "openaire",
+    "text": "openaire\n\n\nCreated: Mar 28, 2025 17:48 | Location: US"
+  },
+  {
+    "objectID": "sos.html#openapc",
+    "href": "sos.html#openapc",
+    "title": "Sesam Open",
+    "section": "openapc",
+    "text": "openapc\n\n\nCreated: Aug 03, 2025 23:02 | Location: US"
+  },
+  {
+    "objectID": "sos.html#opencitations",
+    "href": "sos.html#opencitations",
+    "title": "Sesam Open",
+    "section": "opencitations",
+    "text": "opencitations\n\n\nCreated: Dec 29, 2024 12:23 | Location: US"
+  },
+  {
+    "objectID": "sos.html#pkp",
+    "href": "sos.html#pkp",
+    "title": "Sesam Open",
+    "section": "pkp",
+    "text": "pkp\n\n\nCreated: Jun 06, 2025 01:52 | Location: US"
+  },
+  {
+    "objectID": "sos.html#truthtables",
+    "href": "sos.html#truthtables",
+    "title": "Sesam Open",
+    "section": "truthtables",
+    "text": "truthtables\n\n\nCreated: Mar 28, 2025 18:39 | Location: US"
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "",
+    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/\nContact: Najko Jahn"
+  },
+  {
+    "objectID": "sources.html#cr_history",
+    "href": "sources.html#cr_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_history",
+    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 09:20 | Location: US"
+  },
+  {
+    "objectID": "sources.html#cr_instant",
+    "href": "sources.html#cr_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_instant",
+    "text": "cr_instant\n\n\nCreated: Oct 29, 2021 09:37 | Location: US"
+  },
+  {
+    "objectID": "sources.html#hoaddata",
+    "href": "sources.html#hoaddata",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "hoaddata",
+    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 13:06 | Location: US"
+  },
+  {
+    "objectID": "sources.html#openalex",
+    "href": "sources.html#openalex",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex",
+    "text": "openalex\n\n\nCreated: Jan 10, 2022 15:46 | Location: US"
+  },
+  {
+    "objectID": "sources.html#openbib",
+    "href": "sources.html#openbib",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openbib",
+    "text": "openbib\n\n\nCreated: Mar 28, 2025 15:22 | Location: US"
+  },
+  {
+    "objectID": "sources.html#resources",
+    "href": "sources.html#resources",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "resources",
+    "text": "resources\n\n\nCreated: Nov 02, 2021 08:53 | Location: US"
+  },
+  {
+    "objectID": "sources.html#semantic_scholar",
+    "href": "sources.html#semantic_scholar",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "semantic_scholar",
+    "text": "semantic_scholar\n\n\nCreated: Jun 10, 2024 15:46 | Location: US"
+  },
+  {
+    "objectID": "sources.html#upw_history",
+    "href": "sources.html#upw_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_history",
+    "text": "upw_history\n\n\nCreated: Oct 29, 2021 09:51 | Location: US"
+  },
+  {
+    "objectID": "sources.html#upw_instant",
+    "href": "sources.html#upw_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_instant",
+    "text": "upw_instant\n\n\nCreated: Oct 29, 2021 09:52 | Location: US"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "",
+    "text": "This collection of publicly available and curated datasets on Google BigQuery."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]

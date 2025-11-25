@@ -1,0 +1,153 @@
+/* Observable Framework inspired styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* Observable Framework color system */
+  --theme-foreground: #1b1e23;
+  --theme-background-a: #ffffff;
+  --theme-foreground-focus: #3b5fc0;
+
+  /* Derived colors using color-mix */
+  --theme-background-b: color-mix(in srgb, var(--theme-foreground) 4%, var(--theme-background-a));
+  --theme-background: var(--theme-background-a);
+  --theme-background-alt: var(--theme-background-b);
+  --theme-foreground-alt: color-mix(in srgb, var(--theme-foreground) 90%, var(--theme-background-a));
+  --theme-foreground-muted: color-mix(in srgb, var(--theme-foreground) 60%, var(--theme-background-a));
+  --theme-foreground-faint: color-mix(in srgb, var(--theme-foreground) 50%, var(--theme-background-a));
+  --theme-foreground-fainter: color-mix(in srgb, var(--theme-foreground) 30%, var(--theme-background-a));
+  --theme-foreground-faintest: color-mix(in srgb, var(--theme-foreground) 14%, var(--theme-background-a));
+
+  /* Accent colors */
+  --theme-blue: #4269d0;
+  --theme-green: #3ca951;
+  --theme-red: #ff725c;
+  --theme-yellow: #efb118;
+}
+
+/* Typography */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--theme-foreground);
+  background-color: var(--theme-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;
+  color: var(--theme-foreground-alt);
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+code, pre {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: var(--theme-foreground-focus);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: var(--theme-background-alt) !important;
+  border-bottom: 1px solid var(--theme-foreground-faintest);
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+.navbar-brand, .navbar .nav-link {
+  color: var(--theme-foreground) !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--theme-foreground-focus) !important;
+}
+
+/* Content max-width (Observable Framework style) */
+.quarto-title-block,
+#quarto-content p,
+#quarto-content table,
+#quarto-content figure {
+  max-width: 640px;
+}
+
+#quarto-content pre {
+  max-width: 960px;
+}
+
+/* BigQuery tables styling */
+.bigquery-tables {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.bigquery-tables .reactable {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  border: 1px solid hsl(213, 33%, 93%);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: hsl(213, 45%, 97%);
+  border-bottom-color: hsl(213, 33%, 93%);
+  border-bottom-width: 1px;
+  color: hsl(213, 13%, 33%);
+  font-weight: 600;
+}
+
+.header[aria-sort]:hover,
+.header[aria-sort]:focus {
+  color: hsl(213, 55%, 50%);
+}
+
+.schema-detail {
+  padding: 24px;
+  box-shadow: inset 0 1px 3px #dbdbdb;
+  background: hsl(213, 20%, 99%);
+}
+
+.schema-header {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(213, 13%, 33%);
+}
+
+.nested-fields-header {
+  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: hsl(213, 13%, 45%);
+}
+
+.schema-table {
+  border: 1px solid hsl(213, 33%, 93%);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.05);
+  font-size: 0.875rem;
+}
+
+.number {
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 14px;
+  white-space: pre;
+}

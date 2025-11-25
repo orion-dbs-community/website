@@ -1,0 +1,181 @@
+```{r}
+#| echo: false
+
+my_tables <- bq_dataset_tables(current_dataset)
+
+# Get metadata for all tables
+table_metadata <- map_dfr(my_tables, function(table) {
+  meta <- bq_table_meta(table)
+
+  # Extract schema fields with nested information
+  schema_fields <- if (!is.null(meta$schema$fields)) {
+    list(tibble::tibble(
+      Field = map_chr(meta$schema$fields, "name"),
+      Type = map_chr(meta$schema$fields, "type"),
+      Description = map_chr(meta$schema$fields, \(x) x$description %||% NA_character_),
+      nested_fields = map(meta$schema$fields, get_nested_fields)
+    ))
+  } else {
+    list(NULL)
+  }
+
+  tibble::tibble(
+    name = meta$tableReference$tableId,
+    lastModifiedTime = as.POSIXct(as.numeric(meta$lastModifiedTime) / 1000, origin = "1970-01-01"),
+    location = meta$location,
+    numBytes = as.numeric(meta$numBytes),
+    numRows = as.numeric(meta$numRows),
+    description = meta$description %||% NA_character_,
+    schema = schema_fields
+  )
+})
+
+# Row details function for table metadata
+table_details <- function(index) {
+  schema_data <- table_metadata$schema[[index]]
+  table_desc <- table_metadata$description[[index]]
+
+  if (!is.null(schema_data)) {
+    # Create description section if description exists
+    desc_section <- if (!is.na(table_desc) && table_desc != "") {
+      div(
+        style = "margin-bottom: 1.5rem; padding: 12px; background-color: #f8f9fa; border-left: 3px solid hsl(213, 55%, 50%); border-radius: 4px;",
+        div(
+          style = "font-weight: 600; margin-bottom: 0.5rem; color: hsl(213, 13%, 33%); font-size: 0.875rem;",
+          "Description"
+        ),
+        div(
+          style = "color: hsl(213, 13%, 25%); font-size: 0.9375rem;",
+          table_desc
+        )
+      )
+    } else {
+      NULL
+    }
+
+    detail <- div(
+      class = "schema-detail",
+      desc_section,
+      div(class = "schema-header", "Table Schema"),
+      reactable(
+        schema_data,
+        pagination = FALSE,
+        outlined = TRUE,
+        defaultColDef = colDef(headerClass = "header"),
+        columns = list(
+          Field = colDef(
+            name = "Field",
+            minWidth = 200,
+            style = list(fontWeight = 500)
+          ),
+          Type = colDef(
+            name = "Type",
+            minWidth = 100,
+            style = list(fontFamily = "monospace", fontSize = "0.875rem")
+          ),
+          Description = colDef(
+            name = "Description",
+            minWidth = 250
+          ),
+          nested_fields = colDef(show = FALSE)
+        ),
+        details = function(schema_index) {
+          nested_data <- schema_data$nested_fields[[schema_index]]
+          if (!is.null(nested_data)) {
+            div(
+              style = "padding: 16px; background-color: #fff;",
+              div(class = "nested-fields-header", "Nested Fields"),
+              reactable(
+                nested_data,
+                pagination = FALSE,
+                outlined = TRUE,
+                defaultColDef = colDef(headerClass = "header"),
+                columns = list(
+                  Field = colDef(
+                    name = "Field",
+                    style = list(fontWeight = 500)
+                  ),
+                  Type = colDef(
+                    name = "Type",
+                    style = list(fontFamily = "monospace", fontSize = "0.875rem")
+                  ),
+                  Description = colDef(name = "Description")
+                ),
+                class = "schema-table",
+                theme = reactableTheme(cellPadding = "8px 12px")
+              )
+            )
+          }
+        },
+        class = "schema-table",
+        theme = reactableTheme(cellPadding = "8px 12px")
+      )
+    )
+    return(detail)
+  }
+}
+
+# Main table
+div(
+  class = "bigquery-tables",
+  reactable(
+    table_metadata[, c("name", "lastModifiedTime", "location", "numBytes", "numRows")],
+    onClick = "expand",
+    resizable = TRUE,
+    pagination = FALSE,
+    defaultColDef = colDef(headerClass = "header"),
+    columns = list(
+      name = colDef(
+        name = "Table Name",
+        minWidth = 300,
+        style = list(fontWeight = 600, cursor = "pointer")
+      ),
+      lastModifiedTime = colDef(
+        name = "Last Updated",
+        align = "right",
+        minWidth = 200,
+        cell = function(value) {
+          strftime(value, format = "%b %d, %Y %H:%M")
+        }
+      ),
+      location = colDef(
+        name = "Loc.",
+        minWidth = 80,
+        align = "right"
+      ),
+      numBytes = colDef(
+        name = "Size",
+        align = "right",
+        minWidth = 100,
+        class = "number",
+        cell = function(value) {
+          if (is.na(value)) return("—")
+          size_gb <- value / 1e9
+          if (size_gb >= 1) {
+            paste0(format(round(size_gb, 2), nsmall = 2), " GB")
+          } else {
+            size_mb <- value / 1e6
+            paste0(format(round(size_mb, 2), nsmall = 2), " MB")
+          }
+        }
+      ),
+      numRows = colDef(
+        name = "Rows",
+        align = "right",
+        minWidth = 150,
+        class = "number",
+        cell = function(value) {
+          if (is.na(value)) return("—")
+          format(value, big.mark = ",", scientific = FALSE)
+        }
+      )
+    ),
+    details = table_details,
+    rowStyle = list(cursor = "pointer"),
+    theme = reactableTheme(
+      cellPadding = "8px 12px",
+      style = list(fontFamily = "system-ui, -apple-system, sans-serif")
+    )
+  )
+)
+```

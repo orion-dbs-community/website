@@ -1,0 +1,7 @@
+---
+title: "Sharing the load: Building an open research information collective"
+subtitle: "Open Research Information on Google BigQuery"
+---
+
+This collection of publicly available and curated datasets on Google BigQuery. 
+

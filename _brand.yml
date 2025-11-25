@@ -1,0 +1,24 @@
+meta:
+  name: "GBQ Brand - Observable Framework Style"
+
+color:
+  palette:
+    foreground: "#1b1e23"
+    background: "#ffffff"
+    focus: "#3b5fc0"
+    blue: "#4269d0"
+    green: "#3ca951"
+    red: "#ff725c"
+    yellow: "#efb118"
+
+typography:
+  base:
+    family: '"Merriweather", "Iowan Old Style", "Apple Garamond", "Palatino Linotype", "Times New Roman", "Droid Serif", Times, serif'
+    size: "17px"
+    line-height: 1.5
+  headings:
+    family: "-apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica, helvetica neue, ubuntu, roboto, noto, segoe ui, arial, sans-serif"
+    weight: 700
+  monospace:
+    family: "Menlo, Consolas, monospace"
+    size: "14px"
