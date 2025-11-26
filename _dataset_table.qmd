@@ -150,11 +150,11 @@ div(
         class = "number",
         cell = function(value) {
           if (is.na(value)) return("—")
-          size_gb <- value / 1e9
+          size_gb <- value / (1024^3)
           if (size_gb >= 1) {
             paste0(format(round(size_gb, 2), nsmall = 2), " GB")
           } else {
-            size_mb <- value / 1e6
+            size_mb <- value / (1024^2)
             paste0(format(round(size_mb, 2), nsmall = 2), " MB")
           }
         }
