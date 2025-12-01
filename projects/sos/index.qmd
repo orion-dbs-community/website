@@ -20,7 +20,7 @@ library(bigrquery)
 library(reactable)
 library(htmltools)
 
-bigrquery::bq_auth()
+bigrquery::bq_auth(path = Sys.getenv("BQ_ORI"))
 ```
 
 ```{r}

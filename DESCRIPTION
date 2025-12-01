@@ -1,0 +1,21 @@
+Package: bqori
+Type: Project
+Title: BigQuery ORI Collection Quarto Site
+Version: 0.1.0
+Authors@R: 
+    person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0001-5105-1463")
+    )
+Description: Project website about publicly available Google Cloud BigQuery projects with open research information
+License: MIT
+Depends:
+    R (>= 4.0.0)
+Imports:
+    bigrquery,
+    tidyverse,
+    reactable,
+    htmltools,
+    knitr,
+    gargle
+Encoding: UTF-8
