@@ -10,5 +10,17 @@
   },
   "sos.qmd": {
     "sos.html": "5e796e33"
+  },
+  "contributing.qmd": {
+    "contributing.html": "c381c3dd"
+  },
+  "projects/subugoe/index.qmd": {
+    "index.html": "1fd1a20b"
+  },
+  "projects/sos/index.qmd": {
+    "index.html": "b1ef7751"
+  },
+  "projects/insyspo/index.qmd": {
+    "index.html": "bdb77913"
   }
 }
