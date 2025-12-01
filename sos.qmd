@@ -52,16 +52,16 @@ for (dataset in my_datasets) {
 
   # Create HTML for dataset metadata with styled box
   dataset_info_html <- paste0(
-    '<div style="margin-bottom: 1.5rem; padding: 12px; background-color: #f8f9fa; border-left: 3px solid hsl(213, 55%, 50%); border-radius: 4px;">',
+    '<div class="description-box">',
     if (!is.null(dataset_meta$description) && dataset_meta$description != "") {
       paste0(
-        '<div style="font-weight: 600; margin-bottom: 0.5rem; color: hsl(213, 13%, 33%); font-size: 0.875rem;">Description</div>',
-        '<div style="color: hsl(213, 13%, 25%); font-size: 0.9375rem; margin-bottom: 0.75rem;">',
+        '<div class="description-header">Description</div>',
+        '<div class="description-content" style="margin-bottom: 0.75rem;">',
         dataset_meta$description,
         '</div>'
       )
     } else "",
-    '<div style="color: hsl(213, 13%, 25%); font-size: 0.875rem;">',
+    '<div class="description-meta">',
     '<strong>Created:</strong> ',
     strftime(as.POSIXct(as.numeric(dataset_meta$creationTime) / 1000, origin = "1970-01-01"),
              format = "%b %d, %Y %H:%M"),

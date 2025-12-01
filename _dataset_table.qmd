@@ -39,13 +39,13 @@ table_details <- function(index) {
     # Create description section if description exists
     desc_section <- if (!is.na(table_desc) && table_desc != "") {
       div(
-        style = "margin-bottom: 1.5rem; padding: 12px; background-color: #f8f9fa; border-left: 3px solid hsl(213, 55%, 50%); border-radius: 4px;",
+        class = "description-box",
         div(
-          style = "font-weight: 600; margin-bottom: 0.5rem; color: hsl(213, 13%, 33%); font-size: 0.875rem;",
+          class = "description-header",
           "Description"
         ),
         div(
-          style = "color: hsl(213, 13%, 25%); font-size: 0.9375rem;",
+          class = "description-content",
           table_desc
         )
       )
@@ -83,7 +83,7 @@ table_details <- function(index) {
           nested_data <- schema_data$nested_fields[[schema_index]]
           if (!is.null(nested_data)) {
             div(
-              style = "padding: 16px; background-color: #fff;",
+              class = "nested-fields-container",
               div(class = "nested-fields-header", "Nested Fields"),
               reactable(
                 nested_data,
