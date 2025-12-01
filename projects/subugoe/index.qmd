@@ -1,0 +1,100 @@
+---
+title: "Open Scholarly Data @ SUB Göttingen"
+format:
+  html:
+    page-layout: full
+toc-title: Datasets
+params:
+  bq_project: "subugoe-collaborative"
+---
+
+The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery. 
+
+The warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.
+
+Google BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.
+
+More info: <https://subugoe.github.io/scholcomm_analytics/>
+
+Contact: Najko Jahn
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(bigrquery)
+library(reactable)
+library(htmltools)
+
+bigrquery::bq_auth()
+```
+
+```{r}
+#| echo: false
+my_datasets <- bq_project_datasets(params$bq_project)
+
+# Function to extract nested fields from RECORD type
+get_nested_fields <- function(field) {
+  if (field$type == "RECORD" && !is.null(field$fields)) {
+    tibble::tibble(
+      Field = map_chr(field$fields, "name"),
+      Type = map_chr(field$fields, "type"),
+      Description = map_chr(field$fields, \(x) x$description %||% NA_character_)
+    )
+  } else {
+    NULL
+  }
+}
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Render a section for each dataset
+for (dataset in my_datasets) {
+  # Print dataset name as heading
+  cat(paste0("## ", dataset$dataset, "\n\n"))
+
+  # Get dataset metadata
+  dataset_meta <- bq_dataset_meta(dataset)
+
+  # Create HTML for dataset metadata with styled box
+  dataset_url <- paste0(
+    'https://console.cloud.google.com/bigquery?project=', dataset$project,
+    '&p=', dataset$project,
+    '&d=', dataset$dataset,
+    '&page=dataset'
+  )
+
+  dataset_info_html <- paste0(
+    '<div class="description-box">',
+    if (!is.null(dataset_meta$description) && dataset_meta$description != "") {
+      paste0(
+        '<div class="description-header">Description</div>',
+        '<div class="description-content" style="margin-bottom: 0.75rem;">',
+        dataset_meta$description,
+        '</div>'
+      )
+    } else "",
+    '<div class="description-meta">',
+    '<strong>Created:</strong> ',
+    strftime(as.POSIXct(as.numeric(dataset_meta$creationTime) / 1000, origin = "1970-01-01"),
+             format = "%b %d, %Y %H:%M"),
+    ' | <strong>Location:</strong> ', dataset_meta$location,
+    ' | <a href="', dataset_url, '" target="_blank">View in BigQuery Console</a>',
+    '</div>',
+    '</div>\n\n'
+  )
+
+  cat(dataset_info_html)
+
+  # Set the current dataset for the child document
+  current_dataset <- dataset
+
+  # Render the child document
+  res <- knitr::knit_child("../_dataset_table.qmd", quiet = TRUE, envir = environment())
+  cat(res, sep = "\n")
+  cat("\n\n")
+}
+```

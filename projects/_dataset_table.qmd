@@ -34,19 +34,35 @@ table_metadata <- map_dfr(my_tables, function(table) {
 table_details <- function(index) {
   schema_data <- table_metadata$schema[[index]]
   table_desc <- table_metadata$description[[index]]
+  table_name <- table_metadata$name[[index]]
 
   if (!is.null(schema_data)) {
+    # Create BigQuery console URL for the table
+    table_url <- paste0(
+      'https://console.cloud.google.com/bigquery?project=', current_dataset$project,
+      '&p=', current_dataset$project,
+      '&d=', current_dataset$dataset,
+      '&t=', table_name,
+      '&page=table'
+    )
+
     # Create description section if description exists
     desc_section <- if (!is.na(table_desc) && table_desc != "") {
-      div(
-        class = "description-box",
+      tagList(
         div(
-          class = "description-header",
-          "Description"
-        ),
-        div(
-          class = "description-content",
-          table_desc
+          class = "description-box",
+          div(
+            class = "description-header",
+            "Description"
+          ),
+          div(
+            class = "description-content",
+            table_desc
+          ),
+          tags$div(
+            style = "margin-top: 0.5rem; font-size: 0.9rem;",
+            tags$a(href = table_url, target = "_blank", "View in BigQuery Console")
+          )
         )
       )
     } else {

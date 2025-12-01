@@ -5,9 +5,21 @@ website:
   title: "GBQ-ORI"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: Projects
+        menu:
+          - text: InSySPo Campinas Datasets
+            href: projects/insyspo/
+          - text: Sesame Open Datasets
+            href: projects/sos/
+          - text: SUB Göttingen Datasets
+            href: projects/subugoe/
+      - text: Contribute
+        href: contributing.qmd
+    right:
+      - href: about.qmd
+        text: About
+      - icon: github
+        href: https://github.com/njahn82/bqori_website
 
 format:
   html:

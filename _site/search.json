@@ -1,157 +1,395 @@
 [
   {
-    "objectID": "sos.html",
-    "href": "sos.html",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "projects/sos/index.html",
+    "href": "projects/sos/index.html",
     "title": "Sesam Open",
     "section": "",
     "text": "A great collection powered by Bianca Kramer\n…"
   },
   {
-    "objectID": "sos.html#butler_apcs",
-    "href": "sos.html#butler_apcs",
+    "objectID": "projects/sos/index.html#butler_apcs",
+    "href": "projects/sos/index.html#butler_apcs",
     "title": "Sesam Open",
     "section": "butler_apcs",
-    "text": "butler_apcs\n\n\nCreated: Aug 26, 2025 17:17 | Location: US"
+    "text": "butler_apcs\n\n\nCreated: Aug 26, 2025 17:17 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#crossref",
-    "href": "sos.html#crossref",
+    "objectID": "projects/sos/index.html#crossref",
+    "href": "projects/sos/index.html#crossref",
     "title": "Sesam Open",
     "section": "crossref",
-    "text": "crossref\n\n\nCreated: Jul 08, 2025 09:53 | Location: US"
+    "text": "crossref\n\n\nCreated: Jul 08, 2025 09:53 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#doaj",
-    "href": "sos.html#doaj",
+    "objectID": "projects/sos/index.html#doaj",
+    "href": "projects/sos/index.html#doaj",
     "title": "Sesam Open",
     "section": "doaj",
-    "text": "doaj\n\n\nCreated: Aug 03, 2025 22:57 | Location: US"
+    "text": "doaj\n\n\nCreated: Aug 03, 2025 22:57 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#goa",
-    "href": "sos.html#goa",
+    "objectID": "projects/sos/index.html#goa",
+    "href": "projects/sos/index.html#goa",
     "title": "Sesam Open",
     "section": "goa",
-    "text": "goa\n\n\nCreated: Aug 03, 2025 23:22 | Location: US"
+    "text": "goa\n\n\nCreated: Aug 03, 2025 23:22 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#issn",
-    "href": "sos.html#issn",
+    "objectID": "projects/sos/index.html#issn",
+    "href": "projects/sos/index.html#issn",
     "title": "Sesam Open",
     "section": "issn",
-    "text": "issn\n\n\nCreated: Aug 03, 2025 23:00 | Location: US"
+    "text": "issn\n\n\nCreated: Aug 03, 2025 23:00 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#jct",
-    "href": "sos.html#jct",
+    "objectID": "projects/sos/index.html#jct",
+    "href": "projects/sos/index.html#jct",
     "title": "Sesam Open",
     "section": "jct",
-    "text": "jct\n\n\nCreated: Aug 03, 2025 23:14 | Location: US"
+    "text": "jct\n\n\nCreated: Aug 03, 2025 23:14 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#openaire",
-    "href": "sos.html#openaire",
+    "objectID": "projects/sos/index.html#openaire",
+    "href": "projects/sos/index.html#openaire",
     "title": "Sesam Open",
     "section": "openaire",
-    "text": "openaire\n\n\nCreated: Mar 28, 2025 17:48 | Location: US"
+    "text": "openaire\n\n\nCreated: Mar 28, 2025 17:48 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#openapc",
-    "href": "sos.html#openapc",
+    "objectID": "projects/sos/index.html#openapc",
+    "href": "projects/sos/index.html#openapc",
     "title": "Sesam Open",
     "section": "openapc",
-    "text": "openapc\n\n\nCreated: Aug 03, 2025 23:02 | Location: US"
+    "text": "openapc\n\n\nCreated: Aug 03, 2025 23:02 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#opencitations",
-    "href": "sos.html#opencitations",
+    "objectID": "projects/sos/index.html#opencitations",
+    "href": "projects/sos/index.html#opencitations",
     "title": "Sesam Open",
     "section": "opencitations",
-    "text": "opencitations\n\n\nCreated: Dec 29, 2024 12:23 | Location: US"
+    "text": "opencitations\n\n\nCreated: Dec 29, 2024 12:23 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#pkp",
-    "href": "sos.html#pkp",
+    "objectID": "projects/sos/index.html#pkp",
+    "href": "projects/sos/index.html#pkp",
     "title": "Sesam Open",
     "section": "pkp",
-    "text": "pkp\n\n\nCreated: Jun 06, 2025 01:52 | Location: US"
+    "text": "pkp\n\n\nCreated: Jun 06, 2025 01:52 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sos.html#truthtables",
-    "href": "sos.html#truthtables",
+    "objectID": "projects/sos/index.html#truthtables",
+    "href": "projects/sos/index.html#truthtables",
     "title": "Sesam Open",
     "section": "truthtables",
-    "text": "truthtables\n\n\nCreated: Mar 28, 2025 18:39 | Location: US"
+    "text": "truthtables\n\n\nCreated: Mar 28, 2025 18:39 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html",
-    "href": "sources.html",
+    "objectID": "projects/subugoe/index.html",
+    "href": "projects/subugoe/index.html",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "",
     "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/\nContact: Najko Jahn"
   },
   {
-    "objectID": "sources.html#cr_history",
-    "href": "sources.html#cr_history",
+    "objectID": "projects/subugoe/index.html#cr_history",
+    "href": "projects/subugoe/index.html#cr_history",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "cr_history",
-    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 09:20 | Location: US"
+    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 09:20 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#cr_instant",
-    "href": "sources.html#cr_instant",
+    "objectID": "projects/subugoe/index.html#cr_instant",
+    "href": "projects/subugoe/index.html#cr_instant",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "cr_instant",
-    "text": "cr_instant\n\n\nCreated: Oct 29, 2021 09:37 | Location: US"
+    "text": "cr_instant\n\n\nCreated: Oct 29, 2021 09:37 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#hoaddata",
-    "href": "sources.html#hoaddata",
+    "objectID": "projects/subugoe/index.html#hoaddata",
+    "href": "projects/subugoe/index.html#hoaddata",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "hoaddata",
-    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 13:06 | Location: US"
+    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 13:06 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#openalex",
-    "href": "sources.html#openalex",
+    "objectID": "projects/subugoe/index.html#openalex",
+    "href": "projects/subugoe/index.html#openalex",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "openalex",
-    "text": "openalex\n\n\nCreated: Jan 10, 2022 15:46 | Location: US"
+    "text": "openalex\n\n\nCreated: Jan 10, 2022 15:46 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#openbib",
-    "href": "sources.html#openbib",
+    "objectID": "projects/subugoe/index.html#openbib",
+    "href": "projects/subugoe/index.html#openbib",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "openbib",
-    "text": "openbib\n\n\nCreated: Mar 28, 2025 15:22 | Location: US"
+    "text": "openbib\n\n\nCreated: Mar 28, 2025 15:22 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#resources",
-    "href": "sources.html#resources",
+    "objectID": "projects/subugoe/index.html#resources",
+    "href": "projects/subugoe/index.html#resources",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "resources",
-    "text": "resources\n\n\nCreated: Nov 02, 2021 08:53 | Location: US"
+    "text": "resources\n\n\nCreated: Nov 02, 2021 08:53 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#semantic_scholar",
-    "href": "sources.html#semantic_scholar",
+    "objectID": "projects/subugoe/index.html#semantic_scholar",
+    "href": "projects/subugoe/index.html#semantic_scholar",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "semantic_scholar",
-    "text": "semantic_scholar\n\n\nCreated: Jun 10, 2024 15:46 | Location: US"
+    "text": "semantic_scholar\n\n\nCreated: Jun 10, 2024 15:46 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#upw_history",
-    "href": "sources.html#upw_history",
+    "objectID": "projects/subugoe/index.html#upw_history",
+    "href": "projects/subugoe/index.html#upw_history",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "upw_history",
-    "text": "upw_history\n\n\nCreated: Oct 29, 2021 09:51 | Location: US"
+    "text": "upw_history\n\n\nCreated: Oct 29, 2021 09:51 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "sources.html#upw_instant",
-    "href": "sources.html#upw_instant",
+    "objectID": "projects/subugoe/index.html#upw_instant",
+    "href": "projects/subugoe/index.html#upw_instant",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "upw_instant",
-    "text": "upw_instant\n\n\nCreated: Oct 29, 2021 09:52 | Location: US"
+    "text": "upw_instant\n\n\nCreated: Oct 29, 2021 09:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "GBQ-ORI",
+    "section": "",
+    "text": "Here we describe how to contribute"
+  },
+  {
+    "objectID": "projects/insyspo/index.html",
+    "href": "projects/insyspo/index.html",
+    "title": "The InSySPo project",
+    "section": "",
+    "text": "More info: https://www.leidenmadtrics.nl/articles/towards-the-democratisation-of-open-research-information-for-scientometrics-and-science-policy-the-campinas-experience"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_ciaam",
+    "href": "projects/insyspo/index.html#projectdb_ciaam",
+    "title": "The InSySPo project",
+    "section": "projectdb_ciaam",
+    "text": "projectdb_ciaam\n\n\nCreated: May 30, 2025 01:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "href": "projects/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "title": "The InSySPo project",
+    "section": "projectdb_cwts_summer_school_2023",
+    "text": "projectdb_cwts_summer_school_2023\n\n\nCreated: Sep 18, 2023 17:40 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_escuela_ocyt",
+    "href": "projects/insyspo/index.html#projectdb_escuela_ocyt",
+    "title": "The InSySPo project",
+    "section": "projectdb_escuela_ocyt",
+    "text": "projectdb_escuela_ocyt\n\n\nCreated: Feb 24, 2025 18:13 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_scielo_relational_model",
+    "href": "projects/insyspo/index.html#projectdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "projectdb_scielo_relational_model",
+    "text": "projectdb_scielo_relational_model\n\n\nCreated: Mar 28, 2023 09:20 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_badepi",
+    "href": "projects/insyspo/index.html#publicdb_badepi",
+    "title": "The InSySPo project",
+    "section": "publicdb_badepi",
+    "text": "publicdb_badepi\n\n\nCreated: Feb 26, 2023 12:23 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_capes_ppg",
+    "href": "projects/insyspo/index.html#publicdb_capes_ppg",
+    "title": "The InSySPo project",
+    "section": "publicdb_capes_ppg",
+    "text": "publicdb_capes_ppg\n\n\nCreated: Nov 13, 2023 11:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_crossref",
+    "href": "projects/insyspo/index.html#publicdb_crossref",
+    "title": "The InSySPo project",
+    "section": "publicdb_crossref",
+    "text": "publicdb_crossref\n\n\nCreated: Feb 27, 2023 04:41 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "href": "projects/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "title": "The InSySPo project",
+    "section": "publicdb_cwts_openalex_areas",
+    "text": "publicdb_cwts_openalex_areas\n\n\nCreated: Jan 26, 2024 19:09 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurakalert",
+    "href": "projects/insyspo/index.html#publicdb_eurakalert",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurakalert",
+    "text": "publicdb_eurakalert\n\n\nCreated: Feb 26, 2023 12:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurekalert",
+    "href": "projects/insyspo/index.html#publicdb_eurekalert",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert",
+    "text": "publicdb_eurekalert\n\n\nCreated: Feb 25, 2025 15:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurekalert_2023",
+    "href": "projects/insyspo/index.html#publicdb_eurekalert_2023",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert_2023",
+    "text": "publicdb_eurekalert_2023\n\n\nCreated: Oct 27, 2023 20:26 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurekalert_2025",
+    "href": "projects/insyspo/index.html#publicdb_eurekalert_2025",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert_2025",
+    "text": "publicdb_eurekalert_2025\n\n\nCreated: Jul 18, 2025 19:16 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openaire_rm",
+    "href": "projects/insyspo/index.html#publicdb_openaire_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openaire_rm",
+    "text": "publicdb_openaire_rm\n\n\nCreated: Nov 28, 2023 18:47 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2022_04",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2022_04",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2022_04",
+    "text": "publicdb_openalex_2022_04\n\n\nCreated: Feb 27, 2023 05:50 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2023_08_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2023_08_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2023_08_rm",
+    "text": "publicdb_openalex_2023_08_rm\n\n\nCreated: Aug 30, 2023 16:24 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2024_02_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2024_02_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2024_02_rm",
+    "text": "publicdb_openalex_2024_02_rm\n\n\nCreated: Feb 21, 2024 13:14 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2024_04_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2024_04_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2024_04_rm",
+    "text": "publicdb_openalex_2024_04_rm\n\n\nCreated: Apr 09, 2024 05:12 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2024_04_rm_eu",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2024_04_rm_eu",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2024_04_rm_eu",
+    "text": "publicdb_openalex_2024_04_rm_eu\n\n\nCreated: Sep 05, 2024 13:34 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2024_10_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2024_10_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2024_10_rm",
+    "text": "publicdb_openalex_2024_10_rm\n\n\nCreated: Oct 17, 2024 15:45 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_03_rm",
+    "text": "publicdb_openalex_2025_03_rm\n\n\nCreated: Mar 14, 2025 10:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_08_rm",
+    "text": "publicdb_openalex_2025_08_rm\n\n\nCreated: Sep 01, 2025 21:44 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_opencitations",
+    "href": "projects/insyspo/index.html#publicdb_opencitations",
+    "title": "The InSySPo project",
+    "section": "publicdb_opencitations",
+    "text": "publicdb_opencitations\n\n\nCreated: Feb 26, 2023 12:29 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_orcid_2022",
+    "href": "projects/insyspo/index.html#publicdb_orcid_2022",
+    "title": "The InSySPo project",
+    "section": "publicdb_orcid_2022",
+    "text": "publicdb_orcid_2022\n\n\nCreated: Sep 01, 2023 04:34 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_redalyc_2024_08",
+    "href": "projects/insyspo/index.html#publicdb_redalyc_2024_08",
+    "title": "The InSySPo project",
+    "section": "publicdb_redalyc_2024_08",
+    "text": "publicdb_redalyc_2024_08\n\n\nCreated: Aug 21, 2024 04:35 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_reliance_on_science",
+    "href": "projects/insyspo/index.html#publicdb_reliance_on_science",
+    "title": "The InSySPo project",
+    "section": "publicdb_reliance_on_science",
+    "text": "publicdb_reliance_on_science\n\n\nCreated: Apr 13, 2025 23:12 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo",
+    "href": "projects/insyspo/index.html#publicdb_scielo",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo",
+    "text": "publicdb_scielo\n\n\nCreated: Feb 27, 2023 08:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo_2024_rm",
+    "href": "projects/insyspo/index.html#publicdb_scielo_2024_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_2024_rm",
+    "text": "publicdb_scielo_2024_rm\n\n\nCreated: Jul 16, 2024 22:40 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo_relational_model",
+    "href": "projects/insyspo/index.html#publicdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_relational_model",
+    "text": "publicdb_scielo_relational_model\n\n\nCreated: Oct 11, 2023 15:29 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo_stats",
+    "href": "projects/insyspo/index.html#publicdb_scielo_stats",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_stats",
+    "text": "publicdb_scielo_stats\n\n\nCreated: Feb 27, 2023 05:03 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_swepub",
+    "href": "projects/insyspo/index.html#publicdb_swepub",
+    "title": "The InSySPo project",
+    "section": "publicdb_swepub",
+    "text": "publicdb_swepub\n\n\nCreated: Dec 14, 2023 20:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "href": "projects/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "title": "The InSySPo project",
+    "section": "publicdb_wikipedia_knowledge_graph",
+    "text": "publicdb_wikipedia_knowledge_graph\n\n\nCreated: Feb 27, 2023 05:47 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "index.html",
@@ -159,12 +397,5 @@
     "title": "Sharing the load: Building an open research information collective",
     "section": "",
     "text": "This collection of publicly available and curated datasets on Google BigQuery."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   }
 ]
