@@ -110,6 +110,40 @@ a:hover {
   fill: #ffffff !important;
 }
 
+/* Active and focus states with subtle light contrast */
+.navbar .nav-link:active,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar .nav-link:focus {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  outline: none;
+}
+
+.navbar .navbar-nav .show > .nav-link {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar .dropdown-menu {
+  background-color: #009fe3 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbar .dropdown-item {
+  color: #ffffff !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item:active {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
 .navbar .navbar-toggler {
   border-color: #ffffff !important;
 }
