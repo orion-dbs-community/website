@@ -82,16 +82,17 @@ table_details <- function(index) {
           Field = colDef(
             name = "Field",
             minWidth = 200,
-            style = list(fontWeight = 500)
+            style = list(fontWeight = 500, fontSize = "0.8125rem")
           ),
           Type = colDef(
             name = "Type",
             minWidth = 100,
-            style = list(fontFamily = "monospace", fontSize = "0.875rem")
+            style = list(fontFamily = "monospace", fontSize = "0.8125rem")
           ),
           Description = colDef(
             name = "Description",
-            minWidth = 250
+            minWidth = 250,
+            style = list(fontSize = "0.8125rem")
           ),
           nested_fields = colDef(show = FALSE)
         ),
@@ -109,13 +110,16 @@ table_details <- function(index) {
                 columns = list(
                   Field = colDef(
                     name = "Field",
-                    style = list(fontWeight = 500)
+                    style = list(fontWeight = 500, fontSize = "0.8125rem")
                   ),
                   Type = colDef(
                     name = "Type",
-                    style = list(fontFamily = "monospace", fontSize = "0.875rem")
+                    style = list(fontFamily = "monospace", fontSize = "0.8125rem")
                   ),
-                  Description = colDef(name = "Description")
+                  Description = colDef(
+                    name = "Description",
+                    style = list(fontSize = "0.8125rem")
+                  )
                 ),
                 class = "schema-table",
                 theme = reactableTheme(cellPadding = "8px 12px")
@@ -144,12 +148,13 @@ div(
       name = colDef(
         name = "Table Name",
         minWidth = 300,
-        style = list(fontWeight = 600, cursor = "pointer")
+        style = list(fontWeight = 600, cursor = "pointer", fontSize = "0.875rem")
       ),
       lastModifiedTime = colDef(
         name = "Last Updated",
         align = "right",
         minWidth = 200,
+        style = list(fontSize = "0.875rem"),
         cell = function(value) {
           strftime(value, format = "%b %d, %Y %H:%M")
         }
@@ -157,13 +162,15 @@ div(
       location = colDef(
         name = "Loc.",
         minWidth = 80,
-        align = "right"
+        align = "right",
+        style = list(fontSize = "0.875rem")
       ),
       numBytes = colDef(
         name = "Size",
         align = "right",
         minWidth = 100,
-        class = "number",
+        vAlign = "center",
+        style = list(fontFamily = "monospace", fontSize = "0.875rem"),
         cell = function(value) {
           if (is.na(value)) return("—")
           size_gb <- value / (1024^3)
@@ -179,7 +186,8 @@ div(
         name = "Rows",
         align = "right",
         minWidth = 150,
-        class = "number",
+        vAlign = "center",
+        style = list(fontFamily = "monospace", fontSize = "0.875rem"),
         cell = function(value) {
           if (is.na(value)) return("—")
           format(value, big.mark = ",", scientific = FALSE)
