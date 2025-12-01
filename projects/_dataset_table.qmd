@@ -87,7 +87,7 @@ table_details <- function(index) {
           Type = colDef(
             name = "Type",
             minWidth = 100,
-            style = list(fontFamily = "monospace", fontSize = "0.8125rem")
+            style = list(fontSize = "0.8125rem")
           ),
           Description = colDef(
             name = "Description",
@@ -114,7 +114,7 @@ table_details <- function(index) {
                   ),
                   Type = colDef(
                     name = "Type",
-                    style = list(fontFamily = "monospace", fontSize = "0.8125rem")
+                    style = list(fontSize = "0.8125rem")
                   ),
                   Description = colDef(
                     name = "Description",
@@ -170,7 +170,7 @@ div(
         align = "right",
         minWidth = 150,
         vAlign = "center",
-        style = list(fontFamily = "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace", fontSize = "0.875rem"),
+        style = list(fontFamily = "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace", fontSize = "0.8125rem"),
         cell = function(value) {
           if (is.na(value)) return("—")
           size_gb <- value / (1024^3)
@@ -187,7 +187,7 @@ div(
         align = "right",
         minWidth = 150,
         vAlign = "center",
-        style = list(fontFamily = "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace", fontSize = "0.875rem"),
+        style = list(fontFamily = "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace", fontSize = "0.8125rem"),
         cell = function(value) {
           if (is.na(value)) return("—")
           format(value, big.mark = ",", scientific = FALSE)
