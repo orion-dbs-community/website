@@ -145,7 +145,7 @@ a:hover {
 
 /* Row hover effect */
 .reactable .rt-tbody .rt-tr:hover {
-  background-color: #fef0f1;
+  background-color: #f5f5f5;
 }
 
 .header {

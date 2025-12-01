@@ -35,7 +35,7 @@ if (bq_ori != "") {
   } else {
     # BQ_ORI contains JSON content (from GitHub Actions)
     temp_key <- tempfile(fileext = ".json")
-    writeLines(bq_ori, temp_key)
+    cat(bq_ori, file = temp_key)
     bigrquery::bq_auth(path = temp_key)
   }
 }
