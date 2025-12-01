@@ -20,7 +20,19 @@ library(bigrquery)
 library(reactable)
 library(htmltools)
 
-bigrquery::bq_auth(path = Sys.getenv("BQ_ORI"))
+# Write credentials to temp file if BQ_ORI contains JSON content
+bq_ori <- Sys.getenv("BQ_ORI")
+if (bq_ori != "") {
+  if (file.exists(bq_ori)) {
+    # BQ_ORI is a file path
+    bigrquery::bq_auth(path = bq_ori)
+  } else {
+    # BQ_ORI contains JSON content (from GitHub Actions)
+    temp_key <- tempfile(fileext = ".json")
+    writeLines(bq_ori, temp_key)
+    bigrquery::bq_auth(path = temp_key)
+  }
+}
 ```
 
 ```{r}
