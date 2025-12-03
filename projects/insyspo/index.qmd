@@ -39,13 +39,14 @@ if (bq_ori != "") {
 #| echo: false
 my_datasets <- bq_project_datasets(params$bq_project)
 
-# Function to extract nested fields from RECORD type
+# Function to recursively extract nested fields from RECORD type
 get_nested_fields <- function(field) {
   if (field$type == "RECORD" && !is.null(field$fields)) {
     tibble::tibble(
       Field = map_chr(field$fields, "name"),
       Type = map_chr(field$fields, "type"),
-      Description = map_chr(field$fields, \(x) x$description %||% NA_character_)
+      Description = map_chr(field$fields, \(x) x$description %||% NA_character_),
+      nested_fields = map(field$fields, get_nested_fields)
     )
   } else {
     NULL

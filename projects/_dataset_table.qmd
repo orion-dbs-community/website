@@ -1,6 +1,20 @@
 ```{r}
 #| echo: false
 
+# Function to recursively extract nested fields from RECORD type
+get_nested_fields <- function(field) {
+  if (field$type == "RECORD" && !is.null(field$fields)) {
+    tibble::tibble(
+      Field = map_chr(field$fields, "name"),
+      Type = map_chr(field$fields, "type"),
+      Description = map_chr(field$fields, \(x) x$description %||% NA_character_),
+      nested_fields = map(field$fields, get_nested_fields)
+    )
+  } else {
+    NULL
+  }
+}
+
 my_tables <- bq_dataset_tables(current_dataset)
 
 # Get metadata for all tables
@@ -99,32 +113,44 @@ table_details <- function(index) {
         details = function(schema_index) {
           nested_data <- schema_data$nested_fields[[schema_index]]
           if (!is.null(nested_data)) {
-            div(
-              class = "nested-fields-container",
-              div(class = "nested-fields-header", "Nested Fields"),
-              reactable(
-                nested_data,
-                pagination = FALSE,
-                outlined = TRUE,
-                defaultColDef = colDef(headerClass = "header"),
-                columns = list(
-                  Field = colDef(
-                    name = "Field",
-                    style = list(fontWeight = 500, fontSize = "0.8125rem")
+            # Recursive function to render nested fields at any depth
+            render_nested_fields <- function(data, depth = 1) {
+              div(
+                class = "nested-fields-container",
+                div(class = "nested-fields-header", paste0("Nested Fields", if(depth > 1) paste0(" (Level ", depth, ")") else "")),
+                reactable(
+                  data,
+                  pagination = FALSE,
+                  outlined = TRUE,
+                  defaultColDef = colDef(headerClass = "header"),
+                  columns = list(
+                    Field = colDef(
+                      name = "Field",
+                      style = list(fontWeight = 500, fontSize = "0.8125rem")
+                    ),
+                    Type = colDef(
+                      name = "Type",
+                      style = list(fontSize = "0.8125rem")
+                    ),
+                    Description = colDef(
+                      name = "Description",
+                      style = list(fontSize = "0.8125rem")
+                    ),
+                    nested_fields = colDef(show = FALSE)
                   ),
-                  Type = colDef(
-                    name = "Type",
-                    style = list(fontSize = "0.8125rem")
-                  ),
-                  Description = colDef(
-                    name = "Description",
-                    style = list(fontSize = "0.8125rem")
-                  )
-                ),
-                class = "schema-table",
-                theme = reactableTheme(cellPadding = "8px 12px")
+                  details = function(nested_index) {
+                    deeper_nested_data <- data$nested_fields[[nested_index]]
+                    if (!is.null(deeper_nested_data)) {
+                      render_nested_fields(deeper_nested_data, depth + 1)
+                    }
+                  },
+                  class = "schema-table",
+                  theme = reactableTheme(cellPadding = "8px 12px")
+                )
               )
-            )
+            }
+
+            render_nested_fields(nested_data)
           }
         },
         class = "schema-table",
