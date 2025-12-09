@@ -53,7 +53,7 @@ a:hover {
 }
 
 .navbar-brand, .navbar .nav-link {
-  color: #009fe3 !important;
+  color: #1a1a1a !important;
 }
 
 .navbar .nav-link:hover {
@@ -65,24 +65,24 @@ a:hover {
 .navbar .navbar-toggler-icon,
 .navbar i,
 .navbar svg {
-  color: #009fe3 !important;
-  fill: #009fe3 !important;
+  color: #1a1a1a !important;
+  fill: #1a1a1a !important;
 }
 
 .navbar .nav-link:active,
 .navbar .nav-link.active {
-  color: #009fe3 !important;
+  color: #1a1a1a !important;
   background-color: rgba(0, 159, 227, 0.1) !important;
 }
 
 .navbar .nav-link:focus {
-  color: #009fe3 !important;
+  color: #1a1a1a !important;
   background-color: rgba(0, 159, 227, 0.05) !important;
   outline: none;
 }
 
 .navbar .navbar-nav .show > .nav-link {
-  color: #009fe3 !important;
+  color: #1a1a1a !important;
   background-color: rgba(0, 159, 227, 0.1) !important;
 }
 
@@ -92,7 +92,7 @@ a:hover {
 }
 
 .navbar .dropdown-item {
-  color: #009fe3 !important;
+  color: #1a1a1a !important;
 }
 
 .navbar .dropdown-item:hover,
@@ -103,11 +103,11 @@ a:hover {
 }
 
 .navbar .navbar-toggler {
-  border-color: #009fe3 !important;
+  border-color: #1a1a1a !important;
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 159, 227, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 26, 26, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* BigQuery tables styling */
