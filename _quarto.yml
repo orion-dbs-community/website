@@ -36,6 +36,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    mainfont: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
 
 
 

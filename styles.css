@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
 
 /* Typography */
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.65;
-}
-
 p {
   line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   color: #1a1a1a;
 }
@@ -49,7 +44,7 @@ a:hover {
 .navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e8e8e8;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .navbar-brand, .navbar .nav-link {
@@ -111,10 +106,6 @@ a:hover {
 }
 
 /* BigQuery tables styling */
-.bigquery-tables {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
 .bigquery-tables .reactable {
   margin-top: 1rem;
   font-size: 0.9375rem;
@@ -204,30 +195,3 @@ a:hover {
   background-color: #fff;
 }
 
-/* Footer styling */
-.nav-footer {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* Blog listing and posts */
-.quarto-listing,
-.quarto-listing-category,
-.listing-categories,
-.listing-category,
-article.post,
-article header,
-article .metadata,
-.quarto-title-block {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.quarto-listing .listing-item h3,
-.quarto-listing .listing-item .listing-title,
-article.post h1,
-article.post h2,
-article.post h3,
-article.post h4,
-article.post h5,
-article.post h6 {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
