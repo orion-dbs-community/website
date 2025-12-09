@@ -1,0 +1,14 @@
+---
+title: "News & Tutorials"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+---
+
+Welcome to our blog featuring news, tutorials, and insights about using BigQuery for open scholarly data analysis.

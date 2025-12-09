@@ -1,0 +1,15 @@
+---
+title: "Welcome to GBQ-ORI Blog"
+author: "GBQ-ORI Team"
+date: "2025-12-09"
+categories: [news]
+---
+
+Welcome to the GBQ-ORI blog! This space will feature:
+
+- **News** about new datasets and collections added to the platform
+- **Tutorials** on how to query and analyze data using BigQuery
+- **Use cases** showcasing interesting analyses and applications
+- **Tips & tricks** for working with large-scale scholarly data
+
+Stay tuned for more content coming soon!

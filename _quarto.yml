@@ -3,6 +3,7 @@ project:
 
 website:
   title: "GBQ-ORI"
+  site-url: "https://effulgent-pika-584bcf.netlify.app/"
   navbar:
     left:
       - text: Projects
@@ -13,11 +14,15 @@ website:
             href: projects/sos/
           - text: SUB Göttingen Datasets
             href: projects/subugoe/
+      - text: News & Tutorials
+        href: blog/
     right:
       - href: about.qmd
         text: About
       - text: Contribute
         href: contributing.qmd
+      - icon: rss
+        href: blog/index.xml
       - icon: github
         href: https://github.com/njahn82/bqori_website
   page-footer:
