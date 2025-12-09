@@ -1,59 +1,19 @@
-/* Observable Framework inspired styles */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-:root {
-  /* Observable Framework color system */
-  --theme-foreground: #1b1e23;
-  --theme-background-a: #ffffff;
-  --theme-foreground-focus: #3b5fc0;
-
-  /* Derived colors using color-mix */
-  --theme-background-b: color-mix(in srgb, var(--theme-foreground) 4%, var(--theme-background-a));
-  --theme-background: var(--theme-background-a);
-  --theme-background-alt: var(--theme-background-b);
-  --theme-foreground-alt: color-mix(in srgb, var(--theme-foreground) 90%, var(--theme-background-a));
-  --theme-foreground-muted: color-mix(in srgb, var(--theme-foreground) 60%, var(--theme-background-a));
-  --theme-foreground-faint: color-mix(in srgb, var(--theme-foreground) 50%, var(--theme-background-a));
-  --theme-foreground-fainter: color-mix(in srgb, var(--theme-foreground) 30%, var(--theme-background-a));
-  --theme-foreground-faintest: color-mix(in srgb, var(--theme-foreground) 14%, var(--theme-background-a));
-
-  /* Accent colors */
-  --theme-blue: #4269d0;
-  --theme-green: #3ca951;
-  --theme-red: #ff725c;
-  --theme-yellow: #efb118;
-}
 
 /* Typography */
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-  color: var(--theme-foreground);
-  background-color: var(--theme-background);
+  line-height: 1.65;
+}
+
+p {
+  line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 700;
-  color: var(--theme-foreground-alt);
-  line-height: 1.1;
-}
-
-h1 {
-  font-size: 32px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-top: 2rem;
-}
-
-code, pre {
-  font-family: Menlo, Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.5;
+  color: #1a1a1a;
 }
 
 /* Links */
@@ -80,7 +40,6 @@ a:hover {
   border-left-color: #009fe3 !important;
 }
 
-/* Override Quarto's default active TOC styling */
 .sidebar nav[role="doc-toc"] ul li a.active {
   font-weight: 600;
   background-color: transparent !important;
@@ -88,18 +47,17 @@ a:hover {
 
 /* Navbar styling */
 .navbar {
-  background-color: #F0EEE9 !important;
-  border-bottom: 2px solid #e0e0e0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e8e8e8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .navbar-brand, .navbar .nav-link {
-  color: #1b1e23 !important;
-  text-transform: uppercase;
+  color: #009fe3 !important;
 }
 
 .navbar .nav-link:hover {
-  color: #000000 !important;
+  color: #007bb5 !important;
 }
 
 .navbar .navbar-nav .nav-link,
@@ -107,63 +65,49 @@ a:hover {
 .navbar .navbar-toggler-icon,
 .navbar i,
 .navbar svg {
-  color: #1b1e23 !important;
-  fill: #1b1e23 !important;
+  color: #009fe3 !important;
+  fill: #009fe3 !important;
 }
 
-/* Active and focus states with subtle light contrast */
 .navbar .nav-link:active,
 .navbar .nav-link.active {
-  color: #1b1e23 !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: #009fe3 !important;
+  background-color: rgba(0, 159, 227, 0.1) !important;
 }
 
 .navbar .nav-link:focus {
-  color: #1b1e23 !important;
-  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #009fe3 !important;
+  background-color: rgba(0, 159, 227, 0.05) !important;
   outline: none;
 }
 
 .navbar .navbar-nav .show > .nav-link {
-  color: #1b1e23 !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: #009fe3 !important;
+  background-color: rgba(0, 159, 227, 0.1) !important;
 }
 
 .navbar .dropdown-menu {
-  background-color: #F0EEE9 !important;
-  border: 1px solid #e0e0e0;
+  background-color: #ffffff !important;
+  border: 1px solid #e8e8e8;
 }
 
 .navbar .dropdown-item {
-  color: #1b1e23 !important;
-  text-transform: uppercase;
+  color: #009fe3 !important;
 }
 
 .navbar .dropdown-item:hover,
 .navbar .dropdown-item:focus,
 .navbar .dropdown-item:active {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  color: #000000 !important;
+  background-color: rgba(0, 159, 227, 0.1) !important;
+  color: #007bb5 !important;
 }
 
 .navbar .navbar-toggler {
-  border-color: #1b1e23 !important;
+  border-color: #009fe3 !important;
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(27, 30, 35, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* Content max-width (Observable Framework style) */
-.quarto-title-block,
-#quarto-content p,
-#quarto-content table,
-#quarto-content figure {
-  max-width: 640px;
-}
-
-#quarto-content pre {
-  max-width: 960px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 159, 227, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* BigQuery tables styling */
@@ -179,7 +123,6 @@ a:hover {
   box-shadow: none;
 }
 
-/* Row hover effect */
 .reactable .rt-tbody .rt-tr:hover {
   background-color: #fcfcfc;
 }
@@ -206,15 +149,15 @@ a:hover {
 .schema-header {
   margin-bottom: 1rem;
   font-size: 1.125rem;
-  font-weight: 600;
-  color: #555555;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
 .nested-fields-header {
   margin-bottom: 0.75rem;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #737373;
+  color: #4a5568;
 }
 
 .schema-table {
@@ -230,7 +173,6 @@ a:hover {
   white-space: pre;
 }
 
-/* Description box styling */
 .description-box {
   margin-bottom: 1.5rem;
   padding: 12px;
@@ -242,18 +184,19 @@ a:hover {
 .description-header {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #555555;
+  color: #4a5568;
   font-size: 0.875rem;
 }
 
 .description-content {
-  color: #404040;
+  color: #1a1a1a;
   font-size: 0.9375rem;
 }
 
 .description-meta {
-  color: #404040;
+  color: #4a5568;
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .nested-fields-container {
