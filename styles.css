@@ -203,3 +203,8 @@ a:hover {
   padding: 16px;
   background-color: #fff;
 }
+
+/* Footer styling */
+.nav-footer {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
