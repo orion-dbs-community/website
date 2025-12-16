@@ -1,5 +1,5 @@
 ---
-title: "Sesam Open"
+title: "Sesame Open Science"
 format:
   html:
     page-layout: full
