@@ -1,0 +1,5 @@
+---
+title: 404 error
+subtitle: The page you're looking for doesn't exist. 😕
+format: html
+---

@@ -1,0 +1,10 @@
+---
+title: "Privacy"
+format: html
+---
+
+We do not collect, store or process any Personally Identifiable Information. 
+
+This website sets one technical cookie, which improves the sidebar appearence. 
+
+Fonts are distributed through the GDPR-compliant [bunny.net](https://fonts.bunny.net/).

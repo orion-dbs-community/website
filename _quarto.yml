@@ -28,6 +28,9 @@ website:
   page-footer:
     left:
       - text: "The content on this website is licensed under <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0</a>."
+    center:
+      - text: "Privacy"
+        href: privacy.qmd
     right:
       - text: "Website build with <a href='https://quarto.org/'>Quarto.</a>"
 
