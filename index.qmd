@@ -1,7 +1,54 @@
 ---
-title: "Sharing the load: Building an open research information collective"
-subtitle: "Open Research Information on Google BigQuery"
+title: "Open Research Information on Google BigQuery"
+subtitle: "Sharing the load: Building an open research information collective"
+toc: false
 ---
 
-This collection of publicly available and curated datasets on Google BigQuery. 
+A growing collection of publicly available and community-curated datasets on Google BigQuery. This daily updated registry makes datasets on BigQuery discoverable.
 
+We are not affiliated with the data providers or with Google.
+
+## Featured Collections
+
+*Please also check the participating project websites for more information and for many more available datasets.*
+
+::: {.grid .collection-grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.collection-card}
+### [Crossref](https://www.crossref.org/)
+
+A major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.
+
+[SUB Göttingen](projects/subugoe/) provides the [most recent monthly dump](projects/subugoe/#cr_instant) and [yearly snapshots](projects/subugoe/#cr_history). [Sesame Open Science](projects/sos/) gives access to the latest [public data dump](projects/sos/#crossref).
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.collection-card}
+### [OpenAIRE](https://graph.openaire.eu/what-is-the-openaire-graph)
+
+A free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.
+
+[Sesame Open Science](projects/sos/) provides the full [OpenAIRE Graph Dataset](projects/sos/#openaire). [InSySPo Campinas](projects/insyspo/) offers time-specific versions.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.collection-card}
+### [OpenAlex](https://help.openalex.org/hc/en-us)
+
+A free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.
+
+[SUB Göttingen](projects/subugoe/) provides the [Walden release](projects/subugoe/#openalex_walden) and [September 2025](projects/subugoe/#openalex) snapshots. [InSySPo Campinas](projects/insyspo/) offers [March](projects/insyspo/#publicdb_openalex_2025_03_rm) and [August 2025](projects/insyspo/#publicdb_openalex_2025_08_rm) snapshots.
+:::
+:::
+
+:::
+
+## Get Started
+
+1. **[Browse Collections](projects/)** — Explore the available datasets from our contributing projects
+2. **Access BigQuery** — Use your Google account to access the [BigQuery Console](https://console.cloud.google.com/bigquery)
+3. **Start Querying** — Reference our datasets in your SQL queries using `project.dataset.table` syntax
+4. **[Contribute](contributing.qmd)** — Want to share your data? Check our contributing guide

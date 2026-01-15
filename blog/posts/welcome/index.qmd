@@ -1,15 +1,72 @@
 ---
-title: "Welcome to GBQ-ORI Blog"
-author: "GBQ-ORI Team"
-date: "2025-12-09"
+title: "Sharing the load: Building an open research information collective"
+author:
+  - name: Cameron Neylon
+    orcid: 0000-0002-0068-716X
+  - name: Bianca Kramer
+    orcid: 0000-0002-5965-6560
+date: "2026-01-28"
 categories: [news]
 ---
 
-Welcome to the GBQ-ORI blog! This space will feature:
+The rise of open research information resources is transforming the way we track, analyse and study research systems. Increasingly sources like OpenAIRE, OpenAlex, Crossref, DataCite, ORCID, ROR and others are being used as the basis for making decisions, designing interventions and understanding progress. This operates both at the small scale, where access to data and evidence is easier than it has ever been, to the very large scale analysis of whole systems.
 
-- **News** about new datasets and collections added to the platform
-- **Tutorials** on how to query and analyze data using BigQuery
-- **Use cases** showcasing interesting analyses and applications
-- **Tips & tricks** for working with large-scale scholarly data
+Traditionally, the capacity to do large scale analyses was restricted to a very small set of players. This kind of analysis requires access to an *actionable* version of the *whole* dataset, particularly if the goal was combining data resources. The set of sites with access to complete copies of proprietary databases is tiny. 
 
-Stay tuned for more content coming soon!
+Modern open data sources provide access, including access to full copies of the data, but there has been less focus on providing this access in a way that allows complex querying and joining of whole data archives \- for example to compare the coverage of research outputs by OpenAlex and OpenAIRE or analyse global information on clinical trials using affiliation data from OpenAlex and clinical trials information from Pubmed. Another valuable possibility is the ability to incorporate local data enrichments from national or regional data sources to support local data needs, or improve the overall pool of data.
+
+Google BigQuery has emerged as one powerful tool for combining and working on these large datasets at scale. Multiple groups (including the InSysPo team at Campinas, SUB Göttingen and Sesame Open Science), have created versions of specific open datasets in the BigQuery system, which anyone can access and run their own analyses. Here, the ‘provider’ pays for storage, and the user covers the costs of processing.  
+
+Having worked independently so far, this small group came together last year to ask whether we could coordinate actions. Could it be possible to build a comprehensive open research information resource where the load of providing specific core data sources was distributed? Rather than each separately trying to tackle the whole, could we collectively create a resource that was more than the sum of its parts? 
+
+We met with a series of key questions:
+
+1. Can we share resources and burdens to make available key open research information resources in actionable and combinable form in the cloud?  
+2. Through sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?  
+3. What are the challenges that we can usefully approach collectively?  
+4. What are the benefits and risks of Google BigQuery as an environment and do we agree it is the best place to start?  
+5. What are the blockers for engagement with such an effort? What is needed for different stakeholders to make it attractive both as users and (for some) as providers?
+
+## User and use case driven
+
+Core to our shared interest in working together was the idea of making it easier for more people to undertake large scale analysis. There are many kinds of analysis for which access to APIs is sufficient. We share a belief that large scale analysis will be useful in multiple settings, but that it has been relatively inaccessible.
+
+There is a growing set of research projects that are exploiting this capacity for large scale and combined analysis in a range of ways. Two recent pieces of work provide examples of what is possible. One by Camilla Lindelow and Eline Vandewalle, used the combination of ORCID and OpenAlex provided by InSysPo to analyse researchers without a formal affiliation from around the world. The second example, from Cespedes et al., used a global analysis of language in OpenAlex to examine affiliation. This combines with other efforts, including comparisons of metadata coverage across sources, and combinations of data sets that exploit the capacity to do analysis at scale.
+
+These use cases have a few things in common. They tend to be global in scope (or at least aspire to be) so they require analysis across the whole of a datasource. They generally involve a complex form of query, requiring filtering or analysis on multiple database elements, or a combination of multiple data sources, that is difficult or impossible using the API for any given datasource. And the generated dataset is often very large in its own right \- perhaps involving hundreds of millions of rows of data \- and requires further reduction and analysis.
+
+Overall, the common theme here is analyses that require entire data sources to be *combinable* and *actionable* at scale. We believe if we focus on that set of use cases we can add something valuable to the overall Open Research Information ecosystem.
+
+## Opportunities for shared systems
+
+If people are already doing this what is the value of coordination? The first and most obvious is that with a shared cloud system we only need to pay for online storage of each dataset once and then anyone can use it (backups and versions over time are a separate issue, which we aim to address, but not as the first priority). Cloud storage costs are generally larger than the usage costs involved in running queries so sharing this load is valuable in its own right..
+
+The second advantage is the ability to share capacities. One example of this is data preprocessing. These datasets are not “clean” in the sense that they change over time, have some internal inconsistencies, and often contain elements that raise compatibility issues with database systems. Processing hundreds of millions of lines of JSON to convert hyphens to underscores in variable names takes time and computing power. 
+
+Systems developed within the Curtin Open Knowledge Initiative (COKI) use cloud VMs to do this on demand which scales but adds costs. The team at Göttingen are using the COKI code on their own HPC resources. Others of us were using different code to process on our own computers. There is a clear benefit to be gained by using a common code base for necessary transformations. But also in having a community discussion on what pathways and transformations are necessary. The InSysPo team uses a quite different approach with advantages and disadvantages we can learn from. Different approaches and experiences, but also different sets of resources like HPC could be shared amongst an effective collaboration.
+
+This leads to the third advantage. If we use common systems we help to develop quasi-standards that can be adopted by others. That creates an opportunity to spread the load further, as well as to increase the diversity of datasets available (again, thinking of those highly curated national datasets that are used locally but not recombined into the global data ecosystem). If we have a clear shared approach to the data and how it is managed it makes it easier for others to contribute, and makes the whole set of resources more valuable. 
+
+A final benefit of a shared approach would be a virtuous loop in which shared systems encourage shared approaches to analysis. Common approaches can form the basis for training resources that give end-users an easy point of entry to using these data sources at scale. They will also encourage the sharing of analysis scripts and protocols creating advanced resources to support developing users.
+
+Key to this is understanding both what has value to keep in common, but also what needs to be different to serve a diversity of use cases. We can see value in technical standards (where they are useful) and in agreements around archiving and preservation. Documentation, where it can reach common standards will be helpful not just for users of the data, but potentially for upstream producers in understanding how the data is being used and how to optimize the provision of their data snapshots to facilitate downstream usage..
+
+ 
+
+## The Google-shaped elephant in the room 
+
+A big question is why Google BigQuery? It is certainly not an open system in any meaningful sense and Google is not an organisation many of us feel able to trust. The short answer is pragmatism. There are reasons why we independently arrived at GBQ as a useful tool. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system. In practice, this means datasets can be made publicly available, without the need for specific hard-or software on the side of the user, and, from a user perspective, access to datasets hosted by different providers using the same system. Standing up an independent infrastructure to do the same is a big job and not one we’re equipped to tackle at the moment.
+
+That said, none of us believe that reliance on Google is a long term solution, nor that it is fully equitable. There are some emerging alternatives both in the cloud and for local compute. These aren’t fully mature but they show promise. In the meantime we believe it is important to ensure we have an exit strategy. One such strategy could be a commitment to creating backups in the form of parquet files. Parquet is an interesting interoperability format for databases and can be read in by an increasing number of tools. It holds schema information and allows for database partitioning. 
+
+Perhaps the most important argument is that with Google BigQuery and external archiving, there is at least one plausible option to explore that can provide value immediately, but also provide a potential escape route. We can save the arguments for frozen duck lakes, glaciers, torrents and MySQL for later and for those who will want to have them\!
+
+## Next steps and a call for interest
+
+We have made a small start. Small, but useful for us \- after all we are already using these shared data resources. We hope by engaging a wider community we can make this more useful for more people. How far this goes and how big a community we can create is an open question.
+
+As a first step there is now a website that details the datasets available, where they can be accessed and when the most recent update was. We hope this will be a useful resource for people doing ad hoc analyses as well as those with bigger use cases. We hope a community of users and also of providers will be interested to coordinate through this platform to aid discovery.
+
+Looking forward we’re interested in how we can build on this base. We want to coordinate and build a shared capacity. If you have an interest in how this could be shaped, demonstrating specific use cases, or contributing additional hosted datasets, we’d love to hear from you. Coordination takes time, time requires resources. If there is sufficient interest we will look at how we could coordinate resources and build something as lightweight as possible and as formalised as necessary.
+
+Above all we want to hear from those who share the vision for creating data resources that can be combined and used together and to make them as useful as possible. It is through using these data sources that we identify their issues and can correct and improve them. When we do that work together we increase the quality of all data resources faster and more effectively.

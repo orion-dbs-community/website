@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "GBQ-ORI"
+  title: "ORI-BQ"
   site-url: "https://effulgent-pika-584bcf.netlify.app/"
   navbar:
     left:
