@@ -1,5 +1,5 @@
 ---
-title: "Open Research Information on Google BigQuery"
+title: "Open Research Information on BigQuery"
 subtitle: "Sharing the load: Building an open research information collective"
 toc: false
 ---

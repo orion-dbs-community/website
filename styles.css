@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.bunny.net/css?family=public-sans:400,600,700');
 
 /* Typography */
 p {
@@ -6,9 +6,13 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Public Sans", sans-serif;
   font-weight: 700;
   color: #1a1a1a;
+}
+
+.subtitle, .lead, .quarto-title .subtitle {
+  font-family: "Public Sans", sans-serif;
 }
 
 /* Links */
@@ -44,7 +48,7 @@ a:hover {
 .navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e8e8e8;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Public Sans", sans-serif;
 }
 
 .navbar-brand, .navbar .nav-link {
@@ -67,18 +71,18 @@ a:hover {
 .navbar .nav-link:active,
 .navbar .nav-link.active {
   color: #1a1a1a !important;
-  background-color: rgba(0, 159, 227, 0.1) !important;
+  background-color: rgba(0, 124, 187, 0.1) !important;
 }
 
 .navbar .nav-link:focus {
   color: #1a1a1a !important;
-  background-color: rgba(0, 159, 227, 0.05) !important;
+  background-color: rgba(0, 124, 187, 0.05) !important;
   outline: none;
 }
 
 .navbar .navbar-nav .show > .nav-link {
   color: #1a1a1a !important;
-  background-color: rgba(0, 159, 227, 0.1) !important;
+  background-color: rgba(0, 124, 187, 0.1) !important;
 }
 
 .navbar .dropdown-menu {
@@ -93,7 +97,7 @@ a:hover {
 .navbar .dropdown-item:hover,
 .navbar .dropdown-item:focus,
 .navbar .dropdown-item:active {
-  background-color: rgba(0, 159, 227, 0.1) !important;
+  background-color: rgba(0, 124, 187, 0.1) !important;
   color: #007bb5 !important;
 }
 
@@ -128,7 +132,7 @@ a:hover {
 
 .header[aria-sort]:hover,
 .header[aria-sort]:focus {
-  color: #009fe3;
+  color: #007cbb;
 }
 
 .schema-detail {
@@ -228,4 +232,3 @@ a:hover {
   font-size: 0.875rem;
   color: #4a5568;
 }
-
