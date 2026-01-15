@@ -10,6 +10,8 @@ params:
 
 Collection maintained by Bianca Kramer (Sesame Open Science)
 
+Info and documentation: <https://github.com/bmkramer/metadata_ingest>
+
 ...
 
 ```{r}
