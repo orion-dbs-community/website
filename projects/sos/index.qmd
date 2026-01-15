@@ -1,5 +1,5 @@
 ---
-title: "Sesam Open"
+title: "Sesame Open Science"
 format:
   html:
     page-layout: full
@@ -8,7 +8,9 @@ params:
   bq_project: "sos-datasources"
 ---
 
-A great collection powered by Bianca Kramer
+Collection maintained by Bianca Kramer (Sesame Open Science)
+
+Info and documentation: <https://github.com/bmkramer/metadata_ingest>
 
 ...
 
