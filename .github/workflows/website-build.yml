@@ -8,14 +8,11 @@ on:
   schedule:
     - cron: '0 6 * * *'
 
-permissions:
-  contents: write
-
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
