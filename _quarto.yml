@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "ORI-BQ"
+  title: "orion-dbs"
   site-url: "https://orion-dbs.community/"
   navbar:
     left:
@@ -24,7 +24,7 @@ website:
       - icon: rss
         href: blog/index.xml
       - icon: github
-        href: https://github.com/njahn82/bqori_website
+        href: https://github.com/orion-dbs-community
   page-footer:
     left:
       - text: "The content on this website is licensed under <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0</a>."
