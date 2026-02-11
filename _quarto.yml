@@ -1,9 +1,11 @@
 project:
-  type: website
+     type: website
+     resources:
+       - CNAME
 
 website:
   title: "orion-dbs"
-  site-url: "https://orion-dbs.community/"
+  site-url: "https://orion-dbs.community/website/"
   navbar:
     left:
       - text: Projects
