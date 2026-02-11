@@ -1,1 +1,1 @@
-Sitemap: https://orion-dbs.community/website/sitemap.xml
+Sitemap: https://orion-dbs.community/sitemap.xml

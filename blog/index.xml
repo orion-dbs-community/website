@@ -6,8 +6,8 @@
       version="2.0">
 <channel>
 <title>orion-dbs</title>
-<link>https://orion-dbs.community/website/blog/</link>
-<atom:link href="https://orion-dbs.community/website/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://orion-dbs.community/blog/</link>
+<atom:link href="https://orion-dbs.community/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.27</generator>
 <lastBuildDate>Wed, 28 Jan 2026 00:00:00 GMT</lastBuildDate>
@@ -15,7 +15,7 @@
   <title>Sharing the load: Building an open research information collective</title>
   <dc:creator>Cameron Neylon</dc:creator>
   <dc:creator>Bianca Kramer</dc:creator>
-  <link>https://orion-dbs.community/website/blog/posts/welcome/</link>
+  <link>https://orion-dbs.community/blog/posts/welcome/</link>
   <description><![CDATA[ 
 
 
@@ -72,7 +72,7 @@
 
  ]]></description>
   <category>news</category>
-  <guid>https://orion-dbs.community/website/blog/posts/welcome/</guid>
+  <guid>https://orion-dbs.community/blog/posts/welcome/</guid>
   <pubDate>Wed, 28 Jan 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
