@@ -1,0 +1,450 @@
+[
+  {
+    "objectID": "blog/posts/welcome/index.html",
+    "href": "blog/posts/welcome/index.html",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "",
+    "text": "The rise of open research information resources is transforming the way we track, analyse and study research systems. Increasingly sources like OpenAIRE, OpenAlex, Crossref, DataCite, ORCID, ROR and others are being used as the basis for making decisions, designing interventions and understanding progress. This operates both at the small scale, where access to data and evidence is easier than it has ever been, to the very large scale analysis of whole systems.\nTraditionally, the capacity to do large scale analyses was restricted to a very small set of players. This kind of analysis requires access to an actionable version of the whole dataset, particularly if the goal was combining data resources. The set of sites with access to complete copies of proprietary databases is tiny.\nModern open data sources provide access, including access to full copies of the data, but there has been less focus on providing this access in a way that allows complex querying and joining of whole data archives - for example to compare the coverage of research outputs by OpenAlex and OpenAIRE or analyse global information on clinical trials using affiliation data from OpenAlex and clinical trials information from Pubmed. Another valuable possibility is the ability to incorporate local data enrichments from national or regional data sources to support local data needs, or improve the overall pool of data.\nGoogle BigQuery has emerged as one powerful tool for combining and working on these large datasets at scale. Multiple groups (including the InSysPo team at Campinas, SUB Göttingen and Sesame Open Science), have created versions of specific open datasets in the BigQuery system, which anyone can access and run their own analyses. Here, the ‘provider’ pays for storage, and the user covers the costs of processing.\nHaving worked independently so far, this small group came together last year to ask whether we could coordinate actions. Could it be possible to build a comprehensive open research information resource where the load of providing specific core data sources was distributed? Rather than each separately trying to tackle the whole, could we collectively create a resource that was more than the sum of its parts?\nWe met with a series of key questions:"
+  },
+  {
+    "objectID": "blog/posts/welcome/index.html#user-and-use-case-driven",
+    "href": "blog/posts/welcome/index.html#user-and-use-case-driven",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "User and use case driven",
+    "text": "User and use case driven\nCore to our shared interest in working together was the idea of making it easier for more people to undertake large scale analysis. There are many kinds of analysis for which access to APIs is sufficient. We share a belief that large scale analysis will be useful in multiple settings, but that it has been relatively inaccessible.\nThere is a growing set of research projects that are exploiting this capacity for large scale and combined analysis in a range of ways. Two recent pieces of work provide examples of what is possible. One by Camilla Lindelow and Eline Vandewalle, used the combination of ORCID and OpenAlex provided by InSysPo to analyse researchers without a formal affiliation from around the world. The second example, from Cespedes et al., used a global analysis of language in OpenAlex to examine affiliation. This combines with other efforts, including comparisons of metadata coverage across sources, and combinations of data sets that exploit the capacity to do analysis at scale.\nThese use cases have a few things in common. They tend to be global in scope (or at least aspire to be) so they require analysis across the whole of a datasource. They generally involve a complex form of query, requiring filtering or analysis on multiple database elements, or a combination of multiple data sources, that is difficult or impossible using the API for any given datasource. And the generated dataset is often very large in its own right - perhaps involving hundreds of millions of rows of data - and requires further reduction and analysis.\nOverall, the common theme here is analyses that require entire data sources to be combinable and actionable at scale. We believe if we focus on that set of use cases we can add something valuable to the overall Open Research Information ecosystem."
+  },
+  {
+    "objectID": "blog/posts/welcome/index.html#opportunities-for-shared-systems",
+    "href": "blog/posts/welcome/index.html#opportunities-for-shared-systems",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "Opportunities for shared systems",
+    "text": "Opportunities for shared systems\nIf people are already doing this what is the value of coordination? The first and most obvious is that with a shared cloud system we only need to pay for online storage of each dataset once and then anyone can use it (backups and versions over time are a separate issue, which we aim to address, but not as the first priority). Cloud storage costs are generally larger than the usage costs involved in running queries so sharing this load is valuable in its own right..\nThe second advantage is the ability to share capacities. One example of this is data preprocessing. These datasets are not “clean” in the sense that they change over time, have some internal inconsistencies, and often contain elements that raise compatibility issues with database systems. Processing hundreds of millions of lines of JSON to convert hyphens to underscores in variable names takes time and computing power.\nSystems developed within the Curtin Open Knowledge Initiative (COKI) use cloud VMs to do this on demand which scales but adds costs. The team at Göttingen are using the COKI code on their own HPC resources. Others of us were using different code to process on our own computers. There is a clear benefit to be gained by using a common code base for necessary transformations. But also in having a community discussion on what pathways and transformations are necessary. The InSysPo team uses a quite different approach with advantages and disadvantages we can learn from. Different approaches and experiences, but also different sets of resources like HPC could be shared amongst an effective collaboration.\nThis leads to the third advantage. If we use common systems we help to develop quasi-standards that can be adopted by others. That creates an opportunity to spread the load further, as well as to increase the diversity of datasets available (again, thinking of those highly curated national datasets that are used locally but not recombined into the global data ecosystem). If we have a clear shared approach to the data and how it is managed it makes it easier for others to contribute, and makes the whole set of resources more valuable.\nA final benefit of a shared approach would be a virtuous loop in which shared systems encourage shared approaches to analysis. Common approaches can form the basis for training resources that give end-users an easy point of entry to using these data sources at scale. They will also encourage the sharing of analysis scripts and protocols creating advanced resources to support developing users.\nKey to this is understanding both what has value to keep in common, but also what needs to be different to serve a diversity of use cases. We can see value in technical standards (where they are useful) and in agreements around archiving and preservation. Documentation, where it can reach common standards will be helpful not just for users of the data, but potentially for upstream producers in understanding how the data is being used and how to optimize the provision of their data snapshots to facilitate downstream usage.."
+  },
+  {
+    "objectID": "blog/posts/welcome/index.html#the-google-shaped-elephant-in-the-room",
+    "href": "blog/posts/welcome/index.html#the-google-shaped-elephant-in-the-room",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "The Google-shaped elephant in the room",
+    "text": "The Google-shaped elephant in the room\nA big question is why Google BigQuery? It is certainly not an open system in any meaningful sense and Google is not an organisation many of us feel able to trust. The short answer is pragmatism. There are reasons why we independently arrived at GBQ as a useful tool. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system. In practice, this means datasets can be made publicly available, without the need for specific hard-or software on the side of the user, and, from a user perspective, access to datasets hosted by different providers using the same system. Standing up an independent infrastructure to do the same is a big job and not one we’re equipped to tackle at the moment.\nThat said, none of us believe that reliance on Google is a long term solution, nor that it is fully equitable. There are some emerging alternatives both in the cloud and for local compute. These aren’t fully mature but they show promise. In the meantime we believe it is important to ensure we have an exit strategy. One such strategy could be a commitment to creating backups in the form of parquet files. Parquet is an interesting interoperability format for databases and can be read in by an increasing number of tools. It holds schema information and allows for database partitioning.\nPerhaps the most important argument is that with Google BigQuery and external archiving, there is at least one plausible option to explore that can provide value immediately, but also provide a potential escape route. We can save the arguments for frozen duck lakes, glaciers, torrents and MySQL for later and for those who will want to have them!"
+  },
+  {
+    "objectID": "blog/posts/welcome/index.html#next-steps-and-a-call-for-interest",
+    "href": "blog/posts/welcome/index.html#next-steps-and-a-call-for-interest",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "Next steps and a call for interest",
+    "text": "Next steps and a call for interest\nWe have made a small start. Small, but useful for us - after all we are already using these shared data resources. We hope by engaging a wider community we can make this more useful for more people. How far this goes and how big a community we can create is an open question.\nAs a first step there is now a website that details the datasets available, where they can be accessed and when the most recent update was. We hope this will be a useful resource for people doing ad hoc analyses as well as those with bigger use cases. We hope a community of users and also of providers will be interested to coordinate through this platform to aid discovery.\nLooking forward we’re interested in how we can build on this base. We want to coordinate and build a shared capacity. If you have an interest in how this could be shaped, demonstrating specific use cases, or contributing additional hosted datasets, we’d love to hear from you. Coordination takes time, time requires resources. If there is sufficient interest we will look at how we could coordinate resources and build something as lightweight as possible and as formalised as necessary.\nAbove all we want to hear from those who share the vision for creating data resources that can be combined and used together and to make them as useful as possible. It is through using these data sources that we identify their issues and can correct and improve them. When we do that work together we increase the quality of all data resources faster and more effectively."
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy",
+    "section": "",
+    "text": "Last updated: February 2026"
+  },
+  {
+    "objectID": "privacy.html#overview",
+    "href": "privacy.html#overview",
+    "title": "Privacy",
+    "section": "Overview",
+    "text": "Overview\nThis website is hosted on GitHub Pages and is maintained by the Orion DBS Community. We are committed to protecting your privacy. This policy explains what data is collected when you visit our site."
+  },
+  {
+    "objectID": "privacy.html#what-we-collect",
+    "href": "privacy.html#what-we-collect",
+    "title": "Privacy",
+    "section": "What We Collect",
+    "text": "What We Collect\nWe do not collect any personal data. This website does not use tracking scripts, analytics tools, or any other form of user monitoring."
+  },
+  {
+    "objectID": "privacy.html#cookies",
+    "href": "privacy.html#cookies",
+    "title": "Privacy",
+    "section": "Cookies",
+    "text": "Cookies\nThis website sets one technical cookie to improve the appearance and functionality of the sidebar. This cookie is strictly necessary for the website to function properly and does not store any personal information or track your behavior. No third-party cookies are used."
+  },
+  {
+    "objectID": "privacy.html#hosting",
+    "href": "privacy.html#hosting",
+    "title": "Privacy",
+    "section": "Hosting",
+    "text": "Hosting\nThis site is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit this website, GitHub may collect certain technical information such as your IP address, browser type, and access times in accordance with their own privacy practices. This data collection is handled entirely by GitHub and is outside our control.\nFor details, please refer to the GitHub Privacy Statement."
+  },
+  {
+    "objectID": "privacy.html#external-links",
+    "href": "privacy.html#external-links",
+    "title": "Privacy",
+    "section": "External Links",
+    "text": "External Links\nOur website may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any external site you visit."
+  },
+  {
+    "objectID": "privacy.html#changes-to-this-policy",
+    "href": "privacy.html#changes-to-this-policy",
+    "title": "Privacy",
+    "section": "Changes to This Policy",
+    "text": "Changes to This Policy\nWe may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
+  },
+  {
+    "objectID": "privacy.html#contact",
+    "href": "privacy.html#contact",
+    "title": "Privacy",
+    "section": "Contact",
+    "text": "Contact\nIf you have questions about this privacy policy, please open an issue on our GitHub repository."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Open Research Information on BigQuery",
+    "section": "",
+    "text": "A growing and daily updated collection of publicly available and community-curated datasets on Google BigQuery. We are not affiliated with the data providers or with Google."
+  },
+  {
+    "objectID": "index.html#featured-collections",
+    "href": "index.html#featured-collections",
+    "title": "Open Research Information on BigQuery",
+    "section": "Featured Collections",
+    "text": "Featured Collections\nPlease also check the participating project websites for more information and for many more available datasets.\n\n\n\nCrossref\nA major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.\nSUB Göttingen provides the most recent monthly dump and yearly snapshots. Sesame Open Science gives access to the latest public data dump.\n\n\n\n\nOpenAIRE\nA free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.\nSesame Open Science provides the full OpenAIRE Graph Dataset. InSySPo Campinas offers time-specific versions.\n\n\n\n\nOpenAlex\nA free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.\nSUB Göttingen provides the Walden release and September 2025 snapshots. InSySPo Campinas offers March and August 2025 snapshots."
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Open Research Information on BigQuery",
+    "section": "Get Started",
+    "text": "Get Started\n\nBrowse Collections — Explore the available datasets from our contributing projects\nAccess BigQuery — Use your Google account to access the BigQuery Console\nStart Querying — Reference our datasets in your SQL queries using project.dataset.table syntax\nContribute — Want to share your data? Check our contributing guide"
+  },
+  {
+    "objectID": "projects/insyspo/index.html",
+    "href": "projects/insyspo/index.html",
+    "title": "The InSySPo project",
+    "section": "",
+    "text": "More info: https://www.leidenmadtrics.nl/articles/towards-the-democratisation-of-open-research-information-for-scientometrics-and-science-policy-the-campinas-experience"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_ciaam",
+    "href": "projects/insyspo/index.html#projectdb_ciaam",
+    "title": "The InSySPo project",
+    "section": "projectdb_ciaam",
+    "text": "projectdb_ciaam\n\n\nCreated: May 29, 2025 23:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "href": "projects/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "title": "The InSySPo project",
+    "section": "projectdb_cwts_summer_school_2023",
+    "text": "projectdb_cwts_summer_school_2023\n\n\nCreated: Sep 18, 2023 15:40 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#projectdb_scielo_relational_model",
+    "href": "projects/insyspo/index.html#projectdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "projectdb_scielo_relational_model",
+    "text": "projectdb_scielo_relational_model\n\n\nCreated: Mar 28, 2023 07:20 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_capes_ppg",
+    "href": "projects/insyspo/index.html#publicdb_capes_ppg",
+    "title": "The InSySPo project",
+    "section": "publicdb_capes_ppg",
+    "text": "publicdb_capes_ppg\n\n\nCreated: Nov 13, 2023 10:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "href": "projects/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "title": "The InSySPo project",
+    "section": "publicdb_cwts_openalex_areas",
+    "text": "publicdb_cwts_openalex_areas\n\n\nCreated: Jan 26, 2024 18:09 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurekalert",
+    "href": "projects/insyspo/index.html#publicdb_eurekalert",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert",
+    "text": "publicdb_eurekalert\n\n\nCreated: Feb 25, 2025 14:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_eurekalert_2025",
+    "href": "projects/insyspo/index.html#publicdb_eurekalert_2025",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert_2025",
+    "text": "publicdb_eurekalert_2025\n\n\nCreated: Jul 18, 2025 17:16 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openaire_rm",
+    "href": "projects/insyspo/index.html#publicdb_openaire_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openaire_rm",
+    "text": "publicdb_openaire_rm\n\n\nCreated: Nov 28, 2023 17:47 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_03_rm",
+    "text": "publicdb_openalex_2025_03_rm\n\n\nCreated: Mar 14, 2025 09:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "href": "projects/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_08_rm",
+    "text": "publicdb_openalex_2025_08_rm\n\n\nCreated: Sep 01, 2025 19:44 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_redalyc_2024_08",
+    "href": "projects/insyspo/index.html#publicdb_redalyc_2024_08",
+    "title": "The InSySPo project",
+    "section": "publicdb_redalyc_2024_08",
+    "text": "publicdb_redalyc_2024_08\n\n\nCreated: Aug 21, 2024 02:35 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_reliance_on_science",
+    "href": "projects/insyspo/index.html#publicdb_reliance_on_science",
+    "title": "The InSySPo project",
+    "section": "publicdb_reliance_on_science",
+    "text": "publicdb_reliance_on_science\n\n\nCreated: Apr 13, 2025 21:12 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo_2024_rm",
+    "href": "projects/insyspo/index.html#publicdb_scielo_2024_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_2024_rm",
+    "text": "publicdb_scielo_2024_rm\n\n\nCreated: Jul 16, 2024 20:40 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_scielo_relational_model",
+    "href": "projects/insyspo/index.html#publicdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_relational_model",
+    "text": "publicdb_scielo_relational_model\n\n\nCreated: Oct 11, 2023 13:29 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "href": "projects/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "title": "The InSySPo project",
+    "section": "publicdb_wikipedia_knowledge_graph",
+    "text": "publicdb_wikipedia_knowledge_graph\n\n\nCreated: Feb 27, 2023 04:47 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "How to contribute",
+    "section": "",
+    "text": "If you maintain a publicly available Google BigQuery project with open scholarly data, we’d love to include it in this collection. You can use the template below to share your project description, and after you submit a pull request, we’ll integrate the metadata and update it regularly."
+  },
+  {
+    "objectID": "contributing.html#prerequisites",
+    "href": "contributing.html#prerequisites",
+    "title": "How to contribute",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis project aims to make it easier to discover trusted, quality-assured big and open data warehouses for bibliometrics and data analytics on Google BigQuery. By bringing these collections together, we hope to improve the analyses, applications, and research built on them.\nTo participate, you’ll need to:\n\nProvide large, open datasets via Google BigQuery in a user-friendly format\nUse a permissive open license for all datasets\nCover storage costs (users are responsible for their own query costs)\nMake your data preprocessing code publicly available\nPreserve historical dataset versions to ensure reproducibility (you can store these anywhere, not just BigQuery)\nProvide training materials like getting started guides, use cases, integration instructions, and contact information for support"
+  },
+  {
+    "objectID": "contributing.html#sharing",
+    "href": "contributing.html#sharing",
+    "title": "How to contribute",
+    "section": "Sharing",
+    "text": "Sharing\nTo share your collection, file an issue using this template. You’ll need to provide:\n\nThe ID of your BigQuery project\nAn acronym for your collection\nA brief description\nThe maintainer name(s)\n\nWe’ll use this information to create a dedicated webpage for your collection (though you’re welcome to do this yourself):\n\nCopy _template.qmd to a new folder under projects/ and save it as index.qmd. Use your collection’s acronym as the folder name.\nUpdate the title and project ID in the YAML header (the bq_project parameter).\n\n---\ntitle: \"Open Scholarly Data @ SUB Göttingen\"\nformat:\n  html:\n    page-layout: full\ntoc-title: Datasets\nparams:\n  bq_project: \"subugoe-collaborative\"\n---\n\nAdd your description below the YAML header.\nThe site builds automatically using GitHub Actions. If a dataset or table isn’t publicly available, the build will fail."
+  },
+  {
+    "objectID": "contributing.html#documentation",
+    "href": "contributing.html#documentation",
+    "title": "How to contribute",
+    "section": "Documentation",
+    "text": "Documentation\nWe aim to reuse as much information as possible from Google Cloud BigQuery using the REST API. To help others discover and use your data, you should provide:\n\nDescriptions for projects, datasets, and tables that speak to first-time users. Focus on the essentials—the data source, version, and license—rather than overly technical details. You can link to a GitHub repository with your data processing code if that’s helpful.\nSchemas for tables. Describe each field thoroughly; this makes it much easier for others to understand the datasets.\n\nGitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds."
+  },
+  {
+    "objectID": "contributing.html#use-cases",
+    "href": "contributing.html#use-cases",
+    "title": "How to contribute",
+    "section": "Use-cases",
+    "text": "Use-cases\ntba"
+  },
+  {
+    "objectID": "contributing.html#contact",
+    "href": "contributing.html#contact",
+    "title": "How to contribute",
+    "section": "Contact",
+    "text": "Contact\ntba"
+  },
+  {
+    "objectID": "projects/subugoe/index.html",
+    "href": "projects/subugoe/index.html",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "",
+    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/\nContact: Najko Jahn"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#cr_history",
+    "href": "projects/subugoe/index.html#cr_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_history",
+    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 07:20 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#cr_instant",
+    "href": "projects/subugoe/index.html#cr_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_instant",
+    "text": "cr_instant\n\n\nCreated: Oct 29, 2021 07:37 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#hoaddata",
+    "href": "projects/subugoe/index.html#hoaddata",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "hoaddata",
+    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 11:06 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#oa2020",
+    "href": "projects/subugoe/index.html#oa2020",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "oa2020",
+    "text": "oa2020\n\n\nDescription\n\n\nEstimating global publishing output by leading commercial publishers using open metadata.\nWork carried out for OA2020 WG on financial flows and future cost scenarios https://oa2020.org/working-groups/\n\n\nCreated: Dec 11, 2025 10:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#openalex",
+    "href": "projects/subugoe/index.html#openalex",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex",
+    "text": "openalex\n\n\nCreated: Jan 10, 2022 14:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#openalex_walden",
+    "href": "projects/subugoe/index.html#openalex_walden",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex_walden",
+    "text": "openalex_walden\n\n\nCreated: Dec 03, 2025 10:07 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#openbib",
+    "href": "projects/subugoe/index.html#openbib",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openbib",
+    "text": "openbib\n\n\nCreated: Mar 28, 2025 14:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#resources",
+    "href": "projects/subugoe/index.html#resources",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "resources",
+    "text": "resources\n\n\nCreated: Nov 02, 2021 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#semantic_scholar",
+    "href": "projects/subugoe/index.html#semantic_scholar",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "semantic_scholar",
+    "text": "semantic_scholar\n\n\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#upw_history",
+    "href": "projects/subugoe/index.html#upw_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_history",
+    "text": "upw_history\n\n\nCreated: Oct 29, 2021 07:51 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/subugoe/index.html#upw_instant",
+    "href": "projects/subugoe/index.html#upw_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_instant",
+    "text": "upw_instant\n\n\nCreated: Oct 29, 2021 07:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html",
+    "href": "projects/sos/index.html",
+    "title": "Sesame Open Science",
+    "section": "",
+    "text": "Collection maintained by Bianca Kramer (Sesame Open Science)\nInfo and documentation: https://github.com/bmkramer/metadata_ingest\n…"
+  },
+  {
+    "objectID": "projects/sos/index.html#butler_apcs",
+    "href": "projects/sos/index.html#butler_apcs",
+    "title": "Sesame Open Science",
+    "section": "butler_apcs",
+    "text": "butler_apcs\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#crossref",
+    "href": "projects/sos/index.html#crossref",
+    "title": "Sesame Open Science",
+    "section": "crossref",
+    "text": "crossref\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#doaj",
+    "href": "projects/sos/index.html#doaj",
+    "title": "Sesame Open Science",
+    "section": "doaj",
+    "text": "doaj\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#goa",
+    "href": "projects/sos/index.html#goa",
+    "title": "Sesame Open Science",
+    "section": "goa",
+    "text": "goa\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#issn",
+    "href": "projects/sos/index.html#issn",
+    "title": "Sesame Open Science",
+    "section": "issn",
+    "text": "issn\n\n\nCreated: Aug 03, 2025 21:00 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#jct",
+    "href": "projects/sos/index.html#jct",
+    "title": "Sesame Open Science",
+    "section": "jct",
+    "text": "jct\n\n\nCreated: Aug 03, 2025 21:14 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#openaire",
+    "href": "projects/sos/index.html#openaire",
+    "title": "Sesame Open Science",
+    "section": "openaire",
+    "text": "openaire\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#openapc",
+    "href": "projects/sos/index.html#openapc",
+    "title": "Sesame Open Science",
+    "section": "openapc",
+    "text": "openapc\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#opencitations",
+    "href": "projects/sos/index.html#opencitations",
+    "title": "Sesame Open Science",
+    "section": "opencitations",
+    "text": "opencitations\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#pkp",
+    "href": "projects/sos/index.html#pkp",
+    "title": "Sesame Open Science",
+    "section": "pkp",
+    "text": "pkp\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "projects/sos/index.html#truthtables",
+    "href": "projects/sos/index.html#truthtables",
+    "title": "Sesame Open Science",
+    "section": "truthtables",
+    "text": "truthtables\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "News & Tutorials",
+    "section": "",
+    "text": "Welcome to our blog featuring news, tutorials, and insights about using BigQuery for open scholarly data analysis.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSharing the load: Building an open research information collective\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 28, 2026\n\n\nCameron Neylon, Bianca Kramer\n\n\n\n\n\nNo matching items"
+  }
+]
