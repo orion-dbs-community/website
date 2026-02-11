@@ -28,7 +28,6 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          target: netlify
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          target: gh-pages
         env:
-          BQ_ORI: ${{ secrets.BQ_ORI }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
