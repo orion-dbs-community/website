@@ -5,7 +5,7 @@ project:
 
 website:
   title: "orion-dbs"
-  site-url: "https://orion-dbs.community/website/"
+  site-url: "https://orion-dbs.community"
   navbar:
     left:
       - text: Projects
@@ -26,7 +26,7 @@ website:
       - icon: rss
         href: blog/index.xml
       - icon: github
-        href: https://github.com/orion-dbs-community
+        href: https://github.com/orion-dbs-community/website
   page-footer:
     left:
       - text: "The content on this website is licensed under <a href='https://creativecommons.org/publicdomain/zero/1.0/'>CC0</a>."
