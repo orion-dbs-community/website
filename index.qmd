@@ -53,7 +53,7 @@ A free, open, and comprehensive bibliographic database and knowledge graph for s
 
 To query our datasets, you need a Google Cloud project. You can get started with the [BigQuery sandbox](https://docs.cloud.google.com/bigquery/docs/sandbox), which requires no billing account and includes 1 TB of free queries per month. Replace `your-gcp-project` in the examples below with your own project ID.
 
-This example joins data from two different collections -- article metadata from SUB Göttingen and a Crossref truth table from Sesame Open Science -- to check how many articles from the DEAL Wiley agreement (2019--23) have funder metadata in Crossref.
+This example joins data from two different collections -- [article metadata associated with transformative agreements](collections/subugoe/#openbib) as provided by SUB Göttingen and a [Crossref truth table](collections/sos/#truthtables) from Sesame Open Science -- to check how many articles from the DEAL Wiley agreement (2019--23) have funder metadata in Crossref.
 
 ::: {.panel-tabset}
 
