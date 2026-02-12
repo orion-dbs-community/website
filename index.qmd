@@ -8,7 +8,7 @@ A growing, daily updated collection of publicly available datasets on Google Big
 
 ## Featured Collections
 
-*Please also check the participating project websites for more information and for many more available datasets.*
+*Please also check the participating [collections websites](collections/) for more information and for many more available datasets.*
 
 ::: {.grid .collection-grid}
 

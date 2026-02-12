@@ -8,7 +8,7 @@ website:
   site-url: "https://orion-dbs.community"
   navbar:
     left:
-      - text: Projects
+      - text: Collections
         menu:
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
