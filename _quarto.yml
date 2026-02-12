@@ -12,7 +12,7 @@ website:
         menu:
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
-          - text: Sesame Open Datasets
+          - text: Sesame Open Science Datasets
             href: collections/sos/
           - text: SUB Göttingen Datasets
             href: collections/subugoe/
