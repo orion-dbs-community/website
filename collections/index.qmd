@@ -1,4 +1,9 @@
-## Collections
+---
+title : Collections
+format:
+  html:
+    toc: false
+---
 
 The community currently brings together datasets from three contributing projects:
 

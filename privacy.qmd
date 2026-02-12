@@ -1,6 +1,8 @@
 ---
 title: "Privacy"
-format: html
+format:
+  html:
+    toc: false
 ---
 
 **Last updated:** February 2026
