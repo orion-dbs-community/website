@@ -1,0 +1,7 @@
+## Collections
+
+The community currently brings together datasets from three contributing projects:
+
+- **[InSySPo Campinas Datasets](insyspo/)** -- The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
+- **[Sesame Open Datasets (SOS)](sos/)** -- Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.
+- **[SUB Göttingen Datasets](subugoe/)** -- The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall.

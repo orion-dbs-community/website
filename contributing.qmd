@@ -2,7 +2,6 @@
 title: "How to contribute"
 ---
 
-
 If you maintain a publicly available Google BigQuery project with open scholarly data, we'd love to include it in this collection. You can use the template below to share your project description, and after you submit a pull request, we'll integrate the metadata and update it regularly.
 
 ## Prerequisites
@@ -29,7 +28,7 @@ To share your collection, file an issue using this template. You'll need to prov
 
 We'll use this information to create a dedicated webpage for your collection (though you're welcome to do this yourself):
 
-- Copy `_template.qmd` to a new folder under `projects/` and save it as `index.qmd`. Use your collection's acronym as the folder name.
+- Copy `_template.qmd` to a new folder under `collections/` and save it as `index.qmd`. Use your collection's acronym as the folder name.
 - Update the title and project ID in the YAML header (the `bq_project` parameter).
 
 ```{.yaml}
@@ -45,7 +44,9 @@ params:
 ```
 
 - Add your description below the YAML header.
-- The site builds automatically using GitHub Actions. If a dataset or table isn't publicly available, the build will fail. 
+- Create a Pull Request on GitHub.
+- The site builds automatically using GitHub Actions. If a dataset or table isn't publicly available, the build will fail. You can check locally if the site builds by running `quarto render`.
+
 
 ## Documentation
 
@@ -54,12 +55,10 @@ We aim to reuse as much information as possible from Google Cloud BigQuery using
 - **Descriptions** for projects, datasets, and tables that speak to first-time users. Focus on the essentials—the data source, version, and license—rather than overly technical details. You can link to a GitHub repository with your data processing code if that's helpful.
 - **Schemas** for tables. Describe each field thoroughly; this makes it much easier for others to understand the datasets.
 
-GitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds. 
-
-## Use-cases
-
-tba
+GitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds.
 
 ## Contact
 
-tba
+Inc ase of questions or issues, feel free to create an issue: <https://github.com/orion-dbs-community/website/issues>
+
+Repo-Maintainer: Najko Jahn <najko.jahn@sub.uni-goettingen.de>

@@ -4,7 +4,7 @@ subtitle: "Sharing the load: Building an open research information collective"
 toc: false
 ---
 
-A growing and daily updated collection of publicly available and community-curated datasets on Google BigQuery. We are not affiliated with the data providers or with Google.
+A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale.
 
 ## Featured Collections
 
@@ -18,7 +18,7 @@ A growing and daily updated collection of publicly available and community-curat
 
 A major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.
 
-[SUB Göttingen](projects/subugoe/) provides the [most recent monthly dump](projects/subugoe/#cr_instant) and [yearly snapshots](projects/subugoe/#cr_history). [Sesame Open Science](projects/sos/) gives access to the latest [public data dump](projects/sos/#crossref).
+[SUB Göttingen](collections/subugoe/) provides the [most recent monthly dump](collections/subugoe/#cr_instant) and [yearly snapshots](collections/subugoe/#cr_history). [Sesame Open Science](collections/sos/) gives access to the latest [public data dump](collections/sos/#crossref).
 :::
 :::
 
@@ -28,7 +28,7 @@ A major DOI registration agency for publisher-provided open metadata. Used in ma
 
 A free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.
 
-[Sesame Open Science](projects/sos/) provides the full [OpenAIRE Graph Dataset](projects/sos/#openaire). [InSySPo Campinas](projects/insyspo/) offers time-specific versions.
+[Sesame Open Science](collections/sos/) provides the full [OpenAIRE Graph Dataset](collections/sos/#openaire). [InSySPo Campinas](collections/insyspo/) offers time-specific versions.
 :::
 :::
 
@@ -38,7 +38,7 @@ A free and open resource that interlinks hundreds of millions of metadata record
 
 A free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.
 
-[SUB Göttingen](projects/subugoe/) provides the [Walden release](projects/subugoe/#openalex_walden) and [September 2025](projects/subugoe/#openalex) snapshots. [InSySPo Campinas](projects/insyspo/) offers [March](projects/insyspo/#publicdb_openalex_2025_03_rm) and [August 2025](projects/insyspo/#publicdb_openalex_2025_08_rm) snapshots.
+[SUB Göttingen](collections/subugoe/) provides the [Walden release](collections/subugoe/#openalex_walden) and [September 2025](collections/subugoe/#openalex) snapshots. [InSySPo Campinas](collections/insyspo/) offers [March](collections/insyspo/#publicdb_openalex_2025_03_rm) and [August 2025](collections/insyspo/#publicdb_openalex_2025_08_rm) snapshots.
 :::
 :::
 
@@ -46,7 +46,7 @@ A free, open, and comprehensive bibliographic database and knowledge graph for s
 
 ## Get Started
 
-1. **[Browse Collections](projects/)** — Explore the available datasets from our contributing projects
+1. **[Browse Collections](collections/)** — Explore the available datasets from our contributing projects
 2. **Access BigQuery** — Use your Google account to access the [BigQuery Console](https://console.cloud.google.com/bigquery)
 3. **Start Querying** — Reference our datasets in your SQL queries using `project.dataset.table` syntax
 4. **[Contribute](contributing.qmd)** — Want to share your data? Check our contributing guide
