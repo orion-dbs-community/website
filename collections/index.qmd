@@ -5,7 +5,7 @@ format:
     toc: false
 ---
 
-The community currently brings together datasets from three contributing projects:
+The community currently brings together datasets from the following contributing projects:
 
 - **[CWTS Leiden Datasets](cwts)** -- The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.
 - **[InSySPo Campinas Datasets](insyspo/)** -- The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
