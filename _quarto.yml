@@ -10,6 +10,8 @@ website:
     left:
       - text: Collections
         menu:
+          - text: CWTS Leiden Datasets
+            href: collections/cwts/
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
           - text: Sesame Open Science Datasets

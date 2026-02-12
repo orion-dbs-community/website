@@ -1,5 +1,5 @@
 ---
-title: "CWTS"
+title: "CWTS Leiden Datasets"
 format:
   html:
     page-layout: full
@@ -8,6 +8,9 @@ params:
   bq_project: "cwts-leiden"
 ---
 
+The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.
+
+GitHub Repo: <https://github.com/CWTSLeiden/CWTS-OpenAlex-databases>
 
 ```{r}
 #| echo: false
