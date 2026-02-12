@@ -1,62 +1,70 @@
-@import url('https://fonts.bunny.net/css?family=public-sans:400,600,700');
+@import url("https://fonts.bunny.net/css?family=public-sans:400,600,700");
 
 /* Typography */
 p {
-  line-height: 1.65;
+    line-height: 1.65;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Public Sans", sans-serif;
-  font-weight: 700;
-  color: #1a1a1a;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
-.subtitle, .lead, .quarto-title .subtitle {
-  font-family: "Public Sans", sans-serif;
+.subtitle,
+.lead,
+.quarto-title .subtitle {
+    font-family: "Public Sans", sans-serif;
 }
 
 /* Links */
 a {
-  color: #007cbb;
-  text-decoration: none;
+    color: #007cbb;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Table of Contents */
 .sidebar nav[role="doc-toc"] ul li a,
 #TOC a,
 .toc-actions a {
-  color: #007cbb;
+    color: #007cbb;
 }
 
 .sidebar nav[role="doc-toc"] ul li a.active,
 .sidebar nav[role="doc-toc"] ul li a:hover,
 #TOC a:hover {
-  color: #007cbb !important;
-  border-left-color: #007cbb !important;
+    color: #007cbb !important;
+    border-left-color: #007cbb !important;
 }
 
 .sidebar nav[role="doc-toc"] ul li a.active {
-  font-weight: 600;
-  background-color: transparent !important;
+    font-weight: 600;
+    background-color: transparent !important;
 }
 
 /* Navbar styling */
 .navbar {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #e8e8e8;
-  font-family: "Public Sans", sans-serif;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e8e8e8;
+    font-family: "Public Sans", sans-serif;
 }
 
-.navbar-brand, .navbar .nav-link {
-  color: #1a1a1a !important;
+.navbar-brand,
+.navbar .nav-link {
+    color: #1a1a1a !important;
 }
 
 .navbar .nav-link:hover {
-  color: #007bb5 !important;
+    color: #007bb5 !important;
 }
 
 .navbar .navbar-nav .nav-link,
@@ -64,176 +72,184 @@ a:hover {
 .navbar .navbar-toggler-icon,
 .navbar i,
 .navbar svg {
-  color: #1a1a1a !important;
-  fill: #1a1a1a !important;
+    color: #1a1a1a !important;
+    fill: #1a1a1a !important;
 }
 
 .navbar .nav-link:active,
 .navbar .nav-link.active {
-  color: #1a1a1a !important;
-  background-color: rgba(0, 124, 187, 0.1) !important;
+    color: #1a1a1a !important;
+    background-color: rgba(0, 124, 187, 0.1) !important;
 }
 
 .navbar .nav-link:focus {
-  color: #1a1a1a !important;
-  background-color: rgba(0, 124, 187, 0.05) !important;
-  outline: none;
+    color: #1a1a1a !important;
+    background-color: rgba(0, 124, 187, 0.05) !important;
+    outline: none;
 }
 
 .navbar .navbar-nav .show > .nav-link {
-  color: #1a1a1a !important;
-  background-color: rgba(0, 124, 187, 0.1) !important;
+    color: #1a1a1a !important;
+    background-color: rgba(0, 124, 187, 0.1) !important;
 }
 
 .navbar .dropdown-menu {
-  background-color: #ffffff !important;
-  border: 1px solid #e8e8e8;
+    background-color: #ffffff !important;
+    border: 1px solid #e8e8e8;
 }
 
 .navbar .dropdown-item {
-  color: #1a1a1a !important;
+    color: #1a1a1a !important;
 }
 
 .navbar .dropdown-item:hover,
 .navbar .dropdown-item:focus,
 .navbar .dropdown-item:active {
-  background-color: rgba(0, 124, 187, 0.1) !important;
-  color: #007bb5 !important;
+    background-color: rgba(0, 124, 187, 0.1) !important;
+    color: #007bb5 !important;
 }
 
 .navbar .navbar-toggler {
-  border-color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 26, 26, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 26, 26, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* BigQuery tables styling */
 .bigquery-tables .reactable {
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-  border: 0.5px solid #e8e8e8;
-  border-radius: 4px;
-  box-shadow: none;
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    border: 0.5px solid #e8e8e8;
+    border-radius: 4px;
+    box-shadow: none;
 }
 
 .reactable .rt-tbody .rt-tr:hover {
-  background-color: #fcfcfc;
+    background-color: #fcfcfc;
 }
 
 .header {
-  background-color: #f8f8f8;
-  border-bottom-color: #e0e0e0;
-  border-bottom-width: 1px;
-  color: #555555;
-  font-weight: 600;
+    background-color: #f8f8f8;
+    border-bottom-color: #e0e0e0;
+    border-bottom-width: 1px;
+    color: #555555;
+    font-weight: 600;
 }
 
 .header[aria-sort]:hover,
 .header[aria-sort]:focus {
-  color: #007cbb;
+    color: #007cbb;
 }
 
 .schema-detail {
-  padding: 24px;
-  box-shadow: none;
-  background: #fafafa;
+    padding: 24px;
+    box-shadow: none;
+    background: #fafafa;
 }
 
 .schema-header {
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
 .nested-fields-header {
-  margin-bottom: 0.75rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #4a5568;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #4a5568;
 }
 
 .schema-table {
-  border: 0.5px solid #e8e8e8;
-  border-radius: 4px;
-  box-shadow: none;
-  font-size: 0.875rem;
+    border: 0.5px solid #e8e8e8;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 0.875rem;
 }
 
 .number {
-  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-  font-size: 0.9375rem;
-  white-space: pre;
+    font-family:
+        "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Fira Mono",
+        "Roboto Mono", monospace;
+    font-size: 0.9375rem;
+    white-space: pre;
 }
 
 .description-box {
-  margin-bottom: 1.5rem;
-  padding: 12px;
-  background-color: #f5f5f5;
-  border-left: 3px solid #007cbb;
-  border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-left: 3px solid #007cbb;
+    border-radius: 4px;
 }
 
 .description-header {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #4a5568;
-  font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-size: 0.875rem;
 }
 
 .description-content {
-  color: #1a1a1a;
-  font-size: 0.9375rem;
+    color: #1a1a1a;
+    font-size: 0.9375rem;
 }
 
 .description-meta {
-  color: #4a5568;
-  font-size: 0.875rem;
-  font-weight: 500;
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 .nested-fields-container {
-  padding: 16px;
-  background-color: #fff;
+    padding: 16px;
+    background-color: #fff;
 }
 
 /* Collection Cards - Flat, minimalist style */
 .collection-grid {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .collection-card {
-  padding: 1.25rem;
-  background: #fafafa;
-  border-left: 2px solid #e0e0e0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    padding: 1.25rem;
+    background: #fafafa;
+    border-left: 2px solid #e0e0e0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .collection-card h3 {
-  font-size: 1.125rem;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
 .collection-card p:first-of-type {
-  font-size: 0.9375rem;
-  color: #4a5568;
-  margin-bottom: 0.75rem;
-  min-height: 4.5em;
+    font-size: 0.9375rem;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    min-height: 4.5em;
 }
 
 .collection-card p:last-of-type {
-  margin-bottom: 0;
-  font-size: 0.875rem;
-  color: #4a5568;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+/* List spacing (scoped to main content, excludes navbar/footer) */
+main ul li,
+main ol li {
+    margin-bottom: 0.75rem;
 }
 
 /* Footer styling */
 .nav-footer {
-  font-family: "Public Sans", sans-serif;
+    font-family: "Public Sans", sans-serif;
 }

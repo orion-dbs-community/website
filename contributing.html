@@ -131,15 +131,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="./projects/insyspo/">
+    <a class="dropdown-item" href="./collections/insyspo/">
  <span class="dropdown-text">InSySPo Campinas Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/sos/">
+    <a class="dropdown-item" href="./collections/sos/">
  <span class="dropdown-text">Sesame Open Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/subugoe/">
+    <a class="dropdown-item" href="./collections/subugoe/">
  <span class="dropdown-text">SUB Göttingen Datasets</span></a>
   </li>  
     </ul>
@@ -187,7 +187,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
-  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use-cases</a></li>
   <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -239,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>We’ll use this information to create a dedicated webpage for your collection (though you’re welcome to do this yourself):</p>
 <ul>
-<li>Copy <code>_template.qmd</code> to a new folder under <code>projects/</code> and save it as <code>index.qmd</code>. Use your collection’s acronym as the folder name.</li>
+<li>Copy <code>_template.qmd</code> to a new folder under <code>collections/</code> and save it as <code>index.qmd</code>. Use your collection’s acronym as the folder name.</li>
 <li>Update the title and project ID in the YAML header (the <code>bq_project</code> parameter).</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
@@ -253,7 +252,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Add your description below the YAML header.</li>
-<li>The site builds automatically using GitHub Actions. If a dataset or table isn’t publicly available, the build will fail.</li>
+<li>Create a Pull Request on GitHub.</li>
+<li>The site builds automatically using GitHub Actions. If a dataset or table isn’t publicly available, the build will fail. You can check locally if the site builds by running <code>quarto render</code>.</li>
 </ul>
 </section>
 <section id="documentation" class="level2">
@@ -265,13 +265,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>GitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds.</p>
 </section>
-<section id="use-cases" class="level2">
-<h2 class="anchored" data-anchor-id="use-cases">Use-cases</h2>
-<p>tba</p>
-</section>
 <section id="contact" class="level2">
 <h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>tba</p>
+<p>Inc ase of questions or issues, feel free to create an issue: <a href="https://github.com/orion-dbs-community/website/issues" class="uri">https://github.com/orion-dbs-community/website/issues</a></p>
+<p>Repo-Maintainer: Najko Jahn <a href="mailto:najko.jahn@sub.uni-goettingen.de" class="email">najko.jahn@sub.uni-goettingen.de</a></p>
 
 
 </section>

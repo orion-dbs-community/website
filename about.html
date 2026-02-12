@@ -96,15 +96,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="./projects/insyspo/">
+    <a class="dropdown-item" href="./collections/insyspo/">
  <span class="dropdown-text">InSySPo Campinas Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/sos/">
+    <a class="dropdown-item" href="./collections/sos/">
  <span class="dropdown-text">Sesame Open Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/subugoe/">
+    <a class="dropdown-item" href="./collections/subugoe/">
  <span class="dropdown-text">SUB Göttingen Datasets</span></a>
   </li>  
     </ul>
@@ -144,8 +144,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#collections" id="toc-collections" class="nav-link active" data-scroll-target="#collections">Collections</a></li>
+  <li><a href="#how-to-access-the-data" id="toc-how-to-access-the-data" class="nav-link" data-scroll-target="#how-to-access-the-data">How to access the data</a></li>
+  <li><a href="#about-the-website" id="toc-about-the-website" class="nav-link" data-scroll-target="#about-the-website">About the website</a></li>
+  <li><a href="#get-involved" id="toc-get-involved" class="nav-link" data-scroll-target="#get-involved">Get involved</a></li>
+  <li><a href="#related-datasets" id="toc-related-datasets" class="nav-link" data-scroll-target="#related-datasets">Related datasets</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -169,9 +179,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
+<p>This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.</p>
+<p>For the full motivation behind this effort, see our mission statement: <a href="blog/posts/welcome/">Sharing the load: Building an open research information collective</a>.</p>
+<section id="collections" class="level2">
+<h2 class="anchored" data-anchor-id="collections">Collections</h2>
+<p>The community currently brings together datasets from three contributing projects:</p>
+<ul>
+<li><strong><a href="collections/insyspo/">InSySPo Campinas Datasets</a></strong> – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.</li>
+<li><strong><a href="collections/sos/">Sesame Open Datasets (SOS)</a></strong> – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.</li>
+<li><strong><a href="collections/subugoe/">SUB Göttingen Datasets</a></strong> – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall.</li>
+</ul>
+<p>Each project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything.</p>
+</section>
+<section id="how-to-access-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-access-the-data">How to access the data</h2>
+<p>All datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a <a href="https://cloud.google.com/bigquery/pricing">free tier of 1 TB of query processing per month</a>.</p>
+</section>
+<section id="about-the-website" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-website">About the website</h2>
+<p>This site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the <a href="blog/posts/welcome/">mission statement</a>.</p>
+</section>
+<section id="get-involved" class="level2">
+<h2 class="anchored" data-anchor-id="get-involved">Get involved</h2>
+<p>If you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our <a href="./contributing.html">contributing guide</a> for details.</p>
+</section>
+<section id="related-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="related-datasets">Related datasets</h2>
+<ul>
+<li>The <a href="https://bigquery-lab.dimensions.ai/">Dimensions BigQuery Lab</a> provides a thorough collection of tutorials and queries. Although access to Dimensions data is not publicly available, they host publicly available datasets from ORCID and DataCite which can be used with BigQuery by anyone.</li>
+<li><a href="https://graph.openaire.eu/docs/cloud-access/">OpenAIRE</a> makes their OpenAIRE Graph publicly available on Google BigQuery.</li>
+<li><a href="https://github.com/CWTSLeiden/CWTS-OpenAlex-databases?tab=readme-ov-file#availability-in-google-bigquery">CWTS</a> provides Open Leiden Ranking data and various OpenAlex snapshots on Google BigQuery.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
