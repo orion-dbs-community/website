@@ -59,6 +59,6 @@ GitHub Actions automatically fetches metadata like update times, row counts, siz
 
 ## Contact
 
-Inc ase of questions or issues, feel free to create an issue: <https://github.com/orion-dbs-community/website/issues>
+In case of questions or issues, feel free to create an issue: <https://github.com/orion-dbs-community/website/issues>
 
 Repo-Maintainer: Najko Jahn <najko.jahn@sub.uni-goettingen.de>

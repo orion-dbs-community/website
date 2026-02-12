@@ -46,7 +46,66 @@ A free, open, and comprehensive bibliographic database and knowledge graph for s
 
 ## Get Started
 
-1. **[Browse Collections](collections/)** — Explore the available datasets from our contributing projects
-2. **Access BigQuery** — Use your Google account to access the [BigQuery Console](https://console.cloud.google.com/bigquery)
-3. **Start Querying** — Reference our datasets in your SQL queries using `project.dataset.table` syntax
-4. **[Contribute](contributing.qmd)** — Want to share your data? Check our contributing guide
+1. **[Browse Collections](collections/)** -- Explore the available datasets from our contributing projects
+2. **[Contribute](contributing.qmd)** -- Want to share your data? Check our contributing guide
+
+## First steps
+
+To query our datasets, you need a Google Cloud project. You can get started with the [BigQuery sandbox](https://docs.cloud.google.com/bigquery/docs/sandbox), which requires no billing account and includes 1 TB of free queries per month. Replace `your-gcp-project` in the examples below with your own project ID.
+
+This example joins data from two different collections -- article metadata from SUB Göttingen and a Crossref truth table from Sesame Open Science -- to check how many articles from the DEAL Wiley agreement (2019--23) have funder metadata in Crossref.
+
+::: {.panel-tabset}
+
+## SQL
+
+```sql
+-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = "wiley2019deal"
+GROUP BY has_funders
+```
+
+## R
+
+```r
+library(bigrquery)
+library(DBI)
+
+my_con <- dbConnect(bigquery(), project = "your-gcp-project")
+
+my_sql <- "
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = 'wiley2019deal'
+GROUP BY has_funders
+"
+
+my_df <- dbGetQuery(my_con, my_sql)
+```
+
+## Python
+
+```python
+from google.cloud import bigquery
+
+client = bigquery.Client(project="your-gcp-project")
+
+sql = """
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = 'wiley2019deal'
+GROUP BY has_funders
+"""
+
+result = client.query(sql).to_dataframe()
+```
+
+:::
