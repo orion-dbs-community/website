@@ -243,6 +243,19 @@ a:hover {
     color: #4a5568;
 }
 
+/* Tabset styling */
+.nav-tabs .nav-link {
+    color: #007cbb;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #007cbb;
+}
+
+.nav-tabs .nav-link.active {
+    color: #1a1a1a;
+}
+
 /* List spacing (scoped to main content, excludes navbar/footer) */
 main ul li,
 main ol li {
