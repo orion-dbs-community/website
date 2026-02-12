@@ -277,7 +277,14 @@
     "href": "index.html#get-started",
     "title": "Open Research Information on BigQuery",
     "section": "Get Started",
-    "text": "Get Started\n\nBrowse Collections — Explore the available datasets from our contributing projects\nAccess BigQuery — Use your Google account to access the BigQuery Console\nStart Querying — Reference our datasets in your SQL queries using project.dataset.table syntax\nContribute — Want to share your data? Check our contributing guide"
+    "text": "Get Started\n\nBrowse Collections – Explore the available datasets from our contributing projects\nContribute – Want to share your data? Check our contributing guide"
+  },
+  {
+    "objectID": "index.html#first-steps",
+    "href": "index.html#first-steps",
+    "title": "Open Research Information on BigQuery",
+    "section": "First steps",
+    "text": "First steps\nTo query our datasets, you need a Google Cloud project. You can get started with the BigQuery sandbox, which requires no billing account and includes 1 TB of free queries per month. Replace your-gcp-project in the examples below with your own project ID.\nThis example joins data from two different collections – article metadata from SUB Göttingen and a Crossref truth table from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.\n\nSQLRPython\n\n\n-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = \"wiley2019deal\"\nGROUP BY has_funders\n\n\nlibrary(bigrquery)\nlibrary(DBI)\n\nmy_con &lt;- dbConnect(bigquery(), project = \"your-gcp-project\")\n\nmy_sql &lt;- \"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\n\nmy_df &lt;- dbGetQuery(my_con, my_sql)\n\n\nfrom google.cloud import bigquery\n\nclient = bigquery.Client(project=\"your-gcp-project\")\n\nsql = \"\"\"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\"\"\n\nresult = client.query(sql).to_dataframe()"
   },
   {
     "objectID": "contributing.html",
@@ -312,7 +319,7 @@
     "href": "contributing.html#contact",
     "title": "How to contribute",
     "section": "Contact",
-    "text": "Contact\nInc ase of questions or issues, feel free to create an issue: https://github.com/orion-dbs-community/website/issues\nRepo-Maintainer: Najko Jahn najko.jahn@sub.uni-goettingen.de"
+    "text": "Contact\nIn case of questions or issues, feel free to create an issue: https://github.com/orion-dbs-community/website/issues\nRepo-Maintainer: Najko Jahn najko.jahn@sub.uni-goettingen.de"
   },
   {
     "objectID": "about.html",
@@ -361,14 +368,14 @@
     "href": "collections/index.html",
     "title": "orion-dbs",
     "section": "",
-    "text": "The community currently brings together datasets from three contributing projects:\n\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nSesame Open Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall."
+    "text": "The community currently brings together datasets from three contributing projects:\n\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nSesame Open Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
   },
   {
     "objectID": "collections/index.html#collections",
     "href": "collections/index.html#collections",
     "title": "orion-dbs",
     "section": "",
-    "text": "The community currently brings together datasets from three contributing projects:\n\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nSesame Open Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall."
+    "text": "The community currently brings together datasets from three contributing projects:\n\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nSesame Open Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
   },
   {
     "objectID": "collections/insyspo/index.html",
