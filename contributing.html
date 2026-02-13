@@ -194,6 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a></li>
+  <li><a href="#local-testing" id="toc-local-testing" class="nav-link" data-scroll-target="#local-testing">Local testing</a></li>
   <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
   <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
   </ul>
@@ -261,8 +262,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Add your description below the YAML header.</li>
 <li>Create a Pull Request on GitHub.</li>
-<li>The site builds automatically using GitHub Actions. If a dataset or table isn’t publicly available, the build will fail. You can check locally if the site builds by running <code>quarto render</code>.</li>
 </ul>
+</section>
+<section id="local-testing" class="level2">
+<h2 class="anchored" data-anchor-id="local-testing">Local testing</h2>
+<p>Before submitting your pull request, you can verify that the site builds correctly on your machine. You need <a href="https://quarto.org/docs/get-started/">Quarto</a> and R installed.</p>
+<p>Install the R dependencies listed in the <code>DESCRIPTION</code> file using <a href="https://pak.r-lib.org/">pak</a>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pak")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">local_install_deps</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, render just your new collection page to check for errors:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render collections/<span class="op">&lt;</span>your-collection<span class="op">&gt;</span>/index.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or render the full site:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also start a live-reloading preview server to inspect your changes in the browser:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If a dataset or table in your collection isn’t publicly available, the build will fail.</p>
 </section>
 <section id="documentation" class="level2">
 <h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
