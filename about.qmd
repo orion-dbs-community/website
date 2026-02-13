@@ -8,11 +8,13 @@ For the full motivation behind this effort, see our mission statement: [Sharing 
 
 ## Collections
 
-The community currently brings together datasets from three contributing projects:
+The community currently brings together datasets from the following contributing projects:
 
-- **[InSySPo Campinas Datasets](collections/insyspo/)** -- The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
-- **[Sesame Open Datasets (SOS)](collections/sos/)** -- Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.
-- **[SUB Göttingen Datasets](collections/subugoe/)** -- The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and data from sources including Semantic Scholar and Unpaywall.
+- **[CWTS Leiden Datasets](cwts)** -- The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.
+- **[InSySPo Campinas Datasets](insyspo/)** -- The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
+- **[MultiObs](multiobs/)** -- These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.
+- **[Sesame Open Science Datasets (SOS)](sos/)** -- Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.
+- **[SUB Göttingen Datasets](subugoe/)** -- The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.
 
 Each project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything.
 
@@ -32,4 +34,3 @@ If you maintain a publicly available BigQuery project with open scholarly data, 
 
 - The [Dimensions BigQuery Lab](https://bigquery-lab.dimensions.ai/) provides a thorough collection of tutorials and queries. Although access to Dimensions data is not publicly available, they host publicly available datasets from ORCID and DataCite which can be used with BigQuery by anyone.
 - [OpenAIRE](https://graph.openaire.eu/docs/cloud-access/) makes their OpenAIRE Graph publicly available on Google BigQuery.
-- [CWTS](https://github.com/CWTSLeiden/CWTS-OpenAlex-databases?tab=readme-ov-file#availability-in-google-bigquery) provides Open Leiden Ranking data and various OpenAlex snapshots on Google BigQuery.

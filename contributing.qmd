@@ -45,8 +45,37 @@ params:
 
 - Add your description below the YAML header.
 - Create a Pull Request on GitHub.
-- The site builds automatically using GitHub Actions. If a dataset or table isn't publicly available, the build will fail. You can check locally if the site builds by running `quarto render`.
 
+## Local testing
+
+Before submitting your pull request, you can verify that the site builds correctly on your machine. You need [Quarto](https://quarto.org/docs/get-started/) and R installed.
+
+Install the R dependencies listed in the `DESCRIPTION` file using [pak](https://pak.r-lib.org/):
+
+```{.r}
+# install.packages("pak")
+pak::local_install_deps()
+```
+
+Then, render just your new collection page to check for errors:
+
+```{.bash}
+quarto render collections/<your-collection>/index.qmd
+```
+
+Or render the full site:
+
+```{.bash}
+quarto render
+```
+
+You can also start a live-reloading preview server to inspect your changes in the browser:
+
+```{.bash}
+quarto preview
+```
+
+If a dataset or table in your collection isn't publicly available, the build will fail.
 
 ## Documentation
 

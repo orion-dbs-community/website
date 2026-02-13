@@ -51,7 +51,9 @@ A free, open, and comprehensive bibliographic database and knowledge graph for s
 
 ## First steps
 
-To query our datasets, you need a Google Cloud project. You can get started with the [BigQuery sandbox](https://docs.cloud.google.com/bigquery/docs/sandbox), which requires no billing account and includes 1 TB of free queries per month. Replace `your-gcp-project` in the examples below with your own project ID.
+::: {.callout-note}
+To query datasets, you need a Google Cloud project. You can get started with the [BigQuery sandbox](https://docs.cloud.google.com/bigquery/docs/sandbox), which requires no billing account and includes 1 TB of free queries per month.
+:::
 
 This example joins data from two different collections -- [article metadata associated with transformative agreements](collections/subugoe/#openbib) as provided by SUB Göttingen and a [Crossref truth table](collections/sos/#truthtables) from Sesame Open Science -- to check how many articles from the DEAL Wiley agreement (2019--23) have funder metadata in Crossref.
 
@@ -75,6 +77,7 @@ GROUP BY has_funders
 library(bigrquery)
 library(DBI)
 
+# Replace `your-gcp-project` in the examples below with your own project ID.
 my_con <- dbConnect(bigquery(), project = "your-gcp-project")
 
 my_sql <- "
@@ -94,6 +97,7 @@ my_df <- dbGetQuery(my_con, my_sql)
 ```python
 from google.cloud import bigquery
 
+# Replace `your-gcp-project` in the examples below with your own project ID.
 client = bigquery.Client(project="your-gcp-project")
 
 sql = """
