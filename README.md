@@ -12,8 +12,10 @@ This project brings together independent groups that host open scholarly data on
 
 The collection currently covers datasets from major open scholarly data providers, including Crossref, OpenAIRE, and OpenAlex, made available through contributing projects:
 
+- [CWTS Leiden Datasets](https://orion-dbs.community/collections/cwts/)
 - [InSySPo Campinas Datasets](https://orion-dbs.community/collections/insyspo/)
-- [Sesame Open Datasets (SOS)](https://orion-dbs.community/collections/sos/)
+- [MultiObs Campinas Datasets](https://orion-dbs.community/collections/multiobs/)
+- [Sesame Open Science Datasets (SOS)](https://orion-dbs.community/collections/sos/)
 - [SUB Göttingen Datasets](https://orion-dbs.community/collections/subugoe/)
 
 ## Contributing
@@ -28,14 +30,32 @@ The website is built with [Quarto](https://quarto.org/) and uses R with [bigrque
 
 To add a new collection, copy `_template.qmd` to a new folder under `collections/`, set the `bq_project` parameter in the YAML header, add a description, and submit a pull request.
 
-GitHub Actions rebuild the site daily (see `.github/workflows/website-build.yml`) to keep all metadata current. 
-To build the site locally:
+GitHub Actions rebuild the site daily (see `.github/workflows/website-build.yml`) to keep all metadata current.
+
+## Local development
+
+To test the site locally, you need [Quarto](https://quarto.org/docs/get-started/) and R installed.
+
+Install the R dependencies listed in the `DESCRIPTION` file using [pak](https://pak.r-lib.org/):
+
+```r
+# install.packages("pak")
+pak::local_install_deps()
+```
+
+Then, render the full site:
 
 ```bash
 quarto render
 ```
 
-If a dataset or table isn't publicly available, the build will fail.
+Or start a live-reloading preview server:
+
+```bash
+quarto preview
+```
+
+Note: Rendering requires public access to all BigQuery datasets listed in the collections. If a dataset or table isn't publicly available, the build will fail.
 
 ## Contact
 

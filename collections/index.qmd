@@ -9,8 +9,8 @@ The community currently brings together datasets from the following contributing
 
 - **[CWTS Leiden Datasets](cwts)** -- The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.
 - **[InSySPo Campinas Datasets](insyspo/)** -- The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
-- **[MultiObs]** -- These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.
-- **[Sesame Open Datasets (SOS)](sos/)** -- Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.
+- **[MultiObs](multiobs/)** -- These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.
+- **[Sesame Open Science Datasets (SOS)](sos/)** -- Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.
 - **[SUB Göttingen Datasets](subugoe/)** -- The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.
 
 Want to share your data? Check our [contributing guide](../contributing.html).
