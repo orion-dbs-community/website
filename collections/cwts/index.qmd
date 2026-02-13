@@ -12,6 +12,8 @@ The data science team at the Centre for Science and Technology Studies (CWTS) at
 
 GitHub Repo: <https://github.com/CWTSLeiden/CWTS-OpenAlex-databases>
 
+Contact: [Nees Jan van Eck](https://www.universiteitleiden.nl/en/staffmembers/nees-jan-van-eck)
+
 ```{r}
 #| echo: false
 #| message: false
