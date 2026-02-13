@@ -14,6 +14,8 @@ website:
             href: collections/cwts/
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
+          - text: MultiObs Campinas Datasets
+            href: collections/multiobs/
           - text: Sesame Open Science Datasets
             href: collections/sos/
           - text: SUB Göttingen Datasets
