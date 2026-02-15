@@ -130,7 +130,14 @@
     "href": "collections/sos/index.html#crossref",
     "title": "Sesame Open Science",
     "section": "crossref",
-    "text": "crossref\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
+    "text": "crossref\n\n\nDescription\n\n\nCrossref public data file and Crossref API data for members and journals\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#datacite",
+    "href": "collections/sos/index.html#datacite",
+    "title": "Sesame Open Science",
+    "section": "datacite",
+    "text": "datacite\n\n\nDescription\n\n\nDataCite public data file\n\n\nCreated: Feb 07, 2026 15:27 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#doaj",
@@ -147,13 +154,6 @@
     "text": "goa\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/sos/index.html#issn",
-    "href": "collections/sos/index.html#issn",
-    "title": "Sesame Open Science",
-    "section": "issn",
-    "text": "issn\n\n\nCreated: Aug 03, 2025 21:00 | Location: US | View in BigQuery Console"
-  },
-  {
     "objectID": "collections/sos/index.html#jct",
     "href": "collections/sos/index.html#jct",
     "title": "Sesame Open Science",
@@ -165,7 +165,7 @@
     "href": "collections/sos/index.html#openaire",
     "title": "Sesame Open Science",
     "section": "openaire",
-    "text": "openaire\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
+    "text": "openaire\n\n\nDescription\n\n\nOpenAIRE Graph Dataset\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#openapc",
@@ -179,14 +179,14 @@
     "href": "collections/sos/index.html#opencitations",
     "title": "Sesame Open Science",
     "section": "opencitations",
-    "text": "opencitations\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
+    "text": "opencitations\n\n\nDescription\n\n\nOpenCitations Meta - bibliographic metadata for all publications included in the OpenCitations Index\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#pkp",
     "href": "collections/sos/index.html#pkp",
     "title": "Sesame Open Science",
     "section": "pkp",
-    "text": "pkp\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
+    "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#truthtables",
