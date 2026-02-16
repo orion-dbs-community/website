@@ -16,6 +16,7 @@ author:
 date: "2026-02-16"
 abstract: Can we share resources and burdens to make available key open research information resources in actionable and connectable form in the cloud? Through sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?
 categories: [news]
+license: "CC BY"
 ---
 
 *This is a cross-post from [Upstream](https://upstream.force11.org/about/) supported by FORCE 11. <https://doi.org/10.54900/2pnyq-nhx95>*
@@ -291,3 +292,5 @@ depending on interest, we will set up other forums. It is through using
 these data sources that we identify their issues and can correct and
 improve them. When we do that work together, we increase the quality of
 all data resources faster, more sustainably and more effectively.
+
+*This post is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
