@@ -10,6 +10,7 @@ A growing, daily updated collection of publicly available datasets on Google Big
 
 *Please also check the participating [collections websites](collections/) for more information and for many more available datasets.*
 
+::: {.column-body-outset}
 ::: {.grid .collection-grid}
 
 ::: {.g-col-12 .g-col-md-4}
@@ -28,7 +29,7 @@ A major DOI registration agency for publisher-provided open metadata. Used in ma
 
 A free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.
 
-[Sesame Open Science](collections/sos/) provides the full [OpenAIRE Graph Dataset](collections/sos/#openaire). [InSySPo Campinas](collections/insyspo/) offers time-specific versions.
+[Sesame Open Science](collections/sos/) and [InSySPo Campinas](collections/insyspo/) provide the full [OpenAIRE Graph Dataset](collections/sos/#openaire) in different schemas.
 :::
 :::
 
@@ -38,10 +39,34 @@ A free and open resource that interlinks hundreds of millions of metadata record
 
 A free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.
 
-[SUB Göttingen](collections/subugoe/) provides the [Walden release](collections/subugoe/#openalex_walden) and [September 2025](collections/subugoe/#openalex) snapshots. [InSySPo Campinas](collections/insyspo/) offers [March](collections/insyspo/#publicdb_openalex_2025_03_rm) and [August 2025](collections/insyspo/#publicdb_openalex_2025_08_rm) snapshots.
+Many collections provide time-specfic snapshots of OpenAlex data, including [CWTS](collections/cwts/), [InSySPo Campinas](collections/insyspo/), [MultiObs](collections/multiobs) and [SUB Göttingen](collections/subugoe/).
 :::
 :::
 
+::: {.g-col-12 .g-col-md-2}
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.collection-card}
+### [CWTS Leiden Ranking](https://open.leidenranking.com/)
+
+An open edition of the CWTS Leiden Ranking for universities worldwide.
+
+[CWTS Leiden](collections/cwts/) provides data underlying the [Leiden Ranking Open Edition](collections/cwts/#leiden_ranking_open_edition) along with time-specific [OpenAlex versions](collections/cwts/#openalex).
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.collection-card}
+### [FAPESP Virtual Library](https://bv.fapesp.br/)
+
+The referential information source for research supported by FAPESP from Brazil.
+
+[MultiObs](collections/multiobs/) provides the [FAPESP Virtual Library dataset](collections/multiobs/#fapesp_bv) about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).
+:::
+:::
+
+:::
 :::
 
 ## Get Started

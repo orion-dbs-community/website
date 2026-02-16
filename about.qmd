@@ -34,3 +34,4 @@ If you maintain a publicly available BigQuery project with open scholarly data, 
 
 - The [Dimensions BigQuery Lab](https://bigquery-lab.dimensions.ai/) provides a thorough collection of tutorials and queries. Although access to Dimensions data is not publicly available, they host publicly available datasets from ORCID and DataCite which can be used with BigQuery by anyone.
 - [OpenAIRE](https://graph.openaire.eu/docs/cloud-access/) makes their OpenAIRE Graph publicly available on Google BigQuery.
+- The [German Competence Network for Bibliometrics](https://www.open-bibliometrics.de/) shares their open biblioemtrics dataset also on [Google BigQuery](https://console.cloud.google.com/bigquery?project=openalex-475813).

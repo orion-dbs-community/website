@@ -6,6 +6,7 @@ project:
 website:
   title: "orion-dbs"
   site-url: "https://orion-dbs.community"
+  favicon: favicon.ico
   navbar:
     left:
       - text: Collections
