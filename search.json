@@ -235,7 +235,7 @@
     "href": "collections/cwts/index.html#openalex_2023nov_classification",
     "title": "CWTS Leiden Datasets",
     "section": "openalex_2023nov_classification",
-    "text": "openalex_2023nov_classification\n\n\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
+    "text": "openalex_2023nov_classification\n\n\nDescription\n\n\nThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on November 21, 2023.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.10560276\n\n\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
   },
   {
     "objectID": "collections/cwts/index.html#openalex_2023nov_core",
