@@ -42,6 +42,7 @@ website:
         href: contact.qmd
     right:
       - text: "<a href='mailto:info@orion-dbs.community'>info@orion-dbs.community</a>"
+      - text: "Built with <a href='https://quarto.org/'>Quarto</a>"
 
 format:
   html:
