@@ -4,7 +4,7 @@ project:
     - CNAME
 
 website:
-  title: "orion-dbs"
+  title: "ORION-DBs"
   site-url: "https://orion-dbs.community"
   favicon: favicon.ico
   navbar:
