@@ -20,8 +20,8 @@ categories: [news]
 
 *This is a cross-post from [Upstream](https://upstream.force11.org/about/) supported by FORCE 11. <https://doi.org/10.54900/2pnyq-nhx95>*
 
-![The constellation of Orion as seen from the southern hemisphere. Image from Mary Orr (1896), "Southern Stars: A Guide to the Constellations Visible in the Southern Hemisphere", Gall and Inglis, London and Edinburgh. Illustration probably by William Peacock and Co.
-](orion_dbs_small.png)
+![The constellation of Orion as seen from the southern hemisphere. Image from Mary Orr (1896), "Southern Stars: A Guide to the Constellations Visible in the Southern Hemisphere", Gall and Inglis, London and Edinburgh. Illustration probably by William Peacock and Co.](orion_dbs_small.png)
+
 The rise of open research information resources is transforming the way
 we track, analyse and study research systems. Increasingly, sources like
 OpenAIRE, OpenAlex, Crossref, DataCite, ORCID, ROR and others are being
