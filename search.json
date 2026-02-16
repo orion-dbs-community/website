@@ -123,7 +123,7 @@
     "href": "collections/sos/index.html#butler_apcs",
     "title": "Sesame Open Science",
     "section": "butler_apcs",
-    "text": "butler_apcs\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
+    "text": "butler_apcs\n\n\nDescription\n\n\nButler, Leigh-Ann; Hare, Madelaine; Schönfelder, Nina; Schares, Eric; Alperin, Juan Pablo; Haustein, Stefanie, 2024, “Open dataset of annual Article Processing Charges (APCs) of gold and hybrid journals published by Elsevier, Frontiers, MDPI, PLOS, Springer-Nature and Wiley 2019-2023.\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#crossref",
@@ -144,21 +144,14 @@
     "href": "collections/sos/index.html#doaj",
     "title": "Sesame Open Science",
     "section": "doaj",
-    "text": "doaj\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
+    "text": "doaj\n\n\nDescription\n\n\nDOAJ journal metadata\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#goa",
     "href": "collections/sos/index.html#goa",
     "title": "Sesame Open Science",
     "section": "goa",
-    "text": "goa\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#jct",
-    "href": "collections/sos/index.html#jct",
-    "title": "Sesame Open Science",
-    "section": "jct",
-    "text": "jct\n\n\nCreated: Aug 03, 2025 21:14 | Location: US | View in BigQuery Console"
+    "text": "goa\n\n\nDescription\n\n\nWalt Crawford - Gold Open Access datasets: GOA5 (2014-2019) to GOA10 (2020-2024)\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#openaire",
@@ -187,6 +180,13 @@
     "title": "Sesame Open Science",
     "section": "pkp",
     "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#ror",
+    "href": "collections/sos/index.html#ror",
+    "title": "Sesame Open Science",
+    "section": "ror",
+    "text": "ror\n\n\nDescription\n\n\nFull ROR dataset\n\n\nCreated: Jul 31, 2025 20:49 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#truthtables",
