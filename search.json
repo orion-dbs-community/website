@@ -165,7 +165,7 @@
     "href": "collections/sos/index.html#openapc",
     "title": "Sesame Open Science",
     "section": "openapc",
-    "text": "openapc\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
+    "text": "openapc\n\n\nDescription\n\n\nData from the OpenAPC initiative\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#opencitations",
@@ -193,7 +193,7 @@
     "href": "collections/sos/index.html#truthtables",
     "title": "Sesame Open Science",
     "section": "truthtables",
-    "text": "truthtables\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
+    "text": "truthtables\n\n\nDescription\n\n\nProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source. Created to facilitate comparison of metadata coverage across sources\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/cwts/index.html",
