@@ -38,8 +38,10 @@ website:
     center:
       - text: "Privacy"
         href: privacy.qmd
+      - text: "Contact"
+        href: contact.qmd
     right:
-      - text: "Website build with <a href='https://quarto.org/'>Quarto.</a>"
+      - text: "<a href='mailto:info@orion-dbs.community'>info@orion-dbs.community</a>"
 
 format:
   html:
