@@ -90,7 +90,7 @@ This example joins data from two different collections -- [article metadata asso
 -- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref
 SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
 FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
-LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
   ON lower(jct_articles.doi) = lower(cr_truth.doi)
 WHERE jct_articles.esac_id = "wiley2019deal"
 GROUP BY has_funders
@@ -108,7 +108,7 @@ my_con <- dbConnect(bigquery(), project = "your-gcp-project")
 my_sql <- "
 SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
 FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
-LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
   ON lower(jct_articles.doi) = lower(cr_truth.doi)
 WHERE jct_articles.esac_id = 'wiley2019deal'
 GROUP BY has_funders
@@ -128,7 +128,7 @@ client = bigquery.Client(project="your-gcp-project")
 sql = """
 SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
 FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
-LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20250131 AS cr_truth
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
   ON lower(jct_articles.doi) = lower(cr_truth.doi)
 WHERE jct_articles.esac_id = 'wiley2019deal'
 GROUP BY has_funders
