@@ -1,5 +1,460 @@
 [
   {
+    "objectID": "blog/posts/welcome/index.html",
+    "href": "blog/posts/welcome/index.html",
+    "title": "Sharing the load: Building an open research information collective",
+    "section": "",
+    "text": "This is a cross-post from Upstream supported by FORCE 11. https://doi.org/10.54900/2pnyq-nhx95\n\n\n\nThe constellation of Orion as seen from the southern hemisphere. Image from Mary Orr (1896), “Southern Stars: A Guide to the Constellations Visible in the Southern Hemisphere”, Gall and Inglis, London and Edinburgh. Illustration probably by William Peacock and Co.\n\n\nThe rise of open research information resources is transforming the way we track, analyse and study research systems. Increasingly, sources like OpenAIRE, OpenAlex, Crossref, DataCite, ORCID, ROR and others are being used as the basis for making decisions, designing interventions and understanding progress in the science system. This operates both at the small scale, where access to data and evidence is easier than it has ever been, to the very large scale analysis of whole systems.\nTraditionally, the capacity to do large-scale analyses was restricted to a very small set of players, like specialised research centreor companies. This kind of large scale analysis usually requires access to an actionable version of the whole dataset, particularly if the goal is combining data resources. The set of sites with access to complete copies of proprietary databases is tiny. \nModern open data sources provide access, including access to full copies of the data, but there has been less focus on providing this access in a way that allows large scale complex querying and connecting of whole data archives - for example to compare the coverage of research outputs by OpenAlex and OpenAIRE or analyse global information on clinical trials using affiliation data from OpenAlex and clinical trials information from Pubmed. Another valuable possibility is the ability to incorporate local data enrichments from national or regional data sources to support local data needs, or improve the overall pool of data.\nGoogle BigQuery has emerged as one powerful tool for combining and working on these large datasets at scale. Multiple groups (including the MultiObs team - continuing the work of the InSySPo team at Campinas, SUB Göttingen, Sesame Open Science and CWTS amongst others), have created ‘public’ versions of specific open datasets in the BigQuery system, which anyone can access and run their own analyses. Through these public versions, the ‘provider’ (i.e. the teams mentioned above) pays for storage, and the user freely accesses the ‘public’ versions taking responsibility for covering the costs of data querying and processing.  \nHaving worked independently so far, this small group came together last year to ask whether we could coordinate actions. Could it be possible to build a comprehensive open research information resource where the load of providing specific core and relevant open data sources was distributed? Rather than each separately trying to tackle the whole, potentially duplicating efforts, could we collectively create a resource that was more than the sum of its parts? \nWe met with a series of key questions:\n\nCan we share resources and burdens to make available key open research information resources in actionable and connectable form in the cloud?\n\n\n\nThrough sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?\n\n\n\nWhat are the challenges that we can usefully approach collectively?\n\n\n\nWhat are the benefits and risks of Google BigQuery as an environment and do we agree it is the best place to start?\n\n\n\nWhat are the blockers for engagement with such an effort? What is needed for different stakeholders to make it attractive both as users and (for some) as providers?\n\nUser and use case driven\nCore to our shared interest in working together was the idea of making it easier for more people to undertake large scale analysis. There are many kinds of analysis for which access to APIs is sufficient. We share a belief that large scale analysis will be useful in multiple settings, but that it has been relatively inaccessible. This inaccessibility is a hurdle to realising the promise of democratization and broader adoption of open research information in all decision making processes around science and scholarship, as proposed by the Barcelona Declaration. APIs are also expensive to run, by taking some of the heavy load use-cases away from APIs we can support providers by reducing their costs, centralising distribution, and allowing APIs to focus on the use cases they are best suited for.\nThere is a growing set of research projects that are exploiting this capacity for large scale and combined analysis in a range of ways. Two recent pieces of work provide examples of what is possible. One by Camilla Lindelow and Eline Vandewalle, used the combination of ORCID and OpenAlex provided by InSySPo (now MultiObs) to analyse researchers without a formal affiliation from around the world. The second example, from Cespedes and colleagues associated with the UNESCO Chair in Open Science, used a global analysis of language in OpenAlex to examine affiliation. This combines with other efforts, including comparisons of metadata coverage across sources, and combinations of data sets that exploit the capacity to do analysis at scale.\nThese use cases have a few things in common. They tend to be global in scope (or at least aspire to be) so they require analysis across the whole of a datasource (or a combination of datasources). They generally involve a complex form of query, requiring filtering or analysis on multiple database elements, or a combination of multiple data sources, that is difficult or impossible using the API for any given datasource. And the generated dataset is often very large in its own right - perhaps involving hundreds of millions of rows of data - and requires further reduction and analysis.\nOverall, the common theme here is analyses that require entire data sources to be combinable and actionable at scale. We believe if we focus on that set of use cases we can add something valuable to the overall Open Research Information ecosystem.\nOpportunities for shared systems\nIf people are already doing this what is the value of coordination? The first and most obvious is that with a shared cloud system we only need to pay for online storage of each dataset once and then anyone can use it (backups and versions over time are a separate issue, which we aim to address, but not as the first priority). Cloud storage costs are generally larger than the usage costs involved in running queries so sharing this load is valuable in its own right.\nThe second advantage is the ability to share capacities. One example of this is data preprocessing. These datasets are not “clean” in the sense that they change over time, have some internal inconsistencies, and often contain elements that raise compatibility issues with database systems. Processing hundreds of millions of lines of JSON to convert hyphens to underscores in variable names takes time and computing power (and money!). \nSystems developed within the Curtin Open Knowledge Initiative (COKI) use cloud VMs to do this on demand which scales but adds costs. The team at Göttingen are using code derived from this on their own HPC resources. The team at CWTS uses their own code to process datasource dumps on local servers so that relational databases can be integrated into their internal database system, while also exporting the results to Google BigQuery. Within the Sesame Open Science system a further evolution of the COKI code is used to process dumps on local computers. There is a clear benefit to be gained by using a common code base for necessary transformations. But also in having a community discussion on what pathways and transformations are necessary. The MultiObs team uses a quite different approach -- creating relational structures from datasource dumps -- with advantages (reduced costs, timestamps, etc.) but also disadvantages (lack of live data, need for updates, etc.) we can learn from. Different approaches and experiences, but also different sets of resources like HPC could be shared amongst an effective collaboration.\nThis leads to the third advantage. If we use common systems we help to develop quasi-standards that can be adopted by others. That creates an opportunity to spread the load further, as well as to increase the diversity of datasets available (again, thinking of those highly curated national datasets that are used locally but not always recombined into the global data ecosystem). If we have a clear shared approach to the data and how it is managed it makes it easier for others to contribute, and makes the whole set of resources more valuable and sustainable. In essence, the more we share the load, the less we pay for the costs of our contributions. \nA final benefit of a shared approach would be a virtuous loop in which shared systems encourage shared approaches to analysis. Common approaches can form the basis for training resources that give end-users an easy point of entry to using these data sources at scale. They will also encourage the sharing of analysis scripts and protocols creating advanced and transparent resources to support developing users.\nKey to this is understanding both what has value to keep in common, but also what needs to be different to serve a diversity of use cases. We can see value in technical standards (where they are useful) and in agreements around archiving and preservation. Documentation, where it can reach common standards, will be helpful not just for users of the data, but potentially for upstream producers in understanding how the data is being used and how to optimize the provision of their data snapshots to facilitate downstream usage.\nThe Google-shaped elephant in the room \nA big question is why Google BigQuery? It is certainly not an open system in any meaningful sense and Google is not an organisation many of us feel able to trust. The short answer is pragmatism. There are reasons why we independently arrived at GBQ as a useful tool. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system. In practice, this means datasets can be made publicly available, without the need for specific hard-or software on the side of the user, and, from a user perspective, access to datasets hosted by different providers is possible using a single system. Standing up an independent infrastructure to do this is a big job and not one we’re equipped to tackle at the moment.\nThat said, none of us believe that reliance on Google is a desirable long term solution, nor that it is fully equitable. There are some emerging alternatives both in the cloud and for local computing. These aren’t fully mature but they show promise. In the meantime we believe it is important to ensure we have an exit strategy. One such strategy could be a commitment to creating backups in the form of parquet files. Parquet is an interesting interoperability format for databases and can be read in by an increasing number of tools. It holds schema information and allows for database partitioning. \nPerhaps the most important argument is that with Google BigQuery and external archiving, there is at least one plausible option to explore that can provide value immediately, but also provide a potential escape route. We can save the arguments for frozen duck lakes, glaciers, torrents and MySQL for later and for those who will want to have them! But we need to think seriously about how we will work towards more independence and resilience early on in the process. \nNext steps and a call for interest\nWe have made a small start. Small, but useful for us.  After all, we are already using these shared data resources. We have demonstrated that without much effort or technical hassle it is possible to share the load, reduce costs and maximize benefits and accessibility. We hope by engaging a wider community we can make this more useful for more people and move us all closer to ideals of democratization of open research information, supporting adoption. How far this goes and how big a community we can create is an open question.\nWe have made a small start under the label of ORION-DBs, standing for Open Research Information Online Databases. There is now a website that details the datasets available, where they can be accessed and when the most recent update was. We hope this will be a useful resource for people doing ad hoc analyses, occasional use, or just one-off interest in taking a look, as well as those with bigger use cases and ongoing needs for data access. We hope a community of users and also of providers will be interested to coordinate through this platform to aid discovery, adoption and democratization of open research information.\nLooking forward, we’re interested in how we can build on this base. We want to coordinate and build a shared capacity. If you have an interest in how this could be shaped, demonstrating specific use cases, or contributing additional hosted datasets, we’d love to hear from you. Coordination takes time, time requires resources. If there is sufficient interest, we will look at how we could coordinate resources and build something as lightweight as possible and as formalised as necessary.\nAbove all, we want to hear from those who share the vision for creating data resources that can be combined and used together and to make them as useful as possible. You can contact us through info@orion-dbs.community and depending on interest, we will set up other forums. It is through using these data sources that we identify their issues and can correct and improve them. When we do that work together, we increase the quality of all data resources faster, more sustainably and more effectively.\nThis post is licensed under CC BY 4.0.\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "collections/sos/index.html",
+    "href": "collections/sos/index.html",
+    "title": "Sesame Open Science",
+    "section": "",
+    "text": "Collection maintained by Bianca Kramer (Sesame Open Science)\nInfo and documentation: https://github.com/bmkramer/metadata_ingest\n…"
+  },
+  {
+    "objectID": "collections/sos/index.html#butler_apcs",
+    "href": "collections/sos/index.html#butler_apcs",
+    "title": "Sesame Open Science",
+    "section": "butler_apcs",
+    "text": "butler_apcs\n\n\nDescription\n\n\nButler, Leigh-Ann; Hare, Madelaine; Schönfelder, Nina; Schares, Eric; Alperin, Juan Pablo; Haustein, Stefanie, 2024, “Open dataset of annual Article Processing Charges (APCs) of gold and hybrid journals published by Elsevier, Frontiers, MDPI, PLOS, Springer-Nature and Wiley 2019-2023.\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#crossref",
+    "href": "collections/sos/index.html#crossref",
+    "title": "Sesame Open Science",
+    "section": "crossref",
+    "text": "crossref\n\n\nDescription\n\n\nCrossref public data file and Crossref API data for members and journals\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#datacite",
+    "href": "collections/sos/index.html#datacite",
+    "title": "Sesame Open Science",
+    "section": "datacite",
+    "text": "datacite\n\n\nDescription\n\n\nDataCite public data file\n\n\nCreated: Feb 07, 2026 15:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#doaj",
+    "href": "collections/sos/index.html#doaj",
+    "title": "Sesame Open Science",
+    "section": "doaj",
+    "text": "doaj\n\n\nDescription\n\n\nDOAJ journal metadata\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#goa",
+    "href": "collections/sos/index.html#goa",
+    "title": "Sesame Open Science",
+    "section": "goa",
+    "text": "goa\n\n\nDescription\n\n\nWalt Crawford - Gold Open Access datasets: GOA5 (2014-2019) to GOA10 (2020-2024)\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#openaire",
+    "href": "collections/sos/index.html#openaire",
+    "title": "Sesame Open Science",
+    "section": "openaire",
+    "text": "openaire\n\n\nDescription\n\n\nOpenAIRE Graph Dataset\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#openapc",
+    "href": "collections/sos/index.html#openapc",
+    "title": "Sesame Open Science",
+    "section": "openapc",
+    "text": "openapc\n\n\nDescription\n\n\nData from the OpenAPC initiative\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#opencitations",
+    "href": "collections/sos/index.html#opencitations",
+    "title": "Sesame Open Science",
+    "section": "opencitations",
+    "text": "opencitations\n\n\nDescription\n\n\nOpenCitations Meta - bibliographic metadata for all publications included in the OpenCitations Index\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#pkp",
+    "href": "collections/sos/index.html#pkp",
+    "title": "Sesame Open Science",
+    "section": "pkp",
+    "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#ror",
+    "href": "collections/sos/index.html#ror",
+    "title": "Sesame Open Science",
+    "section": "ror",
+    "text": "ror\n\n\nDescription\n\n\nFull ROR dataset\n\n\nCreated: Jul 31, 2025 20:49 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#truthtables",
+    "href": "collections/sos/index.html#truthtables",
+    "title": "Sesame Open Science",
+    "section": "truthtables",
+    "text": "truthtables\n\n\nDescription\n\n\nProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source. Created to facilitate comparison of metadata coverage across sources\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html",
+    "href": "collections/subugoe/index.html",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "",
+    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/\nContact: Najko Jahn"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#cr_history",
+    "href": "collections/subugoe/index.html#cr_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_history",
+    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 07:20 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#cr_instant",
+    "href": "collections/subugoe/index.html#cr_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_instant",
+    "text": "cr_instant\n\n\nDescription\n\n\nThis dataset contains the most recent Crossref Snapshot.\n\n\nCreated: Oct 29, 2021 07:37 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#hoaddata",
+    "href": "collections/subugoe/index.html#hoaddata",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "hoaddata",
+    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 11:06 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#oa2020",
+    "href": "collections/subugoe/index.html#oa2020",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "oa2020",
+    "text": "oa2020\n\n\nDescription\n\n\nEstimating global publishing output by leading commercial publishers using open metadata.\nWork carried out for OA2020 WG on financial flows and future cost scenarios https://oa2020.org/working-groups/\n\n\nCreated: Dec 11, 2025 10:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#openalex",
+    "href": "collections/subugoe/index.html#openalex",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex",
+    "text": "openalex\n\n\nDescription\n\n\nThis dataset contains the most recent OpenAlex Snapshot (before Walden).\n\n\nCreated: Jan 10, 2022 14:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#openalex_walden",
+    "href": "collections/subugoe/index.html#openalex_walden",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex_walden",
+    "text": "openalex_walden\n\n\nDescription\n\n\nThis dataset contains the most recent OpenAlex-Walden Snapshot.\n\n\nCreated: Dec 03, 2025 10:07 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#openbib",
+    "href": "collections/subugoe/index.html#openbib",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openbib",
+    "text": "openbib\n\n\nDescription\n\n\nThis dataset contains the most recent OPENBIB snapshot.\nFor more information, see: https://zenodo.org/records/18429476\n\n\nCreated: Mar 28, 2025 14:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#resources",
+    "href": "collections/subugoe/index.html#resources",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "resources",
+    "text": "resources\n\n\nCreated: Nov 02, 2021 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#semantic_scholar",
+    "href": "collections/subugoe/index.html#semantic_scholar",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "semantic_scholar",
+    "text": "semantic_scholar\n\n\nDescription\n\n\nThis dataset contains a snapshot from Semantic Scholar.\n\n\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#upw_history",
+    "href": "collections/subugoe/index.html#upw_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_history",
+    "text": "upw_history\n\n\nDescription\n\n\nHistorical Unpaywall Snapshots. Only includes records from 2008 onwards.\n\n\nCreated: Oct 29, 2021 07:51 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#upw_instant",
+    "href": "collections/subugoe/index.html#upw_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_instant",
+    "text": "upw_instant\n\n\nDescription\n\n\nThis dataset contains the most recent Unpaywall Snapshot. Only records from 2008 onwards are included.\n\n\nCreated: Oct 29, 2021 07:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html",
+    "href": "collections/cwts/index.html",
+    "title": "CWTS Leiden Datasets",
+    "section": "",
+    "text": "The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.\nGitHub Repo: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nContact: Nees Jan van Eck"
+  },
+  {
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2023",
+    "text": "leiden_ranking_open_edition_2023\n\n\nDescription\n\n\nThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2023. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2023 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2023 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2023 is based on the OpenAlex snapshot released on November 21, 2023. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2023: https://doi.org/10.59350/89wpz-hpz32\n\n\nCreated: Jan 28, 2024 21:20 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2024",
+    "text": "leiden_ranking_open_edition_2024\n\n\nDescription\n\n\nThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2024. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2024 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2024 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2024 is based on the OpenAlex snapshot released on August 30, 2024. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2024: https://doi.org/10.59350/r512t-r8h93\n\n\nCreated: Sep 27, 2024 13:07 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2025",
+    "text": "leiden_ranking_open_edition_2025\n\n\nDescription\n\n\nThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2025. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2025 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2025 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2025 is based on the OpenAlex snapshot from August, 2025. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2025: https://doi.org/10.59350/jvjy2-4ww95\n\n\nCreated: Oct 29, 2025 06:05 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2023nov",
+    "href": "collections/cwts/index.html#openalex_2023nov",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov",
+    "text": "openalex_2023nov\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on November 21, 2023.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Jan 25, 2024 11:26 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2023nov_classification",
+    "href": "collections/cwts/index.html#openalex_2023nov_classification",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov_classification",
+    "text": "openalex_2023nov_classification\n\n\nDescription\n\n\nThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on November 21, 2023.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.10560276\n\n\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2023nov_core",
+    "href": "collections/cwts/index.html#openalex_2023nov_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov_core",
+    "text": "openalex_2023nov_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on November 21, 2023).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2023nov\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.10949622\n\n\nCreated: Jan 29, 2024 17:55 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2024aug",
+    "href": "collections/cwts/index.html#openalex_2024aug",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2024aug",
+    "text": "openalex_2024aug\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on August 30, 2024.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2024aug_core",
+    "href": "collections/cwts/index.html#openalex_2024aug_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2024aug_core",
+    "text": "openalex_2024aug_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on August 30, 2024).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2024aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.13879947\n\n\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2025aug",
+    "href": "collections/cwts/index.html#openalex_2025aug",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2025aug",
+    "text": "openalex_2025aug\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot from August, 2025.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Oct 26, 2025 11:29 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2025aug_core",
+    "href": "collections/cwts/index.html#openalex_2025aug_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2025aug_core",
+    "text": "openalex_2025aug_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot from August 2025).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2025aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.17200830\n\n\nCreated: Oct 24, 2025 07:46 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy",
+    "section": "",
+    "text": "Last updated: February 2026"
+  },
+  {
+    "objectID": "privacy.html#overview",
+    "href": "privacy.html#overview",
+    "title": "Privacy",
+    "section": "Overview",
+    "text": "Overview\nThis website is hosted on GitHub Pages and is maintained by the Orion DBS Community. We are committed to protecting your privacy. This policy explains what data is collected when you visit our site."
+  },
+  {
+    "objectID": "privacy.html#what-we-collect",
+    "href": "privacy.html#what-we-collect",
+    "title": "Privacy",
+    "section": "What We Collect",
+    "text": "What We Collect\nWe do not collect any personal data. This website does not use tracking scripts, analytics tools, or any other form of user monitoring."
+  },
+  {
+    "objectID": "privacy.html#cookies",
+    "href": "privacy.html#cookies",
+    "title": "Privacy",
+    "section": "Cookies",
+    "text": "Cookies\nThis website sets one technical cookie to improve the appearance and functionality of the sidebar. This cookie is strictly necessary for the website to function properly and does not store any personal information or track your behavior. No third-party cookies are used."
+  },
+  {
+    "objectID": "privacy.html#hosting",
+    "href": "privacy.html#hosting",
+    "title": "Privacy",
+    "section": "Hosting",
+    "text": "Hosting\nThis site is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit this website, GitHub may collect certain technical information such as your IP address, browser type, and access times in accordance with their own privacy practices. This data collection is handled entirely by GitHub and is outside our control.\nFor details, please refer to the GitHub Privacy Statement."
+  },
+  {
+    "objectID": "privacy.html#external-links",
+    "href": "privacy.html#external-links",
+    "title": "Privacy",
+    "section": "External Links",
+    "text": "External Links\nOur website may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any external site you visit."
+  },
+  {
+    "objectID": "privacy.html#changes-to-this-policy",
+    "href": "privacy.html#changes-to-this-policy",
+    "title": "Privacy",
+    "section": "Changes to This Policy",
+    "text": "Changes to This Policy\nWe may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
+  },
+  {
+    "objectID": "privacy.html#contact",
+    "href": "privacy.html#contact",
+    "title": "Privacy",
+    "section": "Contact",
+    "text": "Contact\nIf you have questions about this privacy policy, please open an issue on our GitHub repository."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "For questions, feedback, or interest in contributing datasets, reach out to us at info@orion-dbs.community.\nYou can also open an issue on our GitHub repository."
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "How to contribute",
+    "section": "",
+    "text": "If you maintain a publicly available Google BigQuery project with open scholarly data, we’d love to include it in this collection. You can use the template below to share your project description, and after you submit a pull request, we’ll integrate the metadata and update it regularly."
+  },
+  {
+    "objectID": "contributing.html#prerequisites",
+    "href": "contributing.html#prerequisites",
+    "title": "How to contribute",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis project aims to make it easier to discover trusted, quality-assured big and open data warehouses for bibliometrics and data analytics on Google BigQuery. By bringing these collections together, we hope to improve the analyses, applications, and research built on them.\nTo participate, you’ll need to:\n\nProvide large, open datasets via Google BigQuery in a user-friendly format\nUse a permissive open license for all datasets\nCover storage costs (users are responsible for their own query costs)\nMake your data preprocessing code publicly available\nPreserve historical dataset versions to ensure reproducibility (you can store these anywhere, not just BigQuery)\nProvide training materials like getting started guides, use cases, integration instructions, and contact information for support"
+  },
+  {
+    "objectID": "contributing.html#sharing",
+    "href": "contributing.html#sharing",
+    "title": "How to contribute",
+    "section": "Sharing",
+    "text": "Sharing\nTo share your collection, file an issue using this template. You’ll need to provide:\n\nThe ID of your BigQuery project\nAn acronym for your collection\nA brief description\nThe maintainer name(s)\n\nWe’ll use this information to create a dedicated webpage for your collection (though you’re welcome to do this yourself):\n\nCopy _template.qmd to a new folder under collections/ and save it as index.qmd. Use your collection’s acronym as the folder name.\nUpdate the title and project ID in the YAML header (the bq_project parameter).\n\n---\ntitle: \"Open Scholarly Data @ SUB Göttingen\"\nformat:\n  html:\n    page-layout: full\ntoc-title: Datasets\nparams:\n  bq_project: \"subugoe-collaborative\"\n---\n\nAdd your description below the YAML header.\nCreate a Pull Request on GitHub."
+  },
+  {
+    "objectID": "contributing.html#local-testing",
+    "href": "contributing.html#local-testing",
+    "title": "How to contribute",
+    "section": "Local testing",
+    "text": "Local testing\nBefore submitting your pull request, you can verify that the site builds correctly on your machine. You need Quarto and R installed.\nInstall the R dependencies listed in the DESCRIPTION file using pak:\n# install.packages(\"pak\")\npak::local_install_deps()\nThen, render just your new collection page to check for errors:\nquarto render collections/&lt;your-collection&gt;/index.qmd\nOr render the full site:\nquarto render\nYou can also start a live-reloading preview server to inspect your changes in the browser:\nquarto preview\nIf a dataset or table in your collection isn’t publicly available, the build will fail."
+  },
+  {
+    "objectID": "contributing.html#documentation",
+    "href": "contributing.html#documentation",
+    "title": "How to contribute",
+    "section": "Documentation",
+    "text": "Documentation\nWe aim to reuse as much information as possible from Google Cloud BigQuery using the REST API. To help others discover and use your data, you should provide:\n\nDescriptions for projects, datasets, and tables that speak to first-time users. Focus on the essentials—the data source, version, and license—rather than overly technical details. You can link to a GitHub repository with your data processing code if that’s helpful.\nSchemas for tables. Describe each field thoroughly; this makes it much easier for others to understand the datasets.\n\nGitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds."
+  },
+  {
+    "objectID": "contributing.html#contact",
+    "href": "contributing.html#contact",
+    "title": "How to contribute",
+    "section": "Contact",
+    "text": "Contact\nIn case of questions or issues, feel free to create an issue: https://github.com/orion-dbs-community/website/issues\nRepo-Maintainer: Najko Jahn najko.jahn@sub.uni-goettingen.de"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Open Research Information on BigQuery",
+    "section": "",
+    "text": "A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale."
+  },
+  {
+    "objectID": "index.html#featured-collections",
+    "href": "index.html#featured-collections",
+    "title": "Open Research Information on BigQuery",
+    "section": "Featured Collections",
+    "text": "Featured Collections\nPlease also check the participating collections websites for more information and for many more available datasets.\n\n\n\n\nCrossref\nA major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.\nSUB Göttingen provides the most recent monthly dump and yearly snapshots. Sesame Open Science gives access to the latest public data dump.\n\n\n\n\nOpenAIRE\nA free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.\nSesame Open Science and InSySPo Campinas provide the full OpenAIRE Graph Dataset in different schemas.\n\n\n\n\nOpenAlex\nA free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.\nMany collections provide time-specfic snapshots of OpenAlex data, including CWTS, InSySPo Campinas, MultiObs and SUB Göttingen.\n\n\n\n\n\n\n\nCWTS Leiden Ranking\nAn open edition of the CWTS Leiden Ranking for universities worldwide.\nCWTS Leiden provides data underlying the Leiden Ranking Open Edition along with time-specific OpenAlex versions.\n\n\n\n\nFAPESP Virtual Library\nThe referential information source for research supported by FAPESP from Brazil.\nMultiObs provides the FAPESP Virtual Library dataset about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP)."
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Open Research Information on BigQuery",
+    "section": "Get Started",
+    "text": "Get Started\n\nBrowse Collections – Explore the available datasets from our contributing projects\nContribute – Want to share your data? Check our contributing guide"
+  },
+  {
+    "objectID": "index.html#first-steps",
+    "href": "index.html#first-steps",
+    "title": "Open Research Information on BigQuery",
+    "section": "First steps",
+    "text": "First steps\n\n\n\n\n\n\nNote\n\n\n\nTo query datasets, you need a Google Cloud project. You can get started with the BigQuery sandbox, which requires no billing account and includes 1 TB of free queries per month.\n\n\nThis example joins data from two different collections – article metadata associated with transformative agreements as provided by SUB Göttingen and a Crossref truth table from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.\n\nSQLRPython\n\n\n-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = \"wiley2019deal\"\nGROUP BY has_funders\n\n\nlibrary(bigrquery)\nlibrary(DBI)\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nmy_con &lt;- dbConnect(bigquery(), project = \"your-gcp-project\")\n\nmy_sql &lt;- \"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\n\nmy_df &lt;- dbGetQuery(my_con, my_sql)\n\n\nfrom google.cloud import bigquery\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nclient = bigquery.Client(project=\"your-gcp-project\")\n\nsql = \"\"\"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\"\"\n\nresult = client.query(sql).to_dataframe()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.\nFor the full motivation behind this effort, see our mission statement: Sharing the load: Building an open research information collective."
+  },
+  {
+    "objectID": "about.html#collections",
+    "href": "about.html#collections",
+    "title": "About",
+    "section": "Collections",
+    "text": "Collections\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nEach project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything."
+  },
+  {
+    "objectID": "about.html#how-to-access-the-data",
+    "href": "about.html#how-to-access-the-data",
+    "title": "About",
+    "section": "How to access the data",
+    "text": "How to access the data\nAll datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a free tier of 1 TB of query processing per month."
+  },
+  {
+    "objectID": "about.html#about-the-website",
+    "href": "about.html#about-the-website",
+    "title": "About",
+    "section": "About the website",
+    "text": "About the website\nThis site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the mission statement."
+  },
+  {
+    "objectID": "about.html#get-involved",
+    "href": "about.html#get-involved",
+    "title": "About",
+    "section": "Get involved",
+    "text": "Get involved\nIf you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our contributing guide for details."
+  },
+  {
+    "objectID": "about.html#related-datasets",
+    "href": "about.html#related-datasets",
+    "title": "About",
+    "section": "Related datasets",
+    "text": "Related datasets\n\nThe Dimensions BigQuery Lab provides a thorough collection of tutorials and queries. Although access to Dimensions data is not publicly available, they host publicly available datasets from ORCID and DataCite which can be used with BigQuery by anyone.\nOpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nThe German Competence Network for Bibliometrics shares their open biblioemtrics dataset also on Google BigQuery."
+  },
+  {
+    "objectID": "collections/index.html",
+    "href": "collections/index.html",
+    "title": "Collections",
+    "section": "",
+    "text": "The community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+  },
+  {
+    "objectID": "collections/multiobs/index.html",
+    "href": "collections/multiobs/index.html",
+    "title": "MultiObs",
+    "section": "",
+    "text": "The datasets here are part of a research project at the University of Campinas (UNICAMP) to develop a broad research program to create evidence and knowledge for more effective monitoring of Science, Technology, and Innovation (STI). The program addresses critical and contemporary issues in STI indicators and policy making, addressing pervasive challenges regarding data infrastructures, funding dynamics, and society and policy engagement with STI. We create a novel framework for STI monitoring that federates data infrastructures, and adopts participatory and multi-perspective approaches. We include data about research entities, bibliometrics, economics, intellectual property, among others.\nPreprocessing code can be found at https://github.com/multiobs-ig-unicamp/."
+  },
+  {
+    "objectID": "collections/multiobs/index.html#publicdb_fapesp_bv",
+    "href": "collections/multiobs/index.html#publicdb_fapesp_bv",
+    "title": "MultiObs",
+    "section": "publicdb_fapesp_bv",
+    "text": "publicdb_fapesp_bv\n\n\nCreated: Nov 27, 2025 14:42 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
+    "href": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
+    "title": "MultiObs",
+    "section": "publicdb_openalex_2026_01_rm",
+    "text": "publicdb_openalex_2026_01_rm\n\n\nCreated: Jan 23, 2026 10:12 | Location: US | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/insyspo/index.html",
     "href": "collections/insyspo/index.html",
     "title": "The InSySPo project",
@@ -112,465 +567,10 @@
     "text": "publicdb_wikipedia_knowledge_graph\n\n\nCreated: Feb 27, 2023 04:47 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/sos/index.html",
-    "href": "collections/sos/index.html",
-    "title": "Sesame Open Science",
-    "section": "",
-    "text": "Collection maintained by Bianca Kramer (Sesame Open Science)\nInfo and documentation: https://github.com/bmkramer/metadata_ingest\n…"
-  },
-  {
-    "objectID": "collections/sos/index.html#butler_apcs",
-    "href": "collections/sos/index.html#butler_apcs",
-    "title": "Sesame Open Science",
-    "section": "butler_apcs",
-    "text": "butler_apcs\n\n\nDescription\n\n\nButler, Leigh-Ann; Hare, Madelaine; Schönfelder, Nina; Schares, Eric; Alperin, Juan Pablo; Haustein, Stefanie, 2024, “Open dataset of annual Article Processing Charges (APCs) of gold and hybrid journals published by Elsevier, Frontiers, MDPI, PLOS, Springer-Nature and Wiley 2019-2023.\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#crossref",
-    "href": "collections/sos/index.html#crossref",
-    "title": "Sesame Open Science",
-    "section": "crossref",
-    "text": "crossref\n\n\nDescription\n\n\nCrossref public data file and Crossref API data for members and journals\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#datacite",
-    "href": "collections/sos/index.html#datacite",
-    "title": "Sesame Open Science",
-    "section": "datacite",
-    "text": "datacite\n\n\nDescription\n\n\nDataCite public data file\n\n\nCreated: Feb 07, 2026 15:27 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#doaj",
-    "href": "collections/sos/index.html#doaj",
-    "title": "Sesame Open Science",
-    "section": "doaj",
-    "text": "doaj\n\n\nDescription\n\n\nDOAJ journal metadata\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#goa",
-    "href": "collections/sos/index.html#goa",
-    "title": "Sesame Open Science",
-    "section": "goa",
-    "text": "goa\n\n\nDescription\n\n\nWalt Crawford - Gold Open Access datasets: GOA5 (2014-2019) to GOA10 (2020-2024)\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#openaire",
-    "href": "collections/sos/index.html#openaire",
-    "title": "Sesame Open Science",
-    "section": "openaire",
-    "text": "openaire\n\n\nDescription\n\n\nOpenAIRE Graph Dataset\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#openapc",
-    "href": "collections/sos/index.html#openapc",
-    "title": "Sesame Open Science",
-    "section": "openapc",
-    "text": "openapc\n\n\nDescription\n\n\nData from the OpenAPC initiative\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#opencitations",
-    "href": "collections/sos/index.html#opencitations",
-    "title": "Sesame Open Science",
-    "section": "opencitations",
-    "text": "opencitations\n\n\nDescription\n\n\nOpenCitations Meta - bibliographic metadata for all publications included in the OpenCitations Index\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#pkp",
-    "href": "collections/sos/index.html#pkp",
-    "title": "Sesame Open Science",
-    "section": "pkp",
-    "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#ror",
-    "href": "collections/sos/index.html#ror",
-    "title": "Sesame Open Science",
-    "section": "ror",
-    "text": "ror\n\n\nDescription\n\n\nFull ROR dataset\n\n\nCreated: Jul 31, 2025 20:49 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/sos/index.html#truthtables",
-    "href": "collections/sos/index.html#truthtables",
-    "title": "Sesame Open Science",
-    "section": "truthtables",
-    "text": "truthtables\n\n\nDescription\n\n\nProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source. Created to facilitate comparison of metadata coverage across sources\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html",
-    "href": "collections/cwts/index.html",
-    "title": "CWTS Leiden Datasets",
-    "section": "",
-    "text": "The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.\nGitHub Repo: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nContact: Nees Jan van Eck"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2023",
-    "text": "leiden_ranking_open_edition_2023\n\n\nDescription\n\n\nThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2023. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2023 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2023 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2023 is based on the OpenAlex snapshot released on November 21, 2023. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2023: https://doi.org/10.59350/89wpz-hpz32\n\n\nCreated: Jan 28, 2024 21:20 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2024",
-    "text": "leiden_ranking_open_edition_2024\n\n\nDescription\n\n\nThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2024. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2024 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2024 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2024 is based on the OpenAlex snapshot released on August 30, 2024. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2024: https://doi.org/10.59350/r512t-r8h93\n\n\nCreated: Sep 27, 2024 13:07 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2025",
-    "text": "leiden_ranking_open_edition_2025\n\n\nDescription\n\n\nThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2025. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2025 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2025 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2025 is based on the OpenAlex snapshot from August, 2025. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2025: https://doi.org/10.59350/jvjy2-4ww95\n\n\nCreated: Oct 29, 2025 06:05 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov",
-    "href": "collections/cwts/index.html#openalex_2023nov",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov",
-    "text": "openalex_2023nov\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on November 21, 2023.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Jan 25, 2024 11:26 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov_classification",
-    "href": "collections/cwts/index.html#openalex_2023nov_classification",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov_classification",
-    "text": "openalex_2023nov_classification\n\n\nDescription\n\n\nThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on November 21, 2023.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.10560276\n\n\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov_core",
-    "href": "collections/cwts/index.html#openalex_2023nov_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov_core",
-    "text": "openalex_2023nov_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on November 21, 2023).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2023nov\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.10949622\n\n\nCreated: Jan 29, 2024 17:55 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2024aug",
-    "href": "collections/cwts/index.html#openalex_2024aug",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2024aug",
-    "text": "openalex_2024aug\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on August 30, 2024.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2024aug_core",
-    "href": "collections/cwts/index.html#openalex_2024aug_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2024aug_core",
-    "text": "openalex_2024aug_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on August 30, 2024).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2024aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.13879947\n\n\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2025aug",
-    "href": "collections/cwts/index.html#openalex_2025aug",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2025aug",
-    "text": "openalex_2025aug\n\n\nDescription\n\n\nThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot from August, 2025.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\n\n\nCreated: Oct 26, 2025 11:29 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2025aug_core",
-    "href": "collections/cwts/index.html#openalex_2025aug_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2025aug_core",
-    "text": "openalex_2025aug_core\n\n\nDescription\n\n\nThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot from August 2025).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2025aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.17200830\n\n\nCreated: Oct 24, 2025 07:46 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.\nFor the full motivation behind this effort, see our mission statement: Sharing the load: Building an open research information collective."
-  },
-  {
-    "objectID": "about.html#collections",
-    "href": "about.html#collections",
-    "title": "About",
-    "section": "Collections",
-    "text": "Collections\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest Crossref public data dump and the full OpenAIRE Graph Dataset.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nEach project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything."
-  },
-  {
-    "objectID": "about.html#how-to-access-the-data",
-    "href": "about.html#how-to-access-the-data",
-    "title": "About",
-    "section": "How to access the data",
-    "text": "How to access the data\nAll datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a free tier of 1 TB of query processing per month."
-  },
-  {
-    "objectID": "about.html#about-the-website",
-    "href": "about.html#about-the-website",
-    "title": "About",
-    "section": "About the website",
-    "text": "About the website\nThis site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the mission statement."
-  },
-  {
-    "objectID": "about.html#get-involved",
-    "href": "about.html#get-involved",
-    "title": "About",
-    "section": "Get involved",
-    "text": "Get involved\nIf you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our contributing guide for details."
-  },
-  {
-    "objectID": "about.html#related-datasets",
-    "href": "about.html#related-datasets",
-    "title": "About",
-    "section": "Related datasets",
-    "text": "Related datasets\n\nThe Dimensions BigQuery Lab provides a thorough collection of tutorials and queries. Although access to Dimensions data is not publicly available, they host publicly available datasets from ORCID and DataCite which can be used with BigQuery by anyone.\nOpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nThe German Competence Network for Bibliometrics shares their open biblioemtrics dataset also on Google BigQuery."
-  },
-  {
-    "objectID": "privacy.html",
-    "href": "privacy.html",
-    "title": "Privacy",
-    "section": "",
-    "text": "Last updated: February 2026"
-  },
-  {
-    "objectID": "privacy.html#overview",
-    "href": "privacy.html#overview",
-    "title": "Privacy",
-    "section": "Overview",
-    "text": "Overview\nThis website is hosted on GitHub Pages and is maintained by the Orion DBS Community. We are committed to protecting your privacy. This policy explains what data is collected when you visit our site."
-  },
-  {
-    "objectID": "privacy.html#what-we-collect",
-    "href": "privacy.html#what-we-collect",
-    "title": "Privacy",
-    "section": "What We Collect",
-    "text": "What We Collect\nWe do not collect any personal data. This website does not use tracking scripts, analytics tools, or any other form of user monitoring."
-  },
-  {
-    "objectID": "privacy.html#cookies",
-    "href": "privacy.html#cookies",
-    "title": "Privacy",
-    "section": "Cookies",
-    "text": "Cookies\nThis website sets one technical cookie to improve the appearance and functionality of the sidebar. This cookie is strictly necessary for the website to function properly and does not store any personal information or track your behavior. No third-party cookies are used."
-  },
-  {
-    "objectID": "privacy.html#hosting",
-    "href": "privacy.html#hosting",
-    "title": "Privacy",
-    "section": "Hosting",
-    "text": "Hosting\nThis site is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit this website, GitHub may collect certain technical information such as your IP address, browser type, and access times in accordance with their own privacy practices. This data collection is handled entirely by GitHub and is outside our control.\nFor details, please refer to the GitHub Privacy Statement."
-  },
-  {
-    "objectID": "privacy.html#external-links",
-    "href": "privacy.html#external-links",
-    "title": "Privacy",
-    "section": "External Links",
-    "text": "External Links\nOur website may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any external site you visit."
-  },
-  {
-    "objectID": "privacy.html#changes-to-this-policy",
-    "href": "privacy.html#changes-to-this-policy",
-    "title": "Privacy",
-    "section": "Changes to This Policy",
-    "text": "Changes to This Policy\nWe may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
-  },
-  {
-    "objectID": "privacy.html#contact",
-    "href": "privacy.html#contact",
-    "title": "Privacy",
-    "section": "Contact",
-    "text": "Contact\nIf you have questions about this privacy policy, please open an issue on our GitHub repository."
-  },
-  {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "News & Tutorials",
     "section": "",
     "text": "Welcome to our blog featuring news, tutorials, and insights about using BigQuery for open scholarly data analysis.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSharing the load: Building an open research information collective\n\n\n\nnews\n\n\n\nCan we share resources and burdens to make available key open research information resources in actionable and connectable form in the cloud? Through sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?\n\n\n\n\n\nFeb 16, 2026\n\n\nCameron Neylon, Bianca Kramer, Alysson Fernandes Mazoni, Rodrigo Costas, Najko Jahn, Nees Jan van Eck\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Open Research Information on BigQuery",
-    "section": "",
-    "text": "A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale."
-  },
-  {
-    "objectID": "index.html#featured-collections",
-    "href": "index.html#featured-collections",
-    "title": "Open Research Information on BigQuery",
-    "section": "Featured Collections",
-    "text": "Featured Collections\nPlease also check the participating collections websites for more information and for many more available datasets.\n\n\n\n\nCrossref\nA major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.\nSUB Göttingen provides the most recent monthly dump and yearly snapshots. Sesame Open Science gives access to the latest public data dump.\n\n\n\n\nOpenAIRE\nA free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.\nSesame Open Science and InSySPo Campinas provide the full OpenAIRE Graph Dataset in different schemas.\n\n\n\n\nOpenAlex\nA free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.\nMany collections provide time-specfic snapshots of OpenAlex data, including CWTS, InSySPo Campinas, MultiObs and SUB Göttingen.\n\n\n\n\n\n\n\nCWTS Leiden Ranking\nAn open edition of the CWTS Leiden Ranking for universities worldwide.\nCWTS Leiden provides data underlying the Leiden Ranking Open Edition along with time-specific OpenAlex versions.\n\n\n\n\nFAPESP Virtual Library\nThe referential information source for research supported by FAPESP from Brazil.\nMultiObs provides the FAPESP Virtual Library dataset about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP)."
-  },
-  {
-    "objectID": "index.html#get-started",
-    "href": "index.html#get-started",
-    "title": "Open Research Information on BigQuery",
-    "section": "Get Started",
-    "text": "Get Started\n\nBrowse Collections – Explore the available datasets from our contributing projects\nContribute – Want to share your data? Check our contributing guide"
-  },
-  {
-    "objectID": "index.html#first-steps",
-    "href": "index.html#first-steps",
-    "title": "Open Research Information on BigQuery",
-    "section": "First steps",
-    "text": "First steps\n\n\n\n\n\n\nNote\n\n\n\nTo query datasets, you need a Google Cloud project. You can get started with the BigQuery sandbox, which requires no billing account and includes 1 TB of free queries per month.\n\n\nThis example joins data from two different collections – article metadata associated with transformative agreements as provided by SUB Göttingen and a Crossref truth table from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.\n\nSQLRPython\n\n\n-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = \"wiley2019deal\"\nGROUP BY has_funders\n\n\nlibrary(bigrquery)\nlibrary(DBI)\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nmy_con &lt;- dbConnect(bigquery(), project = \"your-gcp-project\")\n\nmy_sql &lt;- \"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\n\nmy_df &lt;- dbGetQuery(my_con, my_sql)\n\n\nfrom google.cloud import bigquery\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nclient = bigquery.Client(project=\"your-gcp-project\")\n\nsql = \"\"\"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\"\"\n\nresult = client.query(sql).to_dataframe()"
-  },
-  {
-    "objectID": "blog/posts/welcome/index.html",
-    "href": "blog/posts/welcome/index.html",
-    "title": "Sharing the load: Building an open research information collective",
-    "section": "",
-    "text": "This is a cross-post from Upstream supported by FORCE 11. https://doi.org/10.54900/2pnyq-nhx95\n\n\n\nThe constellation of Orion as seen from the southern hemisphere. Image from Mary Orr (1896), “Southern Stars: A Guide to the Constellations Visible in the Southern Hemisphere”, Gall and Inglis, London and Edinburgh. Illustration probably by William Peacock and Co.\n\n\nThe rise of open research information resources is transforming the way we track, analyse and study research systems. Increasingly, sources like OpenAIRE, OpenAlex, Crossref, DataCite, ORCID, ROR and others are being used as the basis for making decisions, designing interventions and understanding progress in the science system. This operates both at the small scale, where access to data and evidence is easier than it has ever been, to the very large scale analysis of whole systems.\nTraditionally, the capacity to do large-scale analyses was restricted to a very small set of players, like specialised research centreor companies. This kind of large scale analysis usually requires access to an actionable version of the whole dataset, particularly if the goal is combining data resources. The set of sites with access to complete copies of proprietary databases is tiny. \nModern open data sources provide access, including access to full copies of the data, but there has been less focus on providing this access in a way that allows large scale complex querying and connecting of whole data archives - for example to compare the coverage of research outputs by OpenAlex and OpenAIRE or analyse global information on clinical trials using affiliation data from OpenAlex and clinical trials information from Pubmed. Another valuable possibility is the ability to incorporate local data enrichments from national or regional data sources to support local data needs, or improve the overall pool of data.\nGoogle BigQuery has emerged as one powerful tool for combining and working on these large datasets at scale. Multiple groups (including the MultiObs team - continuing the work of the InSySPo team at Campinas, SUB Göttingen, Sesame Open Science and CWTS amongst others), have created ‘public’ versions of specific open datasets in the BigQuery system, which anyone can access and run their own analyses. Through these public versions, the ‘provider’ (i.e. the teams mentioned above) pays for storage, and the user freely accesses the ‘public’ versions taking responsibility for covering the costs of data querying and processing.  \nHaving worked independently so far, this small group came together last year to ask whether we could coordinate actions. Could it be possible to build a comprehensive open research information resource where the load of providing specific core and relevant open data sources was distributed? Rather than each separately trying to tackle the whole, potentially duplicating efforts, could we collectively create a resource that was more than the sum of its parts? \nWe met with a series of key questions:\n\nCan we share resources and burdens to make available key open research information resources in actionable and connectable form in the cloud?\n\n\n\nThrough sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?\n\n\n\nWhat are the challenges that we can usefully approach collectively?\n\n\n\nWhat are the benefits and risks of Google BigQuery as an environment and do we agree it is the best place to start?\n\n\n\nWhat are the blockers for engagement with such an effort? What is needed for different stakeholders to make it attractive both as users and (for some) as providers?\n\nUser and use case driven\nCore to our shared interest in working together was the idea of making it easier for more people to undertake large scale analysis. There are many kinds of analysis for which access to APIs is sufficient. We share a belief that large scale analysis will be useful in multiple settings, but that it has been relatively inaccessible. This inaccessibility is a hurdle to realising the promise of democratization and broader adoption of open research information in all decision making processes around science and scholarship, as proposed by the Barcelona Declaration. APIs are also expensive to run, by taking some of the heavy load use-cases away from APIs we can support providers by reducing their costs, centralising distribution, and allowing APIs to focus on the use cases they are best suited for.\nThere is a growing set of research projects that are exploiting this capacity for large scale and combined analysis in a range of ways. Two recent pieces of work provide examples of what is possible. One by Camilla Lindelow and Eline Vandewalle, used the combination of ORCID and OpenAlex provided by InSySPo (now MultiObs) to analyse researchers without a formal affiliation from around the world. The second example, from Cespedes and colleagues associated with the UNESCO Chair in Open Science, used a global analysis of language in OpenAlex to examine affiliation. This combines with other efforts, including comparisons of metadata coverage across sources, and combinations of data sets that exploit the capacity to do analysis at scale.\nThese use cases have a few things in common. They tend to be global in scope (or at least aspire to be) so they require analysis across the whole of a datasource (or a combination of datasources). They generally involve a complex form of query, requiring filtering or analysis on multiple database elements, or a combination of multiple data sources, that is difficult or impossible using the API for any given datasource. And the generated dataset is often very large in its own right - perhaps involving hundreds of millions of rows of data - and requires further reduction and analysis.\nOverall, the common theme here is analyses that require entire data sources to be combinable and actionable at scale. We believe if we focus on that set of use cases we can add something valuable to the overall Open Research Information ecosystem.\nOpportunities for shared systems\nIf people are already doing this what is the value of coordination? The first and most obvious is that with a shared cloud system we only need to pay for online storage of each dataset once and then anyone can use it (backups and versions over time are a separate issue, which we aim to address, but not as the first priority). Cloud storage costs are generally larger than the usage costs involved in running queries so sharing this load is valuable in its own right.\nThe second advantage is the ability to share capacities. One example of this is data preprocessing. These datasets are not “clean” in the sense that they change over time, have some internal inconsistencies, and often contain elements that raise compatibility issues with database systems. Processing hundreds of millions of lines of JSON to convert hyphens to underscores in variable names takes time and computing power (and money!). \nSystems developed within the Curtin Open Knowledge Initiative (COKI) use cloud VMs to do this on demand which scales but adds costs. The team at Göttingen are using code derived from this on their own HPC resources. The team at CWTS uses their own code to process datasource dumps on local servers so that relational databases can be integrated into their internal database system, while also exporting the results to Google BigQuery. Within the Sesame Open Science system a further evolution of the COKI code is used to process dumps on local computers. There is a clear benefit to be gained by using a common code base for necessary transformations. But also in having a community discussion on what pathways and transformations are necessary. The MultiObs team uses a quite different approach -- creating relational structures from datasource dumps -- with advantages (reduced costs, timestamps, etc.) but also disadvantages (lack of live data, need for updates, etc.) we can learn from. Different approaches and experiences, but also different sets of resources like HPC could be shared amongst an effective collaboration.\nThis leads to the third advantage. If we use common systems we help to develop quasi-standards that can be adopted by others. That creates an opportunity to spread the load further, as well as to increase the diversity of datasets available (again, thinking of those highly curated national datasets that are used locally but not always recombined into the global data ecosystem). If we have a clear shared approach to the data and how it is managed it makes it easier for others to contribute, and makes the whole set of resources more valuable and sustainable. In essence, the more we share the load, the less we pay for the costs of our contributions. \nA final benefit of a shared approach would be a virtuous loop in which shared systems encourage shared approaches to analysis. Common approaches can form the basis for training resources that give end-users an easy point of entry to using these data sources at scale. They will also encourage the sharing of analysis scripts and protocols creating advanced and transparent resources to support developing users.\nKey to this is understanding both what has value to keep in common, but also what needs to be different to serve a diversity of use cases. We can see value in technical standards (where they are useful) and in agreements around archiving and preservation. Documentation, where it can reach common standards, will be helpful not just for users of the data, but potentially for upstream producers in understanding how the data is being used and how to optimize the provision of their data snapshots to facilitate downstream usage.\nThe Google-shaped elephant in the room \nA big question is why Google BigQuery? It is certainly not an open system in any meaningful sense and Google is not an organisation many of us feel able to trust. The short answer is pragmatism. There are reasons why we independently arrived at GBQ as a useful tool. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system. In practice, this means datasets can be made publicly available, without the need for specific hard-or software on the side of the user, and, from a user perspective, access to datasets hosted by different providers is possible using a single system. Standing up an independent infrastructure to do this is a big job and not one we’re equipped to tackle at the moment.\nThat said, none of us believe that reliance on Google is a desirable long term solution, nor that it is fully equitable. There are some emerging alternatives both in the cloud and for local computing. These aren’t fully mature but they show promise. In the meantime we believe it is important to ensure we have an exit strategy. One such strategy could be a commitment to creating backups in the form of parquet files. Parquet is an interesting interoperability format for databases and can be read in by an increasing number of tools. It holds schema information and allows for database partitioning. \nPerhaps the most important argument is that with Google BigQuery and external archiving, there is at least one plausible option to explore that can provide value immediately, but also provide a potential escape route. We can save the arguments for frozen duck lakes, glaciers, torrents and MySQL for later and for those who will want to have them! But we need to think seriously about how we will work towards more independence and resilience early on in the process. \nNext steps and a call for interest\nWe have made a small start. Small, but useful for us.  After all, we are already using these shared data resources. We have demonstrated that without much effort or technical hassle it is possible to share the load, reduce costs and maximize benefits and accessibility. We hope by engaging a wider community we can make this more useful for more people and move us all closer to ideals of democratization of open research information, supporting adoption. How far this goes and how big a community we can create is an open question.\nWe have made a small start under the label of ORION-DBs, standing for Open Research Information Online Databases. There is now a website that details the datasets available, where they can be accessed and when the most recent update was. We hope this will be a useful resource for people doing ad hoc analyses, occasional use, or just one-off interest in taking a look, as well as those with bigger use cases and ongoing needs for data access. We hope a community of users and also of providers will be interested to coordinate through this platform to aid discovery, adoption and democratization of open research information.\nLooking forward, we’re interested in how we can build on this base. We want to coordinate and build a shared capacity. If you have an interest in how this could be shaped, demonstrating specific use cases, or contributing additional hosted datasets, we’d love to hear from you. Coordination takes time, time requires resources. If there is sufficient interest, we will look at how we could coordinate resources and build something as lightweight as possible and as formalised as necessary.\nAbove all, we want to hear from those who share the vision for creating data resources that can be combined and used together and to make them as useful as possible. You can contact us through info@orion-dbs.community and depending on interest, we will set up other forums. It is through using these data sources that we identify their issues and can correct and improve them. When we do that work together, we increase the quality of all data resources faster, more sustainably and more effectively.\nThis post is licensed under CC BY 4.0.\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "For questions, feedback, or interest in contributing datasets, reach out to us at info@orion-dbs.community.\nYou can also open an issue on our GitHub repository."
-  },
-  {
-    "objectID": "contributing.html",
-    "href": "contributing.html",
-    "title": "How to contribute",
-    "section": "",
-    "text": "If you maintain a publicly available Google BigQuery project with open scholarly data, we’d love to include it in this collection. You can use the template below to share your project description, and after you submit a pull request, we’ll integrate the metadata and update it regularly."
-  },
-  {
-    "objectID": "contributing.html#prerequisites",
-    "href": "contributing.html#prerequisites",
-    "title": "How to contribute",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nThis project aims to make it easier to discover trusted, quality-assured big and open data warehouses for bibliometrics and data analytics on Google BigQuery. By bringing these collections together, we hope to improve the analyses, applications, and research built on them.\nTo participate, you’ll need to:\n\nProvide large, open datasets via Google BigQuery in a user-friendly format\nUse a permissive open license for all datasets\nCover storage costs (users are responsible for their own query costs)\nMake your data preprocessing code publicly available\nPreserve historical dataset versions to ensure reproducibility (you can store these anywhere, not just BigQuery)\nProvide training materials like getting started guides, use cases, integration instructions, and contact information for support"
-  },
-  {
-    "objectID": "contributing.html#sharing",
-    "href": "contributing.html#sharing",
-    "title": "How to contribute",
-    "section": "Sharing",
-    "text": "Sharing\nTo share your collection, file an issue using this template. You’ll need to provide:\n\nThe ID of your BigQuery project\nAn acronym for your collection\nA brief description\nThe maintainer name(s)\n\nWe’ll use this information to create a dedicated webpage for your collection (though you’re welcome to do this yourself):\n\nCopy _template.qmd to a new folder under collections/ and save it as index.qmd. Use your collection’s acronym as the folder name.\nUpdate the title and project ID in the YAML header (the bq_project parameter).\n\n---\ntitle: \"Open Scholarly Data @ SUB Göttingen\"\nformat:\n  html:\n    page-layout: full\ntoc-title: Datasets\nparams:\n  bq_project: \"subugoe-collaborative\"\n---\n\nAdd your description below the YAML header.\nCreate a Pull Request on GitHub."
-  },
-  {
-    "objectID": "contributing.html#local-testing",
-    "href": "contributing.html#local-testing",
-    "title": "How to contribute",
-    "section": "Local testing",
-    "text": "Local testing\nBefore submitting your pull request, you can verify that the site builds correctly on your machine. You need Quarto and R installed.\nInstall the R dependencies listed in the DESCRIPTION file using pak:\n# install.packages(\"pak\")\npak::local_install_deps()\nThen, render just your new collection page to check for errors:\nquarto render collections/&lt;your-collection&gt;/index.qmd\nOr render the full site:\nquarto render\nYou can also start a live-reloading preview server to inspect your changes in the browser:\nquarto preview\nIf a dataset or table in your collection isn’t publicly available, the build will fail."
-  },
-  {
-    "objectID": "contributing.html#documentation",
-    "href": "contributing.html#documentation",
-    "title": "How to contribute",
-    "section": "Documentation",
-    "text": "Documentation\nWe aim to reuse as much information as possible from Google Cloud BigQuery using the REST API. To help others discover and use your data, you should provide:\n\nDescriptions for projects, datasets, and tables that speak to first-time users. Focus on the essentials—the data source, version, and license—rather than overly technical details. You can link to a GitHub repository with your data processing code if that’s helpful.\nSchemas for tables. Describe each field thoroughly; this makes it much easier for others to understand the datasets.\n\nGitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds."
-  },
-  {
-    "objectID": "contributing.html#contact",
-    "href": "contributing.html#contact",
-    "title": "How to contribute",
-    "section": "Contact",
-    "text": "Contact\nIn case of questions or issues, feel free to create an issue: https://github.com/orion-dbs-community/website/issues\nRepo-Maintainer: Najko Jahn najko.jahn@sub.uni-goettingen.de"
-  },
-  {
-    "objectID": "collections/index.html",
-    "href": "collections/index.html",
-    "title": "Collections",
-    "section": "",
-    "text": "The community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
-  },
-  {
-    "objectID": "collections/subugoe/index.html",
-    "href": "collections/subugoe/index.html",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "",
-    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/\nContact: Najko Jahn"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#cr_history",
-    "href": "collections/subugoe/index.html#cr_history",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "cr_history",
-    "text": "cr_history\n\n\nDescription\n\n\nHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\n\n\nCreated: Oct 29, 2021 07:20 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#cr_instant",
-    "href": "collections/subugoe/index.html#cr_instant",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "cr_instant",
-    "text": "cr_instant\n\n\nDescription\n\n\nThis dataset contains the most recent Crossref Snapshot.\n\n\nCreated: Oct 29, 2021 07:37 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#hoaddata",
-    "href": "collections/subugoe/index.html#hoaddata",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "hoaddata",
-    "text": "hoaddata\n\n\nDescription\n\n\nDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\n\n\nCreated: May 12, 2023 11:06 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#oa2020",
-    "href": "collections/subugoe/index.html#oa2020",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "oa2020",
-    "text": "oa2020\n\n\nDescription\n\n\nEstimating global publishing output by leading commercial publishers using open metadata.\nWork carried out for OA2020 WG on financial flows and future cost scenarios https://oa2020.org/working-groups/\n\n\nCreated: Dec 11, 2025 10:48 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openalex",
-    "href": "collections/subugoe/index.html#openalex",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openalex",
-    "text": "openalex\n\n\nDescription\n\n\nThis dataset contains the most recent OpenAlex Snapshot (before Walden).\n\n\nCreated: Jan 10, 2022 14:46 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openalex_walden",
-    "href": "collections/subugoe/index.html#openalex_walden",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openalex_walden",
-    "text": "openalex_walden\n\n\nDescription\n\n\nThis dataset contains the most recent OpenAlex-Walden Snapshot.\n\n\nCreated: Dec 03, 2025 10:07 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openbib",
-    "href": "collections/subugoe/index.html#openbib",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openbib",
-    "text": "openbib\n\n\nDescription\n\n\nThis dataset contains the most recent OPENBIB snapshot.\nFor more information, see: https://zenodo.org/records/18429476\n\n\nCreated: Mar 28, 2025 14:22 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#resources",
-    "href": "collections/subugoe/index.html#resources",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "resources",
-    "text": "resources\n\n\nCreated: Nov 02, 2021 07:53 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#semantic_scholar",
-    "href": "collections/subugoe/index.html#semantic_scholar",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "semantic_scholar",
-    "text": "semantic_scholar\n\n\nDescription\n\n\nThis dataset contains a snapshot from Semantic Scholar.\n\n\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#upw_history",
-    "href": "collections/subugoe/index.html#upw_history",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "upw_history",
-    "text": "upw_history\n\n\nDescription\n\n\nHistorical Unpaywall Snapshots. Only includes records from 2008 onwards.\n\n\nCreated: Oct 29, 2021 07:51 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#upw_instant",
-    "href": "collections/subugoe/index.html#upw_instant",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "upw_instant",
-    "text": "upw_instant\n\n\nDescription\n\n\nThis dataset contains the most recent Unpaywall Snapshot. Only records from 2008 onwards are included.\n\n\nCreated: Oct 29, 2021 07:52 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/multiobs/index.html",
-    "href": "collections/multiobs/index.html",
-    "title": "MultiObs",
-    "section": "",
-    "text": "The datasets here are part of a research project at the University of Campinas (UNICAMP) to develop a broad research program to create evidence and knowledge for more effective monitoring of Science, Technology, and Innovation (STI). The program addresses critical and contemporary issues in STI indicators and policy making, addressing pervasive challenges regarding data infrastructures, funding dynamics, and society and policy engagement with STI. We create a novel framework for STI monitoring that federates data infrastructures, and adopts participatory and multi-perspective approaches. We include data about research entities, bibliometrics, economics, intellectual property, among others.\nPreprocessing code can be found at https://github.com/multiobs-ig-unicamp/."
-  },
-  {
-    "objectID": "collections/multiobs/index.html#publicdb_fapesp_bv",
-    "href": "collections/multiobs/index.html#publicdb_fapesp_bv",
-    "title": "MultiObs",
-    "section": "publicdb_fapesp_bv",
-    "text": "publicdb_fapesp_bv\n\n\nCreated: Nov 27, 2025 14:42 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
-    "href": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
-    "title": "MultiObs",
-    "section": "publicdb_openalex_2026_01_rm",
-    "text": "publicdb_openalex_2026_01_rm\n\n\nCreated: Jan 23, 2026 10:12 | Location: US | View in BigQuery Console"
   }
 ]
