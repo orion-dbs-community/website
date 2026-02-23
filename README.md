@@ -32,6 +32,27 @@ To add a new collection, copy `_template.qmd` to a new folder under `collections
 
 GitHub Actions rebuild the site daily (see `.github/workflows/website-build.yml`) to keep all metadata current.
 
+### Collection info snapshots
+
+Each time a collection page is rendered, a snapshot of its full metadata is appended to `data/collection_info.jsonl`. Each line is a JSON object representing one table at the time of the build, with the following fields:
+
+| Field | Description |
+|---|---|
+| `collected_at` | ISO 8601 UTC timestamp of the build |
+| `project` | BigQuery project ID |
+| `dataset` | Dataset ID |
+| `table` | Table ID |
+| `description` | Table description |
+| `dataset_description` | Dataset description |
+| `location` | BigQuery region (e.g. `US`, `EU`) |
+| `created_at` | Table creation timestamp |
+| `last_modified` | Last modification timestamp |
+| `num_bytes` | Table size in bytes |
+| `num_rows` | Row count |
+| `schema` | Full field schema, including nested RECORD fields |
+
+The file is committed back to `main` after every build, providing a historical record of how collection metadata evolves over time. The helper that writes the snapshots is in `collect_collection_info.R`.
+
 ## Local development
 
 To test the site locally, you need [Quarto](https://quarto.org/docs/get-started/) and R installed.

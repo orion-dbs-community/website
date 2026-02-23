@@ -10,8 +10,9 @@ format:
 #| message: false
 library(tidyverse)
 library(bslib)
+library(rprojroot)
 
-stats <- read_csv(here::here("data", "bq_stats.csv"), show_col_types = FALSE)
+source(find_root_file("collect_bq_stats.R", criterion = has_file("DESCRIPTION")))
 
 total_datasets <- nrow(stats)
 total_tables <- sum(stats$n_tables)

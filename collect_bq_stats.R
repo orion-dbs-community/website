@@ -1,5 +1,6 @@
 library(tidyverse)
 library(bigrquery)
+library(rprojroot)
 
 bq_ori <- Sys.getenv("BQ_ORI")
 if (bq_ori != "") {
@@ -65,4 +66,4 @@ project_summary <- stats |>
     total_size = sum(total_bytes),
     .by = project)
 
-write_csv(stats, "data/bq_stats.csv")
+write_csv(stats, find_root_file("data", "bq_stats.csv", criterion = has_file("DESCRIPTION")))

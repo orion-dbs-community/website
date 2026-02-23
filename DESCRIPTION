@@ -16,6 +16,8 @@ Imports:
     tidyverse,
     reactable,
     htmltools,
+    jsonlite,
+    rprojroot,
     knitr,
     bslib,
     gargle

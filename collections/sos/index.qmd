@@ -60,6 +60,8 @@ get_nested_fields <- function(field) {
 #| echo: false
 #| results: asis
 
+datasets_with_meta <- list()
+
 # Render a section for each dataset
 for (dataset in my_datasets) {
   # Print dataset name as heading
@@ -105,5 +107,18 @@ for (dataset in my_datasets) {
   res <- knitr::knit_child("../_dataset_table.qmd", quiet = TRUE, envir = environment())
   cat(res, sep = "\n")
   cat("\n\n")
+
+  # Accumulate metadata for snapshot
+  datasets_with_meta[[dataset$dataset]] <- list(
+    meta   = dataset_meta,
+    tables = map(bq_dataset_tables(dataset), bq_table_meta)
+  )
 }
+```
+
+```{r}
+#| echo: false
+#| message: false
+source(rprojroot::find_root_file("collect_collection_info.R", criterion = rprojroot::has_file("DESCRIPTION")))
+snapshot_collection_info(params$bq_project, datasets_with_meta)
 ```
