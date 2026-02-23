@@ -33,7 +33,7 @@ snapshot_collection_info <- function(project, datasets_with_meta,
                                      out_path = NULL) {
   if (is.null(out_path)) {
     root <- find_root(has_file("DESCRIPTION"))
-    out_path <- file.path(root, "data", "collection_info.jsonl")
+    out_path <- file.path(root, "data", paste0("collection_info_", project, ".jsonl"))
   }
   collected_at <- format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
 
@@ -69,7 +69,7 @@ snapshot_collection_info <- function(project, datasets_with_meta,
     unlist()
 
   if (length(lines) > 0) {
-    write(lines, file = out_path, append = TRUE)
+    write(lines, file = out_path, append = FALSE)
   }
 
   invisible(length(lines))

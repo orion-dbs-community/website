@@ -34,7 +34,7 @@ GitHub Actions rebuild the site daily (see `.github/workflows/website-build.yml`
 
 ### Collection info snapshots
 
-Each time a collection page is rendered, a snapshot of its full metadata is appended to `data/collection_info.jsonl`. Each line is a JSON object representing one table at the time of the build, with the following fields:
+Each time a collection page is rendered, it overwrites `data/collection_info_{project}.jsonl` with the current snapshot for that project (one line per table). Git tracks the diff between builds, providing a full history of how metadata evolves over time without the file growing unboundedly. Each line is a JSON object with the following fields:
 
 | Field | Description |
 |---|---|
@@ -51,7 +51,7 @@ Each time a collection page is rendered, a snapshot of its full metadata is appe
 | `num_rows` | Row count |
 | `schema` | Full field schema, including nested RECORD fields |
 
-The file is committed back to `main` after every build, providing a historical record of how collection metadata evolves over time. The helper that writes the snapshots is in `collect_collection_info.R`.
+The per-project files are committed back to `main` after every build. The helper that writes the snapshots is in `collect_collection_info.R`.
 
 ## Local development
 
