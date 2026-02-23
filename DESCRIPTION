@@ -2,8 +2,8 @@ Package: bqori
 Type: Project
 Title: BigQuery ORI Collection Quarto Site
 Version: 0.1.0
-Authors@R: 
-    person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de", 
+Authors@R:
+    person("Najko", "Jahn", , "najko.jahn@sub.uni-goettingen.de",
     role = c("aut", "cre"),
     comment = c(ORCID = "0000-0001-5105-1463")
     )
@@ -17,5 +17,6 @@ Imports:
     reactable,
     htmltools,
     knitr,
+    bslib,
     gargle
 Encoding: UTF-8

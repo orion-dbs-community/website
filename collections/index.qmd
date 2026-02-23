@@ -1,9 +1,48 @@
 ---
-title : Collections
+title : Collections Overview
 format:
   html:
     toc: false
 ---
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(bslib)
+
+stats <- read_csv(here::here("data", "bq_stats.csv"), show_col_types = FALSE)
+
+total_datasets <- nrow(stats)
+total_tables <- sum(stats$n_tables)
+total_gb <- sum(stats$total_bytes) / (1024^3)
+n_projects <- n_distinct(stats$project)
+```
+
+```{r}
+#| echo: false
+layout_columns(
+  value_box(
+    title = "BigQuery Projects",
+    value = n_projects,
+    theme = value_box_theme(bg = "#fafafa", fg = "#1a1a1a"),
+    style = "border-left: 2px solid #4A90D9;"
+  ),
+  value_box(
+    title = "Datasets",
+    value = total_datasets,
+    theme = value_box_theme(bg = "#fafafa", fg = "#1a1a1a"),
+    style = "border-left: 2px solid #4A90D9;"
+  ),
+  value_box(
+    title = "Total Size",
+    value = paste0(format(round(total_gb), big.mark = " "), " GB"),
+    theme = value_box_theme(bg = "#fafafa", fg = "#1a1a1a"),
+    style = "border-left: 2px solid #4A90D9;"
+  ),
+  col_widths = c(4, 4, 4)
+)
+```
 
 The community currently brings together datasets from the following contributing projects:
 

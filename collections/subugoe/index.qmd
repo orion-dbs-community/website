@@ -8,7 +8,7 @@ params:
   bq_project: "subugoe-collaborative"
 ---
 
-The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery. 
+The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.
 
 The warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.
 
@@ -16,7 +16,7 @@ Google BigQuery is provided as part of the OCRE 2024 Framework, with support fro
 
 More info: <https://subugoe.github.io/scholcomm_analytics/>
 
-Contact: Najko Jahn
+Contact: [Najko Jahn](mailto:najko.jahn@sub.uni-goettingen.de), [Nick Haupka](mailto:nick.haupka@sub.uni-goettingen.de)
 
 ```{r}
 #| echo: false
