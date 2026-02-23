@@ -265,3 +265,19 @@ main ol li {
 .nav-footer {
     font-family: "Public Sans", sans-serif;
 }
+
+.bslib-value-box .value-box-value {
+    font-size: 1.75rem;
+    font-family: "Public Sans", sans-serif;
+}
+
+.bslib-value-box .value-box-grid {
+    padding-top: 0.5rem;
+}
+
+.bslib-value-box .value-box-title {
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.8rem;
+    color: #4a5568;
+    letter-spacing: 0.05em;
+}
