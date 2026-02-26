@@ -1,0 +1,88 @@
+---
+title: "Dimensions Open Datasets"
+format:
+  html:
+    page-layout: full
+toc-title: Datasets
+params:
+  bq_project: "ds-open-datasets"
+---
+
+The Dimensions Open Datasets collection provides free access to large-scale scholarly and bibliometric datasets in the Google BigQuery environment. These datasets allow data analysts, scientometricians, and researchers to carry out advanced investigations taking advantage of the speed and flexibility of the BigQuery platform.
+
+This collection currently features the public data files for ORCID and DataCite.
+
+## ORCID Dataset
+
+This dataset is a SQL representation of the ORCID public data file. ORCID (Open Researcher and Contributor ID) is a free, unique, persistent identifier (PID) for individuals to use as they engage in research, scholarship, and innovation activities.
+
+An ORCID record may contain information about a researcher's work, affiliations, funding, peer review, and more. Items on ORCID records can be broken down into assertions that connect the ORCID iD-holder with an activity or affiliation.
+
+* **Release date:** Feb 2025
+
+* **Update frequency:** Yearly
+
+* **License:** CC0
+
+* **Documentation:** [ORCID Official Schema](https://info.orcid.org/documentation/integration-guide/)
+
+* **Sample Queries:** [Dimensions BigQuery Lab - ORCID](https://bigquery-lab.dimensions.ai/tutorials/09-orcid/)
+
+## DataCite Dataset
+
+DataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs.
+
+A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).
+
+* **Release date:** Jan 2026
+
+* **Update frequency:** Yearly
+
+* **License:** CC0
+
+* **Documentation:** [DataCite API documentation](https://support.datacite.org/docs/api)
+
+* **Sample Queries:** [Dimensions BigQuery Lab - DataCite](https://bigquery-lab.dimensions.ai/tutorials/10-datacite/)
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(bigrquery)
+library(reactable)
+library(htmltools)
+
+# Write credentials to temp file if BQ_ORI contains JSON content
+bq_ori <- Sys.getenv("BQ_ORI")
+if (bq_ori != "") {
+  if (file.exists(bq_ori)) {
+    # BQ_ORI is a file path
+    bigrquery::bq_auth(path = bq_ori)
+  } else {
+    # BQ_ORI contains JSON content (from GitHub Actions)
+    temp_key <- tempfile(fileext = ".json")
+    cat(bq_ori, file = temp_key)
+    bigrquery::bq_auth(path = temp_key)
+  }
+}
+```
+
+```{r}
+#| echo: false
+my_datasets <- bq_project_datasets(params$bq_project)
+
+# Function to recursively extract nested fields from RECORD type
+get_nested_fields <- function(field) {
+  if (field$type == "RECORD" && !is.null(field$fields)) {
+    tibble::tibble(
+      Field = map_chr(field$fields, "name"),
+      Type = map_chr(field$fields, "type"),
+      Description = map_chr(field$fields, \(x) x$description %||% NA_character_),
+      nested_fields = map(field$fields, get_nested_fields)
+    )
+  } else {
+    NULL
+  }
+}
+```
+
