@@ -30,9 +30,7 @@ An ORCID record may contain information about a researcher's work, affiliations,
 
 ## DataCite Dataset
 
-DataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs.
-
-A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).
+DataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).
 
 * **Release date:** Jan 2026
 
@@ -65,24 +63,3 @@ if (bq_ori != "") {
     bigrquery::bq_auth(path = temp_key)
   }
 }
-```
-
-```{r}
-#| echo: false
-my_datasets <- bq_project_datasets(params$bq_project)
-
-# Function to recursively extract nested fields from RECORD type
-get_nested_fields <- function(field) {
-  if (field$type == "RECORD" && !is.null(field$fields)) {
-    tibble::tibble(
-      Field = map_chr(field$fields, "name"),
-      Type = map_chr(field$fields, "type"),
-      Description = map_chr(field$fields, \(x) x$description %||% NA_character_),
-      nested_fields = map(field$fields, get_nested_fields)
-    )
-  } else {
-    NULL
-  }
-}
-```
-
