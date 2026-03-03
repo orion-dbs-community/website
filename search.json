@@ -217,6 +217,20 @@
     "text": "DataCite Dataset\nDataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).\n\nRelease date: Jan 2026\nUpdate frequency: Yearly\nLicense: CC0\nDocumentation: DataCite API documentation\nSample Queries: Dimensions BigQuery Lab - DataCite"
   },
   {
+    "objectID": "collections/ds-open-datasets/index.html#datacite",
+    "href": "collections/ds-open-datasets/index.html#datacite",
+    "title": "Dimensions Open Datasets",
+    "section": "datacite",
+    "text": "datacite\n\n\nCreated: Jan 12, 2026 23:11 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html#orcid",
+    "href": "collections/ds-open-datasets/index.html#orcid",
+    "title": "Dimensions Open Datasets",
+    "section": "orcid",
+    "text": "orcid\n\n\nCreated: Dec 03, 2024 21:56 | Location: US | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/index.html",
     "href": "collections/index.html",
     "title": "Collections Overview",
