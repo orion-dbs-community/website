@@ -15,6 +15,8 @@ website:
             href: collections/
           - text: CWTS Leiden Datasets
             href: collections/cwts/
+          - text: Dimensions Open Datasets
+            href: collections/ds-open-datasets/
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
           - text: MultiObs Campinas Datasets

@@ -15,6 +15,7 @@ if (bq_ori != "") {
 
 projects <- c(
   "cwts-leiden",
+  "ds-open-datasets",
   "insyspo",
   "multiobs",
   "sos-datasources",
