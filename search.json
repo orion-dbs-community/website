@@ -571,7 +571,14 @@
     "href": "collections/subugoe/index.html#semantic_scholar",
     "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "semantic_scholar",
-    "text": "semantic_scholar\n\n\nDescription\n\n\nThis dataset contains a snapshot from Semantic Scholar.\n\n\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
+    "text": "semantic_scholar\n\n\nDescription\n\n\nThis dataset contains a snapshot from Semantic Scholar.\n\nData Source & License\nThis dataset contains information from the Semantic Scholar Open Research Corpus, provided by the Allen Institute for Artificial Intelligence (AI2) and made available under the Open Data Commons Attribution License (ODC-By) v1.0.\nThe ODC-By license governs the database rights only — that is, the structure, organisation, and compilation of the data. It does not cover the rights in the individual contents of the database, such as paper titles, abstracts, or full texts, which may be subject to separate copyright or license terms held by their respective authors, publishers, or other rights holders. Users are responsible for ensuring their use of any such content complies with the applicable terms.\nFor scientific publications making use of this data, please also cite: &gt; Kinney et al., The Semantic Scholar Open Data Platform (https://www.semanticscholar.org/paper/cb92a7f9d9dbcf9145e32fdfa0e70e2a6b828eb1)\n\n\n\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#data-source-license",
+    "href": "collections/subugoe/index.html#data-source-license",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "Data Source & License",
+    "text": "Data Source & License\nThis dataset contains information from the Semantic Scholar Open Research Corpus, provided by the Allen Institute for Artificial Intelligence (AI2) and made available under the Open Data Commons Attribution License (ODC-By) v1.0.\nThe ODC-By license governs the database rights only — that is, the structure, organisation, and compilation of the data. It does not cover the rights in the individual contents of the database, such as paper titles, abstracts, or full texts, which may be subject to separate copyright or license terms held by their respective authors, publishers, or other rights holders. Users are responsible for ensuring their use of any such content complies with the applicable terms.\nFor scientific publications making use of this data, please also cite: &gt; Kinney et al., The Semantic Scholar Open Data Platform (https://www.semanticscholar.org/paper/cb92a7f9d9dbcf9145e32fdfa0e70e2a6b828eb1)"
   },
   {
     "objectID": "collections/subugoe/index.html#upw_history",
