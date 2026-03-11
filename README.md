@@ -53,6 +53,50 @@ Each time a collection page is rendered, it overwrites `data/collection_info_{pr
 
 The per-project files are committed back to `main` after every build. The helper that writes the snapshots is in `collect_collection_info.R`.
 
+## Writing blog posts
+
+Blog posts live under `blog/posts/`. Each post is a folder containing an `index.qmd` file.
+
+Blog posts are **rendered locally only** — GitHub Actions never re-renders them. This is controlled by `blog/posts/_metadata.yml` which sets `freeze: true`. Quarto stores the pre-rendered output in the `_freeze/` directory, which is committed to the repository. CI/CD picks up that frozen output instead of re-rendering.
+
+### Adding a new post
+
+1. Create a new folder under `blog/posts/` and add your `index.qmd`.
+2. Render the post locally:
+
+```bash
+quarto render blog/posts/<your-post>/index.qmd
+```
+
+3. Commit both the post source and its frozen output:
+
+```bash
+git add blog/posts/<your-post>/ _freeze/blog/posts/<your-post>/
+git commit -m "Add blog post: <title>"
+```
+
+### Editing an existing post
+
+After editing the `.qmd`, re-render locally and commit the updated freeze output:
+
+```bash
+quarto render blog/posts/<your-post>/index.qmd
+git add _freeze/blog/posts/<your-post>/
+git commit -m "Update blog post: <title>"
+```
+
+The knitr cache (`execute: cache: true`) ensures that expensive computations like BigQuery queries are not re-run unless the corresponding code chunk changes.
+
+### Working on a post in progress (WIP)
+
+To keep a post out of the public blog listing while still being able to render and preview it locally, add `status: "wip"` to the post's YAML front matter:
+
+```yaml
+status: "wip"
+```
+
+The blog listing is configured to exclude posts with this field. Once the post is ready, remove `status: "wip"`, re-render, and commit as usual. Do not use Quarto's built-in `draft: true` — it produces empty HTML and prevents the freeze cache from being populated.
+
 ## Local development
 
 To test the site locally, you need [Quarto](https://quarto.org/docs/get-started/) and R installed.
@@ -70,11 +114,13 @@ Then, render the full site:
 quarto render
 ```
 
-Or start a live-reloading preview server:
+Or start a live-reloading preview server without re-rendering everything (recommended after an initial render):
 
 ```bash
-quarto preview
+quarto preview --no-render
 ```
+
+This skips the expensive initial re-render of collection pages (which make BigQuery calls) and serves whatever is already in `_site/`. Individual files are still re-rendered as you edit them.
 
 Note: Rendering requires public access to all BigQuery datasets listed in the collections. If a dataset or table isn't publicly available, the build will fail.
 
