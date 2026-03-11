@@ -2,6 +2,8 @@
 title: "News & Tutorials"
 listing:
   contents: posts
+  exclude:
+    status: "wip"
   sort: "date desc"
   type: default
   categories: true
