@@ -39,9 +39,10 @@ knitr::opts_chunk$set(format.args = list(big.mark = ",", digits = 2))
 
 ## Introduction
 
-This notebook shows how several open research information resources provided by the [ORION community](https://orion-dbs.community/) on Google BigQuery can be used to measure open access by funder over time.
-We use a comparison of NIH- and European Commission-supported biomedical research literature to illustrate the approach.
-[Transformative agreements have played an important role in Europe](https://doi.org/10.1162/qss_a_00348) for several years, and [recent discussions around the NIH open access policy and price caps for publication fees](https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community) raise the question about the role of similar agreements in the US.
+This notebook shows how several open research information resources provided by the [ORION community](https://orion-dbs.community/) on Google BigQuery can be used to measure open access by funder over time, including an estimation of articles enabled by transformative agreements.
+We compare NIH- and European Commission-supported biomedical research literature to illustrate this approach.
+[Transformative agreements have played an important role in Europe](https://doi.org/10.1162/qss_a_00348) for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear.
+[Recent discussions around the NIH open access policy and price caps for publication fees](https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community) furthermore raise the question about the role of similar agreements in the US.
 
 ## Overview of data sources
 
@@ -50,9 +51,11 @@ Using this policy debate as a starting point, this notebook combines the followi
 *Identifying grant-supported biomedical literature*
 
 - **[PubMed](https://pubmed.ncbi.nlm.nih.gov/)**: Our starting point, which is used to retrieve [NIH grant-supported publications](https://pubmed.ncbi.nlm.nih.gov/?term=NIH%5BGrants+and+Funding%5D) and as a standard source for biomedical literature. PubMed is not available through one of ORION's data offerings, so data are retrieved via the [Entrez API](https://www.ncbi.nlm.nih.gov/home/develop/api/). PubMed identifiers (PMIDs) serve as the linking key for biomedical research records.
+
 ::: {.column-margin}
 The script used can be found [here](fetch_pmid_nih.R).
 :::
+
 - **[OpenAIRE](https://www.openaire.eu/)**: The [OpenAIRE graph](https://www.openaire.eu/), provided by [Sesame Open Science](https://orion-dbs.community/collections/sos/#openaire), is used to identify publications supported by the European Commission. OpenAIRE also contains PMIDs for PubMed-indexed articles, which allows filtering of to biomedical literature and linking to the other sources.
 
 *Publication metadata*
@@ -66,7 +69,7 @@ The script used can be found [here](fetch_pmid_nih.R).
 - **[OpenAlex](https://openalex.org/)**: Provides article- and journal-level open access status.
 - **[cOAlition S Journal Checker Tool data](https://journalcheckertool.org/transformative-agreements/)**: Contains institution- and journal-level data crowd-sourced from library consortia. [SUB Göttingen consolidates this information and links articles to agreements](https://open-bibliometrics.de/posts/20250509-tarelease/). This tutorial shows how that matching can be carried out in Google BigQuery.
 
-## Data gathering steps
+## Querying BigQuery
 
 ### Setup
 
@@ -92,31 +95,6 @@ bq_con <- dbConnect(
 )
 ```
 
-We also define a custom plot theme, inspired by the style used by [Our World in Data](https://ourworldindata.org/).
-
-```{r}
-my_theme <- function(base_size = 12) {
-  theme_minimal(base_size = base_size) +
-    theme(
-      panel.grid.major.x = element_blank(),
-      panel.grid.minor.x = element_blank(),
-      panel.grid.minor.y = element_blank(),
-      panel.grid.major.y = element_line(color = "grey85", linewidth = 0.3),
-      axis.line.x = element_line(color = "grey40", linewidth = 0.4),
-      axis.ticks.x = element_line(color = "grey40", linewidth = 0.3),
-      axis.ticks.length.x = unit(0.15, "cm"),
-      axis.ticks.y = element_blank(),
-      axis.text = element_text(color = "grey30", size = rel(0.9)),
-      axis.title.y = element_text(color = "grey30", size = rel(0.95), margin = margin(r = 10)),
-      plot.title = element_text(face = "bold", size = rel(1.1), color = "grey10", margin = margin(b = 8)),
-      plot.title.position = "plot",
-      plot.caption = element_text(hjust = 1, size = rel(0.7), color = "grey50", margin = margin(t = 12)),
-      plot.caption.position = "plot",
-      legend.position = "top",
-      plot.margin = margin(10, 10, 10, 10)
-    )
-}
-```
 
 ### Create a publication metadata set
 
@@ -396,6 +374,12 @@ The query result is stored in an R object called `funding_oa` for further local 
 funding_oa
 ```
 
+## Results
+
+### Open Access by year and funder
+
+Using the so-compiled data, we can calculate the number and proportion of open access by funder and publication year.
+
 ```{r}
 oa_by_year <- funding_oa |>
   filter(!is.na(oa_type)) |>
@@ -407,6 +391,35 @@ oa_by_year <- funding_oa |>
 
 The following figure illustrates the relative growth of open access, comparing biomedical research articles acknowledging support from the European Commission and the NIH.
 It is evident that both funders have similar open access shares of over 90%.
+
+<details>
+Note that we defined a custom plot theme, inspired by the style used by [Our World in Data](https://ourworldindata.org/).
+
+```{r}
+my_theme <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank(),
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_line(color = "grey85", linewidth = 0.3),
+      axis.line.x = element_line(color = "grey40", linewidth = 0.4),
+      axis.ticks.x = element_line(color = "grey40", linewidth = 0.3),
+      axis.ticks.length.x = unit(0.15, "cm"),
+      axis.ticks.y = element_blank(),
+      axis.text = element_text(color = "grey30", size = rel(0.9)),
+      axis.title.y = element_text(color = "grey30", size = rel(0.95), margin = margin(r = 10)),
+      plot.title = element_text(face = "bold", size = rel(1.1), color = "grey10", margin = margin(b = 8)),
+      plot.title.position = "plot",
+      plot.caption = element_text(hjust = 1, size = rel(0.7), color = "grey50", margin = margin(t = 12)),
+      plot.caption.position = "plot",
+      legend.position = "top",
+      plot.margin = margin(10, 10, 10, 10)
+    )
+}
+```
+
+<details>
 
 ```{r}
 #| dpi: 300
@@ -430,6 +443,7 @@ oa_by_year |>
 ```
 
 The next figure shows the absolute development.
+
 ```{r}
 #| dpi: 300
 #| fig-retina: 2
@@ -451,7 +465,10 @@ oa_by_year |>
   my_theme()
 ```
 
-Next, we break down open access by business model. Four categories are distinguished using a combination of OpenAlex data and estimates derived from the Coalition S Transformative Agreement data:
+### Open Access business models
+
+Next, we break down open access by business model. 
+Four categories are distinguished using a combination of OpenAlex data and estimates derived from the Coalition S Transformative Agreement data:
 
 - **APC**: gold or hybrid open access, not via a transformative agreement
 - **Transformative Agreement**: gold or hybrid open access enabled by a transformative agreement
