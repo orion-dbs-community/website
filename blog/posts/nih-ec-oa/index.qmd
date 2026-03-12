@@ -57,7 +57,8 @@ The ultimate goal in this tutorial is to re-create the following visualisation u
 
 ![](index_files/figure-html/oa_by_year_type_rel-1.png)
 
-Although both funders achieved open access to over 90% of biomedical research literature, their funding models differ. 
+The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. 
+Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. 
 Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission, where such agreements are widely available, than for research funded by the NIH. 
 This illustrates potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies, as suggested by market observers [@Clarke_2025;@Haustein_2025]. 
 
@@ -471,6 +472,7 @@ oa_by_year_and_type |>
 #| echo: false
 # Walk aroudn to deal with knitr cache
 library(tidyverse)
+
 ```
 
 The figures highlight differences in how open access is financed across the two funder communities.
