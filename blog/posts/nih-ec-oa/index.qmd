@@ -55,7 +55,7 @@ We compare NIH- and European Commission-supported biomedical research literature
 
 The ultimate goal in this tutorial is to re-create the following visualisation using [ORION resources](https://orion-dbs.community/), focusing on open access by type with a special emphasis on different open access business models.
 
-![](index/figure-html/oa_by_year_type_rel-1.png)
+![](index_files/figure-html/oa_by_year_type_rel-1.png)
 
 Although both funders achieved open access to over 90% of biomedical research literature, their funding models differ. 
 Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission, where such agreements are widely available, than for research funded by the NIH. 
@@ -465,6 +465,12 @@ oa_by_year_and_type |>
     plot.margin = margin(10, 10, 10, 10)
   ) +
   guides(fill = guide_legend(reverse = TRUE))
+```
+
+```{r}
+#| echo: false
+# Walk aroudn to deal with knitr cache
+library(tidyverse)
 ```
 
 The figures highlight differences in how open access is financed across the two funder communities.
