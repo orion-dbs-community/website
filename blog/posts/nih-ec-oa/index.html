@@ -60,7 +60,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -215,11 +235,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#estimate-articles-covered-by-transformative-agreements" id="toc-estimate-articles-covered-by-transformative-agreements" class="nav-link" data-scroll-target="#estimate-articles-covered-by-transformative-agreements">Estimate articles covered by transformative agreements</a></li>
   <li><a href="#create-the-analytical-dataset-funder-view" id="toc-create-the-analytical-dataset-funder-view" class="nav-link" data-scroll-target="#create-the-analytical-dataset-funder-view">Create the analytical dataset: funder view</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
-  <ul class="collapse">
-  <li><a href="#open-access-by-year-and-funder" id="toc-open-access-by-year-and-funder" class="nav-link" data-scroll-target="#open-access-by-year-and-funder">Open Access by year and funder</a></li>
-  <li><a href="#open-access-business-models" id="toc-open-access-business-models" class="nav-link" data-scroll-target="#open-access-business-models">Open Access business models</a></li>
-  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#responsible-use" id="toc-responsible-use" class="nav-link" data-scroll-target="#responsible-use">Responsible use</a></li>
+  <li><a href="#contributions" id="toc-contributions" class="nav-link" data-scroll-target="#contributions">Contributions</a></li>
+  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
   </ul>
 </nav>
     </div>
@@ -263,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    This tutorial demonstrates how to crosswalk various ORION resources. The focus is on funder and open access information for biomedical journal literature. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, the tutorial shows how to combine several data sources on BigQuery, including Crossref, OpenAIRE, OpenAlex, and open access agreement data from cOAlition S. The analysis covers more than 800,000 articles in PubMed, revealing notable differences in open access uptake between NIH- and EC-supported biomedical research.
+    This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from Pubmed, OpenAIRE, OpenAlex, and open access agreement data from cOAlition S. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access uptake between NIH- and EC-supported biomedical research.
   </div>
 </div>
 
@@ -273,59 +292,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This notebook shows how several open research information resources provided by the <a href="https://orion-dbs.community/">ORION community</a> on Google BigQuery can be used to measure open access by funder over time, including an estimation of articles enabled by transformative agreements. We compare NIH- and European Commission-supported biomedical research literature to illustrate this approach. <a href="https://doi.org/10.1162/qss_a_00348">Transformative agreements have played an important role in Europe</a> for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear. <a href="https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community">Recent discussions around the NIH open access policy and price caps for publication fees</a> furthermore raise the question about the role of similar agreements in the US.</p>
+<p>This tutorial shows how to measure open access by funder over time using open research information resources provided by the <a href="https://orion-dbs.community/">ORION community</a> on Google BigQuery We compare NIH- and European Commission-supported biomedical research literature. <a href="https://esac-initiative.org/about/transformative-agreements/">Transformative agreements</a> have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear. <a href="https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community">Recent discussions around the NIH open access policy and price caps for publication fees</a> furthermore raise the question about the role of similar agreements in the US.</p>
+<p>The ultimate goal in this tutorial is to re-create the following visualisation using <a href="https://orion-dbs.community/">ORION resources</a>, focusing on open access by type with a special emphasis on different open access business models.</p>
+<p><img src="index/figure-html/oa_by_year_type_rel-1.png" class="img-fluid"></p>
+<p>Although both funders achieved open access to over 90% of biomedical research literature, their funding models differ. Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission, where such agreements are widely available, than for research funded by the NIH. This illustrates potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies, as suggested by market observers <span class="citation" data-cites="Clarke_2025 Haustein_2025">(<a href="#ref-Clarke_2025" role="doc-biblioref">Clarke &amp; Esposito, 2025</a>; <a href="#ref-Haustein_2025" role="doc-biblioref">Haustein et al., 2025</a>)</span>.</p>
 </section>
 <section id="overview-of-data-sources" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="overview-of-data-sources">Overview of data sources</h2>
-<p>Using this policy debate as a starting point, this notebook combines the following sources into a unified dataset on open access in biomedical research literature, with a particular focus on publisher-provided open access through transformative agreements.</p>
-<p><em>Identifying grant-supported biomedical literature</em></p>
+<p>Using this policy debate as a starting point, this tutorial combines several resources into a unified dataset on open access in biomedical research literature, with a particular focus on publisher-provided open access through transformative agreements.</p>
+<p>Our open research information resources are:</p>
+<p><em>Identifying grant-supported biomedical research literature</em></p>
 <ul>
-<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></strong>: Our starting point, which is used to retrieve <a href="https://pubmed.ncbi.nlm.nih.gov/?term=NIH%5BGrants+and+Funding%5D">NIH grant-supported publications</a> and as a standard source for biomedical literature. PubMed is not available through one of ORION’s data offerings, so data are retrieved via the <a href="https://www.ncbi.nlm.nih.gov/home/develop/api/">Entrez API</a>. PubMed identifiers (PMIDs) serve as the linking key for biomedical research records.</li>
+<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></strong>: The starting point and a standard source for biomedical research literature, which is used to retrieve <a href="https://pubmed.ncbi.nlm.nih.gov/?term=NIH%5BGrants+and+Funding%5D">NIH grant-supported publications</a>. PubMed is not available through one of ORION’s data offerings, so data are retrieved via the <a href="https://www.ncbi.nlm.nih.gov/home/develop/api/">Entrez API</a>. PubMed identifiers (PMIDs) serve as the linking key for biomedical research publications.</li>
 </ul>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>The script used can be found <a href="fetch_pmid_nih.R">here</a>.</p>
 </div></div><ul>
-<li><strong><a href="https://www.openaire.eu/">OpenAIRE</a></strong>: The <a href="https://www.openaire.eu/">OpenAIRE graph</a>, provided by <a href="https://orion-dbs.community/collections/sos/#openaire">Sesame Open Science</a>, is used to identify publications supported by the European Commission. OpenAIRE also contains PMIDs for PubMed-indexed articles, which allows filtering of to biomedical literature and linking to the other sources.</li>
+<li><strong><a href="https://www.openaire.eu/">OpenAIRE</a></strong>: The <a href="https://www.openaire.eu/">OpenAIRE graph</a>, provided by <a href="https://orion-dbs.community/collections/sos/#openaire">Sesame Open Science on ORION</a>, is used to identify publications supported by the European Commission. OpenAIRE also contains PMIDs for PubMed-indexed articles, which allows filtering to biomedical research literature and linking to the other sources. OpenAIRE is considered the most comprehensive source for EC-funded publications <span class="citation" data-cites="mugabushaka2021scholarlyoutputseuresearch">(<a href="#ref-mugabushaka2021scholarlyoutputseuresearch" role="doc-biblioref">Mugabushaka et al., 2021</a>)</span>.</li>
 </ul>
 <p><em>Publication metadata</em></p>
 <ul>
-<li><strong><a href="https://openalex.org/">OpenAlex</a></strong>: The primary source for bibliographic metadata in this tutorial. OpenAlex records also include PMIDs as identifiers. Here, we will use the <a href="https://orion-dbs.community/collections/subugoe/#openalex_walden">SUB Göttingen OpenAlex offering</a>.</li>
-<li><strong><a href="https://www.crossref.org/">Crossref</a></strong>: As provided by <a href="https://orion-dbs.community/collections/subugoe/#cr_instant">SUB Göttingen</a>. Useful for publisher disambiguation, because Crossref provides more consistent publisher names than OpenAlex.</li>
-<li><strong>Document classification</strong>: A document classification dataset, developed as part of the <a href="https://open-bibliometrics.de/posts/20250717-DocumentTypeClassifier/">German Competence Network for Bibliometrics</a> and provided by SUB Göttingen, is used to restrict the sample to original research articles.</li>
+<li><strong><a href="https://openalex.org/">OpenAlex</a></strong>: The primary source for bibliographic metadata in this tutorial. OpenAlex records also include PMIDs as identifiers. We will use the <a href="https://orion-dbs.community/collections/subugoe/#openalex_walden">SUB Göttingen OpenAlex offering</a>.</li>
+<li><strong>Document classification</strong>: A document classification dataset, developed as part of the <a href="https://open-bibliometrics.de/posts/20250717-DocumentTypeClassifier/">German Competence Network for Bibliometrics</a> and provided by SUB Göttingen, is used to restrict the sample to original research articles <span class="citation" data-cites="Haupka_2026">(<a href="#ref-Haupka_2026" role="doc-biblioref">Haupka, 2026</a>)</span>.</li>
 </ul>
 <p><em>Open access information</em></p>
 <ul>
 <li><strong><a href="https://openalex.org/">OpenAlex</a></strong>: Provides article- and journal-level open access status.</li>
-<li><strong><a href="https://journalcheckertool.org/transformative-agreements/">cOAlition S Journal Checker Tool data</a></strong>: Contains institution- and journal-level data crowd-sourced from library consortia. <a href="https://open-bibliometrics.de/posts/20250509-tarelease/">SUB Göttingen consolidates this information and links articles to agreements</a>. This tutorial shows how that matching can be carried out in Google BigQuery.</li>
+<li><strong><a href="https://journalcheckertool.org/transformative-agreements/">cOAlition S Journal Checker Tool Transformative Agreement data</a></strong>: Contains institution- and journal-level data crowd-sourced about agreements listed in the <a href="https://esac-initiative.org/about/transformative-agreements/agreement-registry/">ESAC registry</a>. <a href="https://open-bibliometrics.de/posts/20250509-tarelease/">SUB Göttingen enriches and consolidates this information and links articles to agreements</a>.</li>
 </ul>
 </section>
 <section id="querying-bigquery" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="querying-bigquery">Querying BigQuery</h2>
+<p>Let’s query these data sources step-by-step.</p>
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<p>As a notebook software, we use <a href="https://quarto.org/">Quarto</a>. Acutally, the ORION website is also build with Quarto.</p>
-<p>To query BigQuery from within our Quarto notebook, we use the R <a href="https://bigrquery.r-dbi.org/"><code>bigrquery</code></a> package via the DBI interface. The connection is established as follows:</p>
+<p>To query BigQuery from within our Quarto notebook, we use the R <a href="https://bigrquery.r-dbi.org/"><code>bigrquery</code></a> package. The connection is established as follows:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bigrquery)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(countrycode)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to GBQ with billing project from SUB Göttingen,</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># You have to use your own :-)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>bq_con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  bigrquery<span class="sc">::</span><span class="fu">bigquery</span>(),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">project =</span> <span class="st">"subugoe-collaborative"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">dataset =</span> <span class="st">"openalex"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">billing =</span> <span class="st">"subugoe-collaborative"</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to GBQ with billing project from SUB Göttingen,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># You have to use your own :-)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>bq_con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  bigrquery<span class="sc">::</span><span class="fu">bigquery</span>(),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">project =</span> <span class="st">"subugoe-collaborative"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">dataset =</span> <span class="st">"openalex"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">billing =</span> <span class="st">"subugoe-collaborative"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="create-a-publication-metadata-set" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="create-a-publication-metadata-set">Create a publication metadata set</h3>
-<p>This section describes how we assembled the analytical dataset, combining grant funding information from PubMed and OpenAIRE with publication metadata from OpenAlex and Crossref.</p>
-<p>It is generally good practice to begin by creating a focused subset of publications that contains only the columns needed for your analysis. This reduces query costs, keeps the working dataset to a manageable size, and keeps a local subset of the raw metadata save.</p>
+<p>This section describes how to assemble the analytical dataset, combining grant funding information from PubMed and OpenAIRE with publication metadata from OpenAlex.</p>
+<p>It is generally good practice to begin with a subset that contains only the columns needed for your analysis. This reduces query costs, keeps the working dataset to a manageable size, and helps safeguard the metadata used for further analysis and validation.</p>
 <p>Our first step is to build a publication dataset enriched with grant funding information from the NIH and the European Commission. Because PubMed is not yet part of ORION, NIH funding data are retrieved directly from PubMed via the Entrez API.</p>
 <p>The result is a list of PMIDs representing NIH-supported publications, which we then upload to BigQuery.</p>
 
@@ -340,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In total, PubMed indexed 824060 publications with NIH support between 2018 and 2024.</p>
-<p>Next, we combine this list with OpenAIRE, <a href="https://arxiv.org/pdf/2109.10638">the most comprehensive source for EC-funded publications</a>, to add European Commission-supported biomedical literature, and with OpenAlex and Crossref to obtain full publication metadata.</p>
+<p>Next, we combine this list with OpenAIRE to add European Commission-supported biomedical literature, and with OpenAlex to obtain full publication metadata.</p>
 <p>The resulting table is stored as <code>subugoe-collaborative.resources.oa_tutorial_md_raw</code>, and is publicly accessible. You will need to substitute your own dataset name.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">TABLE</span> `subugoe<span class="op">-</span>collaborative.resources.oa_tutorial_md_raw` <span class="kw">AS</span> (</span>
@@ -382,48 +403,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    publication_year,</span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    publication_date,</span>
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    primary_location.<span class="kw">source</span>.issn_l <span class="kw">AS</span> issn_l,</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    oalex.primary_location.<span class="kw">source</span>.host_organization_name <span class="kw">AS</span> oalex_publisher,</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    cr.publisher <span class="kw">AS</span> cr_publisher,</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    primary_location.<span class="kw">source</span>.is_in_doaj <span class="kw">AS</span> is_in_doaj,</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    open_access.oa_status <span class="kw">AS</span> oa_status,</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    country <span class="kw">AS</span> country_code,</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    inst.ror,</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    af.funder <span class="kw">AS</span> funders</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> `subugoe<span class="op">-</span>collaborative.openalex_walden.works` <span class="kw">AS</span> oalex</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    primary_location.<span class="kw">source</span>.is_in_doaj <span class="kw">AS</span> is_in_doaj,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    open_access.oa_status <span class="kw">AS</span> oa_status,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    country <span class="kw">AS</span> country_code,</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    inst.ror,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    af.funder <span class="kw">AS</span> funders</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> `subugoe<span class="op">-</span>collaborative.openalex_walden.works` <span class="kw">AS</span> oalex</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    UNNEST(authorships) <span class="kw">AS</span> au <span class="kw">WITH</span> OFFSET <span class="kw">AS</span> pos</span>
 <span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    UNNEST(authorships) <span class="kw">AS</span> au <span class="kw">WITH</span> OFFSET <span class="kw">AS</span> pos</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    UNNEST(au.countries) <span class="kw">AS</span> country</span>
 <span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    UNNEST(au.countries) <span class="kw">AS</span> country</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    UNNEST(au.institutions) <span class="kw">AS</span> inst</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> `subugoe<span class="op">-</span>collaborative.resources.document_classification_september25` <span class="kw">AS</span> doctype_classifier</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> oalex.doi <span class="op">=</span> doctype_classifier.doi</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> `subugoe<span class="op">-</span>collaborative.cr_instant.snapshot` <span class="kw">AS</span> cr</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> <span class="fu">LOWER</span>(oalex.doi) <span class="op">=</span> <span class="fu">LOWER</span>(cr.doi)</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> all_funders <span class="kw">AS</span> af</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> REGEXP_EXTRACT(oalex.ids.pmid, r<span class="st">'(\d+)$'</span>) <span class="op">=</span> af.pmid</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>      pos <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> primary_location.<span class="kw">source</span>.<span class="kw">type</span> <span class="op">=</span> <span class="ot">"journal"</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_paratext <span class="op">=</span> <span class="kw">FALSE</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> oalex.<span class="kw">type</span> <span class="kw">IN</span> (<span class="st">'article'</span>,<span class="st">'review'</span>)</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_research <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">FALSE</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_xpac <span class="op">=</span> <span class="kw">FALSE</span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> (</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>      <span class="kw">NOT</span> REGEXP_CONTAINS(oalex.biblio.issue, <span class="st">'^[a-zA-Z]'</span>)</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>      <span class="kw">OR</span> oalex.biblio.issue <span class="kw">IS</span> <span class="kw">NULL</span>)</span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> (</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>      <span class="kw">NOT</span> REGEXP_CONTAINS(oalex.title, <span class="st">'[0-9]{3} pp.'</span>))</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> publication_year <span class="kw">BETWEEN</span> <span class="dv">2018</span> <span class="kw">AND</span> <span class="dv">2025</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    UNNEST(au.institutions) <span class="kw">AS</span> inst</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> `subugoe<span class="op">-</span>collaborative.resources.document_classification_september25` <span class="kw">AS</span> doctype_classifier</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> oalex.doi <span class="op">=</span> doctype_classifier.doi</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">JOIN</span> all_funders <span class="kw">AS</span> af</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> REGEXP_EXTRACT(oalex.ids.pmid, r<span class="st">'(\d+)$'</span>) <span class="op">=</span> af.pmid</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      pos <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> primary_location.<span class="kw">source</span>.<span class="kw">type</span> <span class="op">=</span> <span class="ot">"journal"</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_paratext <span class="op">=</span> <span class="kw">FALSE</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> oalex.<span class="kw">type</span> <span class="kw">IN</span> (<span class="st">'article'</span>,<span class="st">'review'</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_research <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">FALSE</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> is_xpac <span class="op">=</span> <span class="kw">FALSE</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> (</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>      <span class="kw">NOT</span> REGEXP_CONTAINS(oalex.biblio.issue, <span class="st">'^[a-zA-Z]'</span>)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>      <span class="kw">OR</span> oalex.biblio.issue <span class="kw">IS</span> <span class="kw">NULL</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> (</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>      <span class="kw">NOT</span> REGEXP_CONTAINS(oalex.title, <span class="st">'[0-9]{3} pp.'</span>))</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> publication_year <span class="kw">BETWEEN</span> <span class="dv">2018</span> <span class="kw">AND</span> <span class="dv">2025</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The query uses Common Table Expressions (CTEs), introduced with <code>WITH</code>, to build up the dataset in stages. The first CTE, <code>openaire_funders</code>, extracts EC-funded publications from OpenAIRE by unnesting the fundings array, filtering for the European Commission, and joining to the OpenAIRE publication and relation tables to retrieve the associated PMIDs. The second CTE, <code>nih_funders</code>, reads the PMID list we uploaded in the previous step. Both are combined in <code>all_funders</code> using <code>UNION ALL</code>.</p>
-<p>The main query retrieves metadata for all journal articles in the OpenAlex snapshot and joins the funder information. Several filters are applied to keep the dataset focused on relevant publications: only journal articles and reviews are included; first author affiliations are used (identified via <code>WITH OFFSET</code> because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records. Crossref is used as the source for publisher names, as it provides more consistent disambiguation than OpenAlex, which can split the same publisher across multiple imprints. The dataset covers publications from 2018 to 2025.</p>
+<p>The main query retrieves metadata for all journal articles in the OpenAlex snapshot and joins the funder information. Several filters are applied to keep the dataset focused on relevant publications, following <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span>: only journal articles and reviews are included; first author affiliations are used (identified via <code>WITH OFFSET</code> because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records. The dataset covers publications from 2018 to 2025.</p>
 </section>
-<section id="estimate-articles-covered-by-transformative-agreements" class="level3">
+<section id="estimate-articles-covered-by-transformative-agreements" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="estimate-articles-covered-by-transformative-agreements">Estimate articles covered by transformative agreements</h3>
-<p>Next, we estimate how many open access articles were enabled by a transformative agreement, following the method described by <a href="https://link.springer.com/article/10.1007/s11192-025-05390-3">Jahn (2025)</a>. Because of a lack of open access invoicing data, ususally not shared by libraries and publishers, various metadata sources ar ematched to obtain an estiamtion. Such an appraoch <a href="https://doi.org/10.1162/QSS.a.24">has been proven to provide</a> robust results, but will likely underestimate the overall number of articles enabled by an angreements.</p>
-<p>The query draws on several datasets from the Journal Checker Tool, provided by SUB Göttingen as part of the open bibliometric data offerings from the German Competence Network for Bibliometrics.</p>
+<p>Next, we estimate how many open access articles were enabled by a transformative agreement, following the method more comprehensively described in <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span> and <span class="citation" data-cites="Jahn_2026">Jahn (<a href="#ref-Jahn_2026" role="doc-biblioref">2026</a>)</span>. Because of a lack of open access invoicing data, usually not shared by libraries and publishers, various metadata sources are matched to obtain an estimation. Such an approach can provide robust results <span class="citation" data-cites="de_Jonge_2025">(<a href="#ref-de_Jonge_2025" role="doc-biblioref">de Jonge et al., 2025</a>)</span>, but likely underestimate the overall number of articles enabled by agreements.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>We will discuss these shortcomings in more detail at the end of the tutorial.</p>
+</div></div><p>The query draws on several datasets from the Journal Checker Tool, provided by SUB Göttingen as part of the open bibliometric data offerings from the German Competence Network for Bibliometrics.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">TABLE</span> `subugoe<span class="op">-</span>collaborative.resources.oa_tutorial_jct_articles` <span class="kw">AS</span> (</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span></span>
@@ -501,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="create-the-analytical-dataset-funder-view" class="level3">
 <h3 class="anchored" data-anchor-id="create-the-analytical-dataset-funder-view">Create the analytical dataset: funder view</h3>
 <p>The following query combines the publication metadata table with the transformative agreement articles table to count articles by funder, publication year, and open access type. It also calculates the total number of articles per funder and year, which serves as the denominator for open access proportions.</p>
-<p>The analysis focuses on articles made freely available on the journal website, covering gold open access in DOAJ-listed journals, hybrid open access, and diamond open access. Repository-based open access, such as deposits in PubMed Central, is not distinguished further and is grouped into the “Other” category. The same accounts for bronze, many biomedical journals make back issues openly available after an embargo period to comply with NIH open access policies prior 2025, which OpenAlex tags as bronze.</p>
+<p>The analysis focuses on articles made freely available on the journal website, covering gold open access in DOAJ-listed journals, hybrid open access, and diamond open access. Repository-based open access, such as deposits in PubMed Central, is not distinguished further and is grouped into the “Other” category. The same applies to bronze; many biomedical journals make back issues freely available on their websites after an embargo period <span class="citation" data-cites="Piwowar_2018">(<a href="#ref-Piwowar_2018" role="doc-biblioref">Piwowar et al., 2018</a>)</span>, a practice that helped comply with the previous NIH public access mandate prior to 2025.</p>
 <div class="cell" data-output.var="funding_oa">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  oa <span class="kw">AS</span> (</span>
@@ -524,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">LEFT</span> <span class="kw">JOIN</span></span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      (</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">SELECT</span> <span class="kw">DISTINCT</span> doi</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> `subugoe<span class="op">-</span>closed.apc_science.jct_articles`</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> `subugoe<span class="op">-</span>collaborative.resources.oa_tutorial_jct_articles`</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      ) <span class="kw">AS</span> jct</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      <span class="kw">USING</span> (doi)</span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> funders <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
@@ -563,117 +583,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>funding_oa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 108 × 6
+<pre><code># A tibble: 109 × 6
    publication_year funders            articles n_oa_articles oa_type enabled_ta
               &lt;int&gt; &lt;chr&gt;                 &lt;int&gt;         &lt;int&gt; &lt;chr&gt;   &lt;lgl&gt;     
- 1             2024 NIH                   89834         34745 other_… FALSE     
- 2             2024 NIH                   89834          5062 &lt;NA&gt;    FALSE     
- 3             2024 NIH                   89834          2500 diamon… FALSE     
- 4             2024 NIH                   89834         30187 gold_i… FALSE     
- 5             2024 NIH                   89834          1218 gold_i… TRUE      
- 6             2024 NIH                   89834           131 other_… TRUE      
- 7             2024 NIH                   89834         12750 hybrid… FALSE     
- 8             2024 NIH                   89834          3241 hybrid… TRUE      
- 9             2024 European Commissi…    26958            97 other_… TRUE      
-10             2024 European Commissi…    26958          3102 other_… FALSE     
-# ℹ 98 more rows</code></pre>
+ 1             2024 NIH                   89835         34865 other_… FALSE     
+ 2             2024 NIH                   89835          5063 &lt;NA&gt;    FALSE     
+ 3             2024 NIH                   89835          2500 diamon… FALSE     
+ 4             2024 NIH                   89835          1247 gold_i… TRUE      
+ 5             2024 NIH                   89835         30158 gold_i… FALSE     
+ 6             2024 NIH                   89835         12640 hybrid… FALSE     
+ 7             2024 NIH                   89835          3351 hybrid… TRUE      
+ 8             2024 NIH                   89835            11 other_… TRUE      
+ 9             2024 European Commissi…    26958          1348 &lt;NA&gt;    FALSE     
+10             2024 European Commissi…    26958          2171 gold_i… TRUE      
+# ℹ 99 more rows</code></pre>
 </div>
 </div>
 </section>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
-<section id="open-access-by-year-and-funder" class="level3">
-<h3 class="anchored" data-anchor-id="open-access-by-year-and-funder">Open Access by year and funder</h3>
 <p>Using the so-compiled data, we can calculate the number and proportion of open access by funder and publication year.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>oa_by_year <span class="ot">&lt;-</span> funding_oa <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(oa_type)) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n_oa =</span> <span class="fu">sum</span>(n_oa_articles),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(publication_year, funders, articles)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">oa_prop =</span> n_oa <span class="sc">/</span> articles)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>The following figure illustrates the relative growth of open access, comparing biomedical research articles acknowledging support from the European Commission and the NIH. It is evident that both funders have similar open access shares of over 90%.</p>
-<details>
-<p>Note that we defined a custom plot theme, inspired by the style used by <a href="https://ourworldindata.org/">Our World in Data</a>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_theme <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">base_size =</span> <span class="dv">12</span>) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> base_size) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey85"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="fl">0.4</span>),</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey40"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>),</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.length.x =</span> <span class="fu">unit</span>(<span class="fl">0.15</span>, <span class="st">"cm"</span>),</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.9</span>)),</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.95</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.1</span>), <span class="at">color =</span> <span class="st">"grey10"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.7</span>), <span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">12</span>)),</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>)</span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<details>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>oa_by_year <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(publication_year, oa_prop, <span class="at">group =</span> funders, <span class="at">color =</span> funders)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Open Access (in%)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>()) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="cn">NULL</span>,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"NIH"</span> <span class="ot">=</span> <span class="st">"#323a45"</span>,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"European Commission"</span> <span class="ot">=</span> <span class="st">"#F8AE21"</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">+</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Open Access to biomedical research literature"</span>,</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Journal articles and reviews in PubMed"</span>,</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data sources: PubMed, OpenAIRE, OpenAlex."</span>) <span class="sc">+</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/oa_by_year_rel-1.png" class="img-fluid figure-img" width="2100"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The next figure shows the absolute development.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>oa_by_year <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(publication_year, n_oa, <span class="at">group =</span> funders, <span class="at">color =</span> funders)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Open Access"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="cn">NULL</span>,</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"NIH"</span> <span class="ot">=</span> <span class="st">"#323a45"</span>,</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"European Commission"</span> <span class="ot">=</span> <span class="st">"#F8AE21"</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">+</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Open Access to biomedical research literature"</span>,</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Journal articles and reviews in PubMed"</span>,</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data sources: PubMed, OpenAIRE, OpenAlex."</span>) <span class="sc">+</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/oa_by_year_abs-1.png" class="img-fluid figure-img" width="2100"></p>
-</figure>
-</div>
-</div>
-</div>
-</details></details></section>
-<section id="open-access-business-models" class="level3">
-<h3 class="anchored" data-anchor-id="open-access-business-models">Open Access business models</h3>
-<p>Next, we break down open access by business model. Four categories are distinguished using a combination of OpenAlex data and estimates derived from the Coalition S Transformative Agreement data:</p>
+<p>To do so, we furthermore break down open access by business model, distinguishing four categories using a combination of OpenAlex data and estimates derived from the Coalition S Transformative Agreement data:</p>
 <ul>
 <li><strong>APC</strong>: gold or hybrid open access, not via a transformative agreement</li>
 <li><strong>Transformative Agreement</strong>: gold or hybrid open access enabled by a transformative agreement</li>
@@ -682,59 +613,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Note that the focus is on publisher open access business models, and <a href="https://help.openalex.org/hc/en-us/articles/24347035046295-Open-Access-OA">OpenAlex open access status definition favors publisher-provided open access</a>, so articles in PMC repositories are accounted when there was no open version on a publisher website.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type <span class="ot">&lt;-</span> funding_oa <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(oa_type)) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">oa_cat =</span> <span class="fu">case_when</span>(</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"gold_is_in_doaj"</span>, <span class="st">"hybrid_oa"</span>) <span class="sc">&amp;</span> enabled_ta <span class="sc">==</span> <span class="cn">FALSE</span> <span class="sc">~</span> <span class="st">"APC"</span>,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"gold_is_in_doaj"</span>, <span class="st">"hybrid_oa"</span>) <span class="sc">&amp;</span> enabled_ta <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Transformative Agreement"</span>,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">==</span> <span class="st">"diamond_is_in_doaj"</span> <span class="sc">~</span> <span class="st">"Diamond OA"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> <span class="st">"Other"</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">n_oa =</span> <span class="fu">sum</span>(n_oa_articles),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(publication_year, funders, articles, oa_cat)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">oa_prop =</span> n_oa <span class="sc">/</span> articles,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">oa_cat =</span> <span class="fu">factor</span>(oa_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"APC"</span>, <span class="st">"Transformative Agreement"</span>, <span class="st">"Diamond OA"</span>, <span class="st">"Other"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type <span class="ot">&lt;-</span> funding_oa <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(oa_type)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">oa_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"gold_is_in_doaj"</span>, <span class="st">"hybrid_oa"</span>) <span class="sc">&amp;</span> enabled_ta <span class="sc">==</span> <span class="cn">FALSE</span> <span class="sc">~</span> <span class="st">"APC"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"gold_is_in_doaj"</span>, <span class="st">"hybrid_oa"</span>) <span class="sc">&amp;</span> enabled_ta <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Transformative Agreement"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    oa_type <span class="sc">==</span> <span class="st">"diamond_is_in_doaj"</span> <span class="sc">~</span> <span class="st">"Diamond OA"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> <span class="st">"Other"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">n_oa =</span> <span class="fu">sum</span>(n_oa_articles),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(publication_year, funders, articles, oa_cat)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">|&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">oa_prop =</span> n_oa <span class="sc">/</span> articles,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">oa_cat =</span> <span class="fu">factor</span>(oa_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"APC"</span>, <span class="st">"Transformative Agreement"</span>, <span class="st">"Diamond OA"</span>, <span class="st">"Other"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 56 × 6
    publication_year funders             articles oa_cat             n_oa oa_prop
               &lt;int&gt; &lt;chr&gt;                  &lt;int&gt; &lt;fct&gt;             &lt;int&gt;   &lt;dbl&gt;
- 1             2024 NIH                    89834 Other             34876  0.388 
- 2             2024 NIH                    89834 Diamond OA         2500  0.0278
- 3             2024 NIH                    89834 APC               42937  0.478 
- 4             2024 NIH                    89834 Transformative A…  4459  0.0496
- 5             2024 European Commission    26958 Other              3199  0.119 
- 6             2024 European Commission    26958 Diamond OA          740  0.0275
- 7             2024 European Commission    26958 Transformative A…  8548  0.317 
- 8             2024 European Commission    26958 APC               13123  0.487 
- 9             2023 NIH                    97415 Other             43969  0.451 
-10             2023 NIH                    97415 Diamond OA         1948  0.0200
+ 1             2024 NIH                    89835 Other             34876  0.388 
+ 2             2024 NIH                    89835 Diamond OA         2500  0.0278
+ 3             2024 NIH                    89835 Transformative A…  4598  0.0512
+ 4             2024 NIH                    89835 APC               42798  0.476 
+ 5             2024 European Commission    26958 Transformative A…  8864  0.329 
+ 6             2024 European Commission    26958 APC               12807  0.475 
+ 7             2024 European Commission    26958 Other              3199  0.119 
+ 8             2024 European Commission    26958 Diamond OA          740  0.0275
+ 9             2023 European Commission    28490 Diamond OA          531  0.0186
+10             2023 European Commission    28490 APC               13527  0.475 
 # ℹ 46 more rows</code></pre>
 </div>
 </div>
-<p>The following two plots show the same breakdown as proportions and as absolute counts, respectively.</p>
+<p>Using these aggregated data, we present the relative development of open access by business model:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(publication_year, oa_prop, <span class="at">fill =</span> <span class="fu">fct_rev</span>(oa_cat))) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>funders) <span class="sc">+</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Open Access (in%)"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">"OA model"</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"APC"</span> <span class="ot">=</span> <span class="st">"#0E6BA0"</span>,</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Transformative Agreement"</span> <span class="ot">=</span> <span class="st">"#30C0D2"</span>,</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Diamond OA"</span> <span class="ot">=</span> <span class="st">"#E2A3A4"</span>,</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"#AEACA0"</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">+</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Open Access to grant-supported biomedical research literature"</span>,</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Journal articles and reviews in PubMed"</span>,</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data sources: PubMed, OpenAIRE, OpenAlex, cOAlition S Journal Checker Tool."</span>) <span class="sc">+</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_theme</span>() <span class="sc">+</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(publication_year, oa_prop, <span class="at">fill =</span> <span class="fu">fct_rev</span>(oa_cat))) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>funders) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Open Access (in%)"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">"OA model"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"APC"</span> <span class="ot">=</span> <span class="st">"#0E6BA0"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Transformative Agreement"</span> <span class="ot">=</span> <span class="st">"#30C0D2"</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Diamond OA"</span> <span class="ot">=</span> <span class="st">"#E2A3A4"</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"#D8D8D8a0"</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Open Access to grant-supported biomedical research literature"</span>,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Journal articles and reviews in PubMed"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data sources: PubMed, OpenAIRE, OpenAlex, cOAlition S Journal Checker Tool."</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.1</span>), <span class="at">color =</span> <span class="st">"grey10"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">0.7</span>), <span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">12</span>)),</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -743,43 +689,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>oa_by_year_and_type <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(publication_year, n_oa, <span class="at">fill =</span> <span class="fu">fct_rev</span>(oa_cat))) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>funders) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="st">"Open Access"</span>, <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">big.mark =</span> <span class="st">","</span>),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">"OA model"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"APC"</span> <span class="ot">=</span> <span class="st">"#0E6BA0"</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Transformative Agreement"</span> <span class="ot">=</span> <span class="st">"#30C0D2"</span>,</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Diamond OA"</span> <span class="ot">=</span> <span class="st">"#E2A3A4"</span>,</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"#AEACA0"</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">+</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Open Access to grant-supported biomedical research literature"</span>,</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Journal articles and reviews in PubMed"</span>,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Data sources: PubMed, OpenAIRE, OpenAlex, cOAlition S Journal Checker Tool."</span>) <span class="sc">+</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_theme</span>() <span class="sc">+</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">reverse =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/oa_by_year_type_abs-1.png" class="img-fluid figure-img" width="2400"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The figures highlight differences in how open access is financed across the two funder communities. In 2024, 94.3651624% of NIH-supported biomedical research articles were open access (84772 out of 89834 original research articles and reviews indexed in both PubMed and OpenAlex). Of those open access articles, 50.6499788% were enabled through individual article processing charges (APCs), while only 5.2599915% were covered by transformative agreements. The remaining 41.1409428% were made available through other routes, primarily via PubMed Central.</p>
-<p>The picture is different for European Commission-funded research. In 2024, 94.9996291% of supported biomedical research articles were open access (25610 out of 26958). Of those, 33.3775869% were covered by transformative agreements, a substantially higher share than for NIH-funded research. This reflectsthe wider adoption of such institutional deals in Europe. A further 51.2417025% were enabled through APCs, and 12.4912144% through other routes.</p>
-<p>The comparison suggests that agreements between library consortia and publishers play an important role in making European Commission-funded publications available in Europe, raising important questions about who pays for complying with the funder’s open access policy. The NIH in the US did achieve a similar overall open access share, but through a different route: a much larger proportion of articles is exclusively in the “Other” category, likely representing articles deposited in PubMed Central or made freely available on the publisher’s website after an embargo period to comply with previous NIH mandates.</p>
+<p>The figures highlight differences in how open access is financed across the two funder communities. In 2024, 94.364112% of NIH-supported biomedical research articles were open access (84772 out of 89835 original research articles and reviews indexed in both PubMed and OpenAlex). Of those open access articles, 50.4860095% were enabled through individual article processing charges (APCs), while only 5.4239607% were covered by transformative agreements. The remaining 41.1409428% were made available through other routes, primarily via PubMed Central.</p>
+<p>The picture is different for European Commission-funded research. In 2024, 94.9996291% of supported biomedical research articles were open access (25610 out of 26958). Of those, 34.6114799% were covered by transformative agreements, a substantially higher share than for NIH-funded research. This reflects the wider adoption of such institutional deals in Europe. A further 50.0078094% were enabled through APCs, and 12.4912144% through other routes.</p>
+<p>In both cases, diamond open access accounted for the remaining share and played a minor role.</p>
+<p>The comparison suggests that agreements between library consortia and publishers play an important role in making European Commission-funded publications available in Europe, raising important questions about who pays for complying with the funder’s open access policy. The NIH in the US did achieve a similar overall open access share, but through a different route: a much larger proportion of articles falls exclusively in the “Other” category, likely representing articles deposited in PubMed Central or made freely available on the publisher’s website after an embargo period to comply with previous NIH mandates.</p>
+</section>
+<section id="responsible-use" class="level2">
+<h2 class="anchored" data-anchor-id="responsible-use">Responsible use</h2>
+<p>This tutorial provides estimates relating to articles covered by transformative agreements. Due to a lack of invoice data, which is not usually shared by library consortia and publishers, we had to rely on approximations based on a combination of several data sources. The resources we use to identify articles under transformative agreements – the cOAlition S Journal Checker Tool and the ESAC registry – are based on voluntary contributions from various consortia <span class="citation" data-cites="Kramer_2024">(<a href="#ref-Kramer_2024" role="doc-biblioref">Kramer, 2024</a>)</span>. The scope and eligibility criteria of transformative agreements also vary considerably <span class="citation" data-cites="Rothfritz_2024">(<a href="#ref-Rothfritz_2024" role="doc-biblioref">Rothfritz et al., 2024</a>)</span>.</p>
+<p>For the matching of transformative agreement data, affiliation information and author roles are crucial. Comparisons with Scopus and Web of Science showed that estimates are similar when open metadata is used to match proprietary databases with publicly available transformative agreement data <span class="citation" data-cites="Jahn_2026">(<a href="#ref-Jahn_2026" role="doc-biblioref">Jahn, 2026</a>)</span>. However, as recent changes have demonstrated, <a href="https://www.digital-science.com/blog/2026/02/no-shortcuts-to-research-information-citizenship/">OpenAlex affiliation data coverage can vary</a>. Open access evidence can also differ across different sources.</p>
+<p>These shortcomings apply to both open and proprietary research information resources. Using open research information resources and making them available on BigQuery allows large-scale data analysis to be independently carried out and scrutinised at reasonable computing costs <span class="citation" data-cites="Neylon_2026">(<a href="#ref-Neylon_2026" role="doc-biblioref">Neylon et al., 2026</a>)</span>. This approach also demonstrates the value of combining multiple sources, each of which has its own limitations in terms of coverage and metadata quality, which helps navigate individual data gaps.</p>
+<p>This tutorial can be reused for further monitoring exercises, especially as recent discussions around the NIH open access policy highlight that open access business models and transformative agreements will remain a subject of much debate in the years ahead.</p>
+</section>
+<section id="contributions" class="level2">
+<h2 class="anchored" data-anchor-id="contributions">Contributions</h2>
+<p>Najko Jahn wrote this data analysis. Bianca Kramer and Cameron Neylon provide OpenAIRE snapshots on BigQuery as part of the <a href="https://orion-dbs.community/collections/sos/">Sesame Open Science ORION collection</a>. Nick Haupka takes care of the <a href="https://orion-dbs.community/collections/subugoe/">Open Scholarly Data @ SUB Göttingen</a>.</p>
+</section>
+<section id="funding" class="level2">
+<h2 class="anchored" data-anchor-id="funding">Funding</h2>
+<p>Najko Jahn and Nick Haupka acknowledge funding from Federal Ministry of Research, Technology and Space, project German <a href="https://bibliometrie.info/">Kompetenznetzwerk Bibliometrie</a>, OpenKB (16WIK2101F), and the German Research Foundation (DFG), project <a href="https://oa-datenpraxis.de/">OA-Datenpraxis</a>, Projektnummer 528466070.</p>
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Clarke_2025" class="csl-entry" role="listitem">
+Clarke &amp; Esposito. (2025). Capped. <em>The Brief</em>. <a href="https://www.ce-strategy.com/the-brief/capped/">https://www.ce-strategy.com/the-brief/capped/</a>
+</div>
+<div id="ref-de_Jonge_2025" class="csl-entry" role="listitem">
+de Jonge, H., Kramer, B., &amp; Sondervan, J. (2025). Tracking transformative agreements through open metadata: Method and validation using dutch research council NWO funded papers. <em>Quantitative Science Studies</em>, <em>6</em>, 1215–1227. <a href="https://doi.org/10.1162/qss.a.24">https://doi.org/10.1162/qss.a.24</a>
+</div>
+<div id="ref-Haupka_2026" class="csl-entry" role="listitem">
+Haupka, N. (2026). Presenting a classifier to improve the identification of research journal publications in OpenAlex. <em>Scientometrics</em>, <em>131</em>(2), 925–941. <a href="https://doi.org/10.1007/s11192-025-05524-7">https://doi.org/10.1007/s11192-025-05524-7</a>
+</div>
+<div id="ref-Haustein_2025" class="csl-entry" role="listitem">
+Haustein, S., Schares, E., Alperin, J. P., amargo, F. C., Céspedes, L., Poitras, C., &amp; Strecker, D. (2025). <em>NIH explores capping APCs: Let’s look at the evidence</em>. <a href="https://doi.org/10.59350/scholcommlab.5645">https://doi.org/10.59350/scholcommlab.5645</a>
+</div>
+<div id="ref-Jahn_2025" class="csl-entry" role="listitem">
+Jahn, N. (2025). How open are hybrid journals included in transformative agreements? <em>Quantitative Science Studies</em>, <em>6</em>, 242–262. <a href="https://doi.org/10.1162/qss_a_00348">https://doi.org/10.1162/qss_a_00348</a>
+</div>
+<div id="ref-Jahn_2026" class="csl-entry" role="listitem">
+Jahn, N. (2026). Estimating transformative agreement impact on hybrid open access: A comparative large-scale study using scopus, web of science and open metadata. <em>Scientometrics</em>, <em>131</em>(2), 901–924. <a href="https://doi.org/10.1007/s11192-025-05390-3">https://doi.org/10.1007/s11192-025-05390-3</a>
+</div>
+<div id="ref-Kramer_2024" class="csl-entry" role="listitem">
+Kramer, B. (2024). <em>Study on scientific publishing in <span>Europe</span> – <span>Development</span>, diversity, and transparency of costs</em>. Publications Office of the European Union. <a href="https://doi.org/doi/10.2777/89349">https://doi.org/doi/10.2777/89349</a>
+</div>
+<div id="ref-mugabushaka2021scholarlyoutputseuresearch" class="csl-entry" role="listitem">
+Mugabushaka, A.-M., Baglioni, M., Bardi, A., &amp; Manghi, P. (2021). <em>Scholarly outputs of EU research funding programs: Understanding differences between datasets of publications reported by grant holders and OpenAIRE research graph in H2020</em>. <a href="https://arxiv.org/abs/2109.10638">https://arxiv.org/abs/2109.10638</a>
+</div>
+<div id="ref-Neylon_2026" class="csl-entry" role="listitem">
+Neylon, C., Kramer, B., Mazoni, A. F., Costas, R., Jahn, N., &amp; Eck, N. J. van. (2026). <em>Sharing the load: Building a collective to support open research information online</em>. <a href="https://doi.org/10.54900/2pnyq-nhx95">https://doi.org/10.54900/2pnyq-nhx95</a>
+</div>
+<div id="ref-Piwowar_2018" class="csl-entry" role="listitem">
+Piwowar, H., Priem, J., Larivière, V., Alperin, J. P., Matthias, L., Norlander, B., Farley, A., West, J., &amp; Haustein, S. (2018). The state of <span>OA</span>: A large-scale analysis of the prevalence and impact of open access articles. <em><span>PeerJ</span></em>, <em>6</em>, e4375. <a href="https://doi.org/10.7717/peerj.4375">https://doi.org/10.7717/peerj.4375</a>
+</div>
+<div id="ref-Rothfritz_2024" class="csl-entry" role="listitem">
+Rothfritz, L., Schmal, W. B., &amp; Herb, U. (2024). <em>Trapped in transformative agreements? A multifaceted analysis of &gt;1,000 contracts</em>. arXiv. <a href="https://arxiv.org/abs/2409.20224">https://arxiv.org/abs/2409.20224</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
