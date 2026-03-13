@@ -111,3 +111,10 @@ for (dataset in my_datasets) {
   cat("\n\n")
 }
 ```
+
+```{r}
+#| echo: false
+#| message: false
+source(rprojroot::find_root_file("collect_collection_info.R", criterion = rprojroot::has_file("DESCRIPTION")))
+snapshot_collection_info(params$bq_project, datasets_with_meta)
+```
