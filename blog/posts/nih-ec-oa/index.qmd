@@ -1,5 +1,6 @@
 ---
 title: "Crosswalking ORION resources to measure open access to biomedical research literature"
+subtitle: "The role of transformative agreements for NIH- and EC-funded research"
 author:
   - name: Najko Jahn
     orcid: 0000-0001-5105-1463
@@ -10,9 +11,8 @@ author:
   - name: Nick Haupka
     orcid: 0009-0002-6478-6789
 date: "2026-03-13"
-abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access between NIH- and EC-supported biomedical research."
+abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access uptake between NIH- and EC-supported research."
 categories: [tutorial, open access, transformative agreements, funder info]
-status: "wip"
 bibliography: references.bib
 csl: apa.csl
 citation: 
@@ -50,7 +50,7 @@ knitr::knit_hooks$set(
 ## Introduction
 
 This tutorial shows how to measure open access by funder over time using open research information resources provided by the  [ORION community](https://orion-dbs.community/)  on Google BigQuery.
-We compare NIH- and European Commission-supported biomedical research literature with a focus on open access.
+We compare NIH- and European Commission-supported biomedical research literature with a focus on open access, including an estimation of articles enabled by transformative agreements.
 [Transformative agreements](https://esac-initiative.org/about/transformative-agreements/) have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear.
 [Recent discussions around the NIH open access policy and price caps for publication fees](https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community) furthermore raise the question about the role of similar agreements in the US.
 
@@ -60,7 +60,7 @@ The ultimate goal in this tutorial is to re-create the following visualisation u
 
 The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. 
 Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. 
-Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission, where such agreements are widely available, than for research funded by the NIH. 
+Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe.
 This illustrates potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers [@Clarke_2025;@Haustein_2025]. 
 
 ## Overview of data sources
@@ -404,7 +404,7 @@ To do so, we furthermore break down open access by business model, distinguishin
 - **Diamond OA**: diamond open access (no article processing charge)
 - **Other**: all remaining open access routes (e.g. via PubMed Central)
 
-Note that the focus is on publisher open access business models, and [OpenAlex open access status definition favors publisher-provided open access](https://help.openalex.org/hc/en-us/articles/24347035046295-Open-Access-OA), so articles in PMC repositories are accounted when there was no open version on a publisher website.
+Note that the focus is on publisher open access business models, and [OpenAlex open access status definition favors publisher-provided open access](https://help.openalex.org/hc/en-us/articles/24347035046295-Open-Access-OA), so articles in PMC repositories are accounted for when there was no open version on a publisher website.
 
 ```{r}
 oa_by_year_and_type <- funding_oa |>
