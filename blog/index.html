@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -223,7 +223,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZnVuZGVyJTIwaW5mbw==">funder info <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3BlbiUyMGFjY2Vzcw==">open access <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRz">transformative agreements <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -253,7 +253,46 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1773383825473" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2085">
+<div class="quarto-post image-right" data-index="0" data-categories="dHV0b3JpYWwlMkNvcGVuJTIwYWNjZXNzJTJDdHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRzJTJDZnVuZGVyJTIwaW5mbw==" data-listing-date-sort="1773360000000" data-listing-file-modified-sort="1773411703786" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3582">
+<div class="thumbnail"><a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
+
+<p class="card-img-top"><img src="posts/nih-ec-oa/index_files/figure-html/oa_by_year_type_rel-1.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">Crosswalking ORION resources to measure open access to biomedical research literature</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">The role of transformative agreements for NIH- and EC-funded research</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">tutorial</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMGFjY2Vzcw=='); return false;">open access</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRz'); return false;">transformative agreements</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZnVuZGVyJTIwaW5mbw=='); return false;">funder info</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
+<p>This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access uptake between NIH- and EC-supported research.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
+<div class="listing-date">
+Mar 13, 2026
+</div>
+<div class="listing-author">
+Najko Jahn, Bianca Kramer, Cameron Neylon, Nick Haupka
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1773411703843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2085">
 <div class="thumbnail"><a href="../blog/posts/welcome/index.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/welcome/orion_dbs_small.png"  class="thumbnail-image card-img"/></p>
@@ -263,6 +302,9 @@ window.Quarto = {
 <h3 class="no-anchor listing-title">
 <a href="../blog/posts/welcome/index.html" class="no-external">Sharing the load: Building an open research information collective</a>
 </h3>
+<div class="listing-subtitle">
+<a href="../blog/posts/welcome/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
