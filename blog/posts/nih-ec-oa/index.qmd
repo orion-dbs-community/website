@@ -10,13 +10,14 @@ author:
   - name: Nick Haupka
     orcid: 0009-0002-6478-6789
 date: "2026-03-13"
-abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from Pubmed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access between NIH- and EC-supported biomedical research."
+abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access between NIH- and EC-supported biomedical research."
 categories: [tutorial, open access, transformative agreements, funder info]
 status: "wip"
 bibliography: references.bib
 csl: apa.csl
 citation: 
   container-title: ORION-DBs Blog
+license: "CC BY"
 ---
 
 ```{r}
@@ -208,7 +209,7 @@ SELECT DISTINCT
     AND primary_location.source.type = "journal"
     AND is_paratext = FALSE
     AND oalex.type IN ('article','review')
-    AND is_research IS NOT FALSE
+    AND is_research = TRUE
     AND is_xpac = FALSE
     AND (
       NOT REGEXP_CONTAINS(oalex.biblio.issue, '^[a-zA-Z]')
