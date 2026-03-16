@@ -7,6 +7,8 @@ website:
   title: "ORION-DBs"
   site-url: "https://orion-dbs.community"
   favicon: favicon.ico
+  twitter-card: true
+  open-graph: true
   navbar:
     left:
       - text: Collections
