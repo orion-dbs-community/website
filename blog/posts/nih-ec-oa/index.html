@@ -279,12 +279,20 @@ div.csl-indent {
   </div>
   
     
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/10.59350/4ttp9-7sv10">10.59350/4ttp9-7sv10</a>
+      </p>
+    </div>
+  </div>
   </div>
   
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access uptake between NIH- and EC-supported research.
+    This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access funding between NIH- and EC-supported research.
   </div>
 </div>
 
@@ -294,10 +302,10 @@ div.csl-indent {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This tutorial shows how to measure open access by funder over time using open research information resources provided by the <a href="https://orion-dbs.community/">ORION community</a> on Google BigQuery. We compare NIH- and European Commission-supported biomedical research literature with a focus on open access, including an estimation of articles enabled by transformative agreements. <a href="https://esac-initiative.org/about/transformative-agreements/">Transformative agreements</a> have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear. <a href="https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community">Recent discussions around the NIH open access policy and price caps for publication fees</a> furthermore raise the question about the role of similar agreements in the US.</p>
+<p>This tutorial shows how to measure open access by funder over time using open research information resources provided by the <a href="https://orion-dbs.community/">ORION community</a> on Google BigQuery. We compare NIH- and European Commission-supported biomedical research literature with a focus on open access, including an estimation of articles enabled by transformative agreements. <a href="https://esac-initiative.org/about/transformative-agreements/">Transformative agreements</a> have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear. <a href="https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community">Recent discussions around the NIH open access policy and price caps for publication fees</a> furthermore raise the question about the potential role of similar agreements in the US.</p>
 <p>The ultimate goal in this tutorial is to re-create the following visualisation using <a href="https://orion-dbs.community/">ORION resources</a>, with a special emphasis on funder information and different open access business models.</p>
 <p><img src="index_files/figure-html/oa_by_year_type_rel-1.png" class="img-fluid"></p>
-<p>The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe. This illustrates potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers <span class="citation" data-cites="Clarke_2025 Haustein_2025">(<a href="#ref-Clarke_2025" role="doc-biblioref">Clarke &amp; Esposito, 2025</a>; <a href="#ref-Haustein_2025" role="doc-biblioref">Haustein et al., 2025</a>)</span>.</p>
+<p>The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe. This comparison points to potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers <span class="citation" data-cites="Clarke_2025 Haustein_2025">(<a href="#ref-Clarke_2025" role="doc-biblioref">Clarke &amp; Esposito, 2025</a>; <a href="#ref-Haustein_2025" role="doc-biblioref">Haustein et al., 2025</a>)</span>.</p>
 </section>
 <section id="overview-of-data-sources" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="overview-of-data-sources">Overview of data sources</h2>
@@ -437,7 +445,7 @@ div.csl-indent {
 <span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The query uses Common Table Expressions (CTEs), introduced with <code>WITH</code>, to build up the dataset in stages. The first CTE, <code>openaire_funders</code>, extracts EC-funded publications from OpenAIRE by unnesting the fundings array, filtering for the European Commission, and joining to the OpenAIRE publication and relation tables to retrieve the associated PMIDs. The second CTE, <code>nih_funders</code>, reads the PMID list we uploaded in the previous step. Both are combined in <code>all_funders</code> using <code>UNION ALL</code>.</p>
-<p>The main query retrieves metadata for all journal articles in the OpenAlex snapshot and joins the funder information. Several filters are applied to keep the dataset focused on relevant publications, following <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span>: only journal articles and reviews are included; first author affiliations are used (identified via <code>WITH OFFSET</code> because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records. The dataset covers publications from 2018 to 2025.</p>
+<p>The main query retrieves metadata for all journal articles in the OpenAlex snapshot and joins the funder information. Several filters are applied to keep the dataset focused on relevant publications, following <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span>: only journal articles and reviews are included; first author affiliations are used (identified via <code>WITH OFFSET</code> because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records. To improve the detection of original research articles, a document classifier was also used <span class="citation" data-cites="Haupka_2026">(<a href="#ref-Haupka_2026" role="doc-biblioref">Haupka, 2026</a>)</span>. The dataset covers publications from 2018 to 2025.</p>
 </section>
 <section id="estimate-articles-covered-by-transformative-agreements" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="estimate-articles-covered-by-transformative-agreements">Estimate articles covered by transformative agreements</h3>
@@ -587,16 +595,16 @@ div.csl-indent {
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 109 × 6</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    publication_year funders            articles n_oa_articles oa_type enabled_ta</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               &lt;int&gt; &lt;chr&gt;                 &lt;int&gt;         &lt;int&gt; &lt;chr&gt;   &lt;lgl&gt;     </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1             2024 European Commissi…    26941          1346 &lt;NA&gt;    FALSE     </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2             2024 European Commissi…    26941          9466 gold_i… FALSE     </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3             2024 European Commissi…    26941          2170 gold_i… TRUE      </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4             2024 European Commissi…    26941          3190 other_… FALSE     </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5             2024 European Commissi…    26941          6693 hybrid… TRUE      </span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6             2024 European Commissi…    26941          3327 hybrid… FALSE     </span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7             2024 European Commissi…    26941           740 diamon… FALSE     </span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8             2024 European Commissi…    26941             9 other_… TRUE      </span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9             2024 NIH                   89744          5054 &lt;NA&gt;    FALSE     </span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             2024 NIH                   89744         30150 gold_i… FALSE     </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1             2024 NIH                   89744          5054 &lt;NA&gt;    FALSE     </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2             2024 NIH                   89744         30150 gold_i… FALSE     </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3             2024 NIH                   89744          1247 gold_i… TRUE      </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4             2024 NIH                   89744         34829 other_… FALSE     </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5             2024 NIH                   89744         12618 hybrid… FALSE     </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6             2024 NIH                   89744          3349 hybrid… TRUE      </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7             2024 NIH                   89744          2486 diamon… FALSE     </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8             2024 NIH                   89744            11 other_… TRUE      </span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9             2024 European Commissi…    26941          1346 &lt;NA&gt;    FALSE     </span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             2024 European Commissi…    26941          3190 other_… FALSE     </span></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 99 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -631,16 +639,16 @@ div.csl-indent {
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 56 × 6</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    publication_year funders             articles oa_cat             n_oa oa_prop</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               &lt;int&gt; &lt;chr&gt;                  &lt;int&gt; &lt;fct&gt;             &lt;int&gt;   &lt;dbl&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1             2024 European Commission    26941 APC               12793  0.475 </span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2             2024 European Commission    26941 Transformative A…  8863  0.329 </span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3             2024 European Commission    26941 Other              3199  0.119 </span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4             2024 European Commission    26941 Diamond OA          740  0.0275</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5             2024 NIH                    89744 APC               42768  0.477 </span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6             2024 NIH                    89744 Transformative A…  4596  0.0512</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7             2024 NIH                    89744 Other             34840  0.388 </span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8             2024 NIH                    89744 Diamond OA         2486  0.0277</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1             2024 NIH                    89744 APC               42768  0.477 </span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2             2024 NIH                    89744 Transformative A…  4596  0.0512</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3             2024 NIH                    89744 Other             34840  0.388 </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4             2024 NIH                    89744 Diamond OA         2486  0.0277</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5             2024 European Commission    26941 Other              3199  0.119 </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6             2024 European Commission    26941 Diamond OA          740  0.0275</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7             2024 European Commission    26941 Transformative A…  8863  0.329 </span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8             2024 European Commission    26941 APC               12793  0.475 </span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9             2023 NIH                    97390 Other             43955  0.451 </span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             2023 NIH                    97390 APC               42607  0.437 </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             2023 NIH                    97390 Diamond OA         1944  0.0200</span></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 46 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Using these aggregated data, we present the relative development of open access by business model:</p>
@@ -687,7 +695,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>The figures highlight differences in how open access is financed across the two funder communities. In 2024, both achieved similarly high open access rates: 94% for NIH-supported biomedical research articles (84,690 out of 89,744 original research articles and reviews indexed in both PubMed and OpenAlex) and 95% for European Commission-funded research (25,595 out of 26,941). In both cases, around half of open access articles were enabled through individual article processing charges (APCs), and diamond open access played a minor role.</p>
+<p>The figures highlight differences in how open access is financed across the two funder communities. In 2024, both achieved similarly high open access rates: 94% for NIH-supported biomedical research articles (84,690 out of 89,744 original research articles and reviews indexed in both PubMed and OpenAlex) and 95% for European Commission-funded research (25,595 out of 26,941). In both cases, around half of open access articles were enabled through APCs, and diamond open access played a minor role.</p>
 <p>The key difference lies in transformative agreements. Only 5.4% of NIH-funded open access articles were covered by such agreements, with the remaining 41% made available through other routes, primarily via PubMed Central. For the European Commission, 35% were covered by transformative agreements, reflecting the wider adoption of them in Europe, while 12% came through other routes.</p>
 <p>The comparison suggests that agreements between library consortia and publishers play an important role in making European Commission-funded publications available in Europe, raising questions about the relationship between funder open access mandates and the institutional agreements that facilitate compliance. The NIH in the US did achieve a similar overall open access share, but through a different route: a much larger proportion of articles falls exclusively in the “Other” category, likely representing articles deposited in PubMed Central under previous NIH mandates or made freely available on publisher websites after an embargo period acknowledging these policies.</p>
 </section>
@@ -751,6 +759,7 @@ Rothfritz, L., Schmal, W. B., &amp; Herb, U. (2024). <em>Trapped in transformati
     Biomedical Research Literature},
   date = {2026-03-13},
   url = {https://orion-dbs.community/blog/posts/nih-ec-oa/},
+  doi = {10.59350/4ttp9-7sv10},
   langid = {en},
   abstract = {This tutorial shows how to combine various ORION
     resources, with a focus on funder and open access. Using the
@@ -758,13 +767,13 @@ Rothfritz, L., Schmal, W. B., &amp; Herb, U. (2024). <em>Trapped in transformati
     as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and
     transformative agreement data from cOAlition S and ESAC. The
     analysis covers more than 800,000 biomedical research articles,
-    revealing notable differences in open access uptake between NIH- and
-    EC-supported research.}
+    revealing notable differences in open access funding between NIH-
+    and EC-supported research.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jahn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
 Jahn, N., Kramer, B., Neylon, C., &amp; Haupka, N. (2026, March 13).
 <em>Crosswalking ORION resources to measure open access to biomedical
-research literature</em>. ORION-DBs Blog. <a href="https://orion-dbs.community/blog/posts/nih-ec-oa/">https://orion-dbs.community/blog/posts/nih-ec-oa/</a>
+research literature</em>. ORION-DBs Blog. <a href="https://doi.org/10.59350/4ttp9-7sv10">https://doi.org/10.59350/4ttp9-7sv10</a>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
