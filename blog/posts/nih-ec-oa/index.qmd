@@ -11,13 +11,14 @@ author:
   - name: Nick Haupka
     orcid: 0009-0002-6478-6789
 date: "2026-03-13"
-abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access uptake between NIH- and EC-supported research."
+abstract: "This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access funding between NIH- and EC-supported research."
 categories: [tutorial, open access, transformative agreements, funder info]
 bibliography: references.bib
 csl: apa.csl
 citation: 
   container-title: ORION-DBs Blog
 license: "CC BY"
+doi: "10.59350/4ttp9-7sv10"
 ---
 
 ```{r}
@@ -52,7 +53,7 @@ knitr::knit_hooks$set(
 This tutorial shows how to measure open access by funder over time using open research information resources provided by the  [ORION community](https://orion-dbs.community/)  on Google BigQuery.
 We compare NIH- and European Commission-supported biomedical research literature with a focus on open access, including an estimation of articles enabled by transformative agreements.
 [Transformative agreements](https://esac-initiative.org/about/transformative-agreements/) have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear.
-[Recent discussions around the NIH open access policy and price caps for publication fees](https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community) furthermore raise the question about the role of similar agreements in the US.
+[Recent discussions around the NIH open access policy and price caps for publication fees](https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community) furthermore raise the question about the potential role of similar agreements in the US.
 
 The ultimate goal in this tutorial is to re-create the following visualisation using [ORION resources](https://orion-dbs.community/), with a special emphasis on funder information and different open access business models.
 
@@ -61,7 +62,7 @@ The ultimate goal in this tutorial is to re-create the following visualisation u
 The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. 
 Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. 
 Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe.
-This illustrates potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers [@Clarke_2025;@Haustein_2025]. 
+This comparison points to potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers [@Clarke_2025;@Haustein_2025]. 
 
 ## Overview of data sources
 
@@ -227,7 +228,8 @@ The second CTE, `nih_funders`, reads the PMID list we uploaded in the previous s
 Both are combined in `all_funders` using `UNION ALL`.
 
 The main query retrieves metadata for all journal articles in the OpenAlex snapshot and joins the funder information.
-Several filters are applied to keep the dataset focused on relevant publications, following @Jahn_2025: only journal articles and reviews are included; first author affiliations are used (identified via `WITH OFFSET` because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records.
+Several filters are applied to keep the dataset focused on relevant publications, following @Jahn_2025: only journal articles and reviews are included; first author affiliations are used (identified via `WITH OFFSET` because the author position field was not available in this snapshot); and a set of pattern-based exclusions removes conference proceedings and other non-standard records. 
+To improve the detection of original research articles, a document classifier was also used [@Haupka_2026].
 The dataset covers publications from 2018 to 2025.
 
 ### Estimate articles covered by transformative agreements
@@ -472,7 +474,7 @@ oa_by_year_and_type |>
 
 The figures highlight differences in how open access is financed across the two funder communities.
 In 2024, both achieved similarly high open access rates: `r oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024) |> pull(oa_prop) |> sum() *100`% for NIH-supported biomedical research articles (`r oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024) |> pull(n_oa) |> sum()` out of `r oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024) |> pull(articles) |> unique()` original research articles and reviews indexed in both PubMed and OpenAlex) and `r oa_by_year_and_type |> filter(funders == "European Commission", publication_year == 2024) |> pull(oa_prop) |> sum() *100`% for European Commission-funded research (`r oa_by_year_and_type |> filter(funders == "European Commission", publication_year == 2024) |> pull(n_oa) |> sum()` out of `r oa_by_year_and_type |> filter(funders == "European Commission", publication_year == 2024) |> pull(articles) |> unique()`).
-In both cases, around half of open access articles were enabled through individual article processing charges (APCs), and diamond open access played a minor role.
+In both cases, around half of open access articles were enabled through APCs, and diamond open access played a minor role.
 
 The key difference lies in transformative agreements.
 Only `r oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024, oa_cat == "Transformative Agreement") |> pull(n_oa) / oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024) |> pull(n_oa) |> sum() * 100`% of NIH-funded open access articles were covered by such agreements, with the remaining `r oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024, oa_cat == "Other") |> pull(n_oa) / oa_by_year_and_type |> filter(funders == "NIH", publication_year == 2024) |> pull(n_oa) |> sum() * 100`% made available through other routes, primarily via PubMed Central.
