@@ -19,6 +19,7 @@ citation:
   container-title: ORION-DBs Blog
 license: "CC BY"
 doi: "10.59350/4ttp9-7sv10"
+image: "index_files/figure-html/oa_by_year_type_rel-1.png"
 ---
 
 ```{r}
