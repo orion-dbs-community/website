@@ -27,7 +27,7 @@ insyspo,publicdb_scielo_2024_rm,13,11246623689
 insyspo,publicdb_scielo_relational_model,10,9311092901
 insyspo,publicdb_wikipedia_knowledge_graph,9,27026791353
 multiobs,publicdb_fapesp_bv,1,486874269
-multiobs,publicdb_openalex_2026_01_rm,75,1398570611990
+multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 sos-datasources,butler_apcs,2,11413543
 sos-datasources,crossref,6,625644792425
 sos-datasources,datacite,1,320591552879
