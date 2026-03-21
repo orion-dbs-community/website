@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,6 +14,9 @@
 
 <title>Crosswalking ORION resources to measure open access to biomedical research literature – ORION-DBs</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -93,15 +96,14 @@ div.csl-indent {
 <link href="../../../favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-a78b82bb617a25cd22875126e0d0a835.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-3755f3cd26ae4708c82fe419e80386d5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -317,7 +319,7 @@ div.csl-indent {
 <p>This tutorial shows how to measure open access by funder over time using open research information resources provided by the <a href="https://orion-dbs.community/">ORION community</a> on Google BigQuery. We compare NIH- and European Commission-supported biomedical research literature with a focus on open access, including an estimation of articles enabled by transformative agreements. <a href="https://esac-initiative.org/about/transformative-agreements/">Transformative agreements</a> have played an important role in Europe for several years, but the effect of these agreements on open access to EC grant-supported articles remains unclear. <a href="https://www.science.org/content/article/nih-s-proposed-caps-open-access-publishing-fees-roil-scientific-community">Recent discussions around the NIH open access policy and price caps for publication fees</a> furthermore raise the question about the potential role of similar agreements in the US.</p>
 <p>The ultimate goal in this tutorial is to re-create the following visualisation using <a href="https://orion-dbs.community/">ORION resources</a>, with a special emphasis on funder information and different open access business models.</p>
 <p><img src="index_files/figure-html/oa_by_year_type_rel-1.png" class="img-fluid"></p>
-<p>The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe. This comparison points to potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers <span class="citation" data-cites="Clarke_2025 Haustein_2025">(<a href="#ref-Clarke_2025" role="doc-biblioref">Clarke &amp; Esposito, 2025</a>; <a href="#ref-Haustein_2025" role="doc-biblioref">Haustein et al., 2025</a>)</span>.</p>
+<p>The area chart compares open access to biomedical research literature supported by the European Commission and the NIH between 2018 and 2024. Although both funders achieved open access to over 90% of their grant-supported output, the underlying funding models differ. Notably, the proportion of open access enabled by transformative agreements is substantially larger for research funded by the European Commission than for research funded by the NIH, reflecting the wider availability of such agreements in Europe. This comparison points to potential shifts in the US that could be driven by the increasing prevalence of open access agreements designed to accommodate funder open access policies and price caps, as suggested by publishing market observers and researchers <span class="citation" data-cites="Clarke_2025 Haustein_2025">(<a href="#ref-Clarke_2025" role="doc-biblioref">Clarke &amp; Esposito, 2025</a>; <a href="#ref-Haustein_2025" role="doc-biblioref"><span class="nocase">Haustein et al.</span>, 2025</a>)</span>.</p>
 </section>
 <section id="overview-of-data-sources" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="overview-of-data-sources">Overview of data sources</h2>
@@ -461,7 +463,7 @@ div.csl-indent {
 </section>
 <section id="estimate-articles-covered-by-transformative-agreements" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="estimate-articles-covered-by-transformative-agreements">Estimate articles covered by transformative agreements</h3>
-<p>Next, we estimate how many open access articles were enabled by a transformative agreement, following the method more comprehensively described in <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span> and <span class="citation" data-cites="Jahn_2026">Jahn (<a href="#ref-Jahn_2026" role="doc-biblioref">2026</a>)</span>. Because of a lack of open access invoicing data, usually not shared by libraries and publishers, various metadata sources are matched to obtain an estimation. Such an approach can provide robust results, but likely underestimate the overall number of articles enabled by agreements <span class="citation" data-cites="de_Jonge_2025">(<a href="#ref-de_Jonge_2025" role="doc-biblioref">de Jonge et al., 2025</a>)</span>.</p>
+<p>Next, we estimate how many open access articles were enabled by a transformative agreement, following the method more comprehensively described in <span class="citation" data-cites="Jahn_2025">Jahn (<a href="#ref-Jahn_2025" role="doc-biblioref">2025</a>)</span> and <span class="citation" data-cites="Jahn_2026">Jahn (<a href="#ref-Jahn_2026" role="doc-biblioref">2026</a>)</span>. Because of a lack of open access invoicing data, usually not shared by libraries and publishers, various metadata sources are matched to obtain an estimation. Such an approach can provide robust results, but likely underestimate the overall number of articles enabled by agreements <span class="citation" data-cites="de_Jonge_2025">(<a href="#ref-de_Jonge_2025" role="doc-biblioref"><span class="nocase">de Jonge et al.</span>, 2025</a>)</span>.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>We will discuss these shortcomings in more detail at the end of the tutorial.</p>
@@ -735,13 +737,13 @@ div.csl-indent {
 Clarke &amp; Esposito. (2025). Capped. <em>The Brief</em>. <a href="https://www.ce-strategy.com/the-brief/capped/">https://www.ce-strategy.com/the-brief/capped/</a>
 </div>
 <div id="ref-de_Jonge_2025" class="csl-entry" role="listitem">
-de Jonge, H., Kramer, B., &amp; Sondervan, J. (2025). Tracking transformative agreements through open metadata: Method and validation using dutch research council NWO funded papers. <em>Quantitative Science Studies</em>, <em>6</em>, 1215–1227. <a href="https://doi.org/10.1162/qss.a.24">https://doi.org/10.1162/qss.a.24</a>
+<span class="nocase">de Jonge, H., Kramer, B., &amp; Sondervan, J.</span> (2025). Tracking transformative agreements through open metadata: Method and validation using dutch research council NWO funded papers. <em>Quantitative Science Studies</em>, <em>6</em>, 1215–1227. <a href="https://doi.org/10.1162/qss.a.24">https://doi.org/10.1162/qss.a.24</a>
 </div>
 <div id="ref-Haupka_2026" class="csl-entry" role="listitem">
 Haupka, N. (2026). Presenting a classifier to improve the identification of research journal publications in OpenAlex. <em>Scientometrics</em>, <em>131</em>(2), 925–941. <a href="https://doi.org/10.1007/s11192-025-05524-7">https://doi.org/10.1007/s11192-025-05524-7</a>
 </div>
 <div id="ref-Haustein_2025" class="csl-entry" role="listitem">
-Haustein, S., Schares, E., Alperin, J. P., amargo, F. C., Céspedes, L., Poitras, C., &amp; Strecker, D. (2025). <em>NIH explores capping APCs: Let’s look at the evidence</em>. <a href="https://doi.org/10.59350/scholcommlab.5645">https://doi.org/10.59350/scholcommlab.5645</a>
+<span class="nocase">Haustein, S., Schares, E., Alperin, J. P., amargo, F. C., Céspedes, L., Poitras, C., &amp; Strecker, D.</span> (2025). <em>NIH explores capping APCs: Let’s look at the evidence</em>. <a href="https://doi.org/10.59350/scholcommlab.5645">https://doi.org/10.59350/scholcommlab.5645</a>
 </div>
 <div id="ref-Jahn_2025" class="csl-entry" role="listitem">
 Jahn, N. (2025). How open are hybrid journals included in transformative agreements? <em>Quantitative Science Studies</em>, <em>6</em>, 242–262. <a href="https://doi.org/10.1162/qss_a_00348">https://doi.org/10.1162/qss_a_00348</a>
