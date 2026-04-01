@@ -46,7 +46,7 @@
     "href": "collections/ds-open-datasets/index.html",
     "title": "Dimensions Open Datasets",
     "section": "",
-    "text": "The Dimensions Open Datasets collection provides free access to large-scale scholarly and bibliometric datasets in the Google BigQuery environment. These datasets allow data analysts, scientometricians, and researchers to carry out advanced investigations taking advantage of the speed and flexibility of the BigQuery platform.\nThis collection currently features the public data files for ORCID and DataCite."
+    "text": "The Dimensions Open Datasets collection provides free access to large-scale scholarly and bibliometric datasets in the Google BigQuery environment. These datasets allow data analysts, scientometricians, and researchers to carry out advanced investigations taking advantage of the speed and flexibility of the BigQuery platform.\nThis collection currently features the public data files for ORCID and DataCite.\nGitHub Repo: https://github.com/digital-science/ds-external-dataset-transformations"
   },
   {
     "objectID": "collections/ds-open-datasets/index.html#orcid-dataset",
