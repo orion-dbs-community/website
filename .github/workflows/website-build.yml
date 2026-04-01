@@ -10,6 +10,7 @@ on:
 
 jobs:
   build-deploy:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,6 +27,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Render and Publish
+        if: github.event_name != 'pull_request'
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
@@ -33,7 +35,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BQ_ORI: ${{ secrets.BQ_ORI }}
 
+      - name: Render (PR Check)
+        if: github.event_name == 'pull_request'
+        run: quarto render
+        env:
+          BQ_ORI: ${{ secrets.BQ_ORI }}
+
       - name: Commit updated collection info
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
