@@ -12,6 +12,8 @@ The Dimensions Open Datasets collection provides free access to large-scale scho
 
 This collection currently features the public data files for ORCID and DataCite.
 
+GitHub Repo: <https://github.com/digital-science/ds-external-dataset-transformations>
+
 ## ORCID Dataset
 
 This dataset is a SQL representation of the ORCID public data file. ORCID (Open Researcher and Contributor ID) is a free, unique, persistent identifier (PID) for individuals to use as they engage in research, scholarship, and innovation activities.
