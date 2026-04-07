@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Najko Jahn">
+<meta name="dcterms.date" content="2026-04-07">
 
-<title>News &amp; Tutorials – ORION-DBs</title>
+<title>Introducing the ORION-DBs MCP Server – ORION-DBs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0befe0675bbc341de7d70d142757ba13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-0befe0675bbc341de7d70d142757ba13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,78 +73,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="ORION-DBs" href="index.xml" data-external="1"><meta property="og:title" content="News &amp; Tutorials – ORION-DBs">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://orion-dbs.community/blog/posts/nih-ec-oa/index_files/figure-html/oa_by_year_type_rel-1.png">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Introducing the ORION-DBs MCP Server – ORION-DBs">
+<meta property="og:description" content="ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents orion-mcp, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
+<meta property="og:image" content="https://orion-dbs.community/blog/posts/orion-mcp-welcome/Model_Context_Protocol_logo.svg">
 <meta property="og:site_name" content="ORION-DBs">
-<meta property="og:image:height" content="2966">
-<meta property="og:image:width" content="4800">
-<meta name="twitter:title" content="News &amp; Tutorials – ORION-DBs">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://orion-dbs.community/blog/posts/nih-ec-oa/index_files/figure-html/oa_by_year_type_rel-1.png">
-<meta name="twitter:image-height" content="2966">
-<meta name="twitter:image-width" content="4800">
+<meta name="twitter:title" content="Introducing the ORION-DBs MCP Server – ORION-DBs">
+<meta name="twitter:description" content="ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents orion-mcp, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
+<meta name="twitter:image" content="https://orion-dbs.community/blog/posts/orion-mcp-welcome/Model_Context_Protocol_logo.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -155,7 +93,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ORION-DBs</span>
     </a>
   </div>
@@ -171,51 +109,51 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-collections">    
         <li>
-    <a class="dropdown-item" href="../collections/">
+    <a class="dropdown-item" href="../../../collections/">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/cwts/">
+    <a class="dropdown-item" href="../../../collections/cwts/">
  <span class="dropdown-text">CWTS Leiden Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/ds-open-datasets/">
+    <a class="dropdown-item" href="../../../collections/ds-open-datasets/">
  <span class="dropdown-text">Dimensions Open Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/insyspo/">
+    <a class="dropdown-item" href="../../../collections/insyspo/">
  <span class="dropdown-text">InSySPo Campinas Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/multiobs/">
+    <a class="dropdown-item" href="../../../collections/multiobs/">
  <span class="dropdown-text">MultiObs Campinas Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/sos/">
+    <a class="dropdown-item" href="../../../collections/sos/">
  <span class="dropdown-text">Sesame Open Science Datasets</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../collections/subugoe/">
+    <a class="dropdown-item" href="../../../collections/subugoe/">
  <span class="dropdown-text">SUB Göttingen Datasets</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../blog/"> 
+    <a class="nav-link" href="../../../blog/"> 
 <span class="menu-text">News &amp; Tutorials</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../contributing.html"> 
+    <a class="nav-link" href="../../../contributing.html"> 
 <span class="menu-text">Contribute</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -232,116 +170,138 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZnVuZGVyJTIwaW5mbw==">funder info <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b3BlbiUyMGFjY2Vzcw==">open access <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRz">transformative agreements <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a>
+  <ul class="collapse">
+  <li><a href="#explore-schemas" id="toc-explore-schemas" class="nav-link" data-scroll-target="#explore-schemas">Explore schemas</a></li>
+  <li><a href="#query-bigquery" id="toc-query-bigquery" class="nav-link" data-scroll-target="#query-bigquery">Query BigQuery</a></li>
+  <li><a href="#use-case" id="toc-use-case" class="nav-link" data-scroll-target="#use-case">Use case</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#responsible-use" id="toc-responsible-use" class="nav-link" data-scroll-target="#responsible-use">Responsible use</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">News &amp; Tutorials</h1>
-</div>
+<h1 class="title">Introducing the ORION-DBs MCP Server</h1>
+<p class="subtitle lead">Navigating Open Research Information Resources on BigQuery with LLMs</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">mcp</div>
+    <div class="quarto-category">news</div>
+    <div class="quarto-category">tools</div>
+    <div class="quarto-category">ai</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Najko Jahn <a href="https://orcid.org/0000-0001-5105-1463" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 7, 2026</p>
+    </div>
+  </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents <code>orion-mcp</code>, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
+  </div>
+</div>
 
 
 </header>
 
 
-<p>Welcome to our blog featuring news, tutorials, and insights about using BigQuery for open scholarly data analysis.</p>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p>Working with <a href="https://orion-dbs.community/">ORION-DBs</a> can be tricky: providers use different schemas and pre-processing routines, making cross-database comparisons hard and writing queries against complex schemas a steep learning curve. To give a sense of scale: ORION-DBs currently spans six different BigQuery projects from different providers, 52 datasets with various tables, and over 14 000 GB of data.</p>
+<p><a href="https://github.com/orion-dbs-community/orion-mcp"><code>orion-mcp</code></a> is a <a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a> server that addresses this by connecting ORION-DBs to AI apps like Claude Desktop. Once installed, you can ask questions about the available data sources or have the LLM draft and run SQL queries against them.</p>
+<p>The tool builds directly on the comprehensive schema documentation that ORION-DBs providers maintain, making that work directly useful when chatting with an LLM. It is at an early stage, so feedback is welcome!</p>
+</section>
+<section id="what-it-does" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does">What it does</h2>
+<section id="explore-schemas" class="level3">
+<h3 class="anchored" data-anchor-id="explore-schemas">Explore schemas</h3>
+<p>These tools work without a BigQuery account, using pre-fetched schemas the ORION-DBs website when <a href="https://github.com/orion-dbs-community/orion-mcp"><code>orion-mcp</code></a> is started:</p>
+<ul>
+<li><code>orion_list_datasets</code> — list all available ORION-DBs datasets</li>
+<li><code>orion_list_tables</code> — list tables in a specific dataset</li>
+<li><code>orion_get_db_schema</code> — inspect the full schema of a table</li>
+</ul>
+</section>
+<section id="query-bigquery" class="level3">
+<h3 class="anchored" data-anchor-id="query-bigquery">Query BigQuery</h3>
+<p>Once you know what you want to query, the LLM writes and executes SQL. To avoid surprise costs, a dry-run cost estimate is always shown before any query runs. <code>SELECT *</code> queries are blocked to prevent unnecessary large scans.</p>
+<ul>
+<li><code>orion_estimate_query_cost</code> — estimate bytes scanned and cost before running</li>
+<li><code>orion_run_bq_query</code> — execute the confirmed query</li>
+</ul>
+</section>
+<section id="use-case" class="level3">
+<h3 class="anchored" data-anchor-id="use-case">Use case</h3>
+<p>This screencast demonstrates a typical session.</p>
+<iframe src="https://drive.google.com/file/d/1gpj5kVV5RRBdN-xxoh7CFz1oXcc6KQJ4/preview" width="640" height="480">
+</iframe>
+<p>First, I ask whether OpenAlex is available and which version is the most recent. Then, I ask Claude to compare the version provided by MultiObs with the version provided by SUB Göttingen. Having gained this overview, I ask Claude to retrieve the number of diamond open access articles from first authors from Germany between 2021 and 2025. Throughout, Claude provides me with the estimated query costs and presents the SQL for the queries.</p>
+<p>You may wish to be more explicit about how the results are presented. Often, a dynamic chart is unnecessary.</p>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Full instructions are in the <a href="https://github.com/orion-dbs-community/orion-mcp">GitHub repo README</a>.</p>
+<p>In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google’s <a href="https://cloud.google.com/docs/authentication/application-default-credentials">Application Default Credentials</a>, so your local <code>gcloud</code> credentials are used directly — no service account keys needed. A <a href="https://cloud.google.com/free">Google Cloud account</a> includes 1 TB of free queries per month.</p>
+<p>Requirements: <a href="https://docs.docker.com/desktop/">Docker</a> and the <a href="https://docs.cloud.google.com/sdk/docs/install-sdk">Google Cloud CLI (<code>gcloud</code>)</a>. The server is implemented in R using <a href="https://posit-dev.github.io/mcptools/"><code>{mcptools}</code></a> and <a href="https://ellmer.tidyverse.org/"><code>{ellmer}</code></a>.</p>
+</section>
+<section id="responsible-use" class="level2">
+<h2 class="anchored" data-anchor-id="responsible-use">Responsible use</h2>
+<p>LLMs make mistakes. Always verify that queries return the results you intended before using them in any analysis. If you plan to use this in a publication, check the outlet’s policy on AI-assisted work and document your process accordingly. Please acknowledge resources used.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHV0b3JpYWwlMkNvcGVuJTIwYWNjZXNzJTJDdHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRzJTJDZnVuZGVyJTIwaW5mbw==" data-listing-date-sort="1773360000000" data-listing-file-modified-sort="1775556433303" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3596">
-<div class="thumbnail"><a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
-
-<img loading="lazy" src="../blog/posts/nih-ec-oa/index_files/figure-html/oa_by_year_type_rel-1.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">Crosswalking ORION resources to measure open access to biomedical research literature</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">The role of transformative agreements for NIH- and EC-funded research</a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">tutorial</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMGFjY2Vzcw=='); return false;">open access</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJhbnNmb3JtYXRpdmUlMjBhZ3JlZW1lbnRz'); return false;">transformative agreements</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZnVuZGVyJTIwaW5mbw=='); return false;">funder info</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
-<p>This tutorial shows how to combine various ORION resources, with a focus on funder and open access. Using the National Institutes of Health (NIH) and the European Commission (EC) as examples, it draws on data from PubMed, OpenAIRE, OpenAlex, and transformative agreement data from cOAlition S and ESAC. The analysis covers more than 800,000 biomedical research articles, revealing notable differences in open access funding between NIH- and EC-supported research.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/nih-ec-oa/index.html" class="no-external">
-<div class="listing-date">
-Mar 13, 2026
-</div>
-<div class="listing-author">
-Najko Jahn, Bianca Kramer, Cameron Neylon, Nick Haupka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1775556433357" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2085">
-<div class="thumbnail"><a href="../blog/posts/welcome/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/welcome/orion_dbs_small.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/welcome/index.html" class="no-external">Sharing the load: Building an open research information collective</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/posts/welcome/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/welcome/index.html" class="no-external">
-<p>Can we share resources and burdens to make available key open research information resources in actionable and connectable form in the cloud? Through sharing processes and systems, is it possible, over time, to build a standard for how these data sources should be made available?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/welcome/index.html" class="no-external">
-<div class="listing-date">
-Feb 16, 2026
-</div>
-<div class="listing-author">
-Cameron Neylon, Bianca Kramer, Alysson Fernandes Mazoni, Rodrigo Costas, Najko Jahn, Nees Jan van Eck
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jahn2026,
+  author = {Jahn, Najko},
+  title = {Introducing the {ORION-DBs} {MCP} {Server}},
+  date = {2026-04-07},
+  url = {https://orion-dbs.community/blog/posts/orion-mcp-welcome/},
+  langid = {en},
+  abstract = {ORION-DBs provides access to multiple open research
+    information resources, but their heterogeneous schemas make
+    exploration and querying difficult. This post presents `orion-mcp`,
+    an MCP server that lets LLMs like Claude explore schemas, draft SQL,
+    estimate costs, and run queries, providing a practical entry point
+    for users less familiar with open research information resources and
+    BigQuery.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jahn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Jahn, Najko. 2026. <span>“Introducing the ORION-DBs MCP Server.”</span>
+ORION-DBs Blog, April 7. <a href="https://orion-dbs.community/blog/posts/orion-mcp-welcome/">https://orion-dbs.community/blog/posts/orion-mcp-welcome/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -755,12 +715,12 @@ Cameron Neylon, Bianca Kramer, Alysson Fernandes Mazoni, Rodrigo Costas, Najko J
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../privacy.html">
+    <a class="nav-link" href="../../../privacy.html">
 <p>Privacy</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../contact.html">
+    <a class="nav-link" href="../../../contact.html">
 <p>Contact</p>
 </a>
   </li>  
