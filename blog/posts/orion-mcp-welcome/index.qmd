@@ -1,0 +1,66 @@
+---
+title: "Introducing the ORION-DBs MCP Server"
+subtitle: "Navigating Open Research Information Resources on BigQuery with LLMs"
+author:
+  - name: Najko Jahn
+    orcid: 0000-0001-5105-1463
+abstract: ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents `orion-mcp`, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
+date: "2026-04-07"
+categories: [mcp, news, tools, ai]
+citation: 
+  container-title: ORION-DBs Blog
+license: "CC BY"
+image: "Model_Context_Protocol_logo.svg"
+status: "wip"
+---
+
+## About
+
+Working with [ORION-DBs](https://orion-dbs.community/) can be tricky: providers use different schemas and pre-processing routines,  making cross-database comparisons hard and writing queries against complex schemas a steep learning curve. 
+To give a sense of scale: ORION-DBs currently spans six different BigQuery projects from different providers, 52 datasets with various tables, and over 14 000 GB of data.
+
+[`orion-mcp`](https://github.com/orion-dbs-community/orion-mcp) is a [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) server that addresses this by connecting ORION-DBs to AI apps like Claude Desktop. Once installed, you can ask questions about the available data sources or have the LLM draft and run SQL queries against them. 
+
+The tool builds directly on the comprehensive schema documentation that ORION-DBs providers maintain, making that work directly useful when chatting with an LLM. It is at an early stage, so feedback is welcome!
+
+## What it does
+
+### Explore schemas
+
+These tools work without a BigQuery account, using pre-fetched schemas the ORION-DBs website when [`orion-mcp`](https://github.com/orion-dbs-community/orion-mcp) is started:
+
+- `orion_list_datasets` — list all available ORION-DBs datasets
+- `orion_list_tables` — list tables in a specific dataset
+- `orion_get_db_schema` — inspect the full schema of a table
+
+### Query BigQuery
+
+Once you know what you want to query, the LLM writes and executes SQL. To avoid surprise costs, a dry-run cost estimate is always shown before any query runs. `SELECT *` queries are blocked to prevent unnecessary large scans.
+
+- `orion_estimate_query_cost` — estimate bytes scanned and cost before running
+- `orion_run_bq_query` — execute the confirmed query
+
+### Use case
+
+This screencast demonstrates a typical session.
+
+<iframe src="https://drive.google.com/file/d/1gpj5kVV5RRBdN-xxoh7CFz1oXcc6KQJ4/preview" width="640" height="480"></iframe>
+
+First, I ask whether OpenAlex is available and which version is the most recent. 
+Then, I ask Claude to compare the version provided by MultiObs with the version provided by SUB Göttingen. 
+Having gained this overview, I ask Claude to retrieve the number of diamond open access articles from first authors from Germany between 2021 and 2025. 
+Throughout, Claude provides me with the estimated query costs and presents the SQL for the queries.
+
+You may wish to be more explicit about how the results are presented. Often, a dynamic chart is unnecessary.
+
+## Installation
+
+Full instructions are in the [GitHub repo README](https://github.com/orion-dbs-community/orion-mcp).
+
+In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google's [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials), so your local `gcloud` credentials are used directly — no service account keys needed. A [Google Cloud account](https://cloud.google.com/free) includes 1 TB of free queries per month.
+
+Requirements: [Docker](https://docs.docker.com/desktop/) and the [Google Cloud CLI (`gcloud`)](https://docs.cloud.google.com/sdk/docs/install-sdk). The server is implemented in R using [`{mcptools}`](https://posit-dev.github.io/mcptools/) and [`{ellmer}`](https://ellmer.tidyverse.org/).
+
+## Responsible use
+
+LLMs make mistakes. Always verify that queries return the results you intended before using them in any analysis. If you plan to use this in a publication, check the outlet's policy on AI-assisted work and document your process accordingly. Please acknowledge resources used.
