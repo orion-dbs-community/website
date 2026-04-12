@@ -30,7 +30,7 @@ multiobs,publicdb_fapesp_bv,1,486874269
 multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 sos-datasources,butler_apcs,2,11413543
 sos-datasources,crossref,6,625644792425
-sos-datasources,datacite,8,320593423369
+sos-datasources,datacite,3,320595306715
 sos-datasources,doaj,2,46124645
 sos-datasources,goa,7,31942091
 sos-datasources,openaire,18,1405736885722
