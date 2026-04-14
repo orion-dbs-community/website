@@ -37,7 +37,7 @@ A free and open resource that interlinks hundreds of millions of metadata record
 ::: {.collection-card}
 ### [OpenAlex](https://help.openalex.org/hc/en-us)
 
-A free, open, and comprehensive bibliographic database and knowledge graph for scholarly research.
+A free, open, and comprehensive bibliographic database and knowledge graph for global scholarly research.
 
 Many collections provide time-specfic snapshots of OpenAlex data, including [CWTS](collections/cwts/), [InSySPo Campinas](collections/insyspo/), [MultiObs](collections/multiobs) and [SUB Göttingen](collections/subugoe/).
 :::
@@ -53,8 +53,7 @@ DOI registration agency for research data and other research outputs, linking wo
 :::
 :::
 
-::: {.g-col-12}
-::: {.collection-row-centered}
+::: {.g-col-12 .g-col-md-4}
 ::: {.collection-card}
 ### [CWTS Leiden Ranking](https://open.leidenranking.com/)
 
@@ -62,7 +61,9 @@ An open edition of the CWTS Leiden Ranking for universities worldwide.
 
 [CWTS Leiden](collections/cwts/) provides data underlying the [Leiden Ranking Open Edition](collections/cwts/#leiden_ranking_open_edition) along with time-specific [OpenAlex versions](collections/cwts/#openalex).
 :::
+:::
 
+::: {.g-col-12 .g-col-md-4}
 ::: {.collection-card}
 ### [FAPESP Virtual Library](https://bv.fapesp.br/)
 
@@ -70,14 +71,15 @@ The referential information source for research supported by FAPESP from Brazil.
 
 [MultiObs](collections/multiobs/) provides the [FAPESP Virtual Library dataset](collections/multiobs/#fapesp_bv) about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).
 :::
+:::
 
+::: {.g-col-12 .g-col-md-4}
 ::: {.collection-card}
 ### [ORCID](https://orcid.org/)
 
 Persistent identifier for researchers, linking individuals to their works, affiliations, and funding.
 
 [Dimensions Open Datasets](collections/ds-open-datasets/) provides the full [ORCID public data file](collections/ds-open-datasets/#orcid-dataset) as a SQL representation.
-:::
 :::
 :::
 
