@@ -215,11 +215,36 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+/* Subgrid: first-row cards share row tracks so h3, description, sources align */
+.collection-grid > .g-col-md-3 {
+    grid-row: span 3;
+    display: grid;
+    grid-template-rows: subgrid;
+}
+
+.collection-grid > .g-col-md-3 > .collection-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    height: auto;
+}
+
+.collection-row-centered {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.collection-row-centered .collection-card {
+    flex: 0 0 calc(25% - 1.125rem);
+    min-width: 200px;
+}
+
 .collection-card {
     padding: 1.25rem;
     background: #fafafa;
     border-left: 2px solid #e0e0e0;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
