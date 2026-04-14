@@ -161,6 +161,20 @@
     "text": "publicdb_openalex_2026_01_rm\n\n\nCreated: Jan 23, 2026 10:12 | Location: US | View in BigQuery Console"
   },
   {
+    "objectID": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
+    "href": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
+    "title": "MultiObs",
+    "section": "publicdb_redalyc_2025_12",
+    "text": "publicdb_redalyc_2025_12\n\n\nDescription\n\n\nCopy of insyspo.publicdb_redalyc_2025_12\n\n\nCreated: Jan 12, 2026 01:49 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
+    "href": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
+    "title": "MultiObs",
+    "section": "publicdb_scielo_2024_rm",
+    "text": "publicdb_scielo_2024_rm\n\n\nDescription\n\n\nCopy of insyspo.publicdb_scielo_2024_rm\n\n\nCreated: Jan 12, 2026 01:50 | Location: US | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/sos/index.html",
     "href": "collections/sos/index.html",
     "title": "Sesame Open Science",
@@ -648,7 +662,7 @@
     "href": "collections/index.html",
     "title": "Collections Overview",
     "section": "",
-    "text": "BigQuery Projects\n6\n\n\n\n\n\n\n\n\n\nDatasets\n52\n\n\n\n\n\n\n\n\n\nTotal Size\n14 984 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+    "text": "BigQuery Projects\n6\n\n\n\n\n\n\n\n\n\nDatasets\n54\n\n\n\n\n\n\n\n\n\nTotal Size\n14 994 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
   },
   {
     "objectID": "collections/cwts/index.html",
