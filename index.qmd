@@ -13,7 +13,7 @@ A growing, daily updated collection of publicly available datasets on Google Big
 ::: {.column-body-outset}
 ::: {.grid .collection-grid}
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-3}
 ::: {.collection-card}
 ### [Crossref](https://www.crossref.org/)
 
@@ -23,7 +23,7 @@ A major DOI registration agency for publisher-provided open metadata. Used in ma
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-3}
 ::: {.collection-card}
 ### [OpenAIRE](https://graph.openaire.eu/what-is-the-openaire-graph)
 
@@ -33,7 +33,7 @@ A free and open resource that interlinks hundreds of millions of metadata record
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12 .g-col-md-3}
 ::: {.collection-card}
 ### [OpenAlex](https://help.openalex.org/hc/en-us)
 
@@ -43,10 +43,18 @@ Many collections provide time-specfic snapshots of OpenAlex data, including [CWT
 :::
 :::
 
-::: {.g-col-12 .g-col-md-2}
+::: {.g-col-12 .g-col-md-3}
+::: {.collection-card}
+### [DataCite](https://datacite.org/)
+
+DOI registration agency for research data and other research outputs, linking works, people, and organizations.
+
+[Dimensions Open Datasets](collections/ds-open-datasets/) and [Sesame Open Science](collections/sos/) both provide [DataCite snapshots](collections/ds-open-datasets/#datacite-dataset).
+:::
 :::
 
-::: {.g-col-12 .g-col-md-4}
+::: {.g-col-12}
+::: {.collection-row-centered}
 ::: {.collection-card}
 ### [CWTS Leiden Ranking](https://open.leidenranking.com/)
 
@@ -54,15 +62,22 @@ An open edition of the CWTS Leiden Ranking for universities worldwide.
 
 [CWTS Leiden](collections/cwts/) provides data underlying the [Leiden Ranking Open Edition](collections/cwts/#leiden_ranking_open_edition) along with time-specific [OpenAlex versions](collections/cwts/#openalex).
 :::
-:::
 
-::: {.g-col-12 .g-col-md-4}
 ::: {.collection-card}
 ### [FAPESP Virtual Library](https://bv.fapesp.br/)
 
 The referential information source for research supported by FAPESP from Brazil.
 
 [MultiObs](collections/multiobs/) provides the [FAPESP Virtual Library dataset](collections/multiobs/#fapesp_bv) about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).
+:::
+
+::: {.collection-card}
+### [ORCID](https://orcid.org/)
+
+Persistent identifier for researchers, linking individuals to their works, affiliations, and funding.
+
+[Dimensions Open Datasets](collections/ds-open-datasets/) provides the full [ORCID public data file](collections/ds-open-datasets/#orcid-dataset) as a SQL representation.
+:::
 :::
 :::
 
