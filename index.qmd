@@ -77,7 +77,7 @@ The referential information source for research supported by FAPESP from Brazil.
 ::: {.collection-card}
 ### [ORCID](https://orcid.org/)
 
-Persistent identifier for researchers, linking individuals to their works, affiliations, and funding.
+Persistent identifier linking researchers to their works, affiliations, and funding.
 
 [Dimensions Open Datasets](collections/ds-open-datasets/) provides the full [ORCID public data file](collections/ds-open-datasets/#orcid-dataset) as a SQL representation.
 :::
