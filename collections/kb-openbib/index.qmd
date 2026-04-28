@@ -7,11 +7,11 @@ toc-title: Datasets
 params:
   bq_project: "openalex-475813"
 ---
+
 The [Kompentenznetzwerk Bibliometrie (KB)](https://open-bibliometrics.de/), a network of more than 25 German research institutions, contributes to the ongoing transformation towards open bibliometric data allowing for more transparency and participation in bibliometric research and contract work. But open bibliometric datasources require substantial data checks, cleaning and ongoing curation probably in a decentralised manner. We address these challenges by providing curated open data with a special focus on research from Germany.
 
-More info: <https://subugoe.github.io/scholcomm_analytics/>
-
-Contact: Christine Rimmert
+Contact: [Christine Rimmert](mailto:christine.rimmert@fiz-karlsruhe.de)
+.
 
 ```{r}
 #| echo: false
