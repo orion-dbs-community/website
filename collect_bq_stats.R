@@ -20,7 +20,7 @@ projects <- c(
   "multiobs",
   "sos-datasources",
   "subugoe-collaborative",
-  "kb-openbib"
+  "openalex-475813"
 )
 
 get_project_stats <- function(project) {
