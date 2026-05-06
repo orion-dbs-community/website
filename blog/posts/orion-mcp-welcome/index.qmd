@@ -1,10 +1,10 @@
 ---
-title: "Introducing the ORION-DBs MCP Server"
+title: "Introducing an MCP Server for ORION-DBs"
 subtitle: "Navigating Open Research Information Resources on BigQuery with LLMs"
 author:
   - name: Najko Jahn
     orcid: 0000-0001-5105-1463
-abstract: ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents `orion-mcp`, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
+abstract: ORION-DBs is a collection of open research information resources hosted on BigQuery. Their heterogeneous schemas make exploration and querying difficult. When properly guardrailed, LLMs can be genuinely useful for this kind of work, because they are reasonably good at writing SQL once they have enough context about the data. This post presents `orion-mcp`, an experiemental MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
 date: "2026-04-07"
 categories: [mcp, news, tools, ai]
 citation: 
@@ -14,14 +14,19 @@ image: "Model_Context_Protocol_logo.svg"
 status: "wip"
 ---
 
-## About
+## Introduction
 
-Working with [ORION-DBs](https://orion-dbs.community/) can be tricky: providers use different schemas and pre-processing routines,  making cross-database comparisons hard and writing queries against complex schemas a steep learning curve. 
-To give a sense of scale: ORION-DBs currently spans six different BigQuery projects from different providers, 52 datasets with various tables, and over 14 000 GB of data.
+The [ORION-DBs community](https://orion-dbs.community/) maintains open research information resources such as OpenAlex, Crossref, ORCID, DataCite, and more on Google BigQuery. 
+Its [collections](https://orion-dbs.community/collections/) currently span six different BigQuery projects, 52 datasets with various tables, and over 15 TB of data.
+However, the providers, including [Sesame Open Science](https://orion-dbs.community/collections/sos/), [MultiObs Campinas](https://orion-dbs.community/collections/multiobs/), [CWTS](https://orion-dbs.community/collections/cwts/), [Digital Science](https://orion-dbs.community/collections/ds-open-datasets/) and the [SUB Göttingen](https://orion-dbs.community/collections/subugoe/), use different database schemas and pre-processing routines, which can make it hard to navigate the resources and retrieve data from them.
 
-[`orion-mcp`](https://github.com/orion-dbs-community/orion-mcp) is a [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) server that addresses this by connecting ORION-DBs to AI apps like Claude Desktop. Once installed, you can ask questions about the available data sources or have the LLM draft and run SQL queries against them. 
+To broaden use of ORION-DBs, the experimental [`orion-mcp`](https://github.com/orion-dbs-community/orion-mcp) gives language models guided and database-aware access to ORION-DBs through AI apps like Claude Desktop. 
+`orion-mcp` follows a [growing number of Model Context Protocol (MCP) servers combining scholarly resources with language models](https://aarontay.substack.com/p/creating-your-own-research-assistant), many of them offered by commercial vendors and publishers.
+It provides the language model enough context to write SQL that is executed on BigQuery [rather than in the conversation](https://www.anthropic.com/engineering/code-execution-with-mcp), which reduces token use and keeps data retrieval controllable.
+BigQuery handles large datasets well and only returns results to the language model, typically at low cost.
+This allows users to discuss and refine retrieval strategies based on open data in natural language.
 
-The tool builds directly on the comprehensive schema documentation that ORION-DBs providers maintain, making that work directly useful when chatting with an LLM. It is at an early stage, so feedback is welcome!
+This post walks through a use case navigating open research information on BigQuery with `orion-mcp`. The tool is at an early stage, so feedback is welcome.
 
 ## What it does
 
@@ -57,7 +62,7 @@ You may wish to be more explicit about how the results are presented. Often, a d
 
 Full instructions are in the [GitHub repo README](https://github.com/orion-dbs-community/orion-mcp).
 
-In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google's [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials), so your local `gcloud` credentials are used directly — no service account keys needed. A [Google Cloud account](https://cloud.google.com/free) includes 1 TB of free queries per month.
+In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google's [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials), so your local `gcloud` credentials are used directly. No service account keys needed. A [Google Cloud account](https://cloud.google.com/free) includes 1 TB of free queries per month.
 
 Requirements: [Docker](https://docs.docker.com/desktop/) and the [Google Cloud CLI (`gcloud`)](https://docs.cloud.google.com/sdk/docs/install-sdk). The server is implemented in R using [`{mcptools}`](https://posit-dev.github.io/mcptools/) and [`{ellmer}`](https://ellmer.tidyverse.org/).
 

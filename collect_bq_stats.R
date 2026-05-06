@@ -19,7 +19,8 @@ projects <- c(
   "insyspo",
   "multiobs",
   "sos-datasources",
-  "subugoe-collaborative"
+  "subugoe-collaborative",
+  "kb-openbib"
 )
 
 get_project_stats <- function(project) {

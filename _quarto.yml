@@ -21,6 +21,8 @@ website:
             href: collections/ds-open-datasets/
           - text: InSySPo Campinas Datasets
             href: collections/insyspo/
+          - text: KB OPENBIB
+            href: collections/kb-openbib/
           - text: MultiObs Campinas Datasets
             href: collections/multiobs/
           - text: Sesame Open Science Datasets
