@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OpenAIRE – ORION-DBs</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-64556d7d35b8c0dc6f1d5c7ffc9aa060.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../../site_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="../../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/reactable-0.4.5/reactable.css" rel="stylesheet">
+<script src="../../site_libs/reactable-binding-0.4.5/reactable.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="OpenAIRE – ORION-DBs">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="ORION-DBs">
+<meta name="twitter:title" content="OpenAIRE – ORION-DBs">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ORION-DBs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-collections" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Collections</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-collections">    
+        <li>
+    <a class="dropdown-item" href="../../collections/">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/cwts/">
+ <span class="dropdown-text">CWTS Leiden Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/ds-open-datasets/">
+ <span class="dropdown-text">Dimensions Open Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/insyspo/">
+ <span class="dropdown-text">InSySPo Campinas Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/kb-openbib/">
+ <span class="dropdown-text">KB OPENBIB</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/multiobs/">
+ <span class="dropdown-text">MultiObs Campinas Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/sos/">
+ <span class="dropdown-text">Sesame Open Science Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../collections/subugoe/">
+ <span class="dropdown-text">SUB Göttingen Datasets</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/"> 
+<span class="menu-text">News &amp; Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contributing.html"> 
+<span class="menu-text">Contribute</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog/index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/orion-dbs-community/website"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Datasets</h2>
+   
+  <ul>
+  <li><a href="#oag_v10_6_0" id="toc-oag_v10_6_0" class="nav-link active" data-scroll-target="#oag_v10_6_0">oag_v10_6_0</a></li>
+  <li><a href="#oag_v10_6_0_additional" id="toc-oag_v10_6_0_additional" class="nav-link" data-scroll-target="#oag_v10_6_0_additional">oag_v10_6_0_additional</a></li>
+  <li><a href="#oag_v9_0_1" id="toc-oag_v9_0_1" class="nav-link" data-scroll-target="#oag_v9_0_1">oag_v9_0_1</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">OpenAIRE</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The OpenAIRE Graph is made available publicly as a dataset on Google Cloud and can be accessed and queried from Google BigQuery.</p>
+<p>More info:</p>
+<p><a href="https://graph.openaire.eu/docs/cloud-access/" class="uri">https://graph.openaire.eu/docs/cloud-access/</a></p>
+<section id="oag_v10_6_0" class="level2">
+<h2 class="anchored" data-anchor-id="oag_v10_6_0">oag_v10_6_0</h2>
+<div class="description-box">
+<div class="description-meta">
+<strong>Created:</strong> Dec 05, 2025 07:02 | <strong>Location:</strong> EU | <a href="https://console.cloud.google.com/bigquery?project=openaire-graph&amp;p=openaire-graph&amp;d=oag_v10_6_0&amp;page=dataset" target="_blank">View in BigQuery Console</a>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="bigquery-tables">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-d993d1724869de5f6cf2" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d993d1724869de5f6cf2">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["communities","datasets","datasources","organizations","others","projects","publications","relations","software"],"lastModifiedTime":["2025-12-05T07:10:06Z","2025-12-05T07:04:00Z","2025-12-05T07:09:52Z","2025-12-05T07:09:59Z","2025-12-05T07:09:49Z","2025-12-05T07:10:05Z","2025-12-05T07:03:37Z","2025-12-05T07:12:37Z","2025-12-05T07:04:15Z"],"location":["EU","EU","EU","EU","EU","EU","EU","EU","EU"],"numBytes":[100453,123493852651,56413630,92788741,47971871016,2197117678,586671751606,1182281661675,1129284603],"numRows":[36,86236354,157392,448161,31628153,3673360,205841448,7378579759,737936]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","acronym","description","name","subjects","type","zenodoCommunity"],"Type":["STRING","STRING","STRING","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"3f5f451709b67b773afef327db323f13","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","size","version","geolocations"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","STRING","STRING","JSON"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"88369d8b1da4956432d149b273e846a6","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","originalIds","pids","type","typeScheme","openaireCompatibility","officialName","englishName","websiteUrl","logoUrl","dateOfValidation","description","subjects","languages","contentTypes","releaseStartDate","releaseEndDate","accessRights","uploadRights","databaseAccessRestriction","dataUploadRestriction","versioning","citationGuidelineUrl","pidSystems","certificates","policies","edition","iss","issnLinking","issnOnline","issnPrinted","name","sp","ep","vol","missionStatementUrl"],"Type":["STRING","JSON","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","JSON","JSON","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"3e6307ef85434e3d20b729b0c2670dec","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","legalShortName","legalName","alternativeNames","websiteUrl","country","countryCode","pids"],"Type":["STRING","STRING","STRING","JSON","STRING","STRING","STRING","JSON"],"Description":[null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"de174e7f0d8474d0b74c968a4ad56b06","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","contactPeople","contactGroups","tools"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","JSON","JSON","JSON"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"0ebf9972ef4dc334d7b7cd8ac1b4ad5f","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","code","acronym","title","callIdentifier","fundings","currency","fundedAmount","totalCost","h2020Programmes","keywords","openAccessMandateForDataset","openAccessMandateForPublications","startDate","endDate","subjects","summary","websiteUrl"],"Type":["STRING","STRING","STRING","STRING","STRING","JSON","STRING","FLOAT","FLOAT","JSON","STRING","BOOLEAN","BOOLEAN","STRING","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"ef3624e1df079b588f19e1282c25ba45","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","edition","iss","issnLinking","issnOnline","issnPrinted","containerName","sp","ep","vol","conferenceDate","conferencePlace"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"0fb018a63b6902e3bf9db4da109cfd0e","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["source","sourceType","target","targetType","relationName","relationType","provenance","provenanceTrust","validated","validationDate"],"Type":["STRING","STRING","STRING","STRING","STRING","STRING","STRING","FLOAT","BOOLEAN","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"e468a6e91bbd04875dfd97a5c754e9a8","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","documentationUrls","codeRepositoryUrl","programmingLanguage"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"1ecedcda0ffa91160f974bdb471498b1","static":false,"nested":true},"children":[]}]}]},{"id":"name","name":"Table Name","type":"character","headerClassName":"header","minWidth":250,"style":{"fontWeight":600,"cursor":"pointer","fontSize":"0.875rem"}},{"id":"lastModifiedTime","name":"Last Updated","type":"Date","headerClassName":"header","cell":["Dec 05, 2025 07:10","Dec 05, 2025 07:04","Dec 05, 2025 07:09","Dec 05, 2025 07:09","Dec 05, 2025 07:09","Dec 05, 2025 07:10","Dec 05, 2025 07:03","Dec 05, 2025 07:12","Dec 05, 2025 07:04"],"minWidth":200,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"location","name":"Loc.","type":"character","headerClassName":"header","minWidth":80,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"numBytes","name":"Size","type":"numeric","headerClassName":"header","cell":["0.10 MB","115.01 GB","53.80 MB","88.49 MB","44.68 GB","2.05 GB","546.38 GB","1101.09 GB","1.05 GB"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}},{"id":"numRows","name":"Rows","type":"numeric","headerClassName":"header","cell":["36","86,236,354","157,392","448,161","31,628,153","3,673,360","205,841,448","7,378,579,759","737,936"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}}],"resizable":true,"pagination":false,"onClick":"expand","rowStyle":{"cursor":"pointer"},"theme":{"cellPadding":"8px 12px","style":{"fontFamily":"system-ui, -apple-system, sans-serif"}},"dataKey":"db203aa74a43b5bc8709ec99e8bfdea5"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</section>
+<section id="oag_v10_6_0_additional" class="level2">
+<h2 class="anchored" data-anchor-id="oag_v10_6_0_additional">oag_v10_6_0_additional</h2>
+<div class="description-box">
+<div class="description-meta">
+<strong>Created:</strong> Jan 30, 2026 08:47 | <strong>Location:</strong> EU | <a href="https://console.cloud.google.com/bigquery?project=openaire-graph&amp;p=openaire-graph&amp;d=oag_v10_6_0_additional&amp;page=dataset" target="_blank">View in BigQuery Console</a>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="bigquery-tables">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-40acf756936c10bddda3" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-40acf756936c10bddda3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["organization-types"],"lastModifiedTime":["2026-01-30T08:50:59Z"],"location":["EU"],"numBytes":[25725390],"numRows":[449338]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["organizationtype","id"],"Type":["STRING","STRING"],"Description":[null,null],"nested_fields":[null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"c3abe6d73d6d15c68aa749aef0f4a04a","static":false,"nested":true},"children":[]}]}]},{"id":"name","name":"Table Name","type":"character","headerClassName":"header","minWidth":250,"style":{"fontWeight":600,"cursor":"pointer","fontSize":"0.875rem"}},{"id":"lastModifiedTime","name":"Last Updated","type":"Date","headerClassName":"header","cell":["Jan 30, 2026 08:50"],"minWidth":200,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"location","name":"Loc.","type":"character","headerClassName":"header","minWidth":80,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"numBytes","name":"Size","type":"numeric","headerClassName":"header","cell":["24.53 MB"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}},{"id":"numRows","name":"Rows","type":"numeric","headerClassName":"header","cell":["449,338"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}}],"resizable":true,"pagination":false,"onClick":"expand","rowStyle":{"cursor":"pointer"},"theme":{"cellPadding":"8px 12px","style":{"fontFamily":"system-ui, -apple-system, sans-serif"}},"dataKey":"0e764936c8b8707dbed3dc0bae19f396"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</section>
+<section id="oag_v9_0_1" class="level2">
+<h2 class="anchored" data-anchor-id="oag_v9_0_1">oag_v9_0_1</h2>
+<div class="description-box">
+<div class="description-meta">
+<strong>Created:</strong> Feb 13, 2025 15:43 | <strong>Location:</strong> EU | <a href="https://console.cloud.google.com/bigquery?project=openaire-graph&amp;p=openaire-graph&amp;d=oag_v9_0_1&amp;page=dataset" target="_blank">View in BigQuery Console</a>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="bigquery-tables">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-f9ffb46d59eafb2baaf0" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f9ffb46d59eafb2baaf0">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["communities","datasets","datasources","organizations","others","projects","publications","relations","software"],"lastModifiedTime":["2025-02-13T15:45:56Z","2025-02-13T15:45:56Z","2025-02-13T15:45:57Z","2025-02-13T15:45:56Z","2025-02-13T15:45:58Z","2025-02-13T15:45:56Z","2025-02-13T15:45:58Z","2025-02-13T15:45:59Z","2025-02-13T15:46:45Z"],"location":["EU","EU","EU","EU","EU","EU","EU","EU","EU"],"numBytes":[96147,91669797284,50793474,93388820,38670039331,2056242948,542396138293,1149377832879,873841561],"numRows":[34,73443566,141568,454601,24797142,3482537,192934523,7241517003,596316]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","acronym","description","name","subjects","type","zenodoCommunity"],"Type":["STRING","STRING","STRING","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"3f5f451709b67b773afef327db323f13","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","size","version","geolocations"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","STRING","STRING","JSON"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"88369d8b1da4956432d149b273e846a6","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","originalIds","pids","type","typeScheme","openaireCompatibility","officialName","englishName","websiteUrl","logoUrl","dateOfValidation","description","subjects","languages","contentTypes","releaseStartDate","releaseEndDate","accessRights","uploadRights","databaseAccessRestriction","dataUploadRestriction","versioning","citationGuidelineUrl","pidSystems","certificates","policies","edition","iss","issnLinking","issnOnline","issnPrinted","name","sp","ep","vol","missionStatementUrl"],"Type":["STRING","JSON","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","JSON","JSON","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","JSON","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"3e6307ef85434e3d20b729b0c2670dec","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","legalShortName","legalName","alternativeNames","websiteUrl","country","countryCode","pids"],"Type":["STRING","STRING","STRING","JSON","STRING","STRING","STRING","JSON"],"Description":[null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"de174e7f0d8474d0b74c968a4ad56b06","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","contactPeople","contactGroups","tools"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","JSON","JSON","JSON"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"0ebf9972ef4dc334d7b7cd8ac1b4ad5f","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","code","acronym","title","callIdentifier","fundings","currency","fundedAmount","totalCost","h2020Programmes","keywords","openAccessMandateForDataset","openAccessMandateForPublications","startDate","endDate","subjects","summary","websiteUrl"],"Type":["STRING","STRING","STRING","STRING","STRING","JSON","STRING","FLOAT","FLOAT","JSON","STRING","BOOLEAN","BOOLEAN","STRING","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"ef3624e1df079b588f19e1282c25ba45","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","edition","iss","issnLinking","issnOnline","issnPrinted","containerName","sp","ep","vol","conferenceDate","conferencePlace"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"0fb018a63b6902e3bf9db4da109cfd0e","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["source","sourceType","target","targetType","relationName","relationType","provenance","provenanceTrust","validated","validationDate"],"Type":["STRING","STRING","STRING","STRING","STRING","STRING","STRING","FLOAT","BOOLEAN","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"e468a6e91bbd04875dfd97a5c754e9a8","static":false,"nested":true},"children":[]}]},{"name":"div","attribs":{"className":"schema-detail"},"children":[{"name":"div","attribs":{"className":"schema-header"},"children":["Table Schema"]},{"name":"Reactable","attribs":{"data":{"Field":["id","type","originalIds","mainTitle","subTitle","authors","bestAccessRight","contributors","countries","coverages","dateOfCollection","descriptions","embargoEndDate","indicators","instances","language","languageCode","lastUpdateTimeStamp","pids","publicationDate","publisher","sources","formats","subjects","isGreen","openAccessColor","isInDiamondJournal","publiclyFunded","documentationUrls","codeRepositoryUrl","programmingLanguage"],"Type":["STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","JSON","JSON","STRING","JSON","STRING","JSON","JSON","STRING","STRING","STRING","JSON","STRING","STRING","JSON","JSON","JSON","BOOLEAN","STRING","BOOLEAN","STRING","JSON","STRING","STRING"],"Description":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"nested_fields":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":".details","name":"","type":null,"headerClassName":"header","sortable":false,"resizable":false,"filterable":false,"searchable":false,"width":45,"align":"center","details":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"id":"Field","name":"Field","type":"character","headerClassName":"header","minWidth":200,"style":{"fontWeight":500,"fontSize":"0.8125rem"}},{"id":"Type","name":"Type","type":"character","headerClassName":"header","minWidth":100,"style":{"fontSize":"0.8125rem"}},{"id":"Description","name":"Description","type":"character","headerClassName":"header","minWidth":250,"style":{"fontSize":"0.8125rem"}},{"id":"nested_fields","name":"nested_fields","type":"list","headerClassName":"header","show":false}],"pagination":false,"outlined":true,"className":"schema-table","theme":{"cellPadding":"8px 12px"},"dataKey":"1ecedcda0ffa91160f974bdb471498b1","static":false,"nested":true},"children":[]}]}]},{"id":"name","name":"Table Name","type":"character","headerClassName":"header","minWidth":250,"style":{"fontWeight":600,"cursor":"pointer","fontSize":"0.875rem"}},{"id":"lastModifiedTime","name":"Last Updated","type":"Date","headerClassName":"header","cell":["Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:45","Feb 13, 2025 15:46"],"minWidth":200,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"location","name":"Loc.","type":"character","headerClassName":"header","minWidth":80,"align":"right","style":{"fontSize":"0.875rem"}},{"id":"numBytes","name":"Size","type":"numeric","headerClassName":"header","cell":["0.09 MB","85.37 GB","48.44 MB","89.06 MB","36.01 GB","1.92 GB","505.15 GB","1070.44 GB","833.36 MB"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}},{"id":"numRows","name":"Rows","type":"numeric","headerClassName":"header","cell":["34","73,443,566","141,568","454,601","24,797,142","3,482,537","192,934,523","7,241,517,003","596,316"],"minWidth":150,"align":"right","vAlign":"center","style":{"fontFamily":"ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace","fontSize":"0.8125rem"}}],"resizable":true,"pagination":false,"onClick":"expand","rowStyle":{"cursor":"pointer"},"theme":{"cellPadding":"8px 12px","style":{"fontFamily":"system-ui, -apple-system, sans-serif"}},"dataKey":"ed3aa62a40c478daabbf739c43cbd9d9"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orion-dbs\.community");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ The content on this website is licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../privacy.html">
+<p>Privacy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../../contact.html">
+<p>Contact</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Built with <a href="https://quarto.org/">Quarto</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
