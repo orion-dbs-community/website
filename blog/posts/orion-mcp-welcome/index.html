@@ -9,7 +9,7 @@
 <meta name="author" content="Najko Jahn">
 <meta name="dcterms.date" content="2026-04-07">
 
-<title>Introducing the ORION-DBs MCP Server – ORION-DBs</title>
+<title>Introducing an MCP Server for ORION-DBs – ORION-DBs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,12 +76,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Introducing the ORION-DBs MCP Server – ORION-DBs">
-<meta property="og:description" content="ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents orion-mcp, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
+<meta property="og:title" content="Introducing an MCP Server for ORION-DBs – ORION-DBs">
+<meta property="og:description" content="ORION-DBs is a collection of open research information resources hosted on BigQuery. Their heterogeneous schemas make exploration and querying difficult. When properly guardrailed, LLMs can be genuinely useful for this kind of work, because they are reasonably good at writing SQL once they have enough context about the data. This post presents orion-mcp, an experiemental MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
 <meta property="og:image" content="https://orion-dbs.community/blog/posts/orion-mcp-welcome/Model_Context_Protocol_logo.svg">
 <meta property="og:site_name" content="ORION-DBs">
-<meta name="twitter:title" content="Introducing the ORION-DBs MCP Server – ORION-DBs">
-<meta name="twitter:description" content="ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents orion-mcp, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
+<meta name="twitter:title" content="Introducing an MCP Server for ORION-DBs – ORION-DBs">
+<meta name="twitter:description" content="ORION-DBs is a collection of open research information resources hosted on BigQuery. Their heterogeneous schemas make exploration and querying difficult. When properly guardrailed, LLMs can be genuinely useful for this kind of work, because they are reasonably good at writing SQL once they have enough context about the data. This post presents orion-mcp, an experiemental MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.">
 <meta name="twitter:image" content="https://orion-dbs.community/blog/posts/orion-mcp-welcome/Model_Context_Protocol_logo.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -123,6 +123,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../../collections/insyspo/">
  <span class="dropdown-text">InSySPo Campinas Datasets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../collections/kb-openbib/">
+ <span class="dropdown-text">KB OPENBIB</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../../collections/multiobs/">
@@ -178,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#what-it-does" id="toc-what-it-does" class="nav-link" data-scroll-target="#what-it-does">What it does</a>
   <ul class="collapse">
   <li><a href="#explore-schemas" id="toc-explore-schemas" class="nav-link" data-scroll-target="#explore-schemas">Explore schemas</a></li>
@@ -195,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducing the ORION-DBs MCP Server</h1>
+<h1 class="title">Introducing an MCP Server for ORION-DBs</h1>
 <p class="subtitle lead">Navigating Open Research Information Resources on BigQuery with LLMs</p>
   <div class="quarto-categories">
     <div class="quarto-category">mcp</div>
@@ -229,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 <div>
   <div class="abstract">
     <div class="block-title">Abstract</div>
-    ORION-DBs provides access to multiple open research information resources, but their heterogeneous schemas make exploration and querying difficult. This post presents <code>orion-mcp</code>, an MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
+    ORION-DBs is a collection of open research information resources hosted on BigQuery. Their heterogeneous schemas make exploration and querying difficult. When properly guardrailed, LLMs can be genuinely useful for this kind of work, because they are reasonably good at writing SQL once they have enough context about the data. This post presents <code>orion-mcp</code>, an experiemental MCP server that lets LLMs like Claude explore schemas, draft SQL, estimate costs, and run queries, providing a practical entry point for users less familiar with open research information resources and BigQuery.
   </div>
 </div>
 
@@ -237,11 +241,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>Working with <a href="https://orion-dbs.community/">ORION-DBs</a> can be tricky: providers use different schemas and pre-processing routines, making cross-database comparisons hard and writing queries against complex schemas a steep learning curve. To give a sense of scale: ORION-DBs currently spans six different BigQuery projects from different providers, 52 datasets with various tables, and over 14 000 GB of data.</p>
-<p><a href="https://github.com/orion-dbs-community/orion-mcp"><code>orion-mcp</code></a> is a <a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a> server that addresses this by connecting ORION-DBs to AI apps like Claude Desktop. Once installed, you can ask questions about the available data sources or have the LLM draft and run SQL queries against them.</p>
-<p>The tool builds directly on the comprehensive schema documentation that ORION-DBs providers maintain, making that work directly useful when chatting with an LLM. It is at an early stage, so feedback is welcome!</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The <a href="https://orion-dbs.community/">ORION-DBs community</a> maintains open research information resources such as OpenAlex, Crossref, ORCID, DataCite, and more on Google BigQuery. Its <a href="https://orion-dbs.community/collections/">collections</a> currently span six different BigQuery projects, 52 datasets with various tables, and over 15 TB of data. However, the providers, including <a href="https://orion-dbs.community/collections/sos/">Sesame Open Science</a>, <a href="https://orion-dbs.community/collections/multiobs/">MultiObs Campinas</a>, <a href="https://orion-dbs.community/collections/cwts/">CWTS</a>, <a href="https://orion-dbs.community/collections/ds-open-datasets/">Digital Science</a> and the <a href="https://orion-dbs.community/collections/subugoe/">SUB Göttingen</a>, use different database schemas and pre-processing routines, which can make it hard to navigate the resources and retrieve data from them.</p>
+<p>To broaden use of ORION-DBs, the experimental <a href="https://github.com/orion-dbs-community/orion-mcp"><code>orion-mcp</code></a> gives language models guided and database-aware access to ORION-DBs through AI apps like Claude Desktop. <code>orion-mcp</code> follows a <a href="https://aarontay.substack.com/p/creating-your-own-research-assistant">growing number of Model Context Protocol (MCP) servers combining scholarly resources with language models</a>, many of them offered by commercial vendors and publishers. It provides the language model enough context to write SQL that is executed on BigQuery <a href="https://www.anthropic.com/engineering/code-execution-with-mcp">rather than in the conversation</a>, which reduces token use and keeps data retrieval controllable. BigQuery handles large datasets well and only returns results to the language model, typically at low cost. This allows users to discuss and refine retrieval strategies based on open data in natural language.</p>
+<p>This post walks through a use case navigating open research information on BigQuery with <code>orion-mcp</code>. The tool is at an early stage, so feedback is welcome.</p>
 </section>
 <section id="what-it-does" class="level2">
 <h2 class="anchored" data-anchor-id="what-it-does">What it does</h2>
@@ -274,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p>Full instructions are in the <a href="https://github.com/orion-dbs-community/orion-mcp">GitHub repo README</a>.</p>
-<p>In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google’s <a href="https://cloud.google.com/docs/authentication/application-default-credentials">Application Default Credentials</a>, so your local <code>gcloud</code> credentials are used directly — no service account keys needed. A <a href="https://cloud.google.com/free">Google Cloud account</a> includes 1 TB of free queries per month.</p>
+<p>In summary, the server runs in a Docker container connected to Claude Desktop via its MCP config file. Authentication uses Google’s <a href="https://cloud.google.com/docs/authentication/application-default-credentials">Application Default Credentials</a>, so your local <code>gcloud</code> credentials are used directly. No service account keys needed. A <a href="https://cloud.google.com/free">Google Cloud account</a> includes 1 TB of free queries per month.</p>
 <p>Requirements: <a href="https://docs.docker.com/desktop/">Docker</a> and the <a href="https://docs.cloud.google.com/sdk/docs/install-sdk">Google Cloud CLI (<code>gcloud</code>)</a>. The server is implemented in R using <a href="https://posit-dev.github.io/mcptools/"><code>{mcptools}</code></a> and <a href="https://ellmer.tidyverse.org/"><code>{ellmer}</code></a>.</p>
 </section>
 <section id="responsible-use" class="level2">
@@ -286,21 +290,24 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jahn2026,
   author = {Jahn, Najko},
-  title = {Introducing the {ORION-DBs} {MCP} {Server}},
+  title = {Introducing an {MCP} {Server} for {ORION-DBs}},
   date = {2026-04-07},
   url = {https://orion-dbs.community/blog/posts/orion-mcp-welcome/},
   langid = {en},
-  abstract = {ORION-DBs provides access to multiple open research
-    information resources, but their heterogeneous schemas make
-    exploration and querying difficult. This post presents `orion-mcp`,
-    an MCP server that lets LLMs like Claude explore schemas, draft SQL,
+  abstract = {ORION-DBs is a collection of open research information
+    resources hosted on BigQuery. Their heterogeneous schemas make
+    exploration and querying difficult. When properly guardrailed, LLMs
+    can be genuinely useful for this kind of work, because they are
+    reasonably good at writing SQL once they have enough context about
+    the data. This post presents `orion-mcp`, an experiemental MCP
+    server that lets LLMs like Claude explore schemas, draft SQL,
     estimate costs, and run queries, providing a practical entry point
     for users less familiar with open research information resources and
     BigQuery.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jahn2026" class="csl-entry quarto-appendix-citeas" role="listitem">
-Jahn, Najko. 2026. <span>“Introducing the ORION-DBs MCP Server.”</span>
-ORION-DBs Blog, April 7. <a href="https://orion-dbs.community/blog/posts/orion-mcp-welcome/">https://orion-dbs.community/blog/posts/orion-mcp-welcome/</a>.
+Jahn, Najko. 2026. <span>“Introducing an MCP Server for
+ORION-DBs.”</span> ORION-DBs Blog, April 7. <a href="https://orion-dbs.community/blog/posts/orion-mcp-welcome/">https://orion-dbs.community/blog/posts/orion-mcp-welcome/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
