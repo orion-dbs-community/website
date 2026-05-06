@@ -27,7 +27,7 @@ A major DOI registration agency for publisher-provided open metadata. Used in ma
 ::: {.collection-card}
 ### [OpenAIRE](https://graph.openaire.eu/what-is-the-openaire-graph)
 
-A free and open resource that interlinks hundreds of millions of metadata records from over 100k data sources.
+Knowledge graph interlinking ~350mio publications, datasets, software, grants, and more from ~150k sources.
 
 [Sesame Open Science](collections/sos/) and [InSySPo Campinas](collections/insyspo/) provide the full [OpenAIRE Graph Dataset](collections/sos/#openaire) in different schemas.
 :::
@@ -39,7 +39,7 @@ A free and open resource that interlinks hundreds of millions of metadata record
 
 A free, open, and comprehensive bibliographic database and knowledge graph for global scholarly research.
 
-Many collections provide time-specfic snapshots of OpenAlex data, including [CWTS](collections/cwts/), [InSySPo Campinas](collections/insyspo/), [MultiObs](collections/multiobs) and [SUB Göttingen](collections/subugoe/).
+Many collections provide time-specfic snapshots of OpenAlex data, including [CWTS](collections/cwts/), [KB OPENBIB](collections/kb-openbib/), [InSySPo Campinas](collections/insyspo/), [MultiObs](collections/multiobs) and [SUB Göttingen](collections/subugoe/).
 :::
 :::
 
