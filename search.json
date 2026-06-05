@@ -620,91 +620,98 @@
     "href": "collections/sos/index.html#butler_apcs",
     "title": "Sesame Open Science",
     "section": "butler_apcs",
-    "text": "butler_apcs\n\n\nDescription\n\n\nButler, Leigh-Ann; Hare, Madelaine; Schönfelder, Nina; Schares, Eric; Alperin, Juan Pablo; Haustein, Stefanie, 2024, “Open dataset of annual Article Processing Charges (APCs) of gold and hybrid journals published by Elsevier, Frontiers, MDPI, PLOS, Springer-Nature and Wiley 2019-2023.\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
+    "text": "butler_apcs\n\n\nDescription\n\n\nButler, Leigh-Ann; Hare, Madelaine; Schönfelder, Nina; Schares, Eric; Alperin, Juan Pablo; Haustein, Stefanie, 2024, “Open dataset of annual Article Processing Charges (APCs) of gold and hybrid journals published by Elsevier, Frontiers, MDPI, PLOS, Springer-Nature and Wiley 2019-2023.\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#butler-apcs\n\n\nCreated: Aug 26, 2025 15:17 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#crossref",
     "href": "collections/sos/index.html#crossref",
     "title": "Sesame Open Science",
     "section": "crossref",
-    "text": "crossref\n\n\nDescription\n\n\nCrossref public data file and Crossref API data for members and journals\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
+    "text": "crossref\n\n\nDescription\n\n\nCrossref public data file (sample) and Crossref API data for members and journals\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#crossref-public-data-file\n\n\nCreated: Jul 08, 2025 07:53 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#datacite",
     "href": "collections/sos/index.html#datacite",
     "title": "Sesame Open Science",
     "section": "datacite",
-    "text": "datacite\n\n\nDescription\n\n\nDataCite public data file\n\n\nCreated: Feb 07, 2026 15:27 | Location: US | View in BigQuery Console"
+    "text": "datacite\n\n\nDescription\n\n\nDataCite monthly data file and DataCite clients (data underlying the DataCite API clients endpoint)\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#datacite-monthly-data-file\n\n\nCreated: Feb 07, 2026 15:27 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#doaj",
     "href": "collections/sos/index.html#doaj",
     "title": "Sesame Open Science",
     "section": "doaj",
-    "text": "doaj\n\n\nDescription\n\n\nDOAJ journal metadata\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
+    "text": "doaj\n\n\nDescription\n\n\nDOAJ journal metadata\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#doaj\n\n\nCreated: Aug 03, 2025 20:57 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#goa",
     "href": "collections/sos/index.html#goa",
     "title": "Sesame Open Science",
     "section": "goa",
-    "text": "goa\n\n\nDescription\n\n\nWalt Crawford - Gold Open Access datasets: GOA5 (2014-2019) to GOA10 (2020-2024)\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
+    "text": "goa\n\n\nDescription\n\n\nWalt Crawford - Gold Open Access datasets: GOA5 (2014-2019) to GOA10 (2020-2024)\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#goa\n\n\nCreated: Aug 03, 2025 21:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/sos/index.html#make_data_count",
+    "href": "collections/sos/index.html#make_data_count",
+    "title": "Sesame Open Science",
+    "section": "make_data_count",
+    "text": "make_data_count\n\n\nDescription\n\n\nMake Data Count - Data Citation Corpus\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#make-data-count-data-citation-corpus\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#make-data-count-data-citation-corpus\n\n\nCreated: Jun 04, 2026 06:25 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#openaire",
     "href": "collections/sos/index.html#openaire",
     "title": "Sesame Open Science",
     "section": "openaire",
-    "text": "openaire\n\n\nDescription\n\n\nOpenAIRE Graph Dataset\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
+    "text": "openaire\n\n\nDescription\n\n\nOpenAIRE Graph Dataset\nDocumentation of data ingest:\nhttps://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#openaire\n\n\nCreated: Mar 28, 2025 16:48 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#openapc",
     "href": "collections/sos/index.html#openapc",
     "title": "Sesame Open Science",
     "section": "openapc",
-    "text": "openapc\n\n\nDescription\n\n\nData from the OpenAPC initiative\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
+    "text": "openapc\n\n\nDescription\n\n\nData from the OpenAPC initiative\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#openapc\n\n\nCreated: Aug 03, 2025 21:02 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#opencitations",
     "href": "collections/sos/index.html#opencitations",
     "title": "Sesame Open Science",
     "section": "opencitations",
-    "text": "opencitations\n\n\nDescription\n\n\nOpenCitations Meta - bibliographic metadata for all publications included in the OpenCitations Index\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
+    "text": "opencitations\n\n\nDescription\n\n\nOpenCitations Meta - bibliographic metadata for all publications included in the OpenCitations Index\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#opencitations-meta\n\n\nCreated: Dec 29, 2024 11:23 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#openeditors",
     "href": "collections/sos/index.html#openeditors",
     "title": "Sesame Open Science",
     "section": "openeditors",
-    "text": "openeditors\n\n\nCreated: Mar 19, 2026 13:11 | Location: US | View in BigQuery Console"
+    "text": "openeditors\n\n\nDescription\n\n\nOpen Editors collects data about scholarly journals’ editors and editorial board members.\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest/src/branch/main/README.md#openeditors\n\n\nCreated: Mar 19, 2026 13:11 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#pkp",
     "href": "collections/sos/index.html#pkp",
     "title": "Sesame Open Science",
     "section": "pkp",
-    "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
+    "text": "pkp\n\n\nDescription\n\n\nPKP Beacon dataset - details of publications using software by the Public Knowledge Project\nDocumentation on data ingest: https://codeberg.org/TwoBirds/metadata_ingest#pkp\n\n\nCreated: Jun 05, 2025 23:52 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#ror",
     "href": "collections/sos/index.html#ror",
     "title": "Sesame Open Science",
     "section": "ror",
-    "text": "ror\n\n\nDescription\n\n\nFull ROR dataset\n\n\nCreated: Jul 31, 2025 20:49 | Location: US | View in BigQuery Console"
+    "text": "ror\n\n\nDescription\n\n\nFull ROR dataset\nDocumentation of data ingest: https://codeberg.org/TwoBirds/metadata_ingest#ror\n\n\nCreated: Jul 31, 2025 20:49 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html#truthtables",
     "href": "collections/sos/index.html#truthtables",
     "title": "Sesame Open Science",
     "section": "truthtables",
-    "text": "truthtables\n\n\nDescription\n\n\nProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source. Created to facilitate comparison of metadata coverage across sources\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
+    "text": "truthtables\n\n\nDescription\n\n\nProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source.\nDocumentation of data processing: https://codeberg.org/TwoBirds/metadata_ingest#truthtables Created to facilitate comparison of metadata coverage across sources\n\n\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
   },
   {
     "objectID": "collections/index.html",
     "href": "collections/index.html",
     "title": "Collections Overview",
     "section": "",
-    "text": "BigQuery Projects\n7\n\n\n\n\n\n\n\n\n\nDatasets\n57\n\n\n\n\n\n\n\n\n\nTotal Size\n18 663 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+    "text": "BigQuery Projects\n7\n\n\n\n\n\n\n\n\n\nDatasets\n58\n\n\n\n\n\n\n\n\n\nTotal Size\n17 785 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
   },
   {
     "objectID": "collections/ds-open-datasets/index.html",
