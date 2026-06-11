@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://orion-dbs.community/contributing.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/blog/posts/nih-ec-oa/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.588Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/blog/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.587Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/kb-openbib/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/openaire/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/multiobs/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/insyspo/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/privacy.html</loc>
-    <lastmod>2026-06-10T09:36:57.657Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/about.html</loc>
-    <lastmod>2026-06-10T09:36:57.587Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/contact.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
     <loc>https://orion-dbs.community/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.655Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/cwts/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/subugoe/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/sos/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orion-dbs.community/collections/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
+    <lastmod>2026-06-11T10:00:33.437Z</lastmod>
   </url>
   <url>
     <loc>https://orion-dbs.community/collections/ds-open-datasets/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.649Z</lastmod>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/sos/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/multiobs/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/kb-openbib/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/blog/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.374Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/blog/posts/nih-ec-oa/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.375Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/contact.html</loc>
+    <lastmod>2026-06-11T10:00:33.432Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/privacy.html</loc>
+    <lastmod>2026-06-11T10:00:33.439Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/contributing.html</loc>
+    <lastmod>2026-06-11T10:00:33.432Z</lastmod>
   </url>
   <url>
     <loc>https://orion-dbs.community/blog/posts/welcome/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.647Z</lastmod>
+    <lastmod>2026-06-11T10:00:33.430Z</lastmod>
   </url>
   <url>
     <loc>https://orion-dbs.community/blog/posts/orion-mcp-welcome/index.html</loc>
-    <lastmod>2026-06-10T09:36:57.647Z</lastmod>
+    <lastmod>2026-06-11T10:00:33.430Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/openaire/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/subugoe/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/insyspo/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/cwts/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/collections/index.html</loc>
+    <lastmod>2026-06-11T10:00:33.431Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orion-dbs.community/about.html</loc>
+    <lastmod>2026-06-11T10:00:33.374Z</lastmod>
   </url>
 </urlset>
