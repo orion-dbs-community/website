@@ -10,7 +10,48 @@
 <atom:link href="https://orion-dbs.community/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Fri, 13 Mar 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 06 Jul 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Alternatives for what?</title>
+  <dc:creator>Bianca Kramer</dc:creator>
+  <dc:creator>Cameron Neylon</dc:creator>
+  <link>https://orion-dbs.community/blog/posts/alternatives-to-gbq/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>There are pragmatic reasons why, as both data providers and users, we independently arrived at Google Big Query as a useful tool for sharing open data sets. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system.</p>
+<p>At the same time, Google Big Query is certainly not open scholarly infrastructure, nor is it fully equitable and <a href="https://knowledge.workspace.google.com/admin/support/troubleshooting/countries-or-regions-where-google-workspace-is-available">accessible in all parts of the world</a>, and Google is not an organisation many of us feel able to trust. Thus, reliance on Google is not a desirable long-term solution.</p>
+<p>There are emerging alternatives both in the cloud and for local computing, and organisations exploring these alternatives or interested in doing so. With ORION-DBs, we hope to spur on these developments and their application for opening up use of scholarly data sets.</p>
+<p>As a first contribution, in this blog we discuss some features, or lack thereof, of Google Big Query infrastructure, what they mean for how data are made available and how public infrastructure could strive to emulate or improve these features. Considering these features separately can help to ensure conscious and justified choices are made as to which to prioritise when thinking about local server or cloud deployment.</p>
+<ul>
+<li><p><strong>Having the underlying data available (stored) in publicly owned/governed infrastructure/data storage</strong><br>
+This not the case currently in the Google Big Query setup. However, none of the data sources are made available exclusively through ORION-DBs or any of the subsidiary providers. A condition for inclusion in ORION-DBs is that the data sets are openly available somewhere else with an open license. So at the level of the original data sources, there is no lock-in effect. For the harmonised format of the datasources (table structure after ingest) that’s different - an agreed on archival format (e.g parquet) and storage frequency and location could be of added value here.</p></li>
+<li><p><strong>Having the underlying data available (stored) in Europe or other non-US localities</strong><br>
+Data in Google Big Query can be stored on (Google-owned) servers in Europe rather than US (other locations are also available). A point of attention is that combining data sets is only possible if they are in the same locality storage-wise. In Google Big Query, this can be solved by mirroring data sets across 2 or more localities (or have them hosted separately in 2 or more localities). This is a barrier that an open alternative might be able to circumvent entirely.</p></li>
+<li><p><strong>Having the code of the infrastructure open source</strong><br>
+Core to our goals is helping people build new kinds of analysis and applications. Investing in new platforms will only work if people trust them to remain accessible. This is why open source is one of the Principles of Open Scholarly Infrastructure; a requirement Google Big Query clearly does not meet. Open source doesn’t guarantee continued accessibility, but it helps provide insurance against risks. BigQuery is a major product for Google and is unlikely to disappear quickly, but pricing could increase or other restrictions could make it difficult. An alternative should provide both access as well as enabling others to support that access if needed and open source (and well documented) systems substantially mitigate the risks of infrastructure disappearing from underneath people.</p></li>
+<li><p><strong>Access to the infrastructure (for computing) with no or minimal gate-keeping authentication/access control</strong><br>
+Access to Google Big Query requires a Google account, which is in itself a barrier (dependency on US tech, personal information sharing, etc.). However, beyond this, there is no specific authentication (institutional or otherwise) required with the provider(s) of the ORION databases, minimising friction and social barriers. Risks of misuse/overuse are mitigated by a) all data sets being openly available with no or minimal re-use restrictions, b) all compute costs being borne by the user (see below) and c) the infrastructure being robust enough to not break from excessive use.</p></li>
+<li><p><strong>Cost for storage (incl.&nbsp;pre-processing and ingest) kept separate from cost for compute</strong><br>
+This removes administrative burden and risk for providers (keeping their costs contained and predictable), gives users agency over their usage (no externally imposed usage limits) and could be considered an interesting sustainability model.</p></li>
+<li><p><strong>Ability to combine data sources from different providers that all use the same infrastructure</strong> This removes the necessity for any provider to host ‘all’ data sets - reducing costs for providers and increasing options and flexibility for both users and providers. It also makes it possible for different providers to offer the same data set with a different structure (e.g flat or nested, fully relational or not), rather than enforcing one structure for all hosted databases. As an extension, users can add their local data sets to include in analysis (without publicly exposing them) and providers can also contribute with a single public data set.</p></li>
+<li><p><strong>The infrastructure providing both access to the data and an analysis interface</strong><br>
+Meaning in principle, end users do not have to install specific software to use the data for analysis. At the same time, for Google Big Query, integration with other platforms/software is well documented, extending usage options to, for example, Python and other languages and workflows.</p></li>
+</ul>
+<p>All this is not to uncritically defend our current choice for Google Big Query, but to explain what we, at least, see as some of its separate characteristics that are relevant both for data providers and users. We recommend considering all elements in this list (and potentially others) when scoping the development of public infrastructure for sharing and facilitating usage of public scholarly metadata sources.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>google big query</category>
+  <category>alternatives</category>
+  <category>public infrastructure</category>
+  <guid>https://orion-dbs.community/blog/posts/alternatives-to-gbq/</guid>
+  <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Crosswalking ORION resources to measure open access to biomedical research literature</title>
   <dc:creator>Najko Jahn</dc:creator>
@@ -1930,6 +1971,61 @@ research literature</em>. ORION-DBs Blog. <a href="https://doi.org/10.59350/4ttp
   <category>news</category>
   <guid>https://orion-dbs.community/blog/posts/welcome/</guid>
   <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The power of data snapshots - how to make your data work for others</title>
+  <dc:creator>Bianca Kramer</dc:creator>
+  <dc:creator>Cameron Neylon</dc:creator>
+  <link>https://orion-dbs.community/blog/posts/data-snapshot-requirements/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Providing access to open research information in shared infrastructures, whether through Big Query or future alternatives, requires access to the data sources. Many organizations provide access to their data though APIs and full data snapshots in various formats and with varying frequency.</p>
+<section id="the-importance-of-data-snapshots" class="level2">
+<h2 class="anchored" data-anchor-id="the-importance-of-data-snapshots">The importance of data snapshots</h2>
+<p>Providing a full data snapshot is also a requirement of the <a href="https://doi.org/10.14454/G8WV-VM65">Principles of Open Scholarly Infrastructure</a> which many of these organizations are committed to, with the 2.0 version of the Principles also stressing the importance of clear public documentation. Core to the intent of the original POSI authors was that data could be recovered without restrictions or permissions. A public snapshot under a liberal open license in a trusted repository is a powerful way to achieve this.</p>
+<p>Data snapshots are therefore an opportunity to provide greater certainty about the future of data sources, reducing costs to providers, and enabling new applications. We argue that data snapshots should be a first class way of providing data, and for the provision of these to be accompanied by good documentation, including versioning, licensing and data provenance.</p>
+</section>
+<section id="data-snapshot-requirements-for-orion-db" class="level2">
+<h2 class="anchored" data-anchor-id="data-snapshot-requirements-for-orion-db">Data snapshot requirements for ORION-DB</h2>
+<p>If you already maintain a publicly available Google BigQuery project with open scholarly metadata, we’d love to include it in this collection. More information, including on requirements, can be found <a href="../../../contributing.html">here</a>.</p>
+<p>If you maintain a data set of open scholarly metadata in a different format, and would like us to consider including your data set in Google Big Query as part of the ORION-DBs collection, we request the data set to meet the following requirements:</p>
+<ul>
+<li><strong>have the data set available at a publicly accessible location</strong><br>
+(either a location maintained by your own organization or a third-party digital archive, e.g.&nbsp;Zenodo)</li>
+<li><strong>use a permissive open license</strong><br>
+(CC0 waiver/public domain dedication recommended; feel free to include attribution guidelines regardless of the license and we will transmit these)</li>
+<li><strong>provide a complete, up-to-date schema, which can be used to validate the data</strong><br>
+(JSON schema recommended)</li>
+<li><strong>provide information on versioning and data provenance</strong><br>
+(including the date of the data snapshot, and intended frequency of updates)</li>
+<li><strong>use JSON, CSV or parquet as preferred data format</strong><br>
+(JSON-lines is the easiest for us to work with)</li>
+</ul>
+<p>Having the data <strong>available at a publicly accessible location</strong> is important because we do not want ORION-DBs to be the sole location of any data set. It also provides up front insurance against the concern of data lock-in, and enables simultaneous exploration of other approaches to cloud-based infrastructure.</p>
+<p>For inclusion of data sets in ORION-DBs, a <strong>permissive open license</strong> is a requirement for us to be able to ingest the data set and make it available. It also enables end users to use, combine and re-share the data without restrictions. We cannot see who uses the data we provide through ORION or what the data is used for. This is by design. Therefore any data we provide must be available to us under a liberal open license or be in the public domain.</p>
+<p>A <strong>complete, up-to-date schema</strong> for the data set facilitates data ingest and enables verification of the data structure after ingest. It also provides end users with the required information about the content and structure of the data.</p>
+<p>Similarly, complete and transparent information on <strong>versioning and data provenance</strong> (including the date the snapshot was taken) provided end users with the required information to verify and document the data they use.</p>
+<p>We recognize that there are a multitude of <strong>data formats</strong>, and the choice of data format is often dependent on internal processes as much as on projected use and re-use. Both JSON and CSV formats are common data set formats that are relatively straightforward to ingest in Google Big Query, especially when accompanied with a well-documented schema (see above). Google Big Query is also able to ingest Parquet files, which are increasingly used as data format for complex data structures.</p>
+<p>If an API is available, a record-level dump of the API output (as JSON-lines i.e.&nbsp;a valid JSON record for each API return on each line of a file) would make a suitable data set for inclusion in ORION-DBs. If the scale of the data is large then multiple files and compression are helpful (see for example the OpenAlex and OpenAIRE public data dumps)</p>
+</section>
+<section id="optimising-the-design-and-delivery-of-data-snapshots" class="level2">
+<h2 class="anchored" data-anchor-id="optimising-the-design-and-delivery-of-data-snapshots">Optimising the design and delivery of data snapshots</h2>
+<p>While the data snapshot requirements outlined above reflect our current thinking and practical requirements, they are not set in stone. We hope the ORION-DBs initiative can contribute to a discussion amongst providers and users of open data sets how the design and delivery of data snapshots can be optimized, including file formats, regularity, documentation and more.</p>
+<p>The potential benefits will be the provision of documented, reliable, and trustworthy data snapshots, optimised for usability and cost of production and transfer, and the development of shared infrastructure for opening up use of these data sets.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div> ]]></description>
+  <category>news</category>
+  <category>data snapshots</category>
+  <category>requirements</category>
+  <category>guidelines</category>
+  <guid>https://orion-dbs.community/blog/posts/data-snapshot-requirements/</guid>
+  <pubDate>Invalid Date</pubDate>
 </item>
 </channel>
 </rss>

@@ -2,8 +2,10 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/alternatives-to-gbq/index.html",
       "/blog/posts/nih-ec-oa/index.html",
-      "/blog/posts/welcome/index.html"
+      "/blog/posts/welcome/index.html",
+      "/blog/posts/data-snapshot-requirements/index.html"
     ]
   }
 ]
