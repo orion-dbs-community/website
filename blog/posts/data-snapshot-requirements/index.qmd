@@ -6,7 +6,7 @@ author:
     orcid: 0000-0002-5965-6560
   - name: Cameron Neylon
     orcid: 0000-0002-0068-716X
-date: "2026-07-06quarto render blog/posts/<your-post>/index.qmd"
+date: "2026-07-05"
 abstract: "If you maintain a data set of open scholarly metadata (e.g. through APIs or full data snapshots) and would like us to consider including your data set  in Google Big Query as part of the ORION-DBs collection, this posts outlines the requirements we set out regarding data provision. These include licensing, the availability of a complete data schema, information on versioning and data provenance, and preferred data formats."
 categories: [news, data snapshots, requirements, guidelines]
 license: "CC BY"
