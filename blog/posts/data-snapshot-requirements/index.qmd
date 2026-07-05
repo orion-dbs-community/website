@@ -1,0 +1,56 @@
+---
+title: "The power of data snapshots - how to make your data work for others"
+subtitle: "Data snapshot requirements for ORION-DBs"
+author:
+  - name: Bianca Kramer
+    orcid: 0000-0002-5965-6560
+  - name: Cameron Neylon
+    orcid: 0000-0002-0068-716X
+date: "2026-07-06quarto render blog/posts/<your-post>/index.qmd"
+abstract: "If you maintain a data set of open scholarly metadata (e.g. through APIs or full data snapshots) and would like us to consider including your data set  in Google Big Query as part of the ORION-DBs collection, this posts outlines the requirements we set out regarding data provision. These include licensing, the availability of a complete data schema, information on versioning and data provenance, and preferred data formats."
+categories: [news, data snapshots, requirements, guidelines]
+license: "CC BY"
+---
+
+Providing access to open research information in shared infrastructures, whether through Big Query or future alternatives, requires access to the data sources. Many organizations provide access to their data though APIs and full data snapshots in various formats and with varying frequency.
+
+## The importance of data snapshots
+
+Providing a full data snapshot is also a requirement of the [Principles of Open Scholarly Infrastructure](https://doi.org/10.14454/G8WV-VM65) which many of these organizations are committed to, with the 2.0 version of the Principles also stressing the importance of clear public documentation. Core to the intent of the original POSI authors was that data could be recovered without restrictions or permissions. A public snapshot under a liberal open license in a trusted repository is a powerful way to achieve this.
+
+Data snapshots are therefore an opportunity to provide greater certainty about the future of data sources, reducing costs to providers, and enabling new applications. We argue that data snapshots should be a first class way of providing data, and for the provision of these to be accompanied by good documentation, including versioning, licensing and data provenance.
+
+## Data snapshot requirements for ORION-DB
+
+If you already maintain a publicly available Google BigQuery project with open scholarly metadata, we’d love to include it in this collection. More information, including on requirements, can be found [here](/contributing.qmd).
+
+If you maintain a data set of open scholarly metadata in a different format, and would like us to consider including your data set in Google Big Query as part of the ORION-DBs collection, we request the data set to meet the following requirements:
+
+-   **have the data set available at a publicly accessible location**\
+    (either a location maintained by your own organization or a third-party digital archive, e.g. Zenodo)
+-   **use a permissive open license**\
+    (CC0 waiver/public domain dedication recommended; feel free to include attribution guidelines regardless of the license and we will transmit these)
+-   **provide a complete, up-to-date schema, which can be used to validate the data**\
+    (JSON schema recommended)
+-   **provide information on versioning and data provenance**\
+    (including the date of the data snapshot, and intended frequency of updates)
+-   **use JSON, CSV or parquet as preferred data format**\
+    (JSON-lines is the easiest for us to work with)
+
+Having the data **available at a publicly accessible location** is important because we do not want ORION-DBs to be the sole location of any data set. It also provides up front insurance against the concern of data lock-in, and enables simultaneous exploration of other approaches to cloud-based infrastructure.
+
+For inclusion of data sets in ORION-DBs, a **permissive open license** is a requirement for us to be able to ingest the data set and make it available. It also enables end users to use, combine and re-share the data without restrictions. We cannot see who uses the data we provide through ORION or what the data is used for. This is by design. Therefore any data we provide must be available to us under a liberal open license or be in the public domain.
+
+A **complete, up-to-date schema** for the data set facilitates data ingest and enables verification of the data structure after ingest. It also provides end users with the required information about the content and structure of the data.
+
+Similarly, complete and transparent information on **versioning and data provenance** (including the date the snapshot was taken) provided end users with the required information to verify and document the data they use.
+
+We recognize that there are a multitude of **data formats**, and the choice of data format is often dependent on internal processes as much as on projected use and re-use. Both JSON and CSV formats are common data set formats that are relatively straightforward to ingest in Google Big Query, especially when accompanied with a well-documented schema (see above). Google Big Query is also able to ingest Parquet files, which are increasingly used as data format for complex data structures.
+
+If an API is available, a record-level dump of the API output (as JSON-lines i.e. a valid JSON record for each API return on each line of a file) would make a suitable data set for inclusion in ORION-DBs. If the scale of the data is large then multiple files and compression are helpful (see for example the OpenAlex and OpenAIRE public data dumps)
+
+## Optimising the design and delivery of data snapshots
+
+While the data snapshot requirements outlined above reflect our current thinking and practical requirements, they are not set in stone. We hope the ORION-DBs initiative can contribute to a discussion amongst providers and users of open data sets how the design and delivery of data snapshots can be optimized, including file formats, regularity, documentation and more.
+
+The potential benefits will be the provision of documented, reliable, and trustworthy data snapshots, optimised for usability and cost of production and transfer, and the development of shared infrastructure for opening up use of these data sets.
