@@ -35,6 +35,7 @@ multiobs,publicdb_inep_dados_abertos,167,13583610246
 multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 multiobs,publicdb_redalyc_2025_12,1,533723
 multiobs,publicdb_scielo_2024_rm,13,11246623689
+multiobs,publicdb_wikipedia_citations,1,1361544439
 sos-datasources,backup,9,2762335669585
 sos-datasources,butler_apcs,2,11413543
 sos-datasources,crossref,5,396791902
