@@ -5,15 +5,14 @@ author:
   - name: Bianca Kramer
     orcid: 0000-0002-5965-6560
 date: "2026-08-04"
-abstract: "To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, ORION-DBs is starting a FORCE11 working group. Join our public webinar on September 4, 2026 to learn more!"
+abstract: |
+  With ORION-DBs, a growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. 
+
+  To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, we are starting a [FORCE11 working group](https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/). 
+
+  The working group will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.
 categories: [news, FORCE11, working group, public webinar]
 ---
-
-With ORION-DBs, a growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. 
-
-To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, we are starting a [FORCE11 working group](https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/). 
-
-The working group will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.
 
 ## About FORCE11
 [FORCE11](https://force11.org/) brings together a diverse group of scholars, publishers, librarians, and technologists who are seeking to transform scholarly communications. FORCE11 Working Groups are a place where concrete outputs can be created through volunteer efforts and community engagement.
@@ -30,11 +29,12 @@ Our goal is to build a community with a focus on supporting the users of Open Re
 
 ## Activities
 
-*Working group meetings*
+**Working group meetings**  
 Starting in October 2026, we will organize quarterly (= 3-monthly) working group meetings, which will be held online. Working group meetings will both be an opportunity to share updates with the  full working group, and for participants to split up in subgroups (see below) to work on specific outcomes. with asynchronous work planned between working group meetings. 
 
-*Working group organization*
+**Working group organization**  
 We envision the working group to carry out work in 3 subgroups, each consisting of specific stakeholders: 
+
 - **Providers** - discuss shared approaches to data processing and hosting
 - **Users** - collect use cases, formulate requirements (including for access, training materials, data sources and alternative infrastructure), organize peer-to-peer support 
 - **Infrastructure developers** - share and discuss approaches for alternative infrastructure
