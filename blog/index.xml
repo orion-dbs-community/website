@@ -10,7 +10,57 @@
 <atom:link href="https://orion-dbs.community/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Mon, 06 Jul 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 04 Aug 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>ORION-DBs starts FORCE11 working group</title>
+  <dc:creator>Bianca Kramer</dc:creator>
+  <link>https://orion-dbs.community/blog/posts/force11-working-group-announcement/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>With ORION-DBs, a growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery.</p>
+<p>To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, we are starting a <a href="https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/">FORCE11 working group</a>.</p>
+<p>The working group will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.</p>
+<section id="about-force11" class="level2">
+<h2 class="anchored" data-anchor-id="about-force11">About FORCE11</h2>
+<p><a href="https://force11.org/">FORCE11</a> brings together a diverse group of scholars, publishers, librarians, and technologists who are seeking to transform scholarly communications. FORCE11 Working Groups are a place where concrete outputs can be created through volunteer efforts and community engagement.</p>
+</section>
+<section id="working-group-deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="working-group-deliverables">Working group deliverables</h2>
+<p>Our goal is to build a community with a focus on supporting the users of Open Research Information resources to make more sophisticated and complex use of these data sources. We will do this by consolidating and expanding the resources themselves through supporting providers, gathering user stories and developing training materials. Finally we will scope pathways to technological independence from proprietary systems consistent with the needs of users.</p>
+<ol type="1">
+<li>Validated documentation for processing, hosting and delivering Open Research Information resources via BigQuery in the ORION DBs system</li>
+<li>An expanded set of tools for processing, managing, distributing and archiving large-scale open research information resources</li>
+<li>An expanded set of host providers (from the four at launch) providing access to an expanded set of ORI resources via BigQuery in the first instance</li>
+<li>A set of identified use cases/user stories for the ORION DBs resources</li>
+<li>Training materials including template queries and tutorials to support common use cases and user needs</li>
+<li>An assessment report on technology, governance and management options for alternative technology platforms to deliver equivalent or improved functionality for ORION DBs use cases, including resource requirements and risk assessment</li>
+</ol>
+</section>
+<section id="activities" class="level2">
+<h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<p><em>Working group meetings</em> Starting in October 2026, we will organize quarterly (= 3-monthly) working group meetings, which will be held online. Working group meetings will both be an opportunity to share updates with the full working group, and for participants to split up in subgroups (see below) to work on specific outcomes. with asynchronous work planned between working group meetings.</p>
+<p><em>Working group organization</em> We envision the working group to carry out work in 3 subgroups, each consisting of specific stakeholders: - <strong>Providers</strong> - discuss shared approaches to data processing and hosting - <strong>Users</strong> - collect use cases, formulate requirements (including for access, training materials, data sources and alternative infrastructure), organize peer-to-peer support - <strong>Infrastructure developers</strong> - share and discuss approaches for alternative infrastructure</p>
+</section>
+<section id="public-webinar" class="level2">
+<h2 class="anchored" data-anchor-id="public-webinar">Public webinar</h2>
+<p>We will organize a <a href="https://www.universiteitleiden.nl/en/events/2026/09/collective-action-for-open-research-information-introducing-orion-dbs-and-a-new-force11-working-group">public webinar</a> on <strong>Friday, September 4 2026</strong> from <strong>15:00-16:15 CEST</strong> as part of the <a href="https://www.universiteitleiden.nl/en/events/series/cwts-research-seminars">CWTS Research Seminars</a>.</p>
+<p>The webinar will introduce the ORION-DB initiative, present a number of use cases and introduce the FORCE11 Working Group.</p>
+<p>If you want to learn more about ORION_DB and the planned activities of the working group, you are invited to <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_YmJjYTc2MDUtMzY3OS00YWQ0LTkzYTgtN2RmNWE4YmJhMDZj%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522ca2a7f76-dbd7-4ec0-9108-6b3d524fb7c8%2522%252c%2522Oid%2522%253a%2522b10284b5-b0db-4548-8c70-eeddd68a7e0e%2522%257d%26anon%3Dtrue&amp;type=meetup-join&amp;deeplinkId=10f207c4-200a-436a-949b-64d9bf597a68&amp;directDl=true&amp;msLaunch=true&amp;enableMobilePage=true&amp;suppressPrompt=true">join the webinar online</a>. Registration is not required.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>news</category>
+  <category>FORCE11</category>
+  <category>working group</category>
+  <category>public webinar</category>
+  <guid>https://orion-dbs.community/blog/posts/force11-working-group-announcement/</guid>
+  <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Alternatives for what?</title>
   <dc:creator>Bianca Kramer</dc:creator>
