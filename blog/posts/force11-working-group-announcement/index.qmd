@@ -5,7 +5,7 @@ author:
   - name: Bianca Kramer
     orcid: 0000-0002-5965-6560
 date: "2026-08-04"
-abstract: "To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, ORION-DBs is starting a [FORCE11 working group. Join our public webinar on September 4, 2026 to learn more!"
+abstract: "To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, ORION-DBs is starting a FORCE11 working group. Join our public webinar on September 4, 2026 to learn more!"
 categories: [news, FORCE11, working group, public webinar]
 ---
 
