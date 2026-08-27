@@ -43,7 +43,7 @@ sos-datasources,datacite,2,407247285106
 sos-datasources,doaj,2,46124645
 sos-datasources,goa,7,31942091
 sos-datasources,make_data_count,1,2752577867
-sos-datasources,openaire,18,1405736885722
+sos-datasources,openaire,38,1694668155127
 sos-datasources,openapc,1,58059561
 sos-datasources,opencitations,1,51616399524
 sos-datasources,openeditors,1,202384204
@@ -63,4 +63,5 @@ subugoe-collaborative,upw_history,5,74035873362
 subugoe-collaborative,upw_instant,1,28699639728
 openalex-475813,oal_b_20250711,28,1624363047180
 openalex-475813,oal_b_20260116,31,1899508353589
+openalex-475813,oal_b_20260330,27,1978934079652
 openalex-475813,openbib_20250711,16,10508581721
