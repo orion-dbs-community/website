@@ -9,7 +9,7 @@ cwts-leiden,openalex_2024aug,88,781965403534
 cwts-leiden,openalex_2024aug_core,2,2262621927
 cwts-leiden,openalex_2025aug,88,790039355342
 cwts-leiden,openalex_2025aug_core,2,2365164969
-ds-open-datasets,datacite,2,503624822332
+ds-open-datasets,datacite,3,905209737280
 ds-open-datasets,orcid,3,332176472546
 insyspo,projectdb_ciaam,58,10853145768
 insyspo,projectdb_cwts_summer_school_2023,1,76542945728
@@ -53,11 +53,11 @@ sos-datasources,truthtables,3,282495150572
 subugoe-collaborative,cr_history,7,837471991946
 subugoe-collaborative,cr_instant,1,705393508282
 subugoe-collaborative,hoaddata,24,29540772137
-subugoe-collaborative,oa2020,8,19767071741
+subugoe-collaborative,oa2020,8,30105928826
 subugoe-collaborative,openalex,7,1199056886045
 subugoe-collaborative,openalex_walden,8,2326549086672
 subugoe-collaborative,openbib,16,10508581721
-subugoe-collaborative,resources,47,146494558808
+subugoe-collaborative,resources,48,146500253246
 subugoe-collaborative,semantic_scholar,4,215413012012
 subugoe-collaborative,upw_history,5,74035873362
 subugoe-collaborative,upw_instant,1,28699639728
