@@ -21,7 +21,7 @@ my_tables <- bq_dataset_tables(current_dataset)
 
 # Get metadata for all tables
 table_metadata <- map_dfr(my_tables, function(table) {
-  meta <- bq_table_meta(table)
+  meta <- bq_table_meta_safe(table)
 
   # Extract schema fields with nested information
   schema_fields <- if (!is.null(meta$schema$fields)) {

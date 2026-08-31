@@ -117,7 +117,7 @@ for (dataset in my_datasets) {
   # Accumulate metadata for snapshot (reuse table_metadata built by child doc)
   datasets_with_meta[[dataset$dataset]] <- list(
     meta   = dataset_meta,
-    tables = map(bq_dataset_tables(dataset), bq_table_meta)
+    tables = map(bq_dataset_tables(dataset), bq_table_meta_safe)
   )
 }
 ```

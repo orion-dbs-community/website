@@ -2,6 +2,8 @@ library(tidyverse)
 library(bigrquery)
 library(rprojroot)
 
+source(find_root_file("bq_description.R", criterion = has_file("DESCRIPTION")))
+
 bq_ori <- Sys.getenv("BQ_ORI")
 if (bq_ori != "") {
   if (file.exists(bq_ori)) {
@@ -30,7 +32,7 @@ get_project_stats <- function(project) {
     tables <- bq_dataset_tables(ds)
 
     table_sizes <- map_dfr(tables, function(tbl) {
-      meta <- bq_table_meta(tbl)
+      meta <- bq_table_meta_safe(tbl)
       tibble(
         dataset = ds$dataset,
         table   = meta$tableReference$tableId,

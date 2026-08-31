@@ -56,3 +56,17 @@ raw_html_block <- function(...) {
     "\n", fence, "\n"
   )
 }
+
+# bigrquery::bq_table_meta() builds its request URL with a raw paste0() and
+# doesn't URL-encode identifiers, so it errors on table names BigQuery itself
+# allows but that need percent-encoding (e.g. names containing spaces).
+# Same call, with the path properly encoded.
+bq_table_meta_safe <- function(table, fields = NULL) {
+  table <- bigrquery::as_bq_table(table)
+  url <- bigrquery:::bq_path(
+    utils::URLencode(table$project, reserved = TRUE),
+    utils::URLencode(table$dataset, reserved = TRUE),
+    utils::URLencode(table$table,   reserved = TRUE)
+  )
+  bigrquery:::bq_get(url, query = list(fields = fields))
+}
