@@ -9,7 +9,7 @@ cwts-leiden,openalex_2024aug,88,781965403534
 cwts-leiden,openalex_2024aug_core,2,2262621927
 cwts-leiden,openalex_2025aug,88,790039355342
 cwts-leiden,openalex_2025aug_core,2,2365164969
-ds-open-datasets,datacite,3,905209737280
+ds-open-datasets,datacite,3,905512006190
 ds-open-datasets,orcid,3,332176472546
 insyspo,projectdb_ciaam,58,10853145768
 insyspo,projectdb_cwts_summer_school_2023,1,76542945728
@@ -36,8 +36,10 @@ multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 multiobs,publicdb_redalyc_2025_12,1,533723
 multiobs,publicdb_scielo_2024_rm,13,11246623689
 multiobs,publicdb_wikipedia_citations,1,1361544439
+sos-datasources,arxiv,1,4750815365
 sos-datasources,backup,9,2762335669585
 sos-datasources,butler_apcs,2,11413543
+sos-datasources,comet,7,22849858138
 sos-datasources,crossref,5,396791902
 sos-datasources,datacite,2,407247285106
 sos-datasources,doaj,2,46124645
