@@ -32,11 +32,11 @@ An ORCID record may contain information about a researcher's work, affiliations,
 
 ## DataCite Dataset
 
-DataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs).
+DataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs). Both yearly and weekly snapshots are available. Note that the weekly snapshot will also contain DOIs that have subsequently been unpublished in the current year.
 
 * **Release date:** Jan 2026
 
-* **Update frequency:** Yearly
+* **Update frequency:** Yearly, Weekly
 
 * **License:** CC0
 
