@@ -1,6 +1,8 @@
 ```{r}
 #| echo: false
 
+source(rprojroot::find_root_file("bq_description.R", criterion = rprojroot::has_file("DESCRIPTION")))
+
 # Function to recursively extract nested fields from RECORD type
 get_nested_fields <- function(field) {
   if (field$type == "RECORD" && !is.null(field$fields)) {
@@ -71,7 +73,8 @@ table_details <- function(index) {
           ),
           div(
             class = "description-content",
-            table_desc
+            # Table descriptions are markdown too, render them as such.
+            HTML(bq_description_html(table_desc))
           ),
           tags$div(
             style = "margin-top: 0.5rem; font-size: 0.9rem;",

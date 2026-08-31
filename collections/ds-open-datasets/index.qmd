@@ -52,6 +52,10 @@ library(bigrquery)
 library(reactable)
 library(htmltools)
 
+# Helpers to render free-form BigQuery description fields without leaking their
+# markdown headings into the page TOC.
+source(rprojroot::find_root_file("bq_description.R", criterion = rprojroot::has_file("DESCRIPTION")))
+
 # Write credentials to temp file if BQ_ORI contains JSON content
 bq_ori <- Sys.getenv("BQ_ORI")
 if (bq_ori != "") {
@@ -108,13 +112,15 @@ for (dataset in my_datasets) {
     '&page=dataset'
   )
 
-  dataset_info_html <- paste0(
+  # Emitted as a raw HTML block: dataset descriptions are markdown and may
+  # contain headings, which Pandoc would otherwise add to the TOC.
+  dataset_info_html <- raw_html_block(
     '<div class="description-box">',
     if (!is.null(dataset_meta$description) && dataset_meta$description != "") {
       paste0(
         '<div class="description-header">Description</div>',
         '<div class="description-content" style="margin-bottom: 0.75rem;">',
-        dataset_meta$description,
+        bq_description_html(dataset_meta$description),
         '</div>'
       )
     } else "",
@@ -125,10 +131,10 @@ for (dataset in my_datasets) {
     ' | <strong>Location:</strong> ', dataset_meta$location,
     ' | <a href="', dataset_url, '" target="_blank">View in BigQuery Console</a>',
     '</div>',
-    '</div>\n\n'
+    '</div>'
   )
 
-  cat(dataset_info_html)
+  cat(dataset_info_html, "\n\n", sep = "")
 
   # Set the current dataset for the child document
   current_dataset <- dataset

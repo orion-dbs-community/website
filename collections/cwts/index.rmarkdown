@@ -1,22 +1,18 @@
 ---
-title: "Open Scholarly Data @ SUB Göttingen"
+title: "CWTS Leiden Datasets"
 format:
   html:
     page-layout: full
 toc-title: Datasets
 params:
-  bq_project: "subugoe-collaborative"
+  bq_project: "cwts-leiden"
 ---
 
-The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery. 
+The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.
 
-The warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to bibliometric data from the German Competence Network for Bibliometrics.
+GitHub Repo: <https://github.com/CWTSLeiden/CWTS-OpenAlex-databases>
 
-Google BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.
-
-More info: <https://subugoe.github.io/scholcomm_analytics/>
-
-Contact: Najko Jahn
+Contact: [Nees Jan van Eck](https://www.universiteitleiden.nl/en/staffmembers/nees-jan-van-eck)
 
 ```{r}
 #| echo: false
@@ -25,10 +21,6 @@ library(tidyverse)
 library(bigrquery)
 library(reactable)
 library(htmltools)
-
-# Helpers to render free-form BigQuery description fields without leaking their
-# markdown headings into the page TOC.
-source(rprojroot::find_root_file("bq_description.R", criterion = rprojroot::has_file("DESCRIPTION")))
 
 # Write credentials to temp file if BQ_ORI contains JSON content
 bq_ori <- Sys.getenv("BQ_ORI")
@@ -86,15 +78,13 @@ for (dataset in my_datasets) {
     '&page=dataset'
   )
 
-  # Emitted as a raw HTML block: dataset descriptions are markdown and may
-  # contain headings, which Pandoc would otherwise add to the TOC.
-  dataset_info_html <- raw_html_block(
+  dataset_info_html <- paste0(
     '<div class="description-box">',
     if (!is.null(dataset_meta$description) && dataset_meta$description != "") {
       paste0(
         '<div class="description-header">Description</div>',
         '<div class="description-content" style="margin-bottom: 0.75rem;">',
-        bq_description_html(dataset_meta$description),
+        dataset_meta$description,
         '</div>'
       )
     } else "",
@@ -105,10 +95,10 @@ for (dataset in my_datasets) {
     ' | <strong>Location:</strong> ', dataset_meta$location,
     ' | <a href="', dataset_url, '" target="_blank">View in BigQuery Console</a>',
     '</div>',
-    '</div>'
+    '</div>\n\n'
   )
 
-  cat(dataset_info_html, "\n\n", sep = "")
+  cat(dataset_info_html)
 
   # Set the current dataset for the child document
   current_dataset <- dataset
@@ -118,7 +108,7 @@ for (dataset in my_datasets) {
   cat(res, sep = "\n")
   cat("\n\n")
 
-  # Accumulate metadata for snapshot
+  # Accumulate metadata for snapshot (reuse table_metadata built by child doc)
   datasets_with_meta[[dataset$dataset]] <- list(
     meta   = dataset_meta,
     tables = map(bq_dataset_tables(dataset), bq_table_meta)
@@ -132,3 +122,4 @@ for (dataset in my_datasets) {
 source(rprojroot::find_root_file("collect_collection_info.R", criterion = rprojroot::has_file("DESCRIPTION")))
 snapshot_collection_info(params$bq_project, datasets_with_meta)
 ```
+
