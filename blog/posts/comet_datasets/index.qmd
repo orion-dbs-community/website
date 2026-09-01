@@ -68,4 +68,4 @@ The following datasets are available (follow links for documentation)
 
 ### Share your ideas!
 
-Do you have ideas on how to use these datasets to explore community-enriched metadata? We would love to know your use cases - let us know at [info\@orion-dbs.community](mailto:info@orion-dbs.community), or Dione Mentis and [Adam Buttrick m](mailto:adam.buttrick.ucop.edu) at COMET!
+Do you have ideas on how to use these datasets to explore community-enriched metadata? We would love to know your use cases - let us know at [info\@orion-dbs.community](mailto:info@orion-dbs.community), or [Dione Mentis](mailto:dione.mentis@datacite.org) and [Adam Buttrick](mailto:adam.buttrick.ucop.edu) at COMET!
