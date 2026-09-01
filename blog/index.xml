@@ -10,7 +10,83 @@
 <atom:link href="https://orion-dbs.community/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Tue, 04 Aug 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 01 Sep 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>COMET datasets available on ORION-DBs</title>
+  <dc:creator>Bianca Kramer</dc:creator>
+  <link>https://orion-dbs.community/blog/posts/comet_datasets/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://orion-dbs.community/blog/posts/comet_datasets/comet_logo.png" class="img-fluid" style="width:100.0%"></p>
+<section id="comet-projects" class="level2">
+<h2 class="anchored" data-anchor-id="comet-projects">COMET projects</h2>
+<p>Together with community partners, COMET is carrying out <a href="https://www.cometadata.org/projects/">various projects</a> aimed at developing methods for enriching various elements in existing open scholarly metadata collections. Completed projects include:</p>
+<ul>
+<li><p>Matching preprints to published articles</p></li>
+<li><p>Improving affiliations parsing of preprints</p></li>
+<li><p>Extracting funding metadata from acknowlegdments</p></li>
+</ul>
+<p>All three projects were piloted using arXiv preprints.</p>
+</section>
+<section id="datacite-enrichments" class="level2">
+<h2 class="anchored" data-anchor-id="datacite-enrichments">DataCite enrichments</h2>
+<p>Apart from standalone datasets as project results, COMET also provides enrichments to DataCite DOI metadata, using a standardized format compatible with DataCite metadata schema. These enrichments extend the methodology developed in COMET projects to a wider corpus of metadata.</p>
+<p>Currently, three types of enrichments of DataCite DOI metadata are made available:</p>
+<ul>
+<li><p>matching affiliations</p></li>
+<li><p>identifying and matching funders</p></li>
+<li><p>improving resource type classification</p></li>
+</ul>
+<section id="supporting-usage-and-interoperability" class="level3">
+<h3 class="anchored" data-anchor-id="supporting-usage-and-interoperability">Supporting usage and interoperability</h3>
+<p>COMET makes these datasets available as JSON, CSV and/or Parquet files via <a href="https://zenodo.org/communities/comet2025/">Zenodo</a> and <a href="https://huggingface.co/cometadata">Huggingface</a>. The enriched DOI metadata can also be <a href="https://www.cometadata.org/blog/comet-enrichments-now-available-in-datacite/">retrieved via the DataCite API</a>, but are not (yet) included in DataCite and arXiv metadata files.</p>
+<p>To promote usage of these enriched metadata,various COMET metadata files are now made available through ORION-DBs (provided by <a href="https://orion-dbs.community/collections/sos/">Sesame Open Science</a>), where they can be queried using Google Big Query.</p>
+<p>These datasets can also be directly combined with DataCite and arXiv at scale, using the data snapshots similarly provided through ORION-DBs.</p>
+</section>
+<section id="available-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="available-datasets">Available datasets</h3>
+<p>The following datasets are available (follow links for documentation)</p>
+<ul>
+<li><a href="https://codeberg.org/TwoBirds/metadata_ingest#comet-project-results"><strong>COMET project results</strong></a>
+<ul>
+<li>arXiv preprint matching</li>
+<li>arXiv preprint author affiliation extraction</li>
+<li>arXiv funding entity extractions</li>
+</ul></li>
+<li><a href="https://codeberg.org/TwoBirds/metadata_ingest#comet-enrichments"><strong>COMET DataCite enrichments</strong></a>
+<ul>
+<li>affiliations</li>
+<li>funders</li>
+<li>resource types</li>
+</ul></li>
+<li><a href="https://codeberg.org/TwoBirds/metadata_ingest#datacite"><strong>DataCite</strong></a>
+<ul>
+<li>DataCite monthly data file</li>
+</ul></li>
+<li><a href="https://codeberg.org/TwoBirds/metadata_ingest#arxiv"><strong>arXiv</strong></a>
+<ul>
+<li>arXiv metadata file (retrieved from <a href="https://www.kaggle.com/datasets/Cornell-University/arxiv/data">Kaggle</a>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="share-your-ideas" class="level3">
+<h3 class="anchored" data-anchor-id="share-your-ideas">Share your ideas!</h3>
+<p>Do you have ideas on how to use these datasets to explore community-enriched metadata? We would love to know your use cases - let us know at <a href="mailto:info@orion-dbs.community">info@orion-dbs.community</a>, or Dione Mentis and <a href="mailto:adam.buttrick.ucop.edu">Adam Buttrick m</a> at COMET!</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>news</category>
+  <category>COMET</category>
+  <category>metadata enrichment</category>
+  <guid>https://orion-dbs.community/blog/posts/comet_datasets/</guid>
+  <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>ORION-DBs starts FORCE11 working group</title>
   <dc:creator>Bianca Kramer</dc:creator>

@@ -2,6 +2,7 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/comet_datasets/index.html",
       "/blog/posts/force11-working-group-announcement/index.html",
       "/blog/posts/alternatives-to-gbq/index.html",
       "/blog/posts/data-snapshot-requirements/index.html",
