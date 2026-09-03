@@ -1,0 +1,21 @@
+# FORCE11 Working Group
+
+A growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. This [working group](https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/) will act to coordinate amongst current contributors and work towards community standards for discovery, processing, preservation and documentation. It will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.
+
+## Deliverables
+
+Our goal is to build community with a focus on supporting the users of Open Research Information resources to make more sophisticated and complex use of these data sources. We will do this by consolidating and expanding the resources themselves through supporting providers, gathering user stories and developing training materials. Finally we will scope pathways to technological independence from proprietary systems consistent with the needs of users.
+
+1.  Validated documentation for processing, hosting and delivering Open Research Information resources via BigQuery in the ORION DBs system
+
+2.  An expanded set of [tools](tools.llms.md) for processing, managing, distributing and archiving large-scale open research information resources
+
+3.  An expanded set of host providers (from the four at launch) providing access to an expanded set of ORI resources via BigQuery in the first instance
+
+4.  A set of identified use cases/user stories for the ORION DBs resources
+
+5.  Training materials including template queries and tutorials to support common use cases and user needs
+
+6.  An assessment report on technology, governance and management options for alternative technology platforms to deliver equivalent or improved functionality for ORION DBs use cases, including resource requirements and risk assessment
+
+FORCE 11 Working group: <https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/>

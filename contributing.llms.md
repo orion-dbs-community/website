@@ -1,0 +1,91 @@
+# How to contribute
+
+If you maintain a publicly available Google BigQuery project with open scholarly data, we’d love to include it in this collection. You can use the template below to share your project description, and after you submit a pull request, we’ll integrate the metadata and update it regularly.
+
+## Prerequisites
+
+This project aims to make it easier to discover trusted, quality-assured big and open data warehouses for bibliometrics and data analytics on Google BigQuery. By bringing these collections together, we hope to improve the analyses, applications, and research built on them.
+
+To participate, you’ll need to:
+
+- Provide large, open datasets via Google BigQuery in a user-friendly format
+- Use a permissive open license for all datasets
+- Cover storage costs (users are responsible for their own query costs)
+- Make your data preprocessing code publicly available
+- Preserve historical dataset versions to ensure reproducibility (you can store these anywhere, not just BigQuery)
+- Provide training materials like getting started guides, use cases, integration instructions, and contact information for support
+
+## Sharing
+
+To share your collection, file an issue using this template. You’ll need to provide:
+
+- The ID of your BigQuery project
+- An acronym for your collection
+- A brief description
+- The maintainer name(s)
+
+We’ll use this information to create a dedicated webpage for your collection (though you’re welcome to do this yourself):
+
+- Copy `_template.qmd` to a new folder under `collections/` and save it as `index.qmd`. Use your collection’s acronym as the folder name.
+- Update the title and project ID in the YAML header (the `bq_project` parameter).
+
+``` yaml
+---
+title: "Open Scholarly Data @ SUB Göttingen"
+format:
+  html:
+    page-layout: full
+toc-title: Datasets
+params:
+  bq_project: "subugoe-collaborative"
+---
+```
+
+- Add your description below the YAML header.
+- Create a Pull Request on GitHub.
+
+## Local testing
+
+Before submitting your pull request, you can verify that the site builds correctly on your machine. You need [Quarto](https://quarto.org/docs/get-started/) and R installed.
+
+Install the R dependencies listed in the `DESCRIPTION` file using [pak](https://pak.r-lib.org/):
+
+``` r
+# install.packages("pak")
+pak::local_install_deps()
+```
+
+Then, render just your new collection page to check for errors:
+
+``` bash
+quarto render collections/<your-collection>/index.qmd
+```
+
+Or render the full site:
+
+``` bash
+quarto render
+```
+
+You can also start a live-reloading preview server to inspect your changes in the browser:
+
+``` bash
+quarto preview
+```
+
+If a dataset or table in your collection isn’t publicly available, the build will fail.
+
+## Documentation
+
+We aim to reuse as much information as possible from Google Cloud BigQuery using the REST API. To help others discover and use your data, you should provide:
+
+- **Descriptions** for projects, datasets, and tables that speak to first-time users. Focus on the essentials—the data source, version, and license—rather than overly technical details. You can link to a GitHub repository with your data processing code if that’s helpful.
+- **Schemas** for tables. Describe each field thoroughly; this makes it much easier for others to understand the datasets.
+
+GitHub Actions automatically fetches metadata like update times, row counts, size, and regions during the daily website builds.
+
+## Contact
+
+In case of questions or issues, feel free to create an issue: <https://github.com/orion-dbs-community/website/issues>
+
+Repo-Maintainer: Najko Jahn <najko.jahn@sub.uni-goettingen.de>

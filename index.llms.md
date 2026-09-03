@@ -1,0 +1,117 @@
+# Open Research Information on BigQuery
+
+Sharing the load: Building an open research information collective
+
+A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale.
+
+## Featured Collections
+
+*Please also check the participating [collections websites](collections/) for more information and for many more available datasets.*
+
+### [Crossref](https://www.crossref.org/)
+
+A major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.
+
+[SUB Göttingen](collections/subugoe/) provides the [most recent monthly dump](collections/subugoe/#cr_instant) and [yearly snapshots](collections/subugoe/#cr_history). [Sesame Open Science](collections/sos/) gives access to the latest [public data dump](collections/sos/#crossref).
+
+### [OpenAIRE](https://graph.openaire.eu/what-is-the-openaire-graph)
+
+Knowledge graph interlinking ~350mio publications, datasets, software, grants, and more from ~150k sources.
+
+[Sesame Open Science](collections/sos/), [InSySPo Campinas](collections/insyspo/) and [OpenAIRE](collections/openaire/)provide multiple [OpenAIRE Graph Datasets](collections/sos/#openaire) versions in different schemas.
+
+### [OpenAlex](https://help.openalex.org/hc/en-us)
+
+A free, open, and comprehensive bibliographic database and knowledge graph for global scholarly research.
+
+Many collections provide time-specfic snapshots of OpenAlex data, including [CWTS](collections/cwts/), [KB OPENBIB](collections/kb-openbib/), [InSySPo Campinas](collections/insyspo/), [MultiObs](collections/multiobs) and [SUB Göttingen](collections/subugoe/).
+
+### [DataCite](https://datacite.org/)
+
+DOI registration agency for research data and other research outputs, linking works, people, and organizations.
+
+[Dimensions Open Datasets](collections/ds-open-datasets/) and [Sesame Open Science](collections/sos/) both provide [DataCite snapshots](collections/ds-open-datasets/#datacite-dataset).
+
+### [CWTS Leiden Ranking](https://open.leidenranking.com/)
+
+An open edition of the CWTS Leiden Ranking for universities worldwide.
+
+[CWTS Leiden](collections/cwts/) provides data underlying the [Leiden Ranking Open Edition](collections/cwts/#leiden_ranking_open_edition) along with time-specific [OpenAlex versions](collections/cwts/#openalex).
+
+### [FAPESP Virtual Library](https://bv.fapesp.br/)
+
+The referential information source for research supported by FAPESP from Brazil.
+
+[MultiObs](collections/multiobs/) provides the [FAPESP Virtual Library dataset](collections/multiobs/#fapesp_bv) about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).
+
+### [ORCID](https://orcid.org/)
+
+Persistent identifier linking researchers to their works, affiliations, and funding.
+
+[Dimensions Open Datasets](collections/ds-open-datasets/) provides the full [ORCID public data file](collections/ds-open-datasets/#orcid-dataset) as a SQL representation.
+
+## Get Started
+
+1.  **[Browse Collections](collections/)** – Explore the available datasets from our contributing projects
+2.  **[Contribute](contributing.llms.md)** – Want to share your data? Check our contributing guide
+
+## First steps
+
+> **NOTE:**
+>
+> To query datasets, you need a Google Cloud project. You can get started with the [BigQuery sandbox](https://docs.cloud.google.com/bigquery/docs/sandbox), which requires no billing account and includes 1 TB of free queries per month.
+
+This example joins data from two different collections – [article metadata associated with transformative agreements](collections/subugoe/#openbib) as provided by SUB Göttingen and a [Crossref truth table](collections/sos/#truthtables) from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.
+
+## SQL
+
+``` sql
+-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = "wiley2019deal"
+GROUP BY has_funders
+```
+
+## R
+
+``` r
+library(bigrquery)
+library(DBI)
+
+# Replace `your-gcp-project` in the examples below with your own project ID.
+my_con <- dbConnect(bigquery(), project = "your-gcp-project")
+
+my_sql <- "
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = 'wiley2019deal'
+GROUP BY has_funders
+"
+
+my_df <- dbGetQuery(my_con, my_sql)
+```
+
+## Python
+
+``` python
+from google.cloud import bigquery
+
+# Replace `your-gcp-project` in the examples below with your own project ID.
+client = bigquery.Client(project="your-gcp-project")
+
+sql = """
+SELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles
+FROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles
+LEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth
+  ON lower(jct_articles.doi) = lower(cr_truth.doi)
+WHERE jct_articles.esac_id = 'wiley2019deal'
+GROUP BY has_funders
+"""
+
+result = client.query(sql).to_dataframe()
+```

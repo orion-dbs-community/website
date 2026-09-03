@@ -1,0 +1,38 @@
+# About
+
+This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.
+
+For the full motivation behind this effort, see our mission statement: [Sharing the load: Building an open research information collective](blog/posts/welcome/).
+
+## Collections
+
+The community currently brings together datasets from the following contributing projects:
+
+- **[CWTS Leiden Datasets](collections/cwts)** – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.
+- **[Dimensions Open Datasets](collections/ds-open-datasets/)** – This collection currently features the public data files for ORCID and DataCite.
+- **[InSySPo Campinas Datasets](collections/insyspo/)** – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.
+- **[KB OPENBIB](collections/kb-openbib/)** – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.
+- **[MultiObs](collections/multiobs/)** – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.
+- **[OpenAIRE](collections/openaire)** – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.
+- **[Sesame Open Science Datasets (SOS)](collections/sos/)** – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.
+- **[SUB Göttingen Datasets](collections/subugoe/)** – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.
+
+Each project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything.
+
+## How to access the data
+
+All datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a [free tier of 1 TB of query processing per month](https://cloud.google.com/bigquery/pricing).
+
+## About the website
+
+This site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the [mission statement](blog/posts/welcome/).
+
+## Get involved
+
+If you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our [contributing guide](contributing.llms.md) for details.
+
+You can also check our [Events](events.llms.md) page for upcoming talks and meetings, or browse the [Tools](tools.llms.md) built around these collections.
+
+## FORCE11 Working Group
+
+A growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. Our [FORCE11 working group](force11.llms.md) coordinates amongst current contributors and works towards community standards for discovery, processing, preservation and documentation.

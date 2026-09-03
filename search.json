@@ -175,473 +175,116 @@
     "text": "Contact\nIn case of questions or issues, feel free to create an issue: https://github.com/orion-dbs-community/website/issues\nRepo-Maintainer: Najko Jahn najko.jahn@sub.uni-goettingen.de"
   },
   {
-    "objectID": "collections/ds-open-datasets/index.html",
-    "href": "collections/ds-open-datasets/index.html",
-    "title": "Dimensions Open Datasets",
+    "objectID": "collections/multiobs/index.html",
+    "href": "collections/multiobs/index.html",
+    "title": "MultiObs",
     "section": "",
-    "text": "The Dimensions Open Datasets collection provides free access to large-scale scholarly and bibliometric datasets in the Google BigQuery environment. These datasets allow data analysts, scientometricians, and researchers to carry out advanced investigations taking advantage of the speed and flexibility of the BigQuery platform.\nThis collection currently features the public data files for ORCID and DataCite.\nGitHub Repo: https://github.com/digital-science/ds-external-dataset-transformations"
+    "text": "The datasets here are part of a research project at the University of Campinas (UNICAMP) to develop a broad research program to create evidence and knowledge for more effective monitoring of Science, Technology, and Innovation (STI). The program addresses critical and contemporary issues in STI indicators and policy making, addressing pervasive challenges regarding data infrastructures, funding dynamics, and society and policy engagement with STI. We create a novel framework for STI monitoring that federates data infrastructures, and adopts participatory and multi-perspective approaches. We include data about research entities, bibliometrics, economics, intellectual property, among others.\nPreprocessing code can be found at https://github.com/multiobs-ig-unicamp/."
   },
   {
-    "objectID": "collections/ds-open-datasets/index.html#orcid-dataset",
-    "href": "collections/ds-open-datasets/index.html#orcid-dataset",
-    "title": "Dimensions Open Datasets",
-    "section": "ORCID Dataset",
-    "text": "ORCID Dataset\nThis dataset is a SQL representation of the ORCID public data file. ORCID (Open Researcher and Contributor ID) is a free, unique, persistent identifier (PID) for individuals to use as they engage in research, scholarship, and innovation activities.\nAn ORCID record may contain information about a researcher’s work, affiliations, funding, peer review, and more. Items on ORCID records can be broken down into assertions that connect the ORCID iD-holder with an activity or affiliation.\n\nRelease date: Feb 2025\nUpdate frequency: Yearly\nLicense: CC0\nDocumentation: ORCID Official Schema\nSample Queries: Dimensions BigQuery Lab - ORCID"
+    "objectID": "collections/multiobs/index.html#plublicdb_badepi_dados_abertos",
+    "href": "collections/multiobs/index.html#plublicdb_badepi_dados_abertos",
+    "title": "MultiObs",
+    "section": "plublicdb_badepi_dados_abertos",
+    "text": "plublicdb_badepi_dados_abertos\nCreated: Jul 15, 2026 19:56 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/ds-open-datasets/index.html#datacite-dataset",
-    "href": "collections/ds-open-datasets/index.html#datacite-dataset",
-    "title": "Dimensions Open Datasets",
-    "section": "DataCite Dataset",
-    "text": "DataCite Dataset\nDataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs). Both yearly and weekly snapshots are available. Note that the weekly snapshot will also contain DOIs that have subsequently been unpublished in the current year.\n\nRelease date: Jan 2026\nUpdate frequency: Yearly, Weekly\nLicense: CC0\nDocumentation: DataCite API documentation\nSample Queries: Dimensions BigQuery Lab - DataCite"
+    "objectID": "collections/multiobs/index.html#publicdb_badepi",
+    "href": "collections/multiobs/index.html#publicdb_badepi",
+    "title": "MultiObs",
+    "section": "publicdb_badepi",
+    "text": "publicdb_badepi\nCreated: Jul 15, 2026 20:29 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/ds-open-datasets/index.html#datacite",
-    "href": "collections/ds-open-datasets/index.html#datacite",
-    "title": "Dimensions Open Datasets",
-    "section": "datacite",
-    "text": "datacite\nCreated: Jan 12, 2026 23:11 | Location: US | View in BigQuery Console"
+    "objectID": "collections/multiobs/index.html#publicdb_badepi_dados_abertos",
+    "href": "collections/multiobs/index.html#publicdb_badepi_dados_abertos",
+    "title": "MultiObs",
+    "section": "publicdb_badepi_dados_abertos",
+    "text": "publicdb_badepi_dados_abertos\nCreated: Jul 15, 2026 20:35 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/ds-open-datasets/index.html#orcid",
-    "href": "collections/ds-open-datasets/index.html#orcid",
-    "title": "Dimensions Open Datasets",
-    "section": "orcid",
-    "text": "orcid\nCreated: Dec 03, 2024 21:56 | Location: US | View in BigQuery Console"
+    "objectID": "collections/multiobs/index.html#publicdb_capes_dados_abertos",
+    "href": "collections/multiobs/index.html#publicdb_capes_dados_abertos",
+    "title": "MultiObs",
+    "section": "publicdb_capes_dados_abertos",
+    "text": "publicdb_capes_dados_abertos\nCreated: Jul 15, 2026 20:03 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/index.html",
-    "href": "collections/index.html",
-    "title": "Collections Overview",
-    "section": "",
-    "text": "BigQuery Projects\n7\n\n\n\n\n\n\n\n\n\nDatasets\n68\n\n\n\n\n\n\n\n\n\nTotal Size\n23 130 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+    "objectID": "collections/multiobs/index.html#publicdb_fapesp_bv",
+    "href": "collections/multiobs/index.html#publicdb_fapesp_bv",
+    "title": "MultiObs",
+    "section": "publicdb_fapesp_bv",
+    "text": "publicdb_fapesp_bv\nCreated: Nov 27, 2025 14:42 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/openaire/index.html",
-    "href": "collections/openaire/index.html",
-    "title": "OpenAIRE",
-    "section": "",
-    "text": "The OpenAIRE Graph is made available publicly as a dataset on Google Cloud and can be accessed and queried from Google BigQuery.\nMore info:\nhttps://graph.openaire.eu/docs/cloud-access/"
+    "objectID": "collections/multiobs/index.html#publicdb_inep_dados_abertos",
+    "href": "collections/multiobs/index.html#publicdb_inep_dados_abertos",
+    "title": "MultiObs",
+    "section": "publicdb_inep_dados_abertos",
+    "text": "publicdb_inep_dados_abertos\nCreated: Jul 15, 2026 20:43 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/openaire/index.html#oag_v10_6_0",
-    "href": "collections/openaire/index.html#oag_v10_6_0",
-    "title": "OpenAIRE",
-    "section": "oag_v10_6_0",
-    "text": "oag_v10_6_0\nCreated: Dec 05, 2025 07:02 | Location: EU | View in BigQuery Console"
+    "objectID": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
+    "href": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
+    "title": "MultiObs",
+    "section": "publicdb_openalex_2026_01_rm",
+    "text": "publicdb_openalex_2026_01_rm\nCreated: Jan 23, 2026 10:12 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/openaire/index.html#oag_v10_6_0_additional",
-    "href": "collections/openaire/index.html#oag_v10_6_0_additional",
-    "title": "OpenAIRE",
-    "section": "oag_v10_6_0_additional",
-    "text": "oag_v10_6_0_additional\nCreated: Jan 30, 2026 08:47 | Location: EU | View in BigQuery Console"
+    "objectID": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
+    "href": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
+    "title": "MultiObs",
+    "section": "publicdb_redalyc_2025_12",
+    "text": "publicdb_redalyc_2025_12\nDescriptionCopy of insyspo.publicdb_redalyc_2025_12\nCreated: Jan 12, 2026 01:49 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/openaire/index.html#oag_v9_0_1",
-    "href": "collections/openaire/index.html#oag_v9_0_1",
-    "title": "OpenAIRE",
-    "section": "oag_v9_0_1",
-    "text": "oag_v9_0_1\nCreated: Feb 13, 2025 15:43 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html",
-    "href": "collections/insyspo/index.html",
-    "title": "The InSySPo project",
-    "section": "",
-    "text": "More info: https://www.leidenmadtrics.nl/articles/towards-the-democratisation-of-open-research-information-for-scientometrics-and-science-policy-the-campinas-experience"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#projectdb_ciaam",
-    "href": "collections/insyspo/index.html#projectdb_ciaam",
-    "title": "The InSySPo project",
-    "section": "projectdb_ciaam",
-    "text": "projectdb_ciaam\nCreated: May 29, 2025 23:53 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#projectdb_cwts_summer_school_2023",
-    "href": "collections/insyspo/index.html#projectdb_cwts_summer_school_2023",
-    "title": "The InSySPo project",
-    "section": "projectdb_cwts_summer_school_2023",
-    "text": "projectdb_cwts_summer_school_2023\nCreated: Sep 18, 2023 15:40 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#projectdb_scielo_relational_model",
-    "href": "collections/insyspo/index.html#projectdb_scielo_relational_model",
-    "title": "The InSySPo project",
-    "section": "projectdb_scielo_relational_model",
-    "text": "projectdb_scielo_relational_model\nCreated: Mar 28, 2023 07:20 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_capes_ppg",
-    "href": "collections/insyspo/index.html#publicdb_capes_ppg",
-    "title": "The InSySPo project",
-    "section": "publicdb_capes_ppg",
-    "text": "publicdb_capes_ppg\nCreated: Nov 13, 2023 10:53 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_cwts_openalex_areas",
-    "href": "collections/insyspo/index.html#publicdb_cwts_openalex_areas",
-    "title": "The InSySPo project",
-    "section": "publicdb_cwts_openalex_areas",
-    "text": "publicdb_cwts_openalex_areas\nCreated: Jan 26, 2024 18:09 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_eurekalert",
-    "href": "collections/insyspo/index.html#publicdb_eurekalert",
-    "title": "The InSySPo project",
-    "section": "publicdb_eurekalert",
-    "text": "publicdb_eurekalert\nCreated: Feb 25, 2025 14:48 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_eurekalert_2025",
-    "href": "collections/insyspo/index.html#publicdb_eurekalert_2025",
-    "title": "The InSySPo project",
-    "section": "publicdb_eurekalert_2025",
-    "text": "publicdb_eurekalert_2025\nCreated: Jul 18, 2025 17:16 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_openaire_rm",
-    "href": "collections/insyspo/index.html#publicdb_openaire_rm",
-    "title": "The InSySPo project",
-    "section": "publicdb_openaire_rm",
-    "text": "publicdb_openaire_rm\nCreated: Nov 28, 2023 17:47 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_openalex_2025_03_rm",
-    "href": "collections/insyspo/index.html#publicdb_openalex_2025_03_rm",
-    "title": "The InSySPo project",
-    "section": "publicdb_openalex_2025_03_rm",
-    "text": "publicdb_openalex_2025_03_rm\nCreated: Mar 14, 2025 09:27 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_openalex_2025_08_rm",
-    "href": "collections/insyspo/index.html#publicdb_openalex_2025_08_rm",
-    "title": "The InSySPo project",
-    "section": "publicdb_openalex_2025_08_rm",
-    "text": "publicdb_openalex_2025_08_rm\nCreated: Sep 01, 2025 19:44 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_redalyc_2024_08",
-    "href": "collections/insyspo/index.html#publicdb_redalyc_2024_08",
-    "title": "The InSySPo project",
-    "section": "publicdb_redalyc_2024_08",
-    "text": "publicdb_redalyc_2024_08\nCreated: Aug 21, 2024 02:35 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_reliance_on_science",
-    "href": "collections/insyspo/index.html#publicdb_reliance_on_science",
-    "title": "The InSySPo project",
-    "section": "publicdb_reliance_on_science",
-    "text": "publicdb_reliance_on_science\nCreated: Apr 13, 2025 21:12 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/insyspo/index.html#publicdb_scielo_2024_rm",
-    "href": "collections/insyspo/index.html#publicdb_scielo_2024_rm",
-    "title": "The InSySPo project",
+    "objectID": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
+    "href": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
+    "title": "MultiObs",
     "section": "publicdb_scielo_2024_rm",
-    "text": "publicdb_scielo_2024_rm\nCreated: Jul 16, 2024 20:40 | Location: US | View in BigQuery Console"
+    "text": "publicdb_scielo_2024_rm\nDescriptionCopy of insyspo.publicdb_scielo_2024_rm\nCreated: Jan 12, 2026 01:50 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/insyspo/index.html#publicdb_scielo_relational_model",
-    "href": "collections/insyspo/index.html#publicdb_scielo_relational_model",
-    "title": "The InSySPo project",
-    "section": "publicdb_scielo_relational_model",
-    "text": "publicdb_scielo_relational_model\nCreated: Oct 11, 2023 13:29 | Location: US | View in BigQuery Console"
+    "objectID": "collections/multiobs/index.html#publicdb_wikipedia_citations",
+    "href": "collections/multiobs/index.html#publicdb_wikipedia_citations",
+    "title": "MultiObs",
+    "section": "publicdb_wikipedia_citations",
+    "text": "publicdb_wikipedia_citations\nDescriptionA dataset containing DOI citations extracted from Wikipedia articles in Portuguese, Spanish, and English, based on a snapshot from April 2026. It links scientific works to the Wikipedia pages in which they are cited, using the DOI as the join key. A normalized doi_url field compatible with the OpenAlex format is also included.\nCreated: Jul 16, 2026 23:18 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
-    "href": "collections/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
-    "title": "The InSySPo project",
-    "section": "publicdb_wikipedia_knowledge_graph",
-    "text": "publicdb_wikipedia_knowledge_graph\nCreated: Feb 27, 2023 04:47 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "privacy.html",
-    "href": "privacy.html",
-    "title": "Privacy",
+    "objectID": "collections/kb-openbib/index.html",
+    "href": "collections/kb-openbib/index.html",
+    "title": "KB OPENBIB",
     "section": "",
-    "text": "Last updated: February 2026"
+    "text": "The Kompentenznetzwerk Bibliometrie (KB), a network of more than 25 German research institutions, contributes to the ongoing transformation towards open bibliometric data allowing for more transparency and participation in bibliometric research and contract work. But open bibliometric datasources require substantial data checks, cleaning and ongoing curation probably in a decentralised manner. We address these challenges by providing curated open data with a special focus on research from Germany.\nContact: Christine Rimmert ."
   },
   {
-    "objectID": "privacy.html#overview",
-    "href": "privacy.html#overview",
-    "title": "Privacy",
-    "section": "Overview",
-    "text": "Overview\nThis website is hosted on GitHub Pages and is maintained by the Orion DBS Community. We are committed to protecting your privacy. This policy explains what data is collected when you visit our site."
+    "objectID": "collections/kb-openbib/index.html#oal_b_20250711",
+    "href": "collections/kb-openbib/index.html#oal_b_20250711",
+    "title": "KB OPENBIB",
+    "section": "oal_b_20250711",
+    "text": "oal_b_20250711\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20250711 corresponds to the OpenAlex snapshot from mid-July 2025.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: Oct 21, 2025 13:51 | Location: europe-west3 | View in BigQuery Console"
   },
   {
-    "objectID": "privacy.html#what-we-collect",
-    "href": "privacy.html#what-we-collect",
-    "title": "Privacy",
-    "section": "What We Collect",
-    "text": "What We Collect\nWe do not collect any personal data. This website does not use tracking scripts, analytics tools, or any other form of user monitoring."
+    "objectID": "collections/kb-openbib/index.html#oal_b_20260116",
+    "href": "collections/kb-openbib/index.html#oal_b_20260116",
+    "title": "KB OPENBIB",
+    "section": "oal_b_20260116",
+    "text": "oal_b_20260116\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20260116 corresponds to the OpenAlex snapshot from mid-January 2026.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: May 08, 2026 17:59 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "privacy.html#cookies",
-    "href": "privacy.html#cookies",
-    "title": "Privacy",
-    "section": "Cookies",
-    "text": "Cookies\nThis website sets one technical cookie to improve the appearance and functionality of the sidebar. This cookie is strictly necessary for the website to function properly and does not store any personal information or track your behavior. No third-party cookies are used."
+    "objectID": "collections/kb-openbib/index.html#oal_b_20260330",
+    "href": "collections/kb-openbib/index.html#oal_b_20260330",
+    "title": "KB OPENBIB",
+    "section": "oal_b_20260330",
+    "text": "oal_b_20260330\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20260330 corresponds to the OpenAlex snapshot from end-March 2026.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: Jul 22, 2026 11:06 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "privacy.html#hosting",
-    "href": "privacy.html#hosting",
-    "title": "Privacy",
-    "section": "Hosting",
-    "text": "Hosting\nThis site is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit this website, GitHub may collect certain technical information such as your IP address, browser type, and access times in accordance with their own privacy practices. This data collection is handled entirely by GitHub and is outside our control.\nFor details, please refer to the GitHub Privacy Statement."
-  },
-  {
-    "objectID": "privacy.html#external-links",
-    "href": "privacy.html#external-links",
-    "title": "Privacy",
-    "section": "External Links",
-    "text": "External Links\nOur website may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any external site you visit."
-  },
-  {
-    "objectID": "privacy.html#changes-to-this-policy",
-    "href": "privacy.html#changes-to-this-policy",
-    "title": "Privacy",
-    "section": "Changes to This Policy",
-    "text": "Changes to This Policy\nWe may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
-  },
-  {
-    "objectID": "privacy.html#contact",
-    "href": "privacy.html#contact",
-    "title": "Privacy",
-    "section": "Contact",
-    "text": "Contact\nIf you have questions about this privacy policy, please open an issue on our GitHub repository."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "For questions, feedback, or interest in contributing datasets, reach out to us at info@orion-dbs.community.\nYou can also open an issue on our GitHub repository."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.\nFor the full motivation behind this effort, see our mission statement: Sharing the load: Building an open research information collective."
-  },
-  {
-    "objectID": "about.html#collections",
-    "href": "about.html#collections",
-    "title": "About",
-    "section": "Collections",
-    "text": "Collections\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nEach project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything."
-  },
-  {
-    "objectID": "about.html#how-to-access-the-data",
-    "href": "about.html#how-to-access-the-data",
-    "title": "About",
-    "section": "How to access the data",
-    "text": "How to access the data\nAll datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a free tier of 1 TB of query processing per month."
-  },
-  {
-    "objectID": "about.html#about-the-website",
-    "href": "about.html#about-the-website",
-    "title": "About",
-    "section": "About the website",
-    "text": "About the website\nThis site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the mission statement."
-  },
-  {
-    "objectID": "about.html#get-involved",
-    "href": "about.html#get-involved",
-    "title": "About",
-    "section": "Get involved",
-    "text": "Get involved\nIf you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our contributing guide for details."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Open Research Information on BigQuery",
-    "section": "",
-    "text": "A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale."
-  },
-  {
-    "objectID": "index.html#featured-collections",
-    "href": "index.html#featured-collections",
-    "title": "Open Research Information on BigQuery",
-    "section": "Featured Collections",
-    "text": "Featured Collections\nPlease also check the participating collections websites for more information and for many more available datasets.\n\n\n\n\nCrossref\nA major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.\nSUB Göttingen provides the most recent monthly dump and yearly snapshots. Sesame Open Science gives access to the latest public data dump.\n\n\n\n\nOpenAIRE\nKnowledge graph interlinking ~350mio publications, datasets, software, grants, and more from ~150k sources.\nSesame Open Science and InSySPo Campinas provide the full OpenAIRE Graph Dataset in different schemas.\n\n\n\n\nOpenAlex\nA free, open, and comprehensive bibliographic database and knowledge graph for global scholarly research.\nMany collections provide time-specfic snapshots of OpenAlex data, including CWTS, KB OPENBIB, InSySPo Campinas, MultiObs and SUB Göttingen.\n\n\n\n\nDataCite\nDOI registration agency for research data and other research outputs, linking works, people, and organizations.\nDimensions Open Datasets and Sesame Open Science both provide DataCite snapshots.\n\n\n\n\nCWTS Leiden Ranking\nAn open edition of the CWTS Leiden Ranking for universities worldwide.\nCWTS Leiden provides data underlying the Leiden Ranking Open Edition along with time-specific OpenAlex versions.\n\n\n\n\nFAPESP Virtual Library\nThe referential information source for research supported by FAPESP from Brazil.\nMultiObs provides the FAPESP Virtual Library dataset about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).\n\n\n\n\nORCID\nPersistent identifier linking researchers to their works, affiliations, and funding.\nDimensions Open Datasets provides the full ORCID public data file as a SQL representation."
-  },
-  {
-    "objectID": "index.html#get-started",
-    "href": "index.html#get-started",
-    "title": "Open Research Information on BigQuery",
-    "section": "Get Started",
-    "text": "Get Started\n\nBrowse Collections – Explore the available datasets from our contributing projects\nContribute – Want to share your data? Check our contributing guide"
-  },
-  {
-    "objectID": "index.html#first-steps",
-    "href": "index.html#first-steps",
-    "title": "Open Research Information on BigQuery",
-    "section": "First steps",
-    "text": "First steps\n\n\n\n\n\n\nNote\n\n\n\nTo query datasets, you need a Google Cloud project. You can get started with the BigQuery sandbox, which requires no billing account and includes 1 TB of free queries per month.\n\n\nThis example joins data from two different collections – article metadata associated with transformative agreements as provided by SUB Göttingen and a Crossref truth table from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.\n\nSQLRPython\n\n\n-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = \"wiley2019deal\"\nGROUP BY has_funders\n\n\nlibrary(bigrquery)\nlibrary(DBI)\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nmy_con &lt;- dbConnect(bigquery(), project = \"your-gcp-project\")\n\nmy_sql &lt;- \"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\n\nmy_df &lt;- dbGetQuery(my_con, my_sql)\n\n\nfrom google.cloud import bigquery\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nclient = bigquery.Client(project=\"your-gcp-project\")\n\nsql = \"\"\"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\"\"\n\nresult = client.query(sql).to_dataframe()"
-  },
-  {
-    "objectID": "collections/cwts/index.html",
-    "href": "collections/cwts/index.html",
-    "title": "CWTS Leiden Datasets",
-    "section": "",
-    "text": "The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.\nGitHub Repo: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nContact: Nees Jan van Eck"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2023",
-    "text": "leiden_ranking_open_edition_2023\nDescriptionThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2023. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2023 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2023 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2023 is based on the OpenAlex snapshot released on November 21, 2023. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2023: https://doi.org/10.59350/89wpz-hpz32\nCreated: Jan 28, 2024 21:20 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2024",
-    "text": "leiden_ranking_open_edition_2024\nDescriptionThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2024. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2024 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2024 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2024 is based on the OpenAlex snapshot released on August 30, 2024. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2024: https://doi.org/10.59350/r512t-r8h93\nCreated: Sep 27, 2024 13:07 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
-    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
-    "title": "CWTS Leiden Datasets",
-    "section": "leiden_ranking_open_edition_2025",
-    "text": "leiden_ranking_open_edition_2025\nDescriptionThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2025. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2025 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2025 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2025 is based on the OpenAlex snapshot from August, 2025. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2025: https://doi.org/10.59350/jvjy2-4ww95\nCreated: Oct 29, 2025 06:05 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov",
-    "href": "collections/cwts/index.html#openalex_2023nov",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov",
-    "text": "openalex_2023nov\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on November 21, 2023.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Jan 25, 2024 11:26 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov_classification",
-    "href": "collections/cwts/index.html#openalex_2023nov_classification",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov_classification",
-    "text": "openalex_2023nov_classification\nDescriptionThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on November 21, 2023.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.10560276\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2023nov_core",
-    "href": "collections/cwts/index.html#openalex_2023nov_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2023nov_core",
-    "text": "openalex_2023nov_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on November 21, 2023).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2023nov\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.10949622\nCreated: Jan 29, 2024 17:55 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2024aug",
-    "href": "collections/cwts/index.html#openalex_2024aug",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2024aug",
-    "text": "openalex_2024aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on August 30, 2024.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2024aug_core",
-    "href": "collections/cwts/index.html#openalex_2024aug_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2024aug_core",
-    "text": "openalex_2024aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on August 30, 2024).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2024aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.13879947\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2025aug",
-    "href": "collections/cwts/index.html#openalex_2025aug",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2025aug",
-    "text": "openalex_2025aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot from August, 2025.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Oct 26, 2025 11:29 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/cwts/index.html#openalex_2025aug_core",
-    "href": "collections/cwts/index.html#openalex_2025aug_core",
-    "title": "CWTS Leiden Datasets",
-    "section": "openalex_2025aug_core",
-    "text": "openalex_2025aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot from August 2025).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2025aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.17200830\nCreated: Oct 24, 2025 07:46 | Location: EU | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html",
-    "href": "collections/subugoe/index.html",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "",
-    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to open bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/; see https://subugoe.github.io/scholcomm_analytics/data.html for links to the data processing pipelines used.\nContact: Najko Jahn, Nick Haupka"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#cr_history",
-    "href": "collections/subugoe/index.html#cr_history",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "cr_history",
-    "text": "cr_history\nDescriptionHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\nCreated: Oct 29, 2021 07:20 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#cr_instant",
-    "href": "collections/subugoe/index.html#cr_instant",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "cr_instant",
-    "text": "cr_instant\nDescriptionThis dataset contains the most recent Crossref Snapshot.\nCreated: Oct 29, 2021 07:37 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#hoaddata",
-    "href": "collections/subugoe/index.html#hoaddata",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "hoaddata",
-    "text": "hoaddata\nDescriptionDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\nCreated: May 12, 2023 11:06 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#oa2020",
-    "href": "collections/subugoe/index.html#oa2020",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "oa2020",
-    "text": "oa2020\nDescriptionEstimating global publishing output by leading commercial publishers using open metadata.\nWork carried out for OA2020 WG on financial flows and future cost scenarios https://oa2020.org/working-groups/\nCreated: Dec 11, 2025 10:48 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openalex",
-    "href": "collections/subugoe/index.html#openalex",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openalex",
-    "text": "openalex\nDescriptionThis dataset contains the most recent OpenAlex Snapshot (before Walden).\nCreated: Jan 10, 2022 14:46 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openalex_walden",
-    "href": "collections/subugoe/index.html#openalex_walden",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openalex_walden",
-    "text": "openalex_walden\nDescriptionThis dataset contains the most recent publicly available OpenAlex-Walden Snapshot. Snapshot date 2026-06-26\nCreated: Dec 03, 2025 10:07 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#openbib",
-    "href": "collections/subugoe/index.html#openbib",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "openbib",
-    "text": "openbib\nDescriptionThis dataset contains the most recent OPENBIB snapshot.\nFor more information, see: https://zenodo.org/records/18429476\nCreated: Mar 28, 2025 14:22 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#resources",
-    "href": "collections/subugoe/index.html#resources",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "resources",
-    "text": "resources\nCreated: Nov 02, 2021 07:53 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#semantic_scholar",
-    "href": "collections/subugoe/index.html#semantic_scholar",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "semantic_scholar",
-    "text": "semantic_scholar\nDescriptionThis dataset contains a snapshot from Semantic Scholar.\n–\nData Source & License\nThis dataset contains information from the Semantic Scholar Open Research Corpus, provided by the Allen Institute for Artificial Intelligence (AI2) and made available under the Open Data Commons Attribution License (ODC-By) v1.0.\nThe ODC-By license governs the database rights only — that is, the structure, organisation, and compilation of the data. It does not cover the rights in the individual contents of the database, such as paper titles, abstracts, or full texts, which may be subject to separate copyright or license terms held by their respective authors, publishers, or other rights holders. Users are responsible for ensuring their use of any such content complies with the applicable terms.\nFor scientific publications making use of this data, please also cite:\nKyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney, and Daniel Weld. 2020. S2ORC: The Semantic Scholar Open Research Corpus. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4969–4983, Online. Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.447\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#upw_history",
-    "href": "collections/subugoe/index.html#upw_history",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "upw_history",
-    "text": "upw_history\nDescriptionHistorical Unpaywall Snapshots. Only includes records from 2008 onwards.\nCreated: Oct 29, 2021 07:51 | Location: US | View in BigQuery Console"
-  },
-  {
-    "objectID": "collections/subugoe/index.html#upw_instant",
-    "href": "collections/subugoe/index.html#upw_instant",
-    "title": "Open Scholarly Data @ SUB Göttingen",
-    "section": "upw_instant",
-    "text": "upw_instant\nDescriptionThis dataset contains the most recent Unpaywall Snapshot. Only records from 2008 onwards are included.\nCreated: Oct 29, 2021 07:52 | Location: US | View in BigQuery Console"
+    "objectID": "collections/kb-openbib/index.html#openbib_20250711",
+    "href": "collections/kb-openbib/index.html#openbib_20250711",
+    "title": "KB OPENBIB",
+    "section": "openbib_20250711",
+    "text": "openbib_20250711\nCreated: Jan 21, 2026 12:38 | Location: europe-west3 | View in BigQuery Console"
   },
   {
     "objectID": "collections/sos/index.html",
@@ -763,116 +406,536 @@
     "text": "truthtables\nDescriptionProcessed tables indicating presence (TRUE/FALSE) and count of several metadata elemements for each record in a data source.\nDocumentation of data processing:\nhttps://codeberg.org/TwoBirds/metadata_ingest#truthtables\nCreated to facilitate comparison of metadata coverage across sources\nCreated: Mar 28, 2025 17:39 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/kb-openbib/index.html",
-    "href": "collections/kb-openbib/index.html",
-    "title": "KB OPENBIB",
+    "objectID": "collections/subugoe/index.html",
+    "href": "collections/subugoe/index.html",
+    "title": "Open Scholarly Data @ SUB Göttingen",
     "section": "",
-    "text": "The Kompentenznetzwerk Bibliometrie (KB), a network of more than 25 German research institutions, contributes to the ongoing transformation towards open bibliometric data allowing for more transparency and participation in bibliometric research and contract work. But open bibliometric datasources require substantial data checks, cleaning and ongoing curation probably in a decentralised manner. We address these challenges by providing curated open data with a special focus on research from Germany.\nContact: Christine Rimmert ."
+    "text": "The Scholarly Communication Analytics team at the State and University Library in Göttingen maintains a publicly accessible Open Scholarly Data Warehouse, which is based on Google BigQuery.\nThe warehouse features monthly Crossref snapshots, as well as data from various other sources, including OpenAlex, Semantic Scholar and Unpaywall, and provides access to open bibliometric data from the German Competence Network for Bibliometrics.\nGoogle BigQuery is provided as part of the OCRE 2024 Framework, with support from the GWGD.\nMore info: https://subugoe.github.io/scholcomm_analytics/; see https://subugoe.github.io/scholcomm_analytics/data.html for links to the data processing pipelines used.\nContact: Najko Jahn, Nick Haupka"
   },
   {
-    "objectID": "collections/kb-openbib/index.html#oal_b_20250711",
-    "href": "collections/kb-openbib/index.html#oal_b_20250711",
-    "title": "KB OPENBIB",
-    "section": "oal_b_20250711",
-    "text": "oal_b_20250711\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20250711 corresponds to the OpenAlex snapshot from mid-July 2025.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: Oct 21, 2025 13:51 | Location: europe-west3 | View in BigQuery Console"
+    "objectID": "collections/subugoe/index.html#cr_history",
+    "href": "collections/subugoe/index.html#cr_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_history",
+    "text": "cr_history\nDescriptionHistorical Crossref Snapshots. Only includes publications with type ‘journal-article’.\nCreated: Oct 29, 2021 07:20 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/kb-openbib/index.html#oal_b_20260116",
-    "href": "collections/kb-openbib/index.html#oal_b_20260116",
-    "title": "KB OPENBIB",
-    "section": "oal_b_20260116",
-    "text": "oal_b_20260116\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20260116 corresponds to the OpenAlex snapshot from mid-January 2026.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: May 08, 2026 17:59 | Location: EU | View in BigQuery Console"
+    "objectID": "collections/subugoe/index.html#cr_instant",
+    "href": "collections/subugoe/index.html#cr_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "cr_instant",
+    "text": "cr_instant\nDescriptionThis dataset contains the most recent Crossref Snapshot.\nCreated: Oct 29, 2021 07:37 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/kb-openbib/index.html#oal_b_20260330",
-    "href": "collections/kb-openbib/index.html#oal_b_20260330",
-    "title": "KB OPENBIB",
-    "section": "oal_b_20260330",
-    "text": "oal_b_20260330\nDescriptionDataset Description\nOpenAlex datasets provided by the KB follow the naming convention oal_b_&lt;openalex_snapshot_date&gt; — for example, oal_b_20260330 corresponds to the OpenAlex snapshot from end-March 2026.\nAll data is structured according to a bibliometric database schema developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.\nDisambiguation Tables\nDisambiguation tables are identifiable by the add_ prefix and follow the naming pattern:\nadd_&lt;entity&gt;_&lt;source&gt;_(&lt;lookup&gt;)_(&lt;suppl&gt;)\nThe source field indicates the origin of the disambiguation:\n\nprovider — disambiguation is supplied directly within the OpenAlex data\nkb — disambiguation has been produced by the KB\n\nTables without the _suppl suffix contain only entity assignments. Tables with the _suppl suffix include additional information in a more flexible format.\n\nFor further details on the KB’s data infrastructure and processing pipelines, see the documentation on Zenodo. The table named mapping contains the source of the data in each column in the corresponding raw data format.\n\nNote: The KB infrastructure also holds licensed data that cannot be made publicly available. This data is therefore not present in Google BigQuery.\n\nCreated: Jul 22, 2026 11:06 | Location: EU | View in BigQuery Console"
+    "objectID": "collections/subugoe/index.html#hoaddata",
+    "href": "collections/subugoe/index.html#hoaddata",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "hoaddata",
+    "text": "hoaddata\nDescriptionDatasets used to compile hoaddata, an R package containing data about hybrid open access publishing https://subugoe.github.io/hoaddata/\nCreated: May 12, 2023 11:06 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/kb-openbib/index.html#openbib_20250711",
-    "href": "collections/kb-openbib/index.html#openbib_20250711",
-    "title": "KB OPENBIB",
-    "section": "openbib_20250711",
-    "text": "openbib_20250711\nCreated: Jan 21, 2026 12:38 | Location: europe-west3 | View in BigQuery Console"
+    "objectID": "collections/subugoe/index.html#oa2020",
+    "href": "collections/subugoe/index.html#oa2020",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "oa2020",
+    "text": "oa2020\nDescriptionEstimating global publishing output by leading commercial publishers using open metadata.\nWork carried out for OA2020 WG on financial flows and future cost scenarios https://oa2020.org/working-groups/\nCreated: Dec 11, 2025 10:48 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html",
-    "href": "collections/multiobs/index.html",
-    "title": "MultiObs",
+    "objectID": "collections/subugoe/index.html#openalex",
+    "href": "collections/subugoe/index.html#openalex",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex",
+    "text": "openalex\nDescriptionThis dataset contains the most recent OpenAlex Snapshot (before Walden).\nCreated: Jan 10, 2022 14:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#openalex_walden",
+    "href": "collections/subugoe/index.html#openalex_walden",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openalex_walden",
+    "text": "openalex_walden\nDescriptionThis dataset contains the most recent publicly available OpenAlex-Walden Snapshot. Snapshot date 2026-06-26\nCreated: Dec 03, 2025 10:07 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#openbib",
+    "href": "collections/subugoe/index.html#openbib",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "openbib",
+    "text": "openbib\nDescriptionThis dataset contains the most recent OPENBIB snapshot.\nFor more information, see: https://zenodo.org/records/18429476\nCreated: Mar 28, 2025 14:22 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#resources",
+    "href": "collections/subugoe/index.html#resources",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "resources",
+    "text": "resources\nCreated: Nov 02, 2021 07:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#semantic_scholar",
+    "href": "collections/subugoe/index.html#semantic_scholar",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "semantic_scholar",
+    "text": "semantic_scholar\nDescriptionThis dataset contains a snapshot from Semantic Scholar.\n–\nData Source & License\nThis dataset contains information from the Semantic Scholar Open Research Corpus, provided by the Allen Institute for Artificial Intelligence (AI2) and made available under the Open Data Commons Attribution License (ODC-By) v1.0.\nThe ODC-By license governs the database rights only — that is, the structure, organisation, and compilation of the data. It does not cover the rights in the individual contents of the database, such as paper titles, abstracts, or full texts, which may be subject to separate copyright or license terms held by their respective authors, publishers, or other rights holders. Users are responsible for ensuring their use of any such content complies with the applicable terms.\nFor scientific publications making use of this data, please also cite:\nKyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney, and Daniel Weld. 2020. S2ORC: The Semantic Scholar Open Research Corpus. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 4969–4983, Online. Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.acl-main.447\nCreated: Jun 10, 2024 13:46 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#upw_history",
+    "href": "collections/subugoe/index.html#upw_history",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_history",
+    "text": "upw_history\nDescriptionHistorical Unpaywall Snapshots. Only includes records from 2008 onwards.\nCreated: Oct 29, 2021 07:51 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/subugoe/index.html#upw_instant",
+    "href": "collections/subugoe/index.html#upw_instant",
+    "title": "Open Scholarly Data @ SUB Göttingen",
+    "section": "upw_instant",
+    "text": "upw_instant\nDescriptionThis dataset contains the most recent Unpaywall Snapshot. Only records from 2008 onwards are included.\nCreated: Oct 29, 2021 07:52 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html",
+    "href": "collections/cwts/index.html",
+    "title": "CWTS Leiden Datasets",
     "section": "",
-    "text": "The datasets here are part of a research project at the University of Campinas (UNICAMP) to develop a broad research program to create evidence and knowledge for more effective monitoring of Science, Technology, and Innovation (STI). The program addresses critical and contemporary issues in STI indicators and policy making, addressing pervasive challenges regarding data infrastructures, funding dynamics, and society and policy engagement with STI. We create a novel framework for STI monitoring that federates data infrastructures, and adopts participatory and multi-perspective approaches. We include data about research entities, bibliometrics, economics, intellectual property, among others.\nPreprocessing code can be found at https://github.com/multiobs-ig-unicamp/."
+    "text": "The data science team at the Centre for Science and Technology Studies (CWTS) at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific versions of OpenAlex, and other resources.\nGitHub Repo: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nContact: Nees Jan van Eck"
   },
   {
-    "objectID": "collections/multiobs/index.html#plublicdb_badepi_dados_abertos",
-    "href": "collections/multiobs/index.html#plublicdb_badepi_dados_abertos",
-    "title": "MultiObs",
-    "section": "plublicdb_badepi_dados_abertos",
-    "text": "plublicdb_badepi_dados_abertos\nCreated: Jul 15, 2026 19:56 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2023",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2023",
+    "text": "leiden_ranking_open_edition_2023\nDescriptionThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2023. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2023 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2023 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2023 is based on the OpenAlex snapshot released on November 21, 2023. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2023: https://doi.org/10.59350/89wpz-hpz32\nCreated: Jan 28, 2024 21:20 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_badepi",
-    "href": "collections/multiobs/index.html#publicdb_badepi",
-    "title": "MultiObs",
-    "section": "publicdb_badepi",
-    "text": "publicdb_badepi\nCreated: Jul 15, 2026 20:29 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2024",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2024",
+    "text": "leiden_ranking_open_edition_2024\nDescriptionThis dataset contains the data used to create the Open Edition of the CWTS Leiden Ranking 2024. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2024 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2024 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2024 is based on the OpenAlex snapshot released on August 30, 2024. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2024: https://doi.org/10.59350/r512t-r8h93\nCreated: Sep 27, 2024 13:07 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_badepi_dados_abertos",
-    "href": "collections/multiobs/index.html#publicdb_badepi_dados_abertos",
-    "title": "MultiObs",
-    "section": "publicdb_badepi_dados_abertos",
-    "text": "publicdb_badepi_dados_abertos\nCreated: Jul 15, 2026 20:35 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2025",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2025",
+    "text": "leiden_ranking_open_edition_2025\nDescriptionThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2025. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2025 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2025 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2025 is based on the OpenAlex snapshot from August, 2025. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2025: https://doi.org/10.59350/jvjy2-4ww95\nCreated: Oct 29, 2025 06:05 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_capes_dados_abertos",
-    "href": "collections/multiobs/index.html#publicdb_capes_dados_abertos",
-    "title": "MultiObs",
-    "section": "publicdb_capes_dados_abertos",
-    "text": "publicdb_capes_dados_abertos\nCreated: Jul 15, 2026 20:03 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#openalex_2023nov",
+    "href": "collections/cwts/index.html#openalex_2023nov",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov",
+    "text": "openalex_2023nov\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on November 21, 2023.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Jan 25, 2024 11:26 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_fapesp_bv",
-    "href": "collections/multiobs/index.html#publicdb_fapesp_bv",
-    "title": "MultiObs",
-    "section": "publicdb_fapesp_bv",
-    "text": "publicdb_fapesp_bv\nCreated: Nov 27, 2025 14:42 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#openalex_2023nov_classification",
+    "href": "collections/cwts/index.html#openalex_2023nov_classification",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov_classification",
+    "text": "openalex_2023nov_classification\nDescriptionThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on November 21, 2023.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.10560276\nCreated: Jan 19, 2024 15:54 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_inep_dados_abertos",
-    "href": "collections/multiobs/index.html#publicdb_inep_dados_abertos",
-    "title": "MultiObs",
-    "section": "publicdb_inep_dados_abertos",
-    "text": "publicdb_inep_dados_abertos\nCreated: Jul 15, 2026 20:43 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#openalex_2023nov_core",
+    "href": "collections/cwts/index.html#openalex_2023nov_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2023nov_core",
+    "text": "openalex_2023nov_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on November 21, 2023).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2023nov\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.10949622\nCreated: Jan 29, 2024 17:55 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
-    "href": "collections/multiobs/index.html#publicdb_openalex_2026_01_rm",
-    "title": "MultiObs",
-    "section": "publicdb_openalex_2026_01_rm",
-    "text": "publicdb_openalex_2026_01_rm\nCreated: Jan 23, 2026 10:12 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#openalex_2024aug",
+    "href": "collections/cwts/index.html#openalex_2024aug",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2024aug",
+    "text": "openalex_2024aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on August 30, 2024.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
-    "href": "collections/multiobs/index.html#publicdb_redalyc_2025_12",
-    "title": "MultiObs",
-    "section": "publicdb_redalyc_2025_12",
-    "text": "publicdb_redalyc_2025_12\nDescriptionCopy of insyspo.publicdb_redalyc_2025_12\nCreated: Jan 12, 2026 01:49 | Location: US | View in BigQuery Console"
+    "objectID": "collections/cwts/index.html#openalex_2024aug_core",
+    "href": "collections/cwts/index.html#openalex_2024aug_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2024aug_core",
+    "text": "openalex_2024aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot released on August 30, 2024).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2024aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.13879947\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
-    "href": "collections/multiobs/index.html#publicdb_scielo_2024_rm",
-    "title": "MultiObs",
+    "objectID": "collections/cwts/index.html#openalex_2025aug",
+    "href": "collections/cwts/index.html#openalex_2025aug",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2025aug",
+    "text": "openalex_2025aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot from August, 2025.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Oct 26, 2025 11:29 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2025aug_core",
+    "href": "collections/cwts/index.html#openalex_2025aug_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2025aug_core",
+    "text": "openalex_2025aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot from August 2025).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2025aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.17200830\nCreated: Oct 24, 2025 07:46 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "force11.html",
+    "href": "force11.html",
+    "title": "FORCE11 Working Group",
+    "section": "",
+    "text": "A growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. This working group will act to coordinate amongst current contributors and work towards community standards for discovery, processing, preservation and documentation. It will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources."
+  },
+  {
+    "objectID": "force11.html#deliverables",
+    "href": "force11.html#deliverables",
+    "title": "FORCE11 Working Group",
+    "section": "Deliverables",
+    "text": "Deliverables\nOur goal is to build community with a focus on supporting the users of Open Research Information resources to make more sophisticated and complex use of these data sources. We will do this by consolidating and expanding the resources themselves through supporting providers, gathering user stories and developing training materials. Finally we will scope pathways to technological independence from proprietary systems consistent with the needs of users.\n\nValidated documentation for processing, hosting and delivering Open Research Information resources via BigQuery in the ORION DBs system\nAn expanded set of tools for processing, managing, distributing and archiving large-scale open research information resources\nAn expanded set of host providers (from the four at launch) providing access to an expanded set of ORI resources via BigQuery in the first instance\nA set of identified use cases/user stories for the ORION DBs resources\nTraining materials including template queries and tutorials to support common use cases and user needs\nAn assessment report on technology, governance and management options for alternative technology platforms to deliver equivalent or improved functionality for ORION DBs use cases, including resource requirements and risk assessment\n\nFORCE 11 Working group: https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "For questions, feedback, or interest in contributing datasets, reach out to us at info@orion-dbs.community.\nYou can also open an issue on our GitHub repository."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website is the shared discovery and documentation layer for a community of independent groups that host open scholarly data on Google BigQuery. Rather than each group separately maintaining copies of the same core data sources, the goal is to share the load – coordinating storage, preprocessing, and documentation so that key open research information resources are combinable and actionable at scale.\nFor the full motivation behind this effort, see our mission statement: Sharing the load: Building an open research information collective."
+  },
+  {
+    "objectID": "about.html#collections",
+    "href": "about.html#collections",
+    "title": "About",
+    "section": "Collections",
+    "text": "Collections\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nEach project covers different data sources or versions, so that users benefit from the combination without any single group having to maintain everything."
+  },
+  {
+    "objectID": "about.html#how-to-access-the-data",
+    "href": "about.html#how-to-access-the-data",
+    "title": "About",
+    "section": "How to access the data",
+    "text": "How to access the data\nAll datasets are publicly available on Google BigQuery. Providers cover the storage costs; users pay only for their own query costs. BigQuery includes a free tier of 1 TB of query processing per month."
+  },
+  {
+    "objectID": "about.html#about-the-website",
+    "href": "about.html#about-the-website",
+    "title": "About",
+    "section": "About the website",
+    "text": "About the website\nThis site is rebuilt daily via GitHub Actions to keep metadata like update times, row counts, and dataset sizes current. We are not affiliated with the data providers or with Google. For background on why BigQuery was chosen as a pragmatic starting point – and what the longer-term options look like – see the mission statement."
+  },
+  {
+    "objectID": "about.html#get-involved",
+    "href": "about.html#get-involved",
+    "title": "About",
+    "section": "Get involved",
+    "text": "Get involved\nIf you maintain a publicly available BigQuery project with open scholarly data, we’d love to include it. See our contributing guide for details.\nYou can also check our Events page for upcoming talks and meetings, or browse the Tools built around these collections."
+  },
+  {
+    "objectID": "about.html#force11-working-group",
+    "href": "about.html#force11-working-group",
+    "title": "About",
+    "section": "FORCE11 Working Group",
+    "text": "FORCE11 Working Group\nA growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. Our FORCE11 working group coordinates amongst current contributors and works towards community standards for discovery, processing, preservation and documentation."
+  },
+  {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "There a growing list of tools that make use of ORION-DBs and their collections. Expanding this set is one of the FORCE11 working group’s deliverables."
+  },
+  {
+    "objectID": "tools.html#available-tools",
+    "href": "tools.html#available-tools",
+    "title": "Tools",
+    "section": "Available tools",
+    "text": "Available tools\n\nORION Research Dashboard – an open-source web dashboard for exploring research institutions and funders from the CWTS OpenAlex dataset — without writing any SQL. GitHub | Blog post.\norion-mcp – A Model Context Protocol (MCP) server for interacting with ORION-DBs using LLMs. GitHub | Blog post"
+  },
+  {
+    "objectID": "tools.html#suggest-a-tool",
+    "href": "tools.html#suggest-a-tool",
+    "title": "Tools",
+    "section": "Suggest a tool",
+    "text": "Suggest a tool\nIf you maintain a tool that helps others process, query, or work with data from the participating collections, let us know by filing an issue."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Open Research Information on BigQuery",
+    "section": "",
+    "text": "A growing, daily updated collection of publicly available datasets on Google BigQuery. Independent groups have come together to share the load of storage, preprocessing, and documentation, making open research information combinable and actionable at scale."
+  },
+  {
+    "objectID": "index.html#featured-collections",
+    "href": "index.html#featured-collections",
+    "title": "Open Research Information on BigQuery",
+    "section": "Featured Collections",
+    "text": "Featured Collections\nPlease also check the participating collections websites for more information and for many more available datasets.\n\n\n\n\nCrossref\nA major DOI registration agency for publisher-provided open metadata. Used in many downstream sources.\nSUB Göttingen provides the most recent monthly dump and yearly snapshots. Sesame Open Science gives access to the latest public data dump.\n\n\n\n\nOpenAIRE\nKnowledge graph interlinking ~350mio publications, datasets, software, grants, and more from ~150k sources.\nSesame Open Science, InSySPo Campinas and OpenAIREprovide multiple OpenAIRE Graph Datasets versions in different schemas.\n\n\n\n\nOpenAlex\nA free, open, and comprehensive bibliographic database and knowledge graph for global scholarly research.\nMany collections provide time-specfic snapshots of OpenAlex data, including CWTS, KB OPENBIB, InSySPo Campinas, MultiObs and SUB Göttingen.\n\n\n\n\nDataCite\nDOI registration agency for research data and other research outputs, linking works, people, and organizations.\nDimensions Open Datasets and Sesame Open Science both provide DataCite snapshots.\n\n\n\n\nCWTS Leiden Ranking\nAn open edition of the CWTS Leiden Ranking for universities worldwide.\nCWTS Leiden provides data underlying the Leiden Ranking Open Edition along with time-specific OpenAlex versions.\n\n\n\n\nFAPESP Virtual Library\nThe referential information source for research supported by FAPESP from Brazil.\nMultiObs provides the FAPESP Virtual Library dataset about research grants in science and technology funded by the São Paulo Research Foundation (FAPESP).\n\n\n\n\nORCID\nPersistent identifier linking researchers to their works, affiliations, and funding.\nDimensions Open Datasets provides the full ORCID public data file as a SQL representation."
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Open Research Information on BigQuery",
+    "section": "Get Started",
+    "text": "Get Started\n\nBrowse Collections – Explore the available datasets from our contributing projects\nContribute – Want to share your data? Check our contributing guide"
+  },
+  {
+    "objectID": "index.html#first-steps",
+    "href": "index.html#first-steps",
+    "title": "Open Research Information on BigQuery",
+    "section": "First steps",
+    "text": "First steps\n\n\n\n\n\n\nNote\n\n\n\nTo query datasets, you need a Google Cloud project. You can get started with the BigQuery sandbox, which requires no billing account and includes 1 TB of free queries per month.\n\n\nThis example joins data from two different collections – article metadata associated with transformative agreements as provided by SUB Göttingen and a Crossref truth table from Sesame Open Science – to check how many articles from the DEAL Wiley agreement (2019–23) have funder metadata in Crossref.\n\nSQLRPython\n\n\n-- Articles from the DEAL Wiley agreement (2019-23) with funder metadata in Crossref\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = \"wiley2019deal\"\nGROUP BY has_funders\n\n\nlibrary(bigrquery)\nlibrary(DBI)\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nmy_con &lt;- dbConnect(bigquery(), project = \"your-gcp-project\")\n\nmy_sql &lt;- \"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\n\nmy_df &lt;- dbGetQuery(my_con, my_sql)\n\n\nfrom google.cloud import bigquery\n\n# Replace `your-gcp-project` in the examples below with your own project ID.\nclient = bigquery.Client(project=\"your-gcp-project\")\n\nsql = \"\"\"\nSELECT cr_truth.has_funders, COUNT(DISTINCT jct_articles.doi) AS articles\nFROM `subugoe-collaborative.openbib.jct_articles` AS jct_articles\nLEFT JOIN sos-datasources.truthtables.crossref_truthtable_20260131 AS cr_truth\n  ON lower(jct_articles.doi) = lower(cr_truth.doi)\nWHERE jct_articles.esac_id = 'wiley2019deal'\nGROUP BY has_funders\n\"\"\"\n\nresult = client.query(sql).to_dataframe()"
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy",
+    "section": "",
+    "text": "Last updated: February 2026"
+  },
+  {
+    "objectID": "privacy.html#overview",
+    "href": "privacy.html#overview",
+    "title": "Privacy",
+    "section": "Overview",
+    "text": "Overview\nThis website is hosted on GitHub Pages and is maintained by the Orion DBS Community. We are committed to protecting your privacy. This policy explains what data is collected when you visit our site."
+  },
+  {
+    "objectID": "privacy.html#what-we-collect",
+    "href": "privacy.html#what-we-collect",
+    "title": "Privacy",
+    "section": "What We Collect",
+    "text": "What We Collect\nWe do not collect any personal data. This website does not use tracking scripts, analytics tools, or any other form of user monitoring."
+  },
+  {
+    "objectID": "privacy.html#cookies",
+    "href": "privacy.html#cookies",
+    "title": "Privacy",
+    "section": "Cookies",
+    "text": "Cookies\nThis website sets one technical cookie to improve the appearance and functionality of the sidebar. This cookie is strictly necessary for the website to function properly and does not store any personal information or track your behavior. No third-party cookies are used."
+  },
+  {
+    "objectID": "privacy.html#hosting",
+    "href": "privacy.html#hosting",
+    "title": "Privacy",
+    "section": "Hosting",
+    "text": "Hosting\nThis site is hosted on GitHub Pages, a service provided by GitHub, Inc. When you visit this website, GitHub may collect certain technical information such as your IP address, browser type, and access times in accordance with their own privacy practices. This data collection is handled entirely by GitHub and is outside our control.\nFor details, please refer to the GitHub Privacy Statement."
+  },
+  {
+    "objectID": "privacy.html#external-links",
+    "href": "privacy.html#external-links",
+    "title": "Privacy",
+    "section": "External Links",
+    "text": "External Links\nOur website may contain links to external websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any external site you visit."
+  },
+  {
+    "objectID": "privacy.html#changes-to-this-policy",
+    "href": "privacy.html#changes-to-this-policy",
+    "title": "Privacy",
+    "section": "Changes to This Policy",
+    "text": "Changes to This Policy\nWe may update this privacy policy from time to time. Any changes will be posted on this page with an updated revision date."
+  },
+  {
+    "objectID": "privacy.html#contact",
+    "href": "privacy.html#contact",
+    "title": "Privacy",
+    "section": "Contact",
+    "text": "Contact\nIf you have questions about this privacy policy, please open an issue on our GitHub repository."
+  },
+  {
+    "objectID": "collections/insyspo/index.html",
+    "href": "collections/insyspo/index.html",
+    "title": "The InSySPo project",
+    "section": "",
+    "text": "More info: https://www.leidenmadtrics.nl/articles/towards-the-democratisation-of-open-research-information-for-scientometrics-and-science-policy-the-campinas-experience"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#projectdb_ciaam",
+    "href": "collections/insyspo/index.html#projectdb_ciaam",
+    "title": "The InSySPo project",
+    "section": "projectdb_ciaam",
+    "text": "projectdb_ciaam\nCreated: May 29, 2025 23:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "href": "collections/insyspo/index.html#projectdb_cwts_summer_school_2023",
+    "title": "The InSySPo project",
+    "section": "projectdb_cwts_summer_school_2023",
+    "text": "projectdb_cwts_summer_school_2023\nCreated: Sep 18, 2023 15:40 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#projectdb_scielo_relational_model",
+    "href": "collections/insyspo/index.html#projectdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "projectdb_scielo_relational_model",
+    "text": "projectdb_scielo_relational_model\nCreated: Mar 28, 2023 07:20 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_capes_ppg",
+    "href": "collections/insyspo/index.html#publicdb_capes_ppg",
+    "title": "The InSySPo project",
+    "section": "publicdb_capes_ppg",
+    "text": "publicdb_capes_ppg\nCreated: Nov 13, 2023 10:53 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "href": "collections/insyspo/index.html#publicdb_cwts_openalex_areas",
+    "title": "The InSySPo project",
+    "section": "publicdb_cwts_openalex_areas",
+    "text": "publicdb_cwts_openalex_areas\nCreated: Jan 26, 2024 18:09 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_eurekalert",
+    "href": "collections/insyspo/index.html#publicdb_eurekalert",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert",
+    "text": "publicdb_eurekalert\nCreated: Feb 25, 2025 14:48 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_eurekalert_2025",
+    "href": "collections/insyspo/index.html#publicdb_eurekalert_2025",
+    "title": "The InSySPo project",
+    "section": "publicdb_eurekalert_2025",
+    "text": "publicdb_eurekalert_2025\nCreated: Jul 18, 2025 17:16 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_openaire_rm",
+    "href": "collections/insyspo/index.html#publicdb_openaire_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openaire_rm",
+    "text": "publicdb_openaire_rm\nCreated: Nov 28, 2023 17:47 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "href": "collections/insyspo/index.html#publicdb_openalex_2025_03_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_03_rm",
+    "text": "publicdb_openalex_2025_03_rm\nCreated: Mar 14, 2025 09:27 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "href": "collections/insyspo/index.html#publicdb_openalex_2025_08_rm",
+    "title": "The InSySPo project",
+    "section": "publicdb_openalex_2025_08_rm",
+    "text": "publicdb_openalex_2025_08_rm\nCreated: Sep 01, 2025 19:44 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_redalyc_2024_08",
+    "href": "collections/insyspo/index.html#publicdb_redalyc_2024_08",
+    "title": "The InSySPo project",
+    "section": "publicdb_redalyc_2024_08",
+    "text": "publicdb_redalyc_2024_08\nCreated: Aug 21, 2024 02:35 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_reliance_on_science",
+    "href": "collections/insyspo/index.html#publicdb_reliance_on_science",
+    "title": "The InSySPo project",
+    "section": "publicdb_reliance_on_science",
+    "text": "publicdb_reliance_on_science\nCreated: Apr 13, 2025 21:12 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_scielo_2024_rm",
+    "href": "collections/insyspo/index.html#publicdb_scielo_2024_rm",
+    "title": "The InSySPo project",
     "section": "publicdb_scielo_2024_rm",
-    "text": "publicdb_scielo_2024_rm\nDescriptionCopy of insyspo.publicdb_scielo_2024_rm\nCreated: Jan 12, 2026 01:50 | Location: US | View in BigQuery Console"
+    "text": "publicdb_scielo_2024_rm\nCreated: Jul 16, 2024 20:40 | Location: US | View in BigQuery Console"
   },
   {
-    "objectID": "collections/multiobs/index.html#publicdb_wikipedia_citations",
-    "href": "collections/multiobs/index.html#publicdb_wikipedia_citations",
-    "title": "MultiObs",
-    "section": "publicdb_wikipedia_citations",
-    "text": "publicdb_wikipedia_citations\nDescriptionA dataset containing DOI citations extracted from Wikipedia articles in Portuguese, Spanish, and English, based on a snapshot from April 2026. It links scientific works to the Wikipedia pages in which they are cited, using the DOI as the join key. A normalized doi_url field compatible with the OpenAlex format is also included.\nCreated: Jul 16, 2026 23:18 | Location: US | View in BigQuery Console"
+    "objectID": "collections/insyspo/index.html#publicdb_scielo_relational_model",
+    "href": "collections/insyspo/index.html#publicdb_scielo_relational_model",
+    "title": "The InSySPo project",
+    "section": "publicdb_scielo_relational_model",
+    "text": "publicdb_scielo_relational_model\nCreated: Oct 11, 2023 13:29 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "href": "collections/insyspo/index.html#publicdb_wikipedia_knowledge_graph",
+    "title": "The InSySPo project",
+    "section": "publicdb_wikipedia_knowledge_graph",
+    "text": "publicdb_wikipedia_knowledge_graph\nCreated: Feb 27, 2023 04:47 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/openaire/index.html",
+    "href": "collections/openaire/index.html",
+    "title": "OpenAIRE",
+    "section": "",
+    "text": "The OpenAIRE Graph is made available publicly as a dataset on Google Cloud and can be accessed and queried from Google BigQuery.\nMore info:\nhttps://graph.openaire.eu/docs/cloud-access/"
+  },
+  {
+    "objectID": "collections/openaire/index.html#oag_v10_6_0",
+    "href": "collections/openaire/index.html#oag_v10_6_0",
+    "title": "OpenAIRE",
+    "section": "oag_v10_6_0",
+    "text": "oag_v10_6_0\nCreated: Dec 05, 2025 07:02 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/openaire/index.html#oag_v10_6_0_additional",
+    "href": "collections/openaire/index.html#oag_v10_6_0_additional",
+    "title": "OpenAIRE",
+    "section": "oag_v10_6_0_additional",
+    "text": "oag_v10_6_0_additional\nCreated: Jan 30, 2026 08:47 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/openaire/index.html#oag_v9_0_1",
+    "href": "collections/openaire/index.html#oag_v9_0_1",
+    "title": "OpenAIRE",
+    "section": "oag_v9_0_1",
+    "text": "oag_v9_0_1\nCreated: Feb 13, 2025 15:43 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/index.html",
+    "href": "collections/index.html",
+    "title": "Collections Overview",
+    "section": "",
+    "text": "BigQuery Projects\n7\n\n\n\n\n\n\n\n\n\nDatasets\n68\n\n\n\n\n\n\n\n\n\nTotal Size\n23 130 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html",
+    "href": "collections/ds-open-datasets/index.html",
+    "title": "Dimensions Open Datasets",
+    "section": "",
+    "text": "The Dimensions Open Datasets collection provides free access to large-scale scholarly and bibliometric datasets in the Google BigQuery environment. These datasets allow data analysts, scientometricians, and researchers to carry out advanced investigations taking advantage of the speed and flexibility of the BigQuery platform.\nThis collection currently features the public data files for ORCID and DataCite.\nGitHub Repo: https://github.com/digital-science/ds-external-dataset-transformations"
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html#orcid-dataset",
+    "href": "collections/ds-open-datasets/index.html#orcid-dataset",
+    "title": "Dimensions Open Datasets",
+    "section": "ORCID Dataset",
+    "text": "ORCID Dataset\nThis dataset is a SQL representation of the ORCID public data file. ORCID (Open Researcher and Contributor ID) is a free, unique, persistent identifier (PID) for individuals to use as they engage in research, scholarship, and innovation activities.\nAn ORCID record may contain information about a researcher’s work, affiliations, funding, peer review, and more. Items on ORCID records can be broken down into assertions that connect the ORCID iD-holder with an activity or affiliation.\n\nRelease date: Feb 2025\nUpdate frequency: Yearly\nLicense: CC0\nDocumentation: ORCID Official Schema\nSample Queries: Dimensions BigQuery Lab - ORCID"
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html#datacite-dataset",
+    "href": "collections/ds-open-datasets/index.html#datacite-dataset",
+    "title": "Dimensions Open Datasets",
+    "section": "DataCite Dataset",
+    "text": "DataCite Dataset\nDataCite is a leading global non-profit organization that provides persistent identifiers (DOIs) for research data and other research outputs. A DataCite record contains descriptive metadata for research outputs and resources structured according to the DataCite Metadata Schema. These records may include links to other persistent identifiers (PIDs) for works (DOIs), people (ORCID iDs), and organizations (ROR IDs). Both yearly and weekly snapshots are available. Note that the weekly snapshot will also contain DOIs that have subsequently been unpublished in the current year.\n\nRelease date: Jan 2026\nUpdate frequency: Yearly, Weekly\nLicense: CC0\nDocumentation: DataCite API documentation\nSample Queries: Dimensions BigQuery Lab - DataCite"
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html#datacite",
+    "href": "collections/ds-open-datasets/index.html#datacite",
+    "title": "Dimensions Open Datasets",
+    "section": "datacite",
+    "text": "datacite\nCreated: Jan 12, 2026 23:11 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/ds-open-datasets/index.html#orcid",
+    "href": "collections/ds-open-datasets/index.html#orcid",
+    "title": "Dimensions Open Datasets",
+    "section": "orcid",
+    "text": "orcid\nCreated: Dec 03, 2024 21:56 | Location: US | View in BigQuery Console"
+  },
+  {
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "Events",
+    "section": "",
+    "text": "Talks, workshops, and meetings related to the ORION-DBs community and the FORCE11 working group."
+  },
+  {
+    "objectID": "events.html#upcoming",
+    "href": "events.html#upcoming",
+    "title": "Events",
+    "section": "Upcoming",
+    "text": "Upcoming\n\nFriday, September 4, 2026 – CWTS Research Seminar: Collective action for open research information – introducing ORION-DBs and a new FORCE11 working group. A seminar introducing ORION-DBs and the new FORCE11 working group.\nThursday, September 10, 2026 – Special Session: Open research information for STI studies – introducing ORION-DBs, Room R011, R-building, Rodestraat. Part of the 30th International Conference on Science and Technology Indicators (STI 2026) in Antwerp."
+  },
+  {
+    "objectID": "events.html#past",
+    "href": "events.html#past",
+    "title": "Events",
+    "section": "Past",
+    "text": "Past\n\nSunday, June 14, 2026 – World Biodiversity Forum – ORION-DBs: Large-scale literature searches using open research information resourceson Google BigQuery. Presented at the Workshop Biodiversity Evidence: Foundations of a Community of Practice to streamline and innovate literature workflows, Davos, Switzerland."
   },
   {
     "objectID": "blog/posts/data-snapshot-requirements/index.html",

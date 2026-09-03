@@ -1,0 +1,5 @@
+# Contact
+
+For questions, feedback, or interest in contributing datasets, reach out to us at <info@orion-dbs.community>.
+
+You can also open an issue on our [GitHub repository](https://github.com/orion-dbs-community/website).
