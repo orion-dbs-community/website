@@ -57,3 +57,31 @@ As a first contribution, in this blog we discuss some features, or lack thereof,
   Meaning in principle, end users do not have to install specific software to use the data for analysis. At the same time, for Google Big Query, integration with other platforms/software is well documented, extending usage options to, for example, Python and other languages and workflows.
 
 All this is not to uncritically defend our current choice for Google Big Query, but to explain what we, at least, see as some of its separate characteristics that are relevant both for data providers and users. We recommend considering all elements in this list (and potentially others) when scoping the development of public infrastructure for sharing and facilitating usage of public scholarly metadata sources.
+
+## Citation
+
+BibTeX citation:
+
+``` quarto-appendix-bibtex
+@online{kramer2026,
+  author = {Kramer, Bianca and Neylon, Cameron},
+  title = {Alternatives for What?},
+  date = {2026-07-06},
+  url = {https://orion-dbs.community/blog/posts/alternatives-to-gbq/},
+  doi = {10.59350/pdkx9-j2b63},
+  langid = {en},
+  abstract = {There are emerging alternatives to Google Big Query in the
+    cloud and for local computing, and organisations exploring these
+    alternatives or interested in doing so. With ORION-DBs, we hope to
+    spur on these developments and their application for opening up use
+    of scholarly data sets. As a first contribution, in this blog post
+    we discuss some features, or lack thereof, of Google Big Query
+    infrastructure, what they mean for how data are made available and
+    how public infrastructure could strive to emulate or improve these
+    features.}
+}
+```
+
+For attribution, please cite this work as:
+
+Kramer, Bianca, and Cameron Neylon. 2026. “Alternatives for What?” ORION-DBs Blog, July 6. <https://doi.org/10.59350/pdkx9-j2b63>.

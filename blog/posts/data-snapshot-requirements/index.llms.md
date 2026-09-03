@@ -74,3 +74,30 @@ The potential benefits will be the provision of documented, reliable, and trustw
 ## Reuse
 
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+## Citation
+
+BibTeX citation:
+
+``` quarto-appendix-bibtex
+@online{kramer2026,
+  author = {Kramer, Bianca and Neylon, Cameron},
+  title = {The Power of Data Snapshots - How to Make Your Data Work for
+    Others},
+  date = {2026-07-05},
+  url = {https://orion-dbs.community/blog/posts/data-snapshot-requirements/},
+  doi = {10.59350/5pdvg-bhp08},
+  langid = {en},
+  abstract = {If you maintain a data set of open scholarly metadata
+    (e.g. through APIs or full data snapshots) and would like us to
+    consider including your data set in Google Big Query as part of the
+    ORION-DBs collection, this posts outlines the requirements we set
+    out regarding data provision. These include licensing, the
+    availability of a complete data schema, information on versioning
+    and data provenance, and preferred data formats.}
+}
+```
+
+For attribution, please cite this work as:
+
+Kramer, Bianca, and Cameron Neylon. 2026. “The Power of Data Snapshots - How to Make Your Data Work for Others.” ORION-DBs Blog, July 5. <https://doi.org/10.59350/5pdvg-bhp08>.

@@ -16,6 +16,10 @@ Published
 
 September 1, 2026
 
+Doi
+
+[10.59350/z9n09-6aa44](https://doi.org/10.59350/z9n09-6aa44)
+
 Abstract
 
 The [COMET](https://www.cometadata.org/) initiative is developing collaborative metadata enrichment practices, including ways for provenanced enrichments to flow into open scholarly metadata sources.
@@ -78,3 +82,33 @@ The following datasets are available (follow links for documentation)
 ### Share your ideas!
 
 Do you have ideas on how to use these datasets to explore community-enriched metadata? We would love to know your use cases - let us know at <info@orion-dbs.community>, or [Dione Mentis](mailto:dione.mentis@datacite.org) and [Adam Buttrick](mailto:adam.buttrick.ucop.edu) at COMET!
+
+## Citation
+
+BibTeX citation:
+
+``` quarto-appendix-bibtex
+@online{kramer2026,
+  author = {Kramer, Bianca},
+  title = {COMET Datasets Available on {ORION-DBs}},
+  date = {2026-09-01},
+  url = {https://orion-dbs.community/blog/posts/comet_datasets/},
+  doi = {10.59350/z9n09-6aa44},
+  langid = {en},
+  abstract = {The {[}COMET{]}(https://www.cometadata.org/) initiative is
+    developing collaborative metadata enrichment practices, including
+    ways for provenanced enrichments to flow into open scholarly
+    metadata sources. COMET provides open datasets with enrichments to
+    arXiv and DataCite on Zenodo and Huggingface. DataCite enrichments
+    can also be {[}retrieved through the DataCite
+    API{]}(https://support.datacite.org/docs/metadata-enrichments\#retrieve-a-list-of-enrichment-records),
+    but are not (yet) included in DataCite metadata files. To facilitate
+    broader use of these datasets, including combining them with arXiv
+    and DataCite metadata, various COMET datasets are now provided via
+    ORION-DBs.}
+}
+```
+
+For attribution, please cite this work as:
+
+Kramer, Bianca. 2026. “COMET Datasets Available on ORION-DBs.” ORION-DBs Blog, September 1. <https://doi.org/10.59350/z9n09-6aa44>.

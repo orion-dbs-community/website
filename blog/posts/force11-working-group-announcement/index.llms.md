@@ -18,6 +18,10 @@ Published
 
 August 4, 2026
 
+Doi
+
+[10.59350/ahya3-mb819](https://doi.org/10.59350/ahya3-mb819)
+
 Abstract
 
 With ORION-DBs, a growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery.
@@ -60,3 +64,32 @@ We will organize a [public webinar](https://www.universiteitleiden.nl/en/events/
 The webinar will introduce the ORION-DB initiative, present a number of use cases and introduce the FORCE11 Working Group.
 
 If you are a data provider, metadata user or infrastructure developer and want to learn more about ORION-DB and the planned activities of the working group, you are invited to [join the webinar online](https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_YmJjYTc2MDUtMzY3OS00YWQ0LTkzYTgtN2RmNWE4YmJhMDZj%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522ca2a7f76-dbd7-4ec0-9108-6b3d524fb7c8%2522%252c%2522Oid%2522%253a%2522b10284b5-b0db-4548-8c70-eeddd68a7e0e%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=10f207c4-200a-436a-949b-64d9bf597a68&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true). Registration is not required.
+
+## Citation
+
+BibTeX citation:
+
+``` quarto-appendix-bibtex
+@online{kramer2026,
+  author = {Kramer, Bianca},
+  title = {ORION-DBs Starts {FORCE11} Working Group},
+  date = {2026-08-04},
+  url = {https://orion-dbs.community/blog/posts/force11-working-group-announcement/},
+  doi = {10.59350/ahya3-mb819},
+  langid = {en},
+  abstract = {With ORION-DBs, a growing set of actors are hosting large
+    research information datasets in shared spaces, notably in Google
+    BigQuery. To coordinate amongst current and future contributors and
+    work towards community standards for discovery, processing,
+    preservation and documentation, we are starting a {[}FORCE11 working
+    group{]}(https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/).
+    The working group will also seek to build a community around future
+    alternatives to proprietary cloud systems for data sharing at scale
+    and identify future paths to community-led training and development
+    resources.}
+}
+```
+
+For attribution, please cite this work as:
+
+Kramer, Bianca. 2026. “ORION-DBs Starts FORCE11 Working Group.” ORION-DBs Blog, August 4. <https://doi.org/10.59350/ahya3-mb819>.
