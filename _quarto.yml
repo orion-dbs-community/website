@@ -25,6 +25,8 @@ website:
             href: collections/kb-openbib/
           - text: MultiObs Campinas Datasets
             href: collections/multiobs/
+          - text: OpenAIRE 
+            href: collections/openaire/
           - text: Sesame Open Science Datasets
             href: collections/sos/
           - text: SUB Göttingen Datasets
