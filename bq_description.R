@@ -45,6 +45,21 @@ bq_description_html <- function(x, base_level = 5L) {
   shift_heading_levels(html, base_level = base_level)
 }
 
+# Build an htmltools tag carrying raw HTML content, for use inside a
+# reactable "details" render function.
+#
+# reactable serializes a details tree to JSON and hydrates it as React
+# elements on the client. A plain string child (e.g. from htmltools::HTML())
+# survives that round trip as a literal string and is inserted as an escaped
+# text node -- the "<p>" tags show up as visible text instead of being
+# rendered. reactable's hydration forwards a tag's attribs straight through
+# to React.createElement(), so passing the HTML via the tag's
+# dangerouslySetInnerHTML attribute (with no other children) renders it as
+# actual markup instead.
+raw_html_tag <- function(html, class = NULL, tag_name = "div") {
+  htmltools::tag(tag_name, list(class = class, dangerouslySetInnerHTML = list(`__html` = html)))
+}
+
 # Wrap HTML in a Pandoc raw HTML block, for use in "results: asis" chunks.
 # The fence matters: pasting the HTML in directly ends the raw block at the
 # first blank line, after which Pandoc parses the remainder as markdown again.

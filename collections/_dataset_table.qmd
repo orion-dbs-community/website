@@ -71,11 +71,10 @@ table_details <- function(index) {
             class = "description-header",
             "Description"
           ),
-          div(
-            class = "description-content",
-            # Table descriptions are markdown too, render them as such.
-            HTML(bq_description_html(table_desc))
-          ),
+          # Table descriptions are markdown too, render them as such. This
+          # needs dangerouslySetInnerHTML (via raw_html_tag()), not HTML() --
+          # see bq_description.R for why.
+          raw_html_tag(bq_description_html(table_desc), class = "description-content"),
           tags$div(
             style = "margin-top: 0.5rem; font-size: 0.9rem;",
             tags$a(href = table_url, target = "_blank", "View in BigQuery Console")
