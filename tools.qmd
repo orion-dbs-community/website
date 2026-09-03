@@ -1,0 +1,16 @@
+---
+title: "Tools"
+---
+
+There a growing list of tools that make use of ORION-DBs and their collections. Expanding this set is one of the [FORCE11 working group](force11.qmd)'s deliverables.
+
+## Available tools
+
+- **ORION Research Dashboard** -- an open-source web dashboard for exploring research institutions and funders from the CWTS OpenAlex dataset — without writing any SQL. [GitHub](https://github.com/jpbascur/orion-app) | [Blog post](https://www.leidenmadtrics.nl/articles/orion-dashboard-bringing-open-research-data-within-reach).
+
+- **orion-mcp** -- A Model Context Protocol (MCP) server for interacting with ORION-DBs using LLMs.  [GitHub](https://github.com/subugoe/orion-mcp) | [Blog post](https://subugoe.github.io/scholcomm_analytics/posts/orion_mcp_intro/)
+
+
+## Suggest a tool
+
+If you maintain a tool that helps others process, query, or work with data from the [participating collections](about.qmd#collections), let us know by [filing an issue](https://github.com/orion-dbs-community/website/issues).

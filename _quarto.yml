@@ -5,6 +5,13 @@ project:
 
 website:
   title: "ORION-DBs"
+  llms-txt: true
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: '**News Alert** -  We are starting a <a href="https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/">FORCE11 working group</a>. Join us! 🥳'
+    type: primary
+    position: below-navbar
   site-url: "https://orion-dbs.community"
   favicon: favicon.ico
   twitter-card: true
@@ -33,11 +40,19 @@ website:
             href: collections/subugoe/
       - text: News & Tutorials
         href: blog/
+      - text: Community
+        menu:
+          - text: FORCE11 Working Group
+            href: force11.qmd
+          - text: Events
+            href: events.qmd
+          - text: Tools
+            href: tools.qmd
+          - text: Contribute
+            href: contributing.qmd
     right:
       - href: about.qmd
         text: About
-      - text: Contribute
-        href: contributing.qmd
       - icon: rss
         href: blog/index.xml
       - icon: github

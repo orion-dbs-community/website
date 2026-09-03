@@ -32,3 +32,9 @@ This site is rebuilt daily via GitHub Actions to keep metadata like update times
 ## Get involved
 
 If you maintain a publicly available BigQuery project with open scholarly data, we'd love to include it. See our [contributing guide](contributing.qmd) for details.
+
+You can also check our [Events](events.qmd) page for upcoming talks and meetings, or browse the [Tools](tools.qmd) built around these collections.
+
+## FORCE11 Working Group
+
+A growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery. Our [FORCE11 working group](force11.qmd) coordinates amongst current contributors and works towards community standards for discovery, processing, preservation and documentation.

@@ -29,7 +29,7 @@ A major DOI registration agency for publisher-provided open metadata. Used in ma
 
 Knowledge graph interlinking ~350mio publications, datasets, software, grants, and more from ~150k sources.
 
-[Sesame Open Science](collections/sos/) and [InSySPo Campinas](collections/insyspo/) provide the full [OpenAIRE Graph Dataset](collections/sos/#openaire) in different schemas.
+[Sesame Open Science](collections/sos/),  [InSySPo Campinas](collections/insyspo/) and [OpenAIRE](collections/openaire/)provide multiple [OpenAIRE Graph Datasets](collections/sos/#openaire) versions in different schemas.
 :::
 :::
 
