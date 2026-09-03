@@ -13,6 +13,9 @@ abstract: |
   To facilitate broader use of these datasets, including combining them with arXiv and DataCite metadata, various COMET datasets are now provided via ORION-DBs.
 
 categories: [news, COMET, metadata enrichment]
+citation: 
+  container-title: ORION-DBs Blog
+doi: "10.59350/z9n09-6aa44"
 ---
 
 ![](comet_logo.png){width="100%"}

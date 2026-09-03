@@ -12,6 +12,9 @@ abstract: |
 
   The working group will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.
 categories: [news, FORCE11, working group, public webinar]
+doi: "10.59350/ahya3-mb819"
+citation: 
+  container-title: ORION-DBs Blog
 ---
 
 ## About FORCE11

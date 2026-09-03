@@ -11,6 +11,8 @@ abstract: "If you maintain a data set of open scholarly metadata (e.g. through A
 categories: [news, data snapshots, requirements, guidelines]
 license: "CC BY"
 doi: "10.59350/5pdvg-bhp08"
+citation: 
+  container-title: ORION-DBs Blog
 ---
 
 Providing access to open research information in shared infrastructures, whether through Big Query or future alternatives, requires access to the data sources. Many organizations provide access to their data though APIs and full data snapshots in various formats and with varying frequency.

@@ -10,6 +10,8 @@ date: "2026-07-06"
 abstract: "There are emerging alternatives to Google Big Query in the cloud and for local computing, and organisations exploring these alternatives or interested in doing so. With ORION-DBs, we hope to spur on these developments and their application for opening up use of scholarly data sets.  As a first contribution, in this blog post we discuss some features, or lack thereof, of Google Big Query infrastructure, what they mean for how data are made available and how public infrastructure could strive to emulate or improve these features."
 categories: [news, google big query, alternatives, public infrastructure]
 doi: "10.59350/pdkx9-j2b63"
+citation: 
+  container-title: ORION-DBs Blog
 ---
 
 There are pragmatic reasons why, as both data providers and users, we independently arrived at Google Big Query as a useful tool for sharing open data sets. Google solves a bunch of the hard problems, including authentication without the need for institutional affiliation, systems provisioning and a highly performant database system.
