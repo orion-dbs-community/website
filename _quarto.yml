@@ -9,7 +9,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: '**News Alert** -  We are starting a <a href="https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/">FORCE11 working group</a>. Join us! 🥳'
+    content: '**News Alert** -  We are starting a <a href="https://orion-dbs.community/force11.html">FORCE11 working group</a>. Join us! 🥳'
     type: primary
     position: below-navbar
   site-url: "https://orion-dbs.community"
