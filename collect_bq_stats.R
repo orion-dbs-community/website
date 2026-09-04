@@ -20,6 +20,7 @@ projects <- c(
   "ds-open-datasets",
   "insyspo",
   "multiobs",
+  "openaire-graph",
   "sos-datasources",
   "subugoe-collaborative",
   "openalex-475813"
