@@ -36,6 +36,9 @@ multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 multiobs,publicdb_redalyc_2025_12,1,533723
 multiobs,publicdb_scielo_2024_rm,13,11246623689
 multiobs,publicdb_wikipedia_citations,1,1361544439
+openaire-graph,oag_v10_6_0,9,1943894842053
+openaire-graph,oag_v10_6_0_additional,1,25725390
+openaire-graph,oag_v9_0_1,9,1825188170737
 sos-datasources,arxiv,1,4750815365
 sos-datasources,backup,9,2762335669585
 sos-datasources,butler_apcs,2,11413543
