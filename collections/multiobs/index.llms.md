@@ -28,6 +28,10 @@ Preprocessing code can be found at <https://github.com/multiobs-ig-unicamp/>.
 
 **Created:** Jul 15, 2026 20:43 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_inep_dados_abertos&page=dataset)
 
+## publicdb_openalex_2026_01_eu_rm
+
+**Created:** Sep 07, 2026 20:42 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_openalex_2026_01_eu_rm&page=dataset)
+
 ## publicdb_openalex_2026_01_rm
 
 **Created:** Jan 23, 2026 10:12 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_openalex_2026_01_rm&page=dataset)
