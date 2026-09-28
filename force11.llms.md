@@ -50,7 +50,7 @@ The first working group meeting will take place on:\
 ## Want to join?
 
 Interested in joining the working group? Sign up here:\
-[ORION-DBs FORCE11 Working group sign-up form](nterested%20in%20joining%20the%20working%20group?%20Sign%20up%20here:%20ORION-DBs%20FORCE11%20Working%20group%20sign-up%20form)\
+[ORION-DBs FORCE11 Working group sign-up form](https://opnform.com/forms/orion-force11-working-group-form-r2cki9)\
 
 ------------------------------------------------------------------------
 
