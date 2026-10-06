@@ -36,9 +36,27 @@ DataCite is a leading global non-profit organization that provides persistent id
 
 - **Sample Queries:** [Dimensions BigQuery Lab - DataCite](https://bigquery-lab.dimensions.ai/tutorials/10-datacite/)
 
+## Make Data Count
+
+Make Data Count data citations: links between research articles and the datasets they cite or reuse, found by text-mining full text and classified as Primary (data generated for the article) or Secondary (data reused) where the evidence supports it. Always reflects the current monthly release; see data_citations_YYYYMM for a specific, citable release. Powered by Dimensions, built by Digital Science research staff in collaboration with Make Data Count. CC0 licence. Code and methodology: https://github.com/digital-science/ds-make-data-count-pipeline-external
+
+- **Release date:** Oct 2026
+
+- **Update frequency:** Monthly
+
+- **License:** CC0
+
 ## datacite
 
 **Created:** Jan 12, 2026 23:11 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=ds-open-datasets&p=ds-open-datasets&d=datacite&page=dataset)
+
+## make_data_count
+
+Description
+
+Make Data Count data-citation release, cloned daily from ds-make-data-count.public.
+
+**Created:** Oct 06, 2026 11:44 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=ds-open-datasets&p=ds-open-datasets&d=make_data_count&page=dataset)
 
 ## orcid
 
