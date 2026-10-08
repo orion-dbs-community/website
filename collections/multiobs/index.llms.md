@@ -36,6 +36,14 @@ Preprocessing code can be found at <https://github.com/multiobs-ig-unicamp/>.
 
 **Created:** Jan 23, 2026 10:12 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_openalex_2026_01_rm&page=dataset)
 
+## publicdb_openalex_2026_09_rm
+
+Description
+
+OpenAlex snapshot 2026-09-23, relational model
+
+**Created:** Oct 08, 2026 00:03 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_openalex_2026_09_rm&page=dataset)
+
 ## publicdb_redalyc_2025_12
 
 Description

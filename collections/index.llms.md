@@ -6,11 +6,11 @@ BigQuery Projects
 
 Datasets
 
-73
+74
 
 Total Size
 
-27 952 GB
+29 885 GB
 
 The community currently brings together datasets from the following contributing projects:
 
