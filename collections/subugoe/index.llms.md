@@ -56,7 +56,7 @@ This dataset contains the most recent OpenAlex Snapshot (before Walden).
 
 Description
 
-This dataset contains the most recent publicly available OpenAlex-Walden Snapshot. Snapshot date 2026-06-26
+This dataset contains the most recent publicly available OpenAlex-Walden Snapshot. Snapshot date 2026-10-14
 
 **Created:** Dec 03, 2025 10:07 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=subugoe-collaborative&p=subugoe-collaborative&d=openalex_walden&page=dataset)
 
