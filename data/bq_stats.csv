@@ -38,6 +38,7 @@ multiobs,publicdb_openalex_2026_01_rm,76,1398635836099
 multiobs,publicdb_openalex_2026_09_rm,112,2076110619452
 multiobs,publicdb_redalyc_2025_12,1,533723
 multiobs,publicdb_scielo_2024_rm,13,11246623689
+multiobs,publicdb_scielo_2026_09_rm,10,12912081643
 multiobs,publicdb_wikipedia_citations,1,1361544439
 openaire-graph,oag_v10_6_0,9,1943894842053
 openaire-graph,oag_v10_6_0_additional,1,25725390
@@ -65,7 +66,7 @@ subugoe-collaborative,oa2020,13,49833246480
 subugoe-collaborative,openalex,7,1199056886045
 subugoe-collaborative,openalex_walden,8,2307446201342
 subugoe-collaborative,openbib,16,10508581721
-subugoe-collaborative,resources,50,222871066965
+subugoe-collaborative,resources,51,222871386576
 subugoe-collaborative,semantic_scholar,4,215413012012
 subugoe-collaborative,upw_history,5,74035873362
 subugoe-collaborative,upw_instant,1,28699639728
