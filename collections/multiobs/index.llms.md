@@ -60,6 +60,10 @@ Copy of insyspo.publicdb_scielo_2024_rm
 
 **Created:** Jan 12, 2026 01:50 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_scielo_2024_rm&page=dataset)
 
+## publicdb_scielo_2026_09_rm
+
+**Created:** Oct 19, 2026 11:44 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_scielo_2026_09_rm&page=dataset)
+
 ## publicdb_wikipedia_citations
 
 Description
