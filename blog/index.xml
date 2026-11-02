@@ -9,7 +9,7 @@
 <link>https://orion-dbs.community/blog/</link>
 <atom:link href="https://orion-dbs.community/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.10.20</generator>
+<generator>quarto-1.11.9</generator>
 <lastBuildDate>Tue, 01 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>COMET datasets available on ORION-DBs</title>
@@ -80,7 +80,7 @@
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kramer2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{kramer2026,
   author = {Kramer, Bianca},
   title = {COMET Datasets Available on {ORION-DBs}},
   date = {2026-09-01},
@@ -99,7 +99,7 @@
     and DataCite metadata, various COMET datasets are now provided via
     ORION-DBs.}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
+</code></pre></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
 Kramer, Bianca. 2026. <span>“COMET Datasets Available on
 ORION-DBs.”</span> ORION-DBs Blog, September 1. <a href="https://doi.org/10.59350/z9n09-6aa44">https://doi.org/10.59350/z9n09-6aa44</a>.
 </div></div></section></div> ]]></description>
@@ -155,7 +155,7 @@ We envision the working group to carry out work in 3 subgroups, each consisting 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kramer2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{kramer2026,
   author = {Kramer, Bianca},
   title = {ORION-DBs Starts {FORCE11} Working Group},
   date = {2026-08-04},
@@ -173,7 +173,7 @@ We envision the working group to carry out work in 3 subgroups, each consisting 
     and identify future paths to community-led training and development
     resources.}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
+</code></pre></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
 Kramer, Bianca. 2026. <span>“ORION-DBs Starts FORCE11 Working
 Group.”</span> ORION-DBs Blog, August 4. <a href="https://doi.org/10.59350/ahya3-mb819">https://doi.org/10.59350/ahya3-mb819</a>.
 </div></div></section></div> ]]></description>
@@ -217,7 +217,7 @@ Meaning in principle, end users do not have to install specific software to use 
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kramer2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{kramer2026,
   author = {Kramer, Bianca and Neylon, Cameron},
   title = {Alternatives for What?},
   date = {2026-07-06},
@@ -234,7 +234,7 @@ Meaning in principle, end users do not have to install specific software to use 
     how public infrastructure could strive to emulate or improve these
     features.}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
+</code></pre></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
 Kramer, Bianca, and Cameron Neylon. 2026. <span>“Alternatives for
 What?”</span> ORION-DBs Blog, July 6. <a href="https://doi.org/10.59350/pdkx9-j2b63">https://doi.org/10.59350/pdkx9-j2b63</a>.
 </div></div></section></div> ]]></description>
@@ -292,7 +292,7 @@ What?”</span> ORION-DBs Blog, July 6. <a href="https://doi.org/10.59350/pdkx9-
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kramer2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{kramer2026,
   author = {Kramer, Bianca and Neylon, Cameron},
   title = {The Power of Data Snapshots - How to Make Your Data Work for
     Others},
@@ -308,7 +308,7 @@ What?”</span> ORION-DBs Blog, July 6. <a href="https://doi.org/10.59350/pdkx9-
     availability of a complete data schema, information on versioning
     and data provenance, and preferred data formats.}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
+</code></pre></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kramer2026" class="csl-entry quarto-appendix-citeas">
 Kramer, Bianca, and Cameron Neylon. 2026. <span>“The Power of Data
 Snapshots - How to Make Your Data Work for Others.”</span> ORION-DBs
 Blog, July 5. <a href="https://doi.org/10.59350/5pdvg-bhp08">https://doi.org/10.59350/5pdvg-bhp08</a>.
@@ -2133,7 +2133,7 @@ Piwowar, H., Priem, J., Larivière, V., Alperin, J. P., Matthias, L., Norlander,
 <div id="ref-Rothfritz_2024" class="csl-entry">
 Rothfritz, L., Schmal, W. B., &amp; Herb, U. (2024). <em>Trapped in transformative agreements? A multifaceted analysis of &gt;1,000 contracts</em>. arXiv. <a href="https://arxiv.org/abs/2409.20224">https://arxiv.org/abs/2409.20224</a>
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{jahn2026,
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{jahn2026,
   author = {Jahn, Najko and Kramer, Bianca and Neylon, Cameron and
     Haupka, Nick},
   title = {Crosswalking {ORION} Resources to Measure Open Access to
@@ -2151,7 +2151,7 @@ Rothfritz, L., Schmal, W. B., &amp; Herb, U. (2024). <em>Trapped in transformati
     revealing notable differences in open access funding between NIH-
     and EC-supported research.}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jahn2026" class="csl-entry quarto-appendix-citeas">
+</code></pre></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-jahn2026" class="csl-entry quarto-appendix-citeas">
 Jahn, N., Kramer, B., Neylon, C., &amp; Haupka, N. (2026, March 13).
 <em>Crosswalking ORION resources to measure open access to biomedical
 research literature</em>. ORION-DBs Blog. <a href="https://doi.org/10.59350/4ttp9-7sv10">https://doi.org/10.59350/4ttp9-7sv10</a>

@@ -6,9 +6,9 @@ Welcome to our blog featuring news, tutorials, and insights about using BigQuery
 
 [Explore metadata enrichments of arXiv and DataCite](../blog/posts/comet_datasets/index.llms.md)
 
-[The](../blog/posts/comet_datasets/index.llms.md) [COMET](https://www.cometadata.org/) initiative is developing collaborative metadata enrichment practices, including ways for provenanced enrichments to flow into open scholarly metadata sources.
+The COMET initiative is developing collaborative metadata enrichment practices, including ways for provenanced enrichments to flow into open scholarly metadata sources.
 
-COMET provides open datasets with enrichments to arXiv and DataCite on Zenodo and Huggingface. DataCite enrichments can also be [retrieved through the DataCite API](https://support.datacite.org/docs/metadata-enrichments#retrieve-a-list-of-enrichment-records), but are not (yet) included in DataCite metadata files.
+COMET provides open datasets with enrichments to arXiv and DataCite on Zenodo and Huggingface. DataCite enrichments can also be retrieved through the DataCite API, but are not (yet) included in DataCite metadata files.
 
 To facilitate broader use of these datasets, including combining them with arXiv and DataCite metadata, various COMET datasets are now provided via ORION-DBs.
 
@@ -22,7 +22,7 @@ Bianca Kramer
 
 With ORION-DBs, a growing set of actors are hosting large research information datasets in shared spaces, notably in Google BigQuery.
 
-[To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, we are starting a](../blog/posts/force11-working-group-announcement/index.llms.md) [FORCE11 working group](https://force11.org/group/orion-collective-action-group-for-sharing-and-using-open-research-information-resources-online/).
+To coordinate amongst current and future contributors and work towards community standards for discovery, processing, preservation and documentation, we are starting a FORCE11 working group.
 
 The working group will also seek to build a community around future alternatives to proprietary cloud systems for data sharing at scale and identify future paths to community-led training and development resources.
 
