@@ -48,6 +48,20 @@ See the following blog post for more information about the Leiden Ranking Open E
 
 **Created:** Oct 29, 2025 06:05 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=leiden_ranking_open_edition_2025&page=dataset)
 
+## leiden_ranking_open_edition_2026
+
+Description
+
+This dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2026. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2026 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2026 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.
+
+The Leiden Ranking Open Edition 2026 is based on the OpenAlex snapshot from August, 31 2026. The snapshot data is not included in this dataset.
+
+The source code for creating this dataset is available in the following GitHub repository: <https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition>
+
+See the following blog post for more information about the Leiden Ranking Open Edition: <https://doi.org/10.59350/jvjy2-4ww95>
+
+**Created:** Oct 20, 2026 07:49 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=leiden_ranking_open_edition_2026&page=dataset)
+
 ## openalex_2023nov
 
 Description
@@ -94,6 +108,16 @@ The source code used to construct this dataset is available in the following Git
 
 **Created:** Sep 24, 2024 14:10 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2024aug&page=dataset)
 
+## openalex_2024aug_classification
+
+Description
+
+This dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on August 30, 2024.
+
+See the following Zenodo record for more information about the classification: <https://doi.org/10.5281/zenodo.17441911>
+
+**Created:** Sep 24, 2024 14:10 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2024aug_classification&page=dataset)
+
 ## openalex_2024aug_core
 
 Description
@@ -118,6 +142,16 @@ The source code used to construct this dataset is available in the following Git
 
 **Created:** Oct 26, 2025 11:29 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2025aug&page=dataset)
 
+## openalex_2025aug_classification
+
+Description
+
+This dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot from August 2025.
+
+See the following Zenodo record for more information about the classification: <https://doi.org/10.5281/zenodo.17442025>
+
+**Created:** Oct 23, 2025 21:34 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2025aug_classification&page=dataset)
+
 ## openalex_2025aug_core
 
 Description
@@ -129,3 +163,37 @@ The source code used to identify core sources and core publications in OpenAlex 
 See the following report for more information about the identification of core sources and core publications in OpenAlex: <https://doi.org/10.5281/zenodo.17200830>
 
 **Created:** Oct 24, 2025 07:46 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2025aug_core&page=dataset)
+
+## openalex_2026aug
+
+Description
+
+This dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.
+
+The dataset is based on the OpenAlex snapshot of August 31, 2026.
+
+The source code used to construct this dataset is available in the following GitHub repository: <https://github.com/CWTSLeiden/CWTS-OpenAlex-databases>
+
+**Created:** Oct 20, 2026 07:50 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2026aug&page=dataset)
+
+## openalex_2026aug_classification
+
+Description
+
+This dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot of August 31, 2026.
+
+See the following Zenodo record for more information about the classification: <https://doi.org/10.5281/zenodo.23890489>
+
+**Created:** Oct 20, 2026 07:48 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2026aug_classification&page=dataset)
+
+## openalex_2026aug_core
+
+Description
+
+This dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot of August 31, 2026).
+
+The source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: <https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2026aug>
+
+See the following report for more information about the identification of core sources and core publications in OpenAlex: <https://doi.org/10.5281/zenodo.23889554>
+
+**Created:** Oct 20, 2026 07:48 \| **Location:** EU \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=cwts-leiden&p=cwts-leiden&d=openalex_2026aug_core&page=dataset)

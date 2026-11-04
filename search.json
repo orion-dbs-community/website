@@ -287,6 +287,13 @@
     "text": "leiden_ranking_open_edition_2025\nDescriptionThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2025. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2025 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2025 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2025 is based on the OpenAlex snapshot from August, 2025. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition 2025: https://doi.org/10.59350/jvjy2-4ww95\nCreated: Oct 29, 2025 06:05 | Location: EU | View in BigQuery Console"
   },
   {
+    "objectID": "collections/cwts/index.html#leiden_ranking_open_edition_2026",
+    "href": "collections/cwts/index.html#leiden_ranking_open_edition_2026",
+    "title": "CWTS Leiden Datasets",
+    "section": "leiden_ranking_open_edition_2026",
+    "text": "leiden_ranking_open_edition_2026\nDescriptionThis dataset contains the data used to create the CWTS Leiden Ranking Open Edition 2026. The dataset includes (1) data about the universities included in the Leiden Ranking Open Edition 2026 and the links between these universities and their affiliated organizations, (2) data about the publications included in the Leiden Ranking Open Edition 2026 and the links between these publications and universities and main fields, (3) indicators at the level of publications, and (4) indicators at the level of universities and main fields.\nThe Leiden Ranking Open Edition 2026 is based on the OpenAlex snapshot from August, 31 2026. The snapshot data is not included in this dataset.\nThe source code for creating this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-Leiden-Ranking-Open-Edition\nSee the following blog post for more information about the Leiden Ranking Open Edition: https://doi.org/10.59350/jvjy2-4ww95\nCreated: Oct 20, 2026 07:49 | Location: EU | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/cwts/index.html#openalex_2023nov",
     "href": "collections/cwts/index.html#openalex_2023nov",
     "title": "CWTS Leiden Datasets",
@@ -315,6 +322,13 @@
     "text": "openalex_2024aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot released on August 30, 2024.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
   },
   {
+    "objectID": "collections/cwts/index.html#openalex_2024aug_classification",
+    "href": "collections/cwts/index.html#openalex_2024aug_classification",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2024aug_classification",
+    "text": "openalex_2024aug_classification\nDescriptionThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot released on August 30, 2024.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.17441911\nCreated: Sep 24, 2024 14:10 | Location: EU | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/cwts/index.html#openalex_2024aug_core",
     "href": "collections/cwts/index.html#openalex_2024aug_core",
     "title": "CWTS Leiden Datasets",
@@ -329,6 +343,13 @@
     "text": "openalex_2025aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot from August, 2025.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Oct 26, 2025 11:29 | Location: EU | View in BigQuery Console"
   },
   {
+    "objectID": "collections/cwts/index.html#openalex_2025aug_classification",
+    "href": "collections/cwts/index.html#openalex_2025aug_classification",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2025aug_classification",
+    "text": "openalex_2025aug_classification\nDescriptionThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot from August 2025.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.17442025\nCreated: Oct 23, 2025 21:34 | Location: EU | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/cwts/index.html#openalex_2025aug_core",
     "href": "collections/cwts/index.html#openalex_2025aug_core",
     "title": "CWTS Leiden Datasets",
@@ -336,11 +357,32 @@
     "text": "openalex_2025aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot from August 2025).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2025aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.17200830\nCreated: Oct 24, 2025 07:46 | Location: EU | View in BigQuery Console"
   },
   {
+    "objectID": "collections/cwts/index.html#openalex_2026aug",
+    "href": "collections/cwts/index.html#openalex_2026aug",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2026aug",
+    "text": "openalex_2026aug\nDescriptionThis dataset contains OpenAlex data in a relational format. It is organized into multiple interrelated tables representing key OpenAlex entities such as works, authors, institutions, and sources, along with their relationships.\nThe dataset is based on the OpenAlex snapshot of August 31, 2026.\nThe source code used to construct this dataset is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases\nCreated: Oct 20, 2026 07:50 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2026aug_classification",
+    "href": "collections/cwts/index.html#openalex_2026aug_classification",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2026aug_classification",
+    "text": "openalex_2026aug_classification\nDescriptionThis dataset contains an algorithmic classification of research publications based on data from OpenAlex. The classification is based on the OpenAlex snapshot of August 31, 2026.\nSee the following Zenodo record for more information about the classification: https://doi.org/10.5281/zenodo.23890489\nCreated: Oct 20, 2026 07:48 | Location: EU | View in BigQuery Console"
+  },
+  {
+    "objectID": "collections/cwts/index.html#openalex_2026aug_core",
+    "href": "collections/cwts/index.html#openalex_2026aug_core",
+    "title": "CWTS Leiden Datasets",
+    "section": "openalex_2026aug_core",
+    "text": "openalex_2026aug_core\nDescriptionThis dataset contains data on core sources and core publications identified in the OpenAlex database (based on the OpenAlex snapshot of August 31, 2026).\nThe source code used to identify core sources and core publications in OpenAlex is available in the following GitHub repository: https://github.com/CWTSLeiden/CWTS-OpenAlex-databases/tree/2026aug\nSee the following report for more information about the identification of core sources and core publications in OpenAlex: https://doi.org/10.5281/zenodo.23889554\nCreated: Oct 20, 2026 07:48 | Location: EU | View in BigQuery Console"
+  },
+  {
     "objectID": "collections/index.html",
     "href": "collections/index.html",
     "title": "Collections Overview",
     "section": "",
-    "text": "BigQuery Projects\n8\n\n\n\n\n\n\n\n\n\nDatasets\n75\n\n\n\n\n\n\n\n\n\nTotal Size\n30 172 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
+    "text": "BigQuery Projects\n8\n\n\n\n\n\n\n\n\n\nDatasets\n81\n\n\n\n\n\n\n\n\n\nTotal Size\n31 462 GB\n\n\n\n\n\n\n\n\nThe community currently brings together datasets from the following contributing projects:\n\nCWTS Leiden Datasets – The CWTS data science team at Leiden University provides the CWTS Leiden Ranking Open Edition, time-specific OpenAlex versions, and other resources.\nDimensions Open Datasets – This collection currently features the public data files for ORCID and DataCite.\nInSySPo Campinas Datasets – The InSySPo team at the University of Campinas provides time-specific versions of OpenAIRE and OpenAlex, among other resources.\nKB OPENBIB – The German Competence Network for Bibliometrics provides curated open metadata with the focus on Germany based on OpenAlex.\nMultiObs – These datasets from the University of Campinas support research on Science, Technology, and Innovation (STI) monitoring. The project develops a federated data infrastructure using participatory, multi-perspective approaches, including data on research entities, bibliometrics, economics, and intellectual property.\nOpenAIRE – OpenAIRE makes their OpenAIRE Graph publicly available on Google BigQuery.\nSesame Open Science Datasets (SOS) – Sesame Open Science gives access to the latest public data snapshots of both Crossref and DataCite and the full OpenAIRE Graph Dataset. Other sources include ROR, DOAJ, and PKP.\nSUB Göttingen Datasets – The Scholarly Communication Analytics team at SUB Göttingen maintains monthly Crossref snapshots, OpenAlex releases, and other sources including Semantic Scholar and Unpaywall.\n\nWant to share your data? Check our contributing guide."
   },
   {
     "objectID": "blog/posts/comet_datasets/index.html#comet-projects",
