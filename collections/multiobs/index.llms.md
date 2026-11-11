@@ -20,6 +20,10 @@ Preprocessing code can be found at <https://github.com/multiobs-ig-unicamp/>.
 
 **Created:** Jul 15, 2026 20:03 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_capes_dados_abertos&page=dataset)
 
+## publicdb_erudit
+
+**Created:** Nov 10, 2026 17:40 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_erudit&page=dataset)
+
 ## publicdb_fapesp_bv
 
 **Created:** Nov 27, 2025 14:42 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=multiobs&p=multiobs&d=publicdb_fapesp_bv&page=dataset)
