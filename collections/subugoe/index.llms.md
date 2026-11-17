@@ -34,6 +34,10 @@ Datasets used to compile hoaddata, an R package containing data about hybrid ope
 
 **Created:** May 12, 2023 11:06 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=subugoe-collaborative&p=subugoe-collaborative&d=hoaddata&page=dataset)
 
+## jn_analytics
+
+**Created:** Nov 17, 2026 12:38 \| **Location:** US \| [View in BigQuery Console](https://console.cloud.google.com/bigquery?project=subugoe-collaborative&p=subugoe-collaborative&d=jn_analytics&page=dataset)
+
 ## oa2020
 
 Description
