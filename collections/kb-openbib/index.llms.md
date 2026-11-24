@@ -103,7 +103,7 @@ Description
 
 ##### Dataset Description
 
-OpenAlex datasets provided by the KB follow the naming convention **oal_b\_\<openalex_snapshot_date\>** — for example, `oal_b_20260626` corresponds to the OpenAlex snapshot from end-March 2026.
+OpenAlex datasets provided by the KB follow the naming convention **oal_b\_\<openalex_snapshot_date\>** — for example, `oal_b_20260626` corresponds to the OpenAlex snapshot from end-June 2026.
 
 All data is structured according to a **bibliometric database schema** developed by the KB. This unified schema is designed to accommodate data from multiple sources and across different versions, making it easier to work with and compare data consistently.
 
